@@ -21,9 +21,10 @@
       "entry": "tools/skills/meta-skill/README.md",
       "source_package_name": "packages/02-meta-skill_3.10.1.zip",
       "member_count": 118,
-      "source_archive_sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada",
+      "source_archive_sha256": "26ac8d164143c39656edeeda4d8fa46dd29d1b3507354fdc534c957b8f6da8cd",
       "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "original_archive_sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada"
     },
     {
       "name": "Meta Orchestrator",
@@ -43,9 +44,10 @@
       "entry": "tools/skills/meta-orchestrator/README.md",
       "source_package_name": "packages/03-meta-orchestrator_10.06.zip",
       "member_count": 2,
-      "source_archive_sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de",
+      "source_archive_sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
       "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "original_archive_sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de"
     },
     {
       "name": "Meta Agent",
@@ -65,9 +67,10 @@
       "entry": "tools/skills/meta-agent/README.md",
       "source_package_name": "packages/04-meta-agent_10.06.zip",
       "member_count": 34,
-      "source_archive_sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61",
+      "source_archive_sha256": "c0f6b6a44a6f9f5dfcc0e66e1bdd35ec2d4f3b0c8c6bc8020be057ba59413806",
       "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "original_archive_sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61"
     },
     {
       "name": "Workbench App Development",
@@ -87,9 +90,10 @@
       "entry": "tools/skills/workbench-app-development/README.md",
       "source_package_name": "packages/05-workbench-app-development_10.06.zip",
       "member_count": 8,
-      "source_archive_sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d",
+      "source_archive_sha256": "0fda98443408293c2a2ebf770f97df14d2b10ea1d3889d58d48fccd331feb016",
       "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "original_archive_sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d"
     },
     {
       "name": "Quekou Workbench Frontend",
@@ -108,7 +112,9 @@
       "path": "tools/resources/quekou-frontend/",
       "entry": "tools/resources/quekou-frontend/quekou-workbench-1.0.0/START_HERE.md",
       "source_package_name": "packages/06-quekou-frontend_1.0.0.zip",
-      "member_count": 390
+      "member_count": 390,
+      "original_archive_sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9",
+      "source_archive_sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9"
     },
     {
       "name": "Specialist Tool Guides",
@@ -148,13 +154,14 @@
       ],
       "data_model_sha256": "8c311ad3a73d96d95cb097127fa2cd32e35db0203664ea53e9b81f21dcf42cbd",
       "other_eight_unchanged": false,
-      "source_archive_sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806",
+      "source_archive_sha256": "3d5617490051aad5b99716f9f89b981b52fce6dae335257aca52252476e9cd30",
       "publication_revision": "10.07.3",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
       "member_count": 10,
       "source_reference_freeze": "frozen-candidate-9",
       "original_reference_changes": "Removed one author-local README path from reference 08; seven original reference documents are byte-identical.",
-      "reference_freeze": "public-documentation-10.07.3"
+      "reference_freeze": "public-documentation-10.07.3",
+      "original_archive_sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806"
     },
     {
       "id": "meta-architecture-development",
@@ -182,10 +189,11 @@
         "The final evidence includes targeted repair and recheck; it is not a new independent from-scratch c9 run."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "source_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
+      "source_archive_sha256": "c3ce260081da69495914bf85c0572704bdc4c4862b9022c08126e7b03a5afe5b",
       "publication_revision": "10.07.3",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
-      "source_frozen_candidate": 9
+      "source_frozen_candidate": 9,
+      "original_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305"
     },
     {
       "name": "自然语言反馈接收",
@@ -195,8 +203,8 @@
       "archive": "tools/packages/feedback-intake-10.06.1-candidate.zip",
       "path": "tools/skills/feedback-intake/",
       "entry": "tools/skills/feedback-intake/SKILL.md",
-      "sha256": "5af1c3eb4ac8c4e814fb9d4a07f3dbc0168b1c4809d990974f7167cca75ef9bb",
-      "bytes": 19982,
+      "sha256": "d54e19029778cc3f2b869662cd7a6d5750a31aa0f925de2f056bbe45613bf11e",
+      "bytes": 20007,
       "member_count": 20,
       "validation": {
         "mechanical": "M1-M12 passed in source evidence",
@@ -234,7 +242,7 @@
         "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "source_archive_sha256": "bebc43ba35469a19881f75ba51b888ec2d7433742f600b08025f9f840bb3f04f",
+      "source_archive_sha256": "d54e19029778cc3f2b869662cd7a6d5750a31aa0f925de2f056bbe45613bf11e",
       "publication_revision": "10.07.3",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
@@ -285,7 +293,7 @@
         "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "source_archive_sha256": "0bf31807a72772f1d606220bbd1756d7e1077fd1f3a18128a01d89bd79393ed5",
+      "source_archive_sha256": "70139fc5cf45b8bb1c4bc29a949b07c9ed45d21fc04b9767f5ff4997e88cc621",
       "publication_revision": "10.07.3",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     }
@@ -327,11 +335,11 @@
   ],
   "feedback_collection": {
     "archive": "tools/packages/feedback-channel-10.06.1-candidate.zip",
-    "sha256": "fab91f7ba25c83c159429cc07b1007be6c73bb2e5f4940af657aa3f2348a57de",
-    "bytes": 103798,
+    "sha256": "1987d943574811f34a0cb71cfdf26a43c0ef21232089a5558577091b46c5c52e",
+    "bytes": 103823,
     "members": 70,
     "status": "installed-host-offline-validated-production-not-verified",
-    "source_archive_sha256": "68a8da7755997b6dce04f9b1e38281da4b1b5c076f236819f1ba0efd4c9e4002",
+    "source_archive_sha256": "1987d943574811f34a0cb71cfdf26a43c0ef21232089a5558577091b46c5c52e",
     "publication_revision": "10.07.3"
   },
   "publication_revision": "10.07.3"
