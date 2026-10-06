@@ -1,6 +1,6 @@
 ---
 title: 开发工具
-version: 10.06.4
+version: 10.07.1
 ---
 
 # 开发工具
@@ -16,6 +16,8 @@ version: 10.06.4
 | Quekou Workbench Frontend | [阅读](resources/quekou-frontend/quekou-workbench-1.0.0/START_HERE.md) | [下载](packages/quekou-frontend-1.0.0.zip) | 原始 1.0.0 前端共享包，保留原许可证与第三方声明。 |
 | Specialist Tool Guides | [阅读](resources/specialist-tool-guides/README.md) | [下载](packages/specialist-tool-guides-10.06.zip) | 排产、图纸与商品分析指引及官方入口；在线服务按其账号与接口使用。 |
 | 九份架构写作参照 | [阅读](resources/development-design/README.md) | [下载](packages/development-design-10.06.zip) | 精确九份写作参照，含新增数据结构；供架构设计阅读。 |
+| 自然语言反馈接收 | [阅读](skills/feedback-intake/SKILL.md) | [下载](packages/feedback-intake-10.06.1-candidate.zip) | 本地已验证候选；整理自然语言反馈、集中澄清并形成脱敏公开预览。 |
+| GitHub 反馈提交与维护 | [阅读](skills/github-feedback-maintainer/SKILL.md) | [下载](packages/github-feedback-maintainer-10.06.1-candidate.zip) | 本地已验证候选；提交、去重、查询、补证与受控状态维护，宿主接入中。 |
 | Meta Architecture Development | [架构设计](skills/meta-architecture-development/) | — | 从调研输入形成九份架构文档。 |
 
 ## 调研与流程资料
@@ -25,3 +27,9 @@ version: 10.06.4
 - [开发手册](../handbook/)：每一步的输入、产出、工具和审核关系。
 
 来源包没有附许可证的条目在清单中照实记录；仓库未替原作者增授许可。实际项目记录采用的工具版本与验证条件。
+
+## 反馈接口安装包
+
+[下载两项反馈 Skill 合集](packages/feedback-channel-10.06.1-candidate.zip)。解压后保持两目录同级，按 [运行合同](skills/github-feedback-maintainer/references/operations.md)准备宿主配置和安全凭据。
+
+当前宿主 GitHub 凭据尚未配置，黑背老六真实提交闭环尚未验证。现阶段仍可直接使用 [GitHub 反馈表单](../feedback/)。本地验证结果与宿主接入状态分列于工具清单。

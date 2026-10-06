@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": "10.06.4",
-  "status": "first-batch-published",
+  "version": "10.07.1",
+  "status": "published-with-feedback-candidates",
   "packages": [
     {
       "name": "Meta Skill",
@@ -140,6 +140,78 @@
       "archive": null,
       "files_available": false,
       "handoff": "independent development; publish when delivered"
+    },
+    {
+      "name": "自然语言反馈接收",
+      "slug": "feedback-intake",
+      "version": "10.06.1-candidate",
+      "status": "locally-validated-candidate-host-integration-in-progress",
+      "archive": "tools/packages/feedback-intake-10.06.1-candidate.zip",
+      "path": "tools/skills/feedback-intake/",
+      "entry": "tools/skills/feedback-intake/SKILL.md",
+      "sha256": "bebc43ba35469a19881f75ba51b888ec2d7433742f600b08025f9f840bb3f04f",
+      "bytes": 20514,
+      "member_count": 20,
+      "validation": {
+        "mechanical": "M1-M12 passed in source evidence",
+        "behavior": "32 local tests passed in frozen source evidence",
+        "claim_scope": "local candidate; target-host end-to-end validation pending"
+      },
+      "host_integration": {
+        "status": "in-progress",
+        "github_credentials_configured": false,
+        "end_to_end_verified": false
+      },
+      "dependencies": [
+        "Python 3.10+",
+        "POSIX file locking",
+        "both skills installed as siblings",
+        "host-approved GitHub transport: authenticated gh or Python HTTPS",
+        "host-provided private configuration, trusted approval records and persistent journal"
+      ],
+      "limitations": [
+        "GitHub credentials must be provisioned separately in the host secure area.",
+        "The target digital employee has not completed a verified GitHub create/query/close lifecycle.",
+        "Single-host coordination; distributed multi-host writes not validated.",
+        "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
+      ],
+      "license": "No license file supplied in frozen package; no additional license granted by publication."
+    },
+    {
+      "name": "GitHub 反馈提交与维护",
+      "slug": "github-feedback-maintainer",
+      "version": "10.06.1-candidate",
+      "status": "locally-validated-candidate-host-integration-in-progress",
+      "archive": "tools/packages/github-feedback-maintainer-10.06.1-candidate.zip",
+      "path": "tools/skills/github-feedback-maintainer/",
+      "entry": "tools/skills/github-feedback-maintainer/SKILL.md",
+      "sha256": "0bf31807a72772f1d606220bbd1756d7e1077fd1f3a18128a01d89bd79393ed5",
+      "bytes": 84621,
+      "member_count": 50,
+      "validation": {
+        "mechanical": "M1-M12 passed in source evidence",
+        "behavior": "32 local tests passed in frozen source evidence",
+        "claim_scope": "local candidate; target-host end-to-end validation pending"
+      },
+      "host_integration": {
+        "status": "in-progress",
+        "github_credentials_configured": false,
+        "end_to_end_verified": false
+      },
+      "dependencies": [
+        "Python 3.10+",
+        "POSIX file locking",
+        "both skills installed as siblings",
+        "host-approved GitHub transport: authenticated gh or Python HTTPS",
+        "host-provided private configuration, trusted approval records and persistent journal"
+      ],
+      "limitations": [
+        "GitHub credentials must be provisioned separately in the host secure area.",
+        "The target digital employee has not completed a verified GitHub create/query/close lifecycle.",
+        "Single-host coordination; distributed multi-host writes not validated.",
+        "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
+      ],
+      "license": "No license file supplied in frozen package; no additional license granted by publication."
     }
   ],
   "external_tools": [
@@ -176,5 +248,12 @@
       "path": "tools/resources/fde-flow/",
       "status": "source-reference"
     }
-  ]
+  ],
+  "feedback_collection": {
+    "archive": "tools/packages/feedback-channel-10.06.1-candidate.zip",
+    "sha256": "68a8da7755997b6dce04f9b1e38281da4b1b5c076f236819f1ba0efd4c9e4002",
+    "bytes": 105113,
+    "members": 70,
+    "status": "locally-validated-candidate-host-integration-in-progress"
+  }
 }

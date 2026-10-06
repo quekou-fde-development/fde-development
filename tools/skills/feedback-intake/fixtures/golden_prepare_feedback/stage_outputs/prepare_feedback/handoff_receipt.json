@@ -1,0 +1,21 @@
+{
+  "receiver": "github-feedback-maintainer",
+  "receiver_interface": "scripts/feedback.py::render+wrap_preview",
+  "request_id": "11111111-1111-4111-8111-111111111111",
+  "receipt_id": "cd50cac873276465",
+  "delivery_status": "preview_generated",
+  "preview_path": "stage_outputs/prepare_feedback/preview.json",
+  "preview_file_sha256": "d0438bc95d37119a",
+  "preview_sha256": "835454bc14cdce1156f602ee2ee8a3ea0f22cf54e7f10ea3f0431a05ed6d45dc",
+  "deliveries": [
+    {
+      "request_id": "11111111-1111-4111-8111-111111111111",
+      "receiver": "github-feedback-maintainer",
+      "receiver_interface": "scripts/feedback.py::render+wrap_preview",
+      "preview_path": "stage_outputs/prepare_feedback/preview.json",
+      "preview_file_sha256": "d0438bc95d37119a",
+      "preview_sha256": "835454bc14cdce1156f602ee2ee8a3ea0f22cf54e7f10ea3f0431a05ed6d45dc",
+      "receipt_id": "cd50cac873276465"
+    }
+  ]
+}

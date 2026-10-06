@@ -1,0 +1,19 @@
+{
+  "runner_binding_version": "1.0",
+  "scope": "cross_skill_handoff",
+  "bindings": [
+    {
+      "stage": "prepare_feedback",
+      "adapter": "scripts/run_verification.py",
+      "production_skill": "../github-feedback-maintainer",
+      "production_path": "scripts/feedback.py",
+      "production_sha256": "32595b8759cd0ce277dc09ee23726012482266fc730c0275a4e6d440a422f57a",
+      "symbols": [
+        "render",
+        "wrap_preview"
+      ],
+      "mechanism": "module_call",
+      "verification_scope": "The adapter invokes the sibling production functions during an explicit local verification run. The intake canonical operation remains handoff because approval and public submission are outside this package."
+    }
+  ]
+}

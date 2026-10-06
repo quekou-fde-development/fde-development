@@ -1,0 +1,141 @@
+{
+  "package": "github-feedback-maintainer",
+  "contract_ir_version": "1.0",
+  "stages": [
+    {
+      "stage": "process_feedback",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "process_feedback_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "feedback.source",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at",
+                  "locator"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §process_feedback receipt",
+              "mutants": [
+                "M-source"
+              ]
+            },
+            {
+              "id": "feedback.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "required_fields": [
+                  "id",
+                  "kind",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "kind": "str",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §process_feedback receipt",
+              "mutants": [
+                "M-schema"
+              ]
+            },
+            {
+              "id": "feedback.files",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "declared_count": "output_count",
+                "declared_hash": "outputs_sha256",
+                "file_bindings": {
+                  "path_field": "id",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §process_feedback receipt",
+              "mutants": [
+                "M-files"
+              ]
+            }
+          ]
+        },
+        {
+          "op": "acquire",
+          "artifact": "stage_outputs/process_feedback/observed.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "observed.source",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at",
+                  "locator"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §process_feedback receipt",
+              "mutants": [
+                "M-observed-source"
+              ]
+            },
+            {
+              "id": "observed.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "receipts",
+                "required_fields": [
+                  "result",
+                  "number",
+                  "url",
+                  "state"
+                ],
+                "field_types": {
+                  "result": "str",
+                  "number": "int",
+                  "url": "str",
+                  "state": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §process_feedback receipt",
+              "mutants": [
+                "M-observed-schema"
+              ]
+            },
+            {
+              "id": "observed.files",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "receipts",
+                "declared_count": "receipt_count",
+                "declared_hash": "receipts_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §process_feedback receipt",
+              "mutants": [
+                "M-observed-files"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

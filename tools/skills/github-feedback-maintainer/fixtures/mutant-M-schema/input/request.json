@@ -1,0 +1,13 @@
+{
+  "draft": {
+    "request_id": "00000000-0000-4000-8000-000000000001",
+    "source_alias": "TEST anonymous",
+    "project": "TEST public tools",
+    "category": "手册问题",
+    "target": "handbook/index.html 10.06",
+    "title": "TEST canonical preview",
+    "description": "TEST download click produces no file",
+    "expected": "TEST start download",
+    "evidence": ""
+  }
+}
