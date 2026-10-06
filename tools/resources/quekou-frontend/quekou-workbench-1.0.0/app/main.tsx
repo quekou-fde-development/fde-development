@@ -1,0 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Switcher from './switcher';
+import ComponentLab from './component-lab';
+import WorkbenchDemo from './workbench/WorkbenchDemo';
+import './generated/tokens.css';
+import './styles.css';
+import '../packages/ui/src/styles.css';
+import '../packages/ui/src/blocks.css';
+ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode>{new URLSearchParams(location.search).get('view')==='recipes'?<WorkbenchDemo/>:new URLSearchParams(location.search).get('view')==='components'?<ComponentLab/>:<Switcher/>}</React.StrictMode>);

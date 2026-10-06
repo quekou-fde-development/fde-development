@@ -1,0 +1,46 @@
+.component-lab { min-height:100vh;padding:var(--space-0) var(--page-padding);background-image:var(--ambient-background); }
+.lab-frame { max-width:var(--max-frame-width);margin:auto; }
+.lab-topbar { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);padding:var(--space-5) var(--space-0);border-bottom:var(--border-width) solid var(--border-default);font-size:var(--font-size-caption);color:var(--fg-muted); }
+.lab-topbar a { display:inline-flex;align-items:center;gap:var(--space-2);color:var(--fg-primary); }
+.lab-stage { padding:var(--space-1) var(--space-2);background:var(--accent-soft);color:var(--accent-default);border-radius:var(--radius-control); }
+.lab-intro { display:grid;grid-template-columns:2fr 1fr;align-items:center;gap:var(--space-12);padding:var(--space-12) var(--space-0); }
+.lab-intro h1 { font-size:var(--font-size-display);line-height:var(--line-tight);font-weight:var(--weight-semibold);letter-spacing:var(--tracking-tight); }
+.lab-lead { color:var(--fg-muted);margin-top:var(--space-5)!important;max-width:var(--dialog-width); }
+.lab-jump { display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);font-size:var(--font-size-caption); }
+.lab-jump a { display:inline-flex;align-items:center;gap:var(--space-2);border-bottom:var(--border-width) solid var(--border-strong);padding-bottom:var(--space-2); }
+.lab-jump span { color:var(--fg-muted); }
+.lab-summary { padding:var(--space-8);background:var(--hero-bg);color:var(--hero-fg);border-radius:var(--radius-card);display:flex;flex-direction:column;align-items:flex-start; }
+.lab-summary>svg { width:var(--space-8);height:var(--space-8); }
+.lab-summary>strong { font-size:var(--font-size-kpi-hero,var(--font-size-display));line-height:var(--line-display);margin-top:var(--space-5); }
+.lab-summary>p { color:var(--hero-muted);margin-top:var(--space-2)!important; }
+.lab-summary>div { display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);font-size:var(--font-size-micro);color:var(--hero-muted); }
+.lab-settings { padding:var(--panel-padding);background:var(--surface-raised);border:var(--border-width) solid var(--border-default);border-radius:var(--radius-card); }
+.lab-settings-heading { display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap; }
+.lab-settings h2 { font-size:var(--font-size-section); }
+.lab-settings .qk-muted { font-size:var(--font-size-caption);margin-top:var(--space-1); }
+.lab-theme-tabs { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);margin:var(--space-5) var(--space-0); }
+.lab-theme-tabs button { display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;padding:var(--space-3) var(--space-4);text-align:left;background:var(--surface-base);color:var(--fg-primary);border:var(--border-width) solid var(--border-default);border-radius:var(--radius-control); }
+.lab-theme-tabs button[aria-pressed='true'] { background:var(--accent-soft);border-color:var(--accent-default);color:var(--accent-default); }
+.lab-theme-tabs button>span,.lab-theme-tabs small { font-size:var(--font-size-caption); }
+.lab-controls { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-5);align-items:start; }
+.lab-hue { display:flex;align-items:center;gap:var(--space-2);min-height:var(--control-height); }
+.lab-hue input { min-width:0;width:50%;accent-color:var(--accent-solid); }
+.lab-brand-reset { align-self:flex-start;color:var(--accent-default);font-size:var(--font-size-caption);background:transparent;border:none;padding:var(--space-0); }
+.lab-group { margin-top:var(--space-12);scroll-margin-top:var(--space-6); }
+.lab-group-heading { display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-5); }
+.lab-group-heading>span { font-size:var(--font-size-display);color:var(--fg-subtle);line-height:var(--line-display); }
+.lab-group-heading h2 { display:flex;align-items:center;gap:var(--space-3);font-size:var(--font-size-title); }
+.lab-group-heading small,.lab-group-heading p { font-size:var(--font-size-caption);color:var(--fg-muted);font-weight:var(--weight-regular); }
+.lab-component-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--grid-gap);align-items:start; }
+.lab-component { border:var(--border-width) solid var(--border-default);border-radius:var(--radius-card);background:var(--surface-raised);min-width:0;scroll-margin-top:var(--space-5); }
+.lab-component[data-wide='true'] { grid-column:1/-1; }
+.lab-component>header { display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);border-bottom:var(--border-width) solid var(--border-subtle);padding:var(--space-4) var(--panel-padding); }
+.lab-component>header>div { display:flex;align-items:baseline;gap:var(--space-3);flex-wrap:wrap; }
+.lab-component h3 { font-size:var(--font-size-label); }
+.lab-component>header span,.lab-component>header>small { color:var(--fg-muted);font-size:var(--font-size-micro); }
+.lab-example { padding:var(--panel-padding);min-width:0; }
+.lab-footer { margin-top:var(--space-12);padding:var(--space-8) var(--space-0);border-top:var(--border-width) solid var(--border-default);font-size:var(--font-size-caption); }
+.lab-footer p { margin-top:var(--space-2);color:var(--fg-muted); }
+.lab-footer a { display:inline-block;margin-top:var(--space-4);color:var(--accent-default); }
+@media(max-width:899px) { .lab-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }.lab-intro { gap:var(--space-6); }.lab-summary { padding:var(--space-5); }.lab-topbar>span:not(.lab-stage) { display:none; } }
+@media(max-width:599px) { .lab-intro { grid-template-columns:1fr;padding:var(--space-8) var(--space-0); }.lab-summary { flex-direction:row;align-items:center;flex-wrap:wrap;gap:var(--space-3); }.lab-summary>strong,.lab-summary>div { margin-top:var(--space-0); }.lab-summary>strong { font-size:var(--font-size-title); }.lab-summary>div { flex-basis:100%; }.lab-theme-tabs { gap:var(--space-2); }.lab-theme-tabs button { gap:var(--space-1);padding:var(--space-2); }.lab-theme-tabs small { flex-basis:100%; }.lab-controls,.lab-component-grid,.qk-example-grid { grid-template-columns:1fr; }.lab-intro h1 { font-size:var(--font-size-title); }.lab-group-heading h2 { font-size:var(--font-size-section); }.lab-jump { gap:var(--space-2); }.lab-group { margin-top:var(--space-8); } }
