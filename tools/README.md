@@ -12,3 +12,7 @@ status: package-audit-in-progress
 状态含义：`candidate` 为待审候选；`reference-specification` 为设计规格资料；`published-package` 表示已发布可下载包，实际运行按包内前提执行；`validated-with-conditions` 表示在列明条件下已验证。发布并不自动授予生产可用或总架构师批准状态。
 
 [开发手册](../handbook/) · [反馈](../feedback/)
+
+## 调研输入
+
+[下载或填写通用调研输入文档](resources/通用调研输入文档_10.06.md)。该文件是空白表格；填写后的客户材料保存在对应项目的受控仓库。

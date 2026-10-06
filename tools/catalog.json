@@ -13,5 +13,15 @@
       "handoff": "independent development; publish when delivered"
     }
   ],
-  "external_tools": []
+  "external_tools": [],
+  "resources": [
+    {
+      "id": "research-input",
+      "name": "通用调研输入文档",
+      "version": "10.06",
+      "path": "tools/resources/通用调研输入文档_10.06.md",
+      "status": "blank-template",
+      "sha256": "264af3bd1a666186f40876b529aaf3018c6adfcbc133351acd0a830370aec730"
+    }
+  ]
 }
