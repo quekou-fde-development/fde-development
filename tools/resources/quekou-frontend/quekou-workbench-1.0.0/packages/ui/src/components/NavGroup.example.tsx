@@ -1,0 +1,2 @@
+import {useState} from 'react';import {NavGroup} from '@quekou/ui';import {LayoutDashboard,FolderKanban,Inbox} from 'lucide-react';
+export function NavGroupExample(){const [active,setActive]=useState('projects');return <NavGroup label="业务导航" activeId={active} onNavigate={setActive} items={[{id:'home',label:'经营总览',href:'#component-NavGroup',icon:<LayoutDashboard/>},{id:'projects',label:'交付项目',href:'#component-NavGroup',icon:<FolderKanban/>,count:24},{id:'inbox',label:'我的待办',href:'#component-NavGroup',icon:<Inbox/>,count:8}]}/>} 

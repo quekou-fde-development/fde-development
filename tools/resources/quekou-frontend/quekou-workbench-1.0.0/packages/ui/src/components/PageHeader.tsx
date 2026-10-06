@@ -1,0 +1,4 @@
+import {forwardRef,type HTMLAttributes,type ReactNode} from 'react';
+import {cx,useThemeAttributes,type ThemeOverrides} from '../internal/foundation';
+export interface PageHeaderProps extends HTMLAttributes<HTMLElement>,ThemeOverrides {title:string;description?:string;eyebrow?:string;actions?:ReactNode}
+export const PageHeader=forwardRef<HTMLElement,PageHeaderProps>(function PageHeader({title,description,eyebrow,actions,density,surfaceMode,className,...rest},ref){const attrs=useThemeAttributes({density,surfaceMode});return <header {...rest} {...attrs} ref={ref} className={cx('qk-page-header',className)}><div>{eyebrow&&<p className="qk-eyebrow">{eyebrow}</p>}<h1>{title}</h1>{description&&<p className="qk-muted">{description}</p>}</div>{actions&&<div className="qk-actions">{actions}</div>}</header>;});

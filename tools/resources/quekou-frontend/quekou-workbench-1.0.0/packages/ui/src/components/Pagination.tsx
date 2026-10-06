@@ -1,0 +1,5 @@
+import {forwardRef,type HTMLAttributes} from 'react';
+import {cx,useThemeAttributes,type ThemeOverrides} from '../internal/foundation';
+import {Button} from './Button';
+export interface PaginationProps extends HTMLAttributes<HTMLElement>,ThemeOverrides {page:number;pageCount:number;onPageChange:(page:number)=>void}
+export const Pagination=forwardRef<HTMLElement,PaginationProps>(function Pagination({page,pageCount,onPageChange,density,surfaceMode,className,...rest},ref){const attrs=useThemeAttributes({density,surfaceMode}),count=Math.max(0,Math.floor(pageCount)||0),current=count?Math.max(1,Math.min(count,Math.floor(page)||1)):0;return <nav {...rest} {...attrs} ref={ref} aria-label="分页" className={cx('qk-pagination',className)}><Button size="sm" disabled={current<=1} onClick={()=>onPageChange(1)}>首页</Button><Button size="sm" disabled={current<=1} onClick={()=>onPageChange(current-1)}>上一页</Button><span aria-live="polite">{count?`第 ${current} / ${count} 页`:'暂无分页'}</span><Button size="sm" disabled={current>=count} onClick={()=>onPageChange(current+1)}>下一页</Button><Button size="sm" disabled={current>=count} onClick={()=>onPageChange(count)}>末页</Button></nav>;});
