@@ -1,0 +1,239 @@
+{
+ "package": "jh-suite",
+ "contract_ir_version": "1.0",
+ "stages": [
+  {
+   "stage": "h0_intake",
+   "operations": [
+    {
+     "op": "handoff",
+     "artifact": "h0_intake.json",
+     "source_reachability": "human_handoff",
+     "assertions": [
+      {
+       "id": "h0.artifact_hash",
+       "family": "artifact_hash",
+       "tier": 1,
+       "predicate": {
+        "artifact_path": "h0_payload.csv",
+        "declared_hash": "payload_sha256"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "H1-payload-hash-drift"
+       ]
+      },
+      {
+       "id": "h0.schema_conformance",
+       "family": "schema_conformance",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "required_fields": [
+         "id",
+         "sku"
+        ],
+        "field_types": {
+         "id": "str",
+         "sku": "str"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "H2-intake-schema-gap"
+       ]
+      },
+      {
+       "id": "h0.receiver_receipt",
+       "family": "receiver_receipt",
+       "tier": 1,
+       "predicate": {
+        "required_keys": [
+         "source_id",
+         "received_at",
+         "receiver"
+        ]
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "H3-receipt-missing"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "r0_fee_table",
+   "operations": [
+    {
+     "op": "acquire",
+     "artifact": "r0_fee_table.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "r0.source_receipt",
+       "family": "source_receipt",
+       "tier": 1,
+       "predicate": {
+        "required_keys": [
+         "source_id",
+         "fetched_at"
+        ]
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "R2-fee-receipt-missing"
+       ]
+      },
+      {
+       "id": "r0.schema_conformance",
+       "family": "schema_conformance",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "required_fields": [
+         "sku",
+         "fee"
+        ],
+        "field_types": {
+         "sku": "str",
+         "fee": "number"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "R1-fee-type-drift"
+       ]
+      },
+      {
+       "id": "r0.count_hash",
+       "family": "count_hash",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "declared_count": "row_count",
+        "declared_hash": "rows_sha256"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "R3-fee-content-drift"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "j1_joined",
+   "operations": [
+    {
+     "op": "join",
+     "artifact": "j1_joined.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "j1.key_coverage",
+       "family": "key_coverage",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "h0_intake",
+         "artifact": "h0_intake.json",
+         "collection": "rows",
+         "id_field": "id"
+        },
+        "output": {
+         "collection": "joined",
+         "id_field": "id"
+        },
+        "unmatched_ids": "unmatched_ids"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "J1-join-drop-silent"
+       ]
+      },
+      {
+       "id": "j1.cardinality",
+       "family": "cardinality",
+       "tier": 1,
+       "predicate": {
+        "collection": "joined",
+        "key_field": "id",
+        "expect": "one_to_one"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "J2-join-fanout"
+       ]
+      },
+      {
+       "id": "j1.unmatched_set",
+       "family": "unmatched_set",
+       "tier": 1,
+       "predicate": {
+        "field": "unmatched_ids",
+        "output": {
+         "collection": "joined",
+         "id_field": "id"
+        },
+        "input": {
+         "stage": "h0_intake",
+         "artifact": "h0_intake.json",
+         "collection": "rows",
+         "id_field": "id"
+        },
+        "right": {
+         "stage": "r0_fee_table",
+         "artifact": "r0_fee_table.json",
+         "collection": "rows",
+         "key_field": "sku"
+        },
+        "join_key": "sku"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "J3-unmatched-unlogged",
+        "J5-false-unmatched"
+       ]
+      },
+      {
+       "id": "j1.joined_value_replay",
+       "family": "joined_value_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "joined",
+        "key_field": "id",
+        "join_key": "sku",
+        "right": {
+         "stage": "r0_fee_table",
+         "artifact": "r0_fee_table.json",
+         "collection": "rows",
+         "key_field": "sku"
+        },
+        "value_fields": {
+         "fee": "fee"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/jh_rules.md §交接与合并规则",
+       "mutants": [
+        "J4-fee-swap"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "package": "multiop-suite",
+ "contract_ir_version": "1.0",
+ "stages": [
+  {
+   "stage": "x_reconcile",
+   "operations": [
+    {
+     "op": "acquire",
+     "artifact": "x_left.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "x.left_receipt",
+       "family": "source_receipt",
+       "tier": 1,
+       "predicate": {
+        "required_keys": [
+         "source_id",
+         "fetched_at"
+        ]
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X4-left-receipt-missing"
+       ]
+      },
+      {
+       "id": "x.left_schema",
+       "family": "schema_conformance",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "required_fields": [
+         "id",
+         "amount"
+        ],
+        "field_types": {
+         "id": "str",
+         "amount": "int"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X5-left-schema-type-drift"
+       ]
+      },
+      {
+       "id": "x.left_count",
+       "family": "count_hash",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "declared_count": "page_total",
+        "declared_hash": "rows_sha256"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X2-first-op-broken"
+       ]
+      }
+     ]
+    },
+    {
+     "op": "acquire",
+     "artifact": "x_right.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "x.right_receipt",
+       "family": "source_receipt",
+       "tier": 1,
+       "predicate": {
+        "required_keys": [
+         "source_id",
+         "fetched_at"
+        ]
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X6-right-receipt-missing"
+       ]
+      },
+      {
+       "id": "x.right_schema",
+       "family": "schema_conformance",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "required_fields": [
+         "id",
+         "amount"
+        ],
+        "field_types": {
+         "id": "str",
+         "amount": "int"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X7-right-schema-type-drift"
+       ]
+      },
+      {
+       "id": "x.right_count",
+       "family": "count_hash",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "declared_count": "page_total",
+        "declared_hash": "rows_sha256"
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X1-second-op-broken"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "y_merge",
+   "operations": [
+    {
+     "op": "map",
+     "artifact": "y_merged.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "y.from_right",
+       "family": "key_row_preservation",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "x_reconcile",
+         "collection": "rows",
+         "id_field": "id",
+         "artifact": "x_right.json"
+        },
+        "output": {
+         "collection": "rows",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "fixtures/multiop_rules.md §双账对账规则",
+       "mutants": [
+        "X3-downstream-drop"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

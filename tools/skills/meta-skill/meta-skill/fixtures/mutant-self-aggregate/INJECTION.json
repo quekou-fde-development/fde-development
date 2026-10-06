@@ -1,0 +1,5 @@
+{
+  "mutation": "M-self-aggregate",
+  "must_be_rejected_by": "self.aggregate.receipt/self.aggregate.schema/self.aggregate.count_hash",
+  "doc": "Remove receipt timestamp and a file hash; alter declared count."
+}

@@ -1,0 +1,1075 @@
+{
+ "package": "order-aging-query",
+ "contract_ir_version": "1.0",
+ "_source_anchor_base": "packages/A-current/SKILL.md（判据唯一权威源）",
+ "_note": "本契约是解释器的回归语料。规则一律溯源到 A-current/SKILL.md 的条文，不从 golden 产物反推——从产物反推等于让审核器拟合被审对象，断言必然恒真。mock 源是 markdown 表，机械可重读，故 source_reachability = machine，T2 真跑；真实 ERP 为网页 GUI 时同一份契约标 human_handoff，T2 转 UNVERIFIED。",
+ "stages": [
+  {
+   "stage": "s1_export",
+   "operations": [
+    {
+     "op": "acquire",
+     "artifact": "s1_export.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s1.count_hash",
+       "family": "count_hash",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "declared_count": "page_total",
+        "declared_hash": "rows_sha256"
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 1 步校验 · 导出行数 = 待发货页面订单总数",
+       "mutants": [
+        "M1-page-total-drift"
+       ]
+      },
+      {
+       "id": "s1.schema",
+       "family": "schema_conformance",
+       "tier": 1,
+       "predicate": {
+        "collection": "rows",
+        "required_fields": [
+         "id",
+         "country",
+         "sku",
+         "created"
+        ],
+        "field_types": {
+         "id": "str",
+         "country": "str",
+         "sku": "str",
+         "created": "str"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 1 步 · 导出勾选所有字段",
+       "mutants": [
+        "M2-schema-field-missing"
+       ]
+      },
+      {
+       "id": "s1.source_rows",
+       "family": "source_row_match",
+       "tier": 2,
+       "predicate": {
+        "collection": "rows",
+        "fields": [
+         "id",
+         "country",
+         "sku",
+         "created"
+        ],
+        "source": {
+         "format": "markdown_table",
+         "section": "表 A",
+         "columns": [
+          0,
+          1,
+          2,
+          3
+         ]
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 1 步校验 · 导出行数对不上重新导出，不带病进第 2 步",
+       "mutants": [
+        "M26-source-row-drift"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s2_filtered",
+   "operations": [
+    {
+     "op": "filter",
+     "artifact": "s2_filtered.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s2.subset",
+       "family": "output_subset_input",
+       "tier": 1,
+       "predicate": {
+        "output": {
+         "collection": "orders",
+         "id_field": "id"
+        },
+        "input": {
+         "stage": "s1_export",
+         "collection": "rows",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 2 步 · 筛选只删不增",
+       "mutants": [
+        "M3-phantom-order"
+       ]
+      },
+      {
+       "id": "s2.predicate_replay",
+       "family": "predicate_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "orders",
+        "id_field": "id",
+        "rule": {
+         "field": "country",
+         "op": "eq",
+         "value": "中国发货"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 2 步 · 仅保留发货国标记 = 中国发货；校验筛后唯一值 = 中国发货",
+       "mutants": [
+        "M4-country-leak"
+       ]
+      },
+      {
+       "id": "s2.excluded_count",
+       "family": "excluded_count_set",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "s1_export",
+         "collection": "rows",
+         "id_field": "id"
+        },
+        "output": {
+         "collection": "orders",
+         "id_field": "id"
+        },
+        "excluded_counts": [
+         "deleted_us",
+         "deleted_blank"
+        ]
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 2 步 · 删美国行 + 删空白行，二者各自落账",
+       "mutants": [
+        "E3-silent-row-drop"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s3_groups",
+   "operations": [
+    {
+     "op": "map",
+     "artifact": "s3_groups.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s3.key_preservation",
+       "family": "key_row_preservation",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "s2_filtered",
+         "collection": "orders",
+         "id_field": "id"
+        },
+        "output": {
+         "collection": "classified",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 3 步 · 每单都要判属性，不得只查自制丢掉委外",
+       "mutants": [
+        "E3-silent-row-drop"
+       ]
+      },
+      {
+       "id": "s3.attr_rule_replay",
+       "family": "assignment_rule_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "classified",
+        "id_field": "id",
+        "bucket_field": "group",
+        "rule": {
+         "type": "lookup",
+         "field": "observed_attr",
+         "table": {
+          "自制": "自制",
+          "委外": "委外"
+         },
+         "default": "属性异常"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 3 步路由 · 自制→自制组 / 委外→委外组 / 其他取值（含外购、空值）→属性异常",
+       "mutants": [
+        "E4-attr-route-contradiction"
+       ]
+      },
+      {
+       "id": "s3.attr_source_readback",
+       "family": "source_readback",
+       "tier": 2,
+       "predicate": {
+        "collection": "classified",
+        "key_field": "sku",
+        "id_field": "id",
+        "observed_field": "observed_attr",
+        "source": {
+         "format": "markdown_table",
+         "section": "表 E",
+         "key_col": 0,
+         "value_col": 1,
+         "missing_as": "（表E无此SKU）"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 3 步查询路径 · 物流档案管理按五位 SKU 读物料属性",
+       "mutants": [
+        "M5-attr-observation-miscopy"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s4_tiers",
+   "operations": [
+    {
+     "op": "partition",
+     "artifact": "s4_tiers.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s4.union",
+       "family": "union_completeness",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "s3_groups",
+         "collection": "classified",
+         "id_field": "id",
+         "filter": {
+          "field": "group",
+          "op": "in",
+          "values": [
+           "自制",
+           "委外"
+          ]
+         }
+        },
+        "output": {
+         "collection": "tiers",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 3 步 · 自制委外两组都进第 4 步；属性异常止步",
+       "mutants": [
+        "E5-pipeline-drop"
+       ]
+      },
+      {
+       "id": "s4.disjoint",
+       "family": "pairwise_disjoint",
+       "tier": 1,
+       "predicate": {
+        "output": {
+         "collection": "tiers",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 4 步 · 切三组，每单恰好落一组",
+       "mutants": [
+        "M6-tier-double-listed"
+       ]
+      },
+      {
+       "id": "s4.assignment_rule_replay",
+       "family": "assignment_rule_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "tiers",
+        "id_field": "id",
+        "bucket_field": "tier",
+        "rule": {
+         "type": "date_offset",
+         "field": "created",
+         "base_path": "exec_day",
+         "bands": [
+          [
+           0,
+           0,
+           1
+          ],
+          [
+           1,
+           2,
+           2
+          ],
+          [
+           3,
+           null,
+           3
+          ]
+         ],
+         "future_default": null
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 4 步 · 第一组当日／第二组昨天+前天／第三组更早；以订单创建时间的自然日归组，不按 24 小时滑窗",
+       "mutants": [
+        "E2-today-start-shift"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s5_prod",
+   "operations": [
+    {
+     "op": "map",
+     "artifact": "s5_prod.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s5.key_preservation",
+       "family": "key_row_preservation",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "s4_tiers",
+         "collection": "tiers",
+         "id_field": "id"
+        },
+        "output": {
+         "collection": "results",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 4→5 步 · 三组全部进生产环节核查",
+       "mutants": [
+        "E5-pipeline-drop"
+       ]
+      },
+      {
+       "id": "s5.route_rule_replay",
+       "family": "assignment_rule_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "results",
+        "id_field": "id",
+        "bucket_field": "decision",
+        "rule": {
+         "type": "match",
+         "cases": [
+          {
+           "when": {
+            "observed": {
+             "op": "eq",
+             "value": "全完成"
+            }
+           },
+           "then": "continue"
+          },
+          {
+           "when": {
+            "observed": {
+             "op": "eq",
+             "value": "有未完成"
+            }
+           },
+           "then": "生产异常"
+          },
+          {
+           "when": {
+            "observed": {
+             "op": "eq",
+             "value": "查无"
+            },
+            "group": {
+             "op": "eq",
+             "value": "委外"
+            }
+           },
+           "then": "continue"
+          },
+          {
+           "when": {
+            "observed": {
+             "op": "eq",
+             "value": "查无"
+            },
+            "group": {
+             "op": "eq",
+             "value": "自制"
+            }
+           },
+           "then": "无工单"
+          }
+         ],
+         "default": null
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 5 步路由 · 任一工序≠已完成→生产异常止步；全完成→进第 6 步；查无且委外→正常形态进第 6 步；查无且自制→无工单",
+       "mutants": [
+        "E8-outsource-route-reversal"
+       ]
+      },
+      {
+       "id": "s5.source_readback",
+       "family": "source_readback",
+       "tier": 2,
+       "predicate": {
+        "collection": "results",
+        "key_field": "id",
+        "observed_field": "observed",
+        "source": {
+         "format": "markdown_table",
+         "section": "表 B",
+         "key_col": 0,
+         "value_col": 1,
+         "missing_as": "查无",
+         "normalize": [
+          {
+           "contains": "查询无结果",
+           "to": "查无"
+          },
+          {
+           "contains": ":未完成",
+           "to": "有未完成"
+          },
+          {
+           "contains": "：未完成",
+           "to": "有未完成"
+          },
+          {
+           "else": "全完成"
+          }
+         ]
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 5 步查询路径 · 工单管理按订单号查全部工序状态",
+       "mutants": [
+        "M7-prod-observation-miscopy"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s6_qc",
+   "operations": [
+    {
+     "op": "map",
+     "artifact": "s6_qc.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s6.key_preservation",
+       "family": "key_row_preservation",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "s5_prod",
+         "collection": "results",
+         "id_field": "id",
+         "filter": {
+          "field": "decision",
+          "op": "eq",
+          "value": "continue"
+         }
+        },
+        "output": {
+         "collection": "results",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 5 步 · 命中即止步不进第 6 步；全完成→进第 6 步",
+       "mutants": [
+        "E5-pipeline-drop"
+       ]
+      },
+      {
+       "id": "s6.whitelist_rule_replay",
+       "family": "assignment_rule_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "results",
+        "id_field": "id",
+        "bucket_field": "decision",
+        "rule": {
+         "type": "match",
+         "cases": [
+          {
+           "when": {
+            "observed_status": {
+             "op": "in",
+             "values": [
+              "质检完成",
+              "工单完工待质检"
+             ]
+            }
+           },
+           "then": "continue"
+          },
+          {
+           "when": {
+            "observed_status": {
+             "op": "eq",
+             "value": "搜索无结果"
+            }
+           },
+           "then": "状态待判"
+          }
+         ],
+         "default": "质检异常"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 6 步 · 白名单 = {质检完成, 工单完工待质检}，补集式判定；搜索无结果→状态待判",
+       "mutants": [
+        "E1-whitelist-always-false",
+        "E6-whitelist-shrunk"
+       ]
+      },
+      {
+       "id": "s6.source_readback",
+       "family": "source_readback",
+       "tier": 2,
+       "predicate": {
+        "collection": "results",
+        "key_field": "id",
+        "observed_field": "observed_status",
+        "source": {
+         "format": "markdown_table",
+         "section": "表 C",
+         "key_col": 0,
+         "value_col": 1,
+         "missing_as": "搜索无结果"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 6 步查询路径 · 销售管理→子订单搜索订单号读状态栏",
+       "mutants": [
+        "E10-observation-miscopy"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s7_logistics",
+   "operations": [
+    {
+     "op": "map",
+     "artifact": "s7_logistics.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s7.key_preservation",
+       "family": "key_row_preservation",
+       "tier": 1,
+       "predicate": {
+        "input": {
+         "stage": "s6_qc",
+         "collection": "results",
+         "id_field": "id",
+         "filter": {
+          "field": "decision",
+          "op": "eq",
+          "value": "continue"
+         }
+        },
+        "output": {
+         "collection": "results",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 6 步 · 白名单内→进第 7 步；命中→止步不进第 7 步",
+       "mutants": [
+        "E5-pipeline-drop"
+       ]
+      },
+      {
+       "id": "s7.enum_rule_replay",
+       "family": "assignment_rule_replay",
+       "tier": 1,
+       "predicate": {
+        "collection": "results",
+        "id_field": "id",
+        "bucket_field": "decision",
+        "rule": {
+         "type": "match",
+         "cases": [
+          {
+           "when": {
+            "observed_status": {
+             "op": "in",
+             "values": [
+              "已发货",
+              "已签收",
+              "已取消",
+              "已归档",
+              "待确认"
+             ]
+            }
+           },
+           "then": "正常"
+          },
+          {
+           "when": {
+            "observed_status": {
+             "op": "in",
+             "values": [
+              "待建物流单",
+              "已建物流单",
+              "物流单生成失败"
+             ]
+            }
+           },
+           "then": "物流异常"
+          }
+         ],
+         "default": "状态待判"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 7 步 · 两个封闭枚举判，不用补集式；八态之外或搜索无结果→状态待判",
+       "mutants": [
+        "M8-logistics-complement-form"
+       ]
+      },
+      {
+       "id": "s7.source_readback",
+       "family": "source_readback",
+       "tier": 2,
+       "predicate": {
+        "collection": "results",
+        "key_field": "id",
+        "observed_field": "observed_status",
+        "source": {
+         "format": "markdown_table",
+         "section": "表 D",
+         "key_col": 0,
+         "value_col": 1,
+         "missing_as": "搜索无结果"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 7 步查询路径 · 物流与申报→发货单管理搜索订单号读状态",
+       "mutants": [
+        "M9-logistics-observation-miscopy"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "s8_summary",
+   "operations": [
+    {
+     "op": "aggregate",
+     "artifact": "s8_summary.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "s8.detail_recomputation",
+       "family": "detail_recomputation",
+       "tier": 1,
+       "predicate": {
+        "counts": {
+         "生产异常": "counts.生产异常",
+         "质检异常": "counts.质检异常",
+         "物流异常": "counts.物流异常",
+         "属性异常": "counts.属性异常",
+         "无工单": "counts.无工单",
+         "状态待判": "counts.状态待判",
+         "正常": "counts.正常"
+        },
+        "lists": {
+         "生产异常": "lists.生产异常",
+         "质检异常": "lists.质检异常",
+         "物流异常": "lists.物流异常",
+         "属性异常": "lists.属性异常",
+         "无工单": "lists.无工单",
+         "状态待判": "lists.状态待判",
+         "正常": "lists.正常"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步 · 各清单含单号列表 + 计数",
+       "mutants": [
+        "E7-double-count",
+        "E9-forced-balance"
+       ]
+      },
+      {
+       "id": "s8.bucket_rebuild",
+       "family": "assignment_rule_replay",
+       "tier": 1,
+       "predicate": {
+        "lists": {
+         "生产异常": "lists.生产异常",
+         "质检异常": "lists.质检异常",
+         "物流异常": "lists.物流异常",
+         "属性异常": "lists.属性异常",
+         "无工单": "lists.无工单",
+         "状态待判": "lists.状态待判",
+         "正常": "lists.正常"
+        },
+        "sources": {
+         "生产异常": [
+          {
+           "stage": "s5_prod",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "生产异常"
+           }
+          }
+         ],
+         "无工单": [
+          {
+           "stage": "s5_prod",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "无工单"
+           }
+          }
+         ],
+         "质检异常": [
+          {
+           "stage": "s6_qc",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "质检异常"
+           }
+          }
+         ],
+         "物流异常": [
+          {
+           "stage": "s7_logistics",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "物流异常"
+           }
+          }
+         ],
+         "属性异常": [
+          {
+           "stage": "s3_groups",
+           "collection": "classified",
+           "id_field": "id",
+           "filter": {
+            "field": "group",
+            "op": "eq",
+            "value": "属性异常"
+           }
+          }
+         ],
+         "状态待判": [
+          {
+           "stage": "s6_qc",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "状态待判"
+           }
+          },
+          {
+           "stage": "s7_logistics",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "状态待判"
+           }
+          }
+         ],
+         "正常": [
+          {
+           "stage": "s7_logistics",
+           "collection": "results",
+           "id_field": "id",
+           "filter": {
+            "field": "decision",
+            "op": "eq",
+            "value": "正常"
+           }
+          }
+         ]
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 9 行 · 每单只归属首个拦截它的环节，被拦截即止步——七桶成员由各段裁决唯一确定",
+       "mutants": [
+        "M11-bucket-swap",
+        "E1-whitelist-always-false"
+       ]
+      },
+      {
+       "id": "s8.total_reconciliation",
+       "family": "total_reconciliation",
+       "tier": 1,
+       "predicate": {
+        "parts": [
+         "counts.生产异常",
+         "counts.质检异常",
+         "counts.物流异常",
+         "counts.属性异常",
+         "counts.无工单",
+         "counts.状态待判",
+         "counts.正常"
+        ],
+        "input": {
+         "stage": "s2_filtered",
+         "collection": "orders",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步校验 · 七类计数之和 = 第 2 步筛后总单数",
+       "mutants": [
+        "E5-pipeline-drop",
+        "E7-double-count"
+       ]
+      },
+      {
+       "id": "s8.each_bucket_enumerable",
+       "family": "each_bucket_independently_enumerable",
+       "tier": 1,
+       "predicate": {
+        "lists": {
+         "生产异常": "lists.生产异常",
+         "质检异常": "lists.质检异常",
+         "物流异常": "lists.物流异常",
+         "属性异常": "lists.属性异常",
+         "无工单": "lists.无工单",
+         "状态待判": "lists.状态待判",
+         "正常": "lists.正常"
+        },
+        "counts": {
+         "生产异常": "counts.生产异常",
+         "质检异常": "counts.质检异常",
+         "物流异常": "counts.物流异常",
+         "属性异常": "counts.属性异常",
+         "无工单": "counts.无工单",
+         "状态待判": "counts.状态待判",
+         "正常": "counts.正常"
+        },
+        "input": {
+         "stage": "s2_filtered",
+         "collection": "orders",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "contract_ir §4 守恒式反解禁则 + SKILL.md 第 8 步 · 每单恰好落一处",
+       "mutants": [
+        "E9-forced-balance",
+        "E5-pipeline-drop"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "final_stats",
+   "operations": [
+    {
+     "op": "render",
+     "artifact": "final_stats.json",
+     "source_reachability": "machine",
+     "assertions": [
+      {
+       "id": "final.counts_match_source",
+       "family": "row_column_sheet_reconciliation",
+       "tier": 0,
+       "predicate": {
+        "compare_map": "counts",
+        "input": {
+         "stage": "s8_summary",
+         "path": "counts"
+        },
+        "note": "pending_manual"
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步 · 统计件计数出自汇总，不另算",
+       "mutants": [
+        "M10-render-count-drift"
+       ]
+      },
+      {
+       "id": "final.claimed_total_match_source",
+       "family": "row_column_sheet_reconciliation",
+       "tier": 0,
+       "predicate": {
+        "rendered_rows": "N_claimed",
+        "input": {
+         "stage": "s2_filtered",
+         "collection": "orders",
+         "id_field": "id"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步 · 统计件计数出自汇总，不另算",
+       "mutants": [
+        "M25-claimed-total-chain-drift"
+       ]
+      },
+      {
+       "id": "final.render_source_replay",
+       "family": "row_column_sheet_reconciliation",
+       "tier": 0,
+       "predicate": {
+        "compare_paths": [
+         {
+          "output": "N_claimed",
+          "input": {
+           "stage": "s8_summary",
+           "path": "N_claimed"
+          }
+         },
+         {
+          "output": "lists_public.生产异常",
+          "input": {
+           "stage": "s8_summary",
+           "path": "lists.生产异常"
+          }
+         },
+         {
+          "output": "lists_public.质检异常",
+          "input": {
+           "stage": "s8_summary",
+           "path": "lists.质检异常"
+          }
+         },
+         {
+          "output": "lists_public.物流异常",
+          "input": {
+           "stage": "s8_summary",
+           "path": "lists.物流异常"
+          }
+         },
+         {
+          "output": "lists_public.属性异常",
+          "input": {
+           "stage": "s8_summary",
+           "path": "lists.属性异常"
+          }
+         },
+         {
+          "output": "lists_public.无工单",
+          "input": {
+           "stage": "s8_summary",
+           "path": "lists.无工单"
+          }
+         },
+         {
+          "output": "lists_public.状态待判",
+          "input": {
+           "stage": "s8_summary",
+           "path": "lists.状态待判"
+          }
+         }
+        ]
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步 · 各清单单号列表 + 计数；正常单只记计数不列明细",
+       "mutants": [
+        "M23-claimed-total-drift",
+        "M24-public-list-生产异常",
+        "M24-public-list-质检异常",
+        "M24-public-list-物流异常",
+        "M24-public-list-属性异常",
+        "M24-public-list-无工单",
+        "M24-public-list-状态待判"
+       ]
+      },
+      {
+       "id": "final.summary_reconciliation",
+       "family": "summary_reconciliation",
+       "tier": 0,
+       "predicate": {
+        "counts": {
+         "生产异常": "counts.生产异常",
+         "质检异常": "counts.质检异常",
+         "物流异常": "counts.物流异常",
+         "属性异常": "counts.属性异常",
+         "无工单": "counts.无工单",
+         "状态待判": "counts.状态待判"
+        },
+        "lists": {
+         "生产异常": "lists_public.生产异常",
+         "质检异常": "lists_public.质检异常",
+         "物流异常": "lists_public.物流异常",
+         "属性异常": "lists_public.属性异常",
+         "无工单": "lists_public.无工单",
+         "状态待判": "lists_public.状态待判"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步 · 各清单单号列表 + 计数；正常单只记计数不列明细",
+       "mutants": [
+        "E7-double-count"
+       ]
+      },
+      {
+       "id": "final.output_field_coverage",
+       "family": "output_field_coverage",
+       "tier": 1,
+       "predicate": {
+        "exempt": {
+         "counts.正常": "SKILL.md 第 8 步：正常单只记计数不列明细，故无对应 lists_public 项可供明细—汇总对账遍历"
+        }
+       },
+       "derived_fields": [],
+       "source_anchor": "SKILL.md 第 8 步 · 统计件计数出自汇总，不另算",
+       "mutants": [
+        "M21-render-unread-field",
+        "M22-render-parent-prefix-only"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

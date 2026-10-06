@@ -1,0 +1,24 @@
+{
+  "source_id": "scripts/init_eval_workspace.py",
+  "fetched_at": "deterministic-self-check",
+  "output_count": 3,
+  "outputs_sha256": "a048fb5c77a5ef58",
+  "outputs": [
+    {
+      "id": "stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/evals/evals.json",
+      "kind": "file",
+      "sha256": "54dd3c49e57ace14"
+    },
+    {
+      "id": "stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/trigger_eval/trigger_set.json",
+      "kind": "file",
+      "sha256": "d303802ab991f7c6"
+    },
+    {
+      "id": "stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/history.json",
+      "kind": "file",
+      "sha256": "0015e713c2215c15"
+    }
+  ],
+  "evidence_kind": "deterministic_fixture"
+}

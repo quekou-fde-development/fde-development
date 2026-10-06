@@ -1,0 +1,10 @@
+[
+  {
+    "query": "（填：该触发的用户说法）",
+    "should_trigger": true
+  },
+  {
+    "query": "（填：near-miss，不该触发）",
+    "should_trigger": false
+  }
+]
