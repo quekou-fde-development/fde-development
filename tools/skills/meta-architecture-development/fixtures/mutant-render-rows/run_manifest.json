@@ -1,0 +1,57 @@
+{
+  "run_id": "golden-basic",
+  "package_hash": "564c3c020c1cf200",
+  "contract_hash": "2bf8e5ed38e69621",
+  "run_dir_resolved": "/Users/sherlock/Intelligence_Network/Workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_skills/meta-architecture-development/fixtures/golden-basic",
+  "run_dir_source": "explicit_arg",
+  "started_at": "2026-10-06T23:00:05",
+  "stages": [
+    {
+      "stage": "acquire_sources",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "acquire_sources_receipt.json",
+          "source_reachability": "machine"
+        }
+      ],
+      "audit_tiers_run": [
+        1
+      ],
+      "assertions": {
+        "passed": 3,
+        "failed": 0,
+        "unverified": 0
+      },
+      "verdict": "PASS",
+      "unresolved_coverage": []
+    },
+    {
+      "stage": "render_documents",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "render_input_receipt.json",
+          "source_reachability": "machine"
+        },
+        {
+          "op": "render",
+          "artifact": "render_documents_receipt.json",
+          "source_reachability": "machine"
+        }
+      ],
+      "audit_tiers_run": [
+        1
+      ],
+      "assertions": {
+        "passed": 9,
+        "failed": 0,
+        "unverified": 0
+      },
+      "verdict": "PASS",
+      "unresolved_coverage": []
+    }
+  ],
+  "final_verdict": "PASS",
+  "retention": "always"
+}

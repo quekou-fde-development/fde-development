@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-summary",
+  "must_be_rejected_by": "render.summary",
+  "doc": "break document count"
+}

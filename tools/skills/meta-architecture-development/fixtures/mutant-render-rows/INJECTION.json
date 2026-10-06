@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-rows",
+  "must_be_rejected_by": "render.rows",
+  "doc": "break receipt document binding"
+}
