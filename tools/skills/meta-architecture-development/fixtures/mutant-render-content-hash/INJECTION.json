@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-content-hash",
+  "must_be_rejected_by": "render.content_hash",
+  "doc": "alter a rendered Markdown file"
+}

@@ -1,0 +1,5 @@
+{
+  "mutation": "M-acquire-schema",
+  "must_be_rejected_by": "acquire.schema",
+  "doc": "change receipt output kind type"
+}
