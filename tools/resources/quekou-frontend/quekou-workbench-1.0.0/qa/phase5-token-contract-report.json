@@ -1,0 +1,21 @@
+{
+  "result": "passed",
+  "systems": 3,
+  "modes": 6,
+  "parameterNames": [
+    "accentHue",
+    "density",
+    "radiusScale",
+    "surfaceMode"
+  ],
+  "checks": [
+    "complete semantic groups in each mode",
+    "resolved references and no cycles",
+    "HSL colors",
+    "4pt density dimensions",
+    "independent default and compact rows",
+    "source uniqueness for selected systems",
+    "all parameter variants generated",
+    "approved phase boundary respected"
+  ]
+}

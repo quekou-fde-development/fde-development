@@ -1,0 +1,4 @@
+interface:
+  display_name: "缺口工作台"
+  short_description: "按杭州缺口品牌规范创建客户工作台，复用三套风格、四种页面和标准组件"
+  default_prompt: "使用 $quekou-workbench 帮我创建一个缺口风格的客户工作台，先核对业务需求，再打开页面给我看。"

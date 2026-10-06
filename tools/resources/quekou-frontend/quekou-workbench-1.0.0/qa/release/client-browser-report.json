@@ -1,0 +1,350 @@
+{
+  "result": "passed",
+  "variants": [
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "overview",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "list",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "detail",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "settings",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 390,
+      "recipe": "overview",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 390,
+      "recipe": "list",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 390,
+      "recipe": "detail",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "light",
+      "width": 390,
+      "recipe": "settings",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "overview",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "list",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "detail",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "settings",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "overview",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "list",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "detail",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "bento",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "settings",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "overview",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "list",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "detail",
+      "minContrast": 4.57
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "settings",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 390,
+      "recipe": "overview",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 390,
+      "recipe": "list",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 390,
+      "recipe": "detail",
+      "minContrast": 4.57
+    },
+    {
+      "theme": "glass",
+      "mode": "light",
+      "width": 390,
+      "recipe": "settings",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "overview",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "list",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "detail",
+      "minContrast": 5.059
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "settings",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "overview",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "list",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "detail",
+      "minContrast": 5.059
+    },
+    {
+      "theme": "glass",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "settings",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "overview",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "list",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "detail",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 1440,
+      "recipe": "settings",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 390,
+      "recipe": "overview",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 390,
+      "recipe": "list",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 390,
+      "recipe": "detail",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "light",
+      "width": 390,
+      "recipe": "settings",
+      "minContrast": 4.932
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "overview",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "list",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "detail",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 1440,
+      "recipe": "settings",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "overview",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "list",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "detail",
+      "minContrast": 6.637
+    },
+    {
+      "theme": "ambient",
+      "mode": "dark",
+      "width": 390,
+      "recipe": "settings",
+      "minContrast": 6.637
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "four empty recipes",
+    "local save is explicitly temporary",
+    "refresh restores config",
+    "typed danger confirmation",
+    "keyboard tabs",
+    "filter reset"
+  ]
+}

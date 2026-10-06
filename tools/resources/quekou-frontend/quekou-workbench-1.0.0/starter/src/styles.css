@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { background:var(--surface-base); }
+body { margin:var(--space-0); }
+.client-root { min-height:100vh; }
+.client-main { max-width:var(--recipe-content-width);margin:auto;padding:var(--page-padding); }
+.client-notice { border:var(--border-width) solid var(--border-default);border-radius:var(--radius-control);padding:var(--space-3);margin-bottom:var(--space-5)!important;color:var(--fg-muted);background:var(--surface-raised); }
+.qk-shell { background-image:var(--ambient-background); }
+@media(max-width:599px) { .client-main { padding:var(--space-3); } }
+
+.client-root .qk-shell-brand { padding:var(--space-3); }
+.client-root .qk-shell-brand>strong { display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }

@@ -1,0 +1,13 @@
+{
+  "result": "passed",
+  "checks": [
+    "same ten project records",
+    "derived amount average count risk totals",
+    "chart reconciles to contract amount",
+    "global numeric sort before page slicing",
+    "non-mutating query",
+    "combined text status client and date filters",
+    "empty totals",
+    "new record has no fabricated history or documents"
+  ]
+}

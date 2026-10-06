@@ -1,0 +1,1 @@
+module.exports={content:['./index.html','./src/**/*.{ts,tsx}'],presets:[require('@quekou/theme/tailwind.preset').default]};

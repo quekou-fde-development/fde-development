@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "date": "2026-09-28",
+  "environment": {
+    "os": "darwin",
+    "arch": "arm64",
+    "node": "v24.18.0",
+    "npm": "11.16.0"
+  },
+  "checks": [
+    "archive extracted outside source workspace",
+    "all archive file hashes verified before install",
+    "npm ci completed with newly created empty cache",
+    "transferred source builds and token/model checks pass",
+    "client generated outside source kit directory",
+    "client installs both versioned local tarballs without workspace links",
+    "client strict types and production build pass",
+    "final starter passes 48 browser variants including sidebar icons and long title",
+    "existing target rejected without changing files",
+    "unsupported theme rejected without creating target"
+  ],
+  "limits": [
+    "same macOS computer; different workstation OS not tested",
+    "Codex discovery in colleagues accounts not directly tested"
+  ]
+}

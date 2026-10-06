@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "checks": [
+    "mobile chart labels render at least 13 CSS pixels",
+    "pending request disables double submission",
+    "pending dialog does not dismiss",
+    "failure is visible without false success",
+    "successful retry closes once complete",
+    "signed chart values stay inside the plotting area",
+    "invalid values show an explicit state",
+    "loading hides stale progress and AI text",
+    "inherited theme names cannot crash the app",
+    "no browser errors"
+  ],
+  "errors": [],
+  "browser": "153.0.8010.53",
+  "minRenderedChartLabel": 13
+}
