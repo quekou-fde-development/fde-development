@@ -1,0 +1,2 @@
+import {Button} from '@quekou/ui';
+export function ButtonExample(){return <div className="qk-example-stack">{(['primary','secondary','ghost'] as const).map(variant=><div className="qk-example-row" key={variant}>{(['sm','md','lg'] as const).map(size=><Button key={size} variant={variant} size={size}>{({primary:'主要操作',secondary:'次要操作',ghost:'文字操作'})[variant]} · {size}</Button>)}</div>)}<div className="qk-example-row"><Button disabled>不可操作</Button><Button loading>处理中</Button><Button density="compact">单独使用紧凑密度</Button></div></div>}

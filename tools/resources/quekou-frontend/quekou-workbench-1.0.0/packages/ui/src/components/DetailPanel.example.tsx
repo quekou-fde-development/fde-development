@@ -1,0 +1,2 @@
+import {useState} from 'react';import {DetailPanel} from '@quekou/ui';import {Button} from '@quekou/ui';import {ProgressBar} from '@quekou/ui';
+export function DetailPanelExample(){const [open,setOpen]=useState(true);return open?<DetailPanel title="交付详情" description="供应链数据治理 · 演示信息" onClose={()=>setOpen(false)}><div className="qk-example-stack"><p>负责人：陈明</p><p>下个验收节点：客户复核</p><ProgressBar label="交付详情进度" value={72}/></div></DetailPanel>:<Button onClick={()=>setOpen(true)}>重新打开详情</Button>} 

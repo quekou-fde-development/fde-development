@@ -1,0 +1,4 @@
+import {forwardRef,useEffect,useState,type HTMLAttributes} from 'react';
+import {cx,useThemeAttributes,type ThemeOverrides} from '../internal/foundation';
+export interface AvatarProps extends HTMLAttributes<HTMLSpanElement>,ThemeOverrides {name:string;src?:string;size?:'sm'|'lg'}
+export const Avatar=forwardRef<HTMLSpanElement,AvatarProps>(function Avatar({name,src,size='sm',density,surfaceMode,className,...rest},ref){const attrs=useThemeAttributes({density,surfaceMode});const [failed,setFailed]=useState(false);useEffect(()=>setFailed(false),[src]);return <span {...rest} {...attrs} ref={ref} role="img" aria-label={name} className={cx('qk-avatar',className)} data-size={size}>{src&&!failed?<img src={src} alt="" onError={()=>setFailed(true)}/>:<span aria-hidden="true">{name.trim().slice(-2)||'?'}</span>}</span>;});

@@ -1,0 +1,2 @@
+import {useState} from 'react';import {CommandPalette} from '@quekou/ui';import {Button} from '@quekou/ui';
+export function CommandPaletteExample(){const [open,setOpen]=useState(false),[result,setResult]=useState('尚未执行命令');return <div className="qk-example-stack"><Button onClick={()=>setOpen(true)}>打开快捷命令 · ⌘ K</Button><p role="status" className="qk-muted">{result}</p><CommandPalette open={open} onOpenChange={setOpen} items={['查看项目','查看待办','查看设置'].map((label,i)=>({id:String(i),label,onSelect:()=>setResult('演示已执行：'+label)}))}/></div>} 

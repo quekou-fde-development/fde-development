@@ -1,0 +1,4 @@
+import {forwardRef,useRef,useEffect,type InputHTMLAttributes} from 'react';
+import {cx,useThemeAttributes,useMergedRef,type ThemeOverrides} from '../internal/foundation';
+export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>,'type'>,ThemeOverrides {label:string;indeterminate?:boolean}
+export const Checkbox=forwardRef<HTMLInputElement,CheckboxProps>(function Checkbox({label,indeterminate=false,density,surfaceMode,className,...rest},ref){const local=useRef<HTMLInputElement|null>(null);const merged=useMergedRef(ref,local),attrs=useThemeAttributes({density,surfaceMode});useEffect(()=>{if(local.current)local.current.indeterminate=indeterminate;},[indeterminate]);return <label {...attrs} className={cx('qk-checkbox',className)}><input {...rest} ref={merged} type="checkbox" aria-checked={indeterminate?'mixed':rest.checked}/><span>{label}</span></label>;});

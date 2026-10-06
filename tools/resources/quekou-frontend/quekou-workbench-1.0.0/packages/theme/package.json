@@ -1,0 +1,38 @@
+{
+  "name": "@quekou/theme",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "UNLICENSED",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.preset": {
+      "types": "./dist/tailwind.preset.d.ts",
+      "import": "./dist/tailwind.preset.js",
+      "require": "./dist/tailwind.preset.cjs"
+    }
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}

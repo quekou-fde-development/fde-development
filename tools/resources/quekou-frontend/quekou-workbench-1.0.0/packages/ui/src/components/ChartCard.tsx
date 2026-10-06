@@ -1,0 +1,4 @@
+import {forwardRef,type HTMLAttributes,type ReactNode,useId} from 'react';
+import {cx,useThemeAttributes,type ThemeOverrides} from '../internal/foundation';
+export interface ChartCardProps extends HTMLAttributes<HTMLElement>,ThemeOverrides {title:string;description?:string;legend?:ReactNode;actions?:ReactNode}
+export const ChartCard=forwardRef<HTMLElement,ChartCardProps>(function ChartCard({title,description,legend,actions,density,surfaceMode,className,children,...rest},ref){const attrs=useThemeAttributes({density,surfaceMode}),id=useId();return <figure {...rest} {...attrs} ref={ref} aria-labelledby={id} className={cx('qk-chart-card qk-panel',className)}><figcaption className="qk-panel-heading"><div><h3 id={id}>{title}</h3>{description&&<p className="qk-muted">{description}</p>}</div>{actions}</figcaption><div className="qk-chart-content">{children}</div>{legend&&<div className="qk-chart-legend">{legend}</div>}</figure>;});

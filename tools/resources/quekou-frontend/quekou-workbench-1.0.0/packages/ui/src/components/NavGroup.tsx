@@ -1,0 +1,5 @@
+import {forwardRef,type HTMLAttributes,type ReactNode} from 'react';
+import {cx,useThemeAttributes,type ThemeOverrides} from '../internal/foundation';
+export interface NavItem {id:string;label:string;href:string;icon?:ReactNode;count?:number}
+export interface NavGroupProps extends HTMLAttributes<HTMLElement>,ThemeOverrides {label:string;items:readonly NavItem[];activeId?:string;onNavigate?:(id:string)=>void}
+export const NavGroup=forwardRef<HTMLElement,NavGroupProps>(function NavGroup({label,items,activeId,onNavigate,density,surfaceMode,className,...rest},ref){const attrs=useThemeAttributes({density,surfaceMode});return <nav {...rest} {...attrs} ref={ref} aria-label={label} className={cx('qk-nav-group',className)}><p className="qk-nav-label qk-muted">{label}</p>{items.map(item=><a key={item.id} href={item.href} aria-label={item.label} aria-current={activeId===item.id?'page':undefined} className="qk-nav-link" onClick={()=>onNavigate?.(item.id)}>{item.icon&&<span aria-hidden="true">{item.icon}</span>}<span className="qk-nav-label">{item.label}</span>{item.count!==undefined&&<span className="qk-nav-count">{item.count}</span>}</a>)}</nav>;});
