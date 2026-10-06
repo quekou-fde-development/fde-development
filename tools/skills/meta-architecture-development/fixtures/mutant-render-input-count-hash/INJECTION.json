@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-input-count-hash",
+  "must_be_rejected_by": "render_input.count_hash",
+  "doc": "corrupt prepared document-list hash"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "source_roots": [
+    "sources"
+  ],
+  "sources": [
+    {
+      "id": "brief",
+      "path": "sources/brief.md",
+      "kind": "markdown"
+    }
+  ]
+}

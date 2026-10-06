@@ -1,0 +1,3 @@
+# Site architecture
+
+Fixture architecture.

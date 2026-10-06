@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "source_manifest_sha256": "7c9228fae37dddf759416f9f674915ea8ca29f010231832dcdc0c8ef102fe42f",
+  "sources": [
+    {
+      "id": "brief",
+      "source_path_sha256": "423f73a0c0131a33459938e52f30f90ff7131608cca9eb6017230a619d30519c",
+      "content_sha256": "02aa71f1ff2199828a80e9568a0e2a0c67760a6a1cca5ab09a04397625e09108",
+      "byte_count": 66,
+      "snapshot_path": "working/sources/brief.bin"
+    }
+  ]
+}

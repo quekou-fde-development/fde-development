@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-input-receipt",
+  "must_be_rejected_by": "render_input.receipt",
+  "doc": "remove render input receipt time"
+}
