@@ -1,0 +1,40 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const argv=process.argv.slice(2),opts={};
+const allowed=new Set(['name','out','style','business','entity','accentHue','density','radiusScale','surfaceMode']);
+for(let i=0;i<argv.length;i+=2){const key=argv[i]?.replace(/^--/,'');if(!argv[i]?.startsWith('--')||!allowed.has(key)||!argv[i+1]||argv[i+1].startsWith('--'))throw Error('参数格式：--name 客户名 --out 新目录 [--style 6|7|10]');opts[key]=argv[i+1];}
+if(!opts.name?.trim()||!opts.out)throw Error('必须提供 --name 与 --out；只创建新目录。');
+const target=path.resolve(process.cwd(),opts.out);
+if(fs.existsSync(target))throw Error('目标目录已存在，已停止；不会覆盖：'+target);
+const style=opts.style||'6',themes={'6':'bento','7':'glass','10':'ambient'};
+if(!themes[style])throw Error('风格仅支持 6、7、10。');
+const themeName=themes[style],tokens=JSON.parse(fs.readFileSync(path.join(root,'design/tokens.json'),'utf8')),defaults=tokens.systems[themeName].defaults;
+const theme={theme:themeName,accentHue:opts.accentHue===undefined||opts.accentHue==='brand'?'brand':Number(opts.accentHue),density:opts.density||defaults.density,radiusScale:Number(opts.radiusScale||1),surfaceMode:opts.surfaceMode||defaults.surfaceMode};
+if(theme.accentHue!=='brand'&&(!Number.isInteger(theme.accentHue)||theme.accentHue<210||theme.accentHue>240))throw Error('accentHue 必须是 brand 或 210–240 整数。');
+for(const k of ['density','radiusScale','surfaceMode'])if(!tokens.parameterPolicy[k].values.includes(theme[k]))throw Error('不支持的参数：'+k);
+const sourcePkg=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')),version=sourcePkg.version;
+const packages=['theme','ui'].map(n=>'quekou-'+n+'-'+version+'.tgz');
+for(const file of packages)if(!fs.existsSync(path.join(root,'artifacts',file)))throw Error('缺少安装包，请先生成共享发布包。');
+fs.mkdirSync(path.dirname(target),{recursive:true});
+const staging=fs.mkdtempSync(path.join(path.dirname(target),'.quekou-new-'));
+const json=(p,v)=>fs.writeFileSync(path.join(staging,p),JSON.stringify(v,null,2)+'\n');
+try{
+ fs.cpSync(path.join(root,'starter'),staging,{recursive:true});
+ for(const [src,dst] of [['design','design'],['.agents/skills/quekou-workbench','.agents/skills/quekou-workbench'],['docs','docs']])fs.cpSync(path.join(root,src),path.join(staging,dst),{recursive:true});
+ fs.mkdirSync(path.join(staging,'vendor'));
+ for(const file of packages)fs.copyFileSync(path.join(root,'artifacts',file),path.join(staging,'vendor',file));
+ fs.mkdirSync(path.join(staging,'reference/ui'),{recursive:true});
+ fs.copyFileSync(path.join(root,'packages/ui/README.md'),path.join(staging,'reference/ui/README.md'));
+ for(const file of fs.readdirSync(path.join(root,'packages/ui/src/components')).filter(f=>f.endsWith('.example.tsx')))fs.copyFileSync(path.join(root,'packages/ui/src/components',file),path.join(staging,'reference/ui',file));
+ for(const file of ['NEW_CLIENT.md','LICENSE.txt','THIRD_PARTY_NOTICES.md'])fs.copyFileSync(path.join(root,file),path.join(staging,file));
+ json('package.json',{name:'quekou-client-workbench',version:'0.1.0',private:true,type:'module',engines:sourcePkg.engines,scripts:{dev:'vite',build:'tsc --noEmit && vite build',preview:'vite preview',check:'npm run build'},dependencies:{...sourcePkg.dependencies,'@quekou/theme':'file:vendor/'+packages[0],'@quekou/ui':'file:vendor/'+packages[1]},devDependencies:Object.fromEntries(Object.entries(sourcePkg.devDependencies).filter(([k])=>!['playwright','esbuild'].includes(k)))});
+ fs.writeFileSync(path.join(staging,'src/client.config.ts'),"import type {ThemeSettings} from '@quekou/ui';\nexport const client = "+JSON.stringify({name:opts.name.trim(),business:opts.business||'业务领域待确认',entity:opts.entity||'业务对象',metrics:['核心指标一','核心指标二','核心指标三','核心指标四'],theme},null,2)+" satisfies {name:string;business:string;entity:string;metrics:[string,string,string,string];theme:ThemeSettings};\n");
+ json('workbench.project.json',{kind:'client',kitVersion:version,clientName:opts.name.trim(),style:Number(style),backend:'not-connected',createdAt:new Date().toISOString()});
+ fs.writeFileSync(path.join(staging,'PROJECT_BRIEF.md'),'# '+opts.name.trim()+'\n\n使用缺口工作台 '+version+'，风格 '+style+'。\n\n## 已知需求\n- 领域：'+(opts.business||'待确认')+'\n- 核心对象：'+(opts.entity||'待确认')+'\n\n## 待确认\n- 使用者与业务动作\n- 四项指标及计算口径\n- 数据来源、访问权限与保存规则\n- 客户验收负责人\n\n## 当前进度\n已生成四类页面的空数据骨架；未接入真实业务。新项目第一次运行 npm install 生成自己的锁定文件；之后使用 npm ci。\n');
+ fs.writeFileSync(path.join(staging,'.gitignore'),'node_modules/\ndist/\n.env\n.env.*\n!.env.example\n.DS_Store\n');
+ if(fs.existsSync(target))throw Error('目标目录在生成期间已被创建，已停止。');
+ fs.renameSync(staging,target);
+ console.log(JSON.stringify({created:target,version,theme,next:['在 Codex 中打开此目录','读取 AGENTS.md 与 PROJECT_BRIEF.md','安装项目依赖并启动预览，返回实际地址']},null,2));
+}catch(error){fs.rmSync(staging,{recursive:true,force:true});throw error;}
