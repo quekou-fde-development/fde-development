@@ -1,0 +1,1283 @@
+{
+  "package": "fde-meta-agent",
+  "contract_ir_version": "1.0",
+  "stages": [
+    {
+      "stage": "freeze_spec",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "s1_spec_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "spec.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at",
+                  "source_relpath",
+                  "logical_id",
+                  "code",
+                  "contract_sha256"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-receipt"
+              ]
+            },
+            {
+              "id": "spec.blocks_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "blocks",
+                "required_fields": [
+                  "id",
+                  "present",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "present": "bool",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-blocks-type"
+              ]
+            },
+            {
+              "id": "spec.blocks_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "blocks",
+                "declared_count": "block_count",
+                "declared_hash": "blocks_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-blocks-count",
+                "M-spec-blocks-content"
+              ]
+            },
+            {
+              "id": "spec.keys_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "keys",
+                "required_fields": [
+                  "id",
+                  "carrier",
+                  "has_carrier",
+                  "source"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "carrier": "str",
+                  "has_carrier": "bool",
+                  "source": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-keys-type"
+              ]
+            },
+            {
+              "id": "spec.keys_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "keys",
+                "declared_count": "key_count",
+                "declared_hash": "keys_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-keys-count"
+              ]
+            },
+            {
+              "id": "spec.keys_carrier",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "keys",
+                "id_field": "id",
+                "rule": {
+                  "field": "has_carrier",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-key-no-carrier"
+              ]
+            },
+            {
+              "id": "spec.dims_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "params_dims",
+                "declared_count": "dim_count",
+                "declared_hash": "dims_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-dims-count"
+              ]
+            },
+            {
+              "id": "spec.dims_present",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "params_dims",
+                "id_field": "id",
+                "rule": {
+                  "field": "present",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-dim-absent"
+              ]
+            },
+            {
+              "id": "spec.routing_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "routing",
+                "declared_count": "routing_count",
+                "declared_hash": "routing_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-routing-count"
+              ]
+            },
+            {
+              "id": "spec.readback_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "readback_items",
+                "required_fields": [
+                  "id",
+                  "name",
+                  "code_on_fail"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "name": "str",
+                  "code_on_fail": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-readback-type"
+              ]
+            },
+            {
+              "id": "spec.readback_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "readback_items",
+                "declared_count": "readback_item_count",
+                "declared_hash": "readback_items_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：freeze_spec",
+              "mutants": [
+                "M-spec-readback-count",
+                "M-spec-readback-drop"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "accept_environment",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "s2_environment_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "env.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at",
+                  "source_relpath",
+                  "release",
+                  "team_id",
+                  "directory_mechanism"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_environment",
+              "mutants": [
+                "M-env-receipt"
+              ]
+            },
+            {
+              "id": "env.probes_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "probes",
+                "required_fields": [
+                  "id",
+                  "endpoint",
+                  "http_status",
+                  "item_count"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "endpoint": "str",
+                  "http_status": "int",
+                  "item_count": "int"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_environment",
+              "mutants": [
+                "M-env-probe-type"
+              ]
+            },
+            {
+              "id": "env.probes_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "probes",
+                "declared_count": "probe_count",
+                "declared_hash": "probes_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_environment",
+              "mutants": [
+                "M-env-probe-count"
+              ]
+            },
+            {
+              "id": "env.probes_ok",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "probes",
+                "id_field": "id",
+                "rule": {
+                  "field": "http_status",
+                  "op": "eq",
+                  "value": 200
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_environment",
+              "mutants": [
+                "M-env-probe-status"
+              ]
+            },
+            {
+              "id": "env.directory_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "live_directory",
+                "required_fields": [
+                  "logical_id",
+                  "employee_id",
+                  "code",
+                  "display_name"
+                ],
+                "field_types": {
+                  "logical_id": "str",
+                  "employee_id": "str",
+                  "code": "str",
+                  "display_name": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_environment",
+              "mutants": [
+                "M-env-dir-type"
+              ]
+            },
+            {
+              "id": "env.directory_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "live_directory",
+                "declared_count": "directory_count",
+                "declared_hash": "directory_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_environment",
+              "mutants": [
+                "M-env-dir-count",
+                "M-env-dir-content"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "resolve_routing",
+      "operations": [
+        {
+          "op": "join",
+          "artifact": "s3_routing_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "routing.key_coverage",
+              "family": "key_coverage",
+              "tier": 1,
+              "predicate": {
+                "input": {
+                  "stage": "freeze_spec",
+                  "collection": "routing",
+                  "id_field": "role"
+                },
+                "output": {
+                  "collection": "resolved",
+                  "id_field": "role"
+                },
+                "unmatched_ids": "unresolved_ids"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：resolve_routing",
+              "mutants": [
+                "M-routing-drop-role"
+              ]
+            },
+            {
+              "id": "routing.cardinality",
+              "family": "cardinality",
+              "tier": 1,
+              "predicate": {
+                "collection": "resolved",
+                "key_field": "role",
+                "expect": "one_to_one"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：resolve_routing",
+              "mutants": [
+                "M-routing-dup-role"
+              ]
+            },
+            {
+              "id": "routing.unmatched",
+              "family": "unmatched_set",
+              "tier": 1,
+              "predicate": {
+                "field": "unresolved_ids",
+                "output": {
+                  "collection": "resolved",
+                  "id_field": "role"
+                },
+                "input": {
+                  "stage": "freeze_spec",
+                  "collection": "routing",
+                  "id_field": "role"
+                },
+                "right": {
+                  "stage": "accept_environment",
+                  "collection": "live_directory",
+                  "key_field": "logical_id"
+                },
+                "join_key": "target"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：resolve_routing",
+              "mutants": [
+                "M-routing-false-unmatched"
+              ]
+            },
+            {
+              "id": "routing.values",
+              "family": "joined_value_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "resolved",
+                "key_field": "role",
+                "join_key": "target",
+                "right": {
+                  "stage": "accept_environment",
+                  "collection": "live_directory",
+                  "key_field": "logical_id"
+                },
+                "value_fields": {
+                  "employee_id": "employee_id",
+                  "code": "code",
+                  "display_name": "display_name"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：resolve_routing",
+              "mutants": [
+                "M-routing-swap-id"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "compile_prompt",
+      "operations": [
+        {
+          "op": "render",
+          "artifact": "s4_prompt_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "prompt.direct",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "logical_id",
+                    "input": {
+                      "stage": "freeze_spec",
+                      "path": "logical_id"
+                    }
+                  },
+                  {
+                    "output": "release",
+                    "input": {
+                      "stage": "accept_environment",
+                      "path": "release"
+                    }
+                  }
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-wrong-seat"
+              ]
+            },
+            {
+              "id": "prompt.summary",
+              "family": "summary_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "counts": {
+                  "segments": "segment_count",
+                  "skeleton": "skeleton_count",
+                  "text_checks": "text_check_count",
+                  "artifacts": "artifact_count"
+                },
+                "lists": {
+                  "segments": "segments",
+                  "skeleton": "skeleton",
+                  "text_checks": "text_checks",
+                  "artifacts": "artifacts"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-count-skew"
+              ]
+            },
+            {
+              "id": "prompt.segments_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "segments",
+                "required_fields": [
+                  "id",
+                  "chars",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "chars": "int",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-segment-type"
+              ]
+            },
+            {
+              "id": "prompt.segments_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "segments",
+                "declared_count": "segment_count",
+                "declared_hash": "segments_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-segment-drop",
+                "M-prompt-segment-edit"
+              ]
+            },
+            {
+              "id": "prompt.skeleton_present",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "skeleton",
+                "id_field": "label",
+                "rule": {
+                  "field": "present",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-skeleton-missing"
+              ]
+            },
+            {
+              "id": "prompt.text_checks",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "text_checks",
+                "id_field": "id",
+                "rule": {
+                  "field": "present",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-nonduty-missing",
+                "M-prompt-replytargets-missing"
+              ]
+            },
+            {
+              "id": "prompt.artifacts_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "artifacts",
+                "declared_count": "artifact_count",
+                "declared_hash": "artifacts_sha256",
+                "file_bindings": {
+                  "path_field": "path",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-file-drift"
+              ]
+            },
+            {
+              "id": "prompt.coverage",
+              "family": "output_field_coverage",
+              "tier": 1,
+              "predicate": {
+                "exempt": {
+                  "prompt_bytes": "软闸读数口，无机器执行体：谓词词汇表只有 eq/ne/in/not_in/contains，没有数值比较 op，故 prompt-segments.md §六 的「超 3 KB 人工复核」写不成断言；且本值由段脚本自报、无任何族能从盘上的正文重算字节数核它，改成 999 不会被任何断言拒。它供人读，不供闸拦。"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-unread-field"
+              ]
+            },
+            {
+              "id": "prompt.directory_mechanism",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "directory_mechanism",
+                    "input": {
+                      "stage": "accept_environment",
+                      "path": "directory_mechanism"
+                    }
+                  },
+                  {
+                    "output": "directory_embedded",
+                    "input": {
+                      "stage": "accept_environment",
+                      "path": "directory_fallback"
+                    }
+                  }
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：compile_prompt",
+              "mutants": [
+                "M-prompt-directory-liar"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "accept_images",
+      "operations": [
+        {
+          "op": "handoff",
+          "artifact": "s5_image_receipt.json",
+          "source_reachability": "human_handoff",
+          "assertions": [
+            {
+              "id": "images.avatar_hash",
+              "family": "artifact_hash",
+              "tier": 1,
+              "predicate": {
+                "artifact_path": "images/avatar.png",
+                "declared_hash": "avatar_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-avatar-swap"
+              ]
+            },
+            {
+              "id": "images.bio_hash",
+              "family": "artifact_hash",
+              "tier": 1,
+              "predicate": {
+                "artifact_path": "images/bio.png",
+                "declared_hash": "bio_image_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-bio-swap"
+              ]
+            },
+            {
+              "id": "images.assets_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "assets",
+                "required_fields": [
+                  "id",
+                  "path",
+                  "width",
+                  "height",
+                  "approved",
+                  "sha256",
+                  "pixel_match"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "path": "str",
+                  "width": "int",
+                  "height": "int",
+                  "approved": "bool",
+                  "sha256": "str",
+                  "pixel_match": "bool"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-asset-type"
+              ]
+            },
+            {
+              "id": "images.assets_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "assets",
+                "declared_count": "asset_count",
+                "declared_hash": "assets_sha256",
+                "file_bindings": {
+                  "path_field": "path",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-count-mismatch"
+              ]
+            },
+            {
+              "id": "images.approved",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "assets",
+                "id_field": "id",
+                "rule": {
+                  "field": "approved",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-unapproved"
+              ]
+            },
+            {
+              "id": "images.pixel_match",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "assets",
+                "id_field": "id",
+                "rule": {
+                  "field": "pixel_match",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-pixel-mismatch"
+              ]
+            },
+            {
+              "id": "images.receiver",
+              "family": "receiver_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "receiver",
+                  "received_at",
+                  "reviewer",
+                  "qa_status",
+                  "face_rule",
+                  "target_verified"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-no-reviewer"
+              ]
+            },
+            {
+              "id": "images.rule_matches_spec",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "face_rule",
+                    "input": {
+                      "stage": "freeze_spec",
+                      "path": "face_rule"
+                    }
+                  }
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：accept_images",
+              "mutants": [
+                "M-images-rule-lie"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "apply_config",
+      "operations": [
+        {
+          "op": "partition",
+          "artifact": "s6_config_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "config.union",
+              "family": "union_completeness",
+              "tier": 1,
+              "predicate": {
+                "input": {
+                  "stage": "freeze_spec",
+                  "collection": "keys",
+                  "id_field": "id"
+                },
+                "buckets": [
+                  "written",
+                  "reused",
+                  "failed"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：apply_config",
+              "mutants": [
+                "M-config-drop-key"
+              ]
+            },
+            {
+              "id": "config.disjoint",
+              "family": "pairwise_disjoint",
+              "tier": 1,
+              "predicate": {
+                "buckets": [
+                  "written",
+                  "reused",
+                  "failed"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：apply_config",
+              "mutants": [
+                "M-config-key-two-buckets"
+              ]
+            },
+            {
+              "id": "config.rule",
+              "family": "assignment_rule_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "keys",
+                "bucket_field": "bucket",
+                "id_field": "id",
+                "rule": {
+                  "type": "match",
+                  "cases": [
+                    {
+                      "when": {
+                        "readback_equal": {
+                          "op": "eq",
+                          "value": true
+                        },
+                        "http_status": {
+                          "op": "in",
+                          "values": [
+                            200,
+                            201
+                          ]
+                        }
+                      },
+                      "then": "written"
+                    },
+                    {
+                      "when": {
+                        "readback_equal": {
+                          "op": "eq",
+                          "value": true
+                        },
+                        "http_status": {
+                          "op": "eq",
+                          "value": 0
+                        }
+                      },
+                      "then": "reused"
+                    }
+                  ],
+                  "default": "failed"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：apply_config",
+              "mutants": [
+                "M-config-bucket-lie",
+                "M-config-readback-false"
+              ]
+            },
+            {
+              "id": "config.keys_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "keys",
+                "required_fields": [
+                  "id",
+                  "carrier",
+                  "http_status",
+                  "readback_equal",
+                  "bucket"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "carrier": "str",
+                  "http_status": "int",
+                  "readback_equal": "bool",
+                  "bucket": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：apply_config",
+              "mutants": [
+                "M-config-key-type"
+              ]
+            },
+            {
+              "id": "config.keys_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "keys",
+                "declared_count": "key_count",
+                "declared_hash": "keys_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：apply_config",
+              "mutants": [
+                "M-config-key-count"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "verify_readback",
+      "operations": [
+        {
+          "op": "aggregate",
+          "artifact": "s7_readback_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "readback.detail",
+              "family": "detail_recomputation",
+              "tier": 1,
+              "predicate": {
+                "counts": {
+                  "pass": "pass_count",
+                  "fail": "fail_count",
+                  "fallback": "fallback_count"
+                },
+                "lists": {
+                  "pass": "pass_ids",
+                  "fail": "fail_ids",
+                  "fallback": "fallback_ids"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：verify_readback",
+              "mutants": [
+                "M-readback-count-skew"
+              ]
+            },
+            {
+              "id": "readback.total",
+              "family": "total_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "parts": [
+                  "pass_count",
+                  "fail_count",
+                  "fallback_count"
+                ],
+                "input": {
+                  "stage": "freeze_spec",
+                  "collection": "readback_items",
+                  "id_field": "id"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：verify_readback",
+              "mutants": [
+                "M-readback-lose-item"
+              ]
+            },
+            {
+              "id": "readback.buckets",
+              "family": "each_bucket_independently_enumerable",
+              "tier": 1,
+              "predicate": {
+                "lists": {
+                  "pass": "pass_ids",
+                  "fail": "fail_ids",
+                  "fallback": "fallback_ids"
+                },
+                "counts": {
+                  "pass": "pass_count",
+                  "fail": "fail_count",
+                  "fallback": "fallback_count"
+                },
+                "input": {
+                  "stage": "freeze_spec",
+                  "collection": "readback_items",
+                  "id_field": "id"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：verify_readback",
+              "mutants": [
+                "M-readback-backsolve",
+                "M-readback-hide-fail"
+              ]
+            },
+            {
+              "id": "readback.items_schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "items",
+                "required_fields": [
+                  "id",
+                  "name",
+                  "status",
+                  "code",
+                  "evidence"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "name": "str",
+                  "status": "str",
+                  "code": "str",
+                  "evidence": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：verify_readback",
+              "mutants": [
+                "M-readback-item-type"
+              ]
+            },
+            {
+              "id": "readback.items_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "items",
+                "declared_count": "item_count",
+                "declared_hash": "items_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：verify_readback",
+              "mutants": [
+                "M-readback-item-edit"
+              ]
+            },
+            {
+              "id": "readback.pixel_anchor",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "pixel_local",
+                    "input": {
+                      "stage": "accept_images",
+                      "path": "assets.local_pixel_sha256"
+                    }
+                  }
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：verify_readback",
+              "mutants": [
+                "M-readback-pixel-liar"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "finalize_delivery",
+      "operations": [
+        {
+          "op": "render",
+          "artifact": "s8_delivery_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "delivery.direct",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "logical_id",
+                    "input": {
+                      "stage": "freeze_spec",
+                      "path": "logical_id"
+                    }
+                  },
+                  {
+                    "output": "release",
+                    "input": {
+                      "stage": "accept_environment",
+                      "path": "release"
+                    }
+                  },
+                  {
+                    "output": "employee_id",
+                    "input": {
+                      "stage": "apply_config",
+                      "path": "employee_id"
+                    }
+                  }
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-wrong-employee"
+              ]
+            },
+            {
+              "id": "delivery.summary",
+              "family": "summary_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "counts": {
+                  "gates": "gate_count",
+                  "artifacts": "artifact_count"
+                },
+                "lists": {
+                  "gates": "gates",
+                  "artifacts": "artifacts"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-count-skew"
+              ]
+            },
+            {
+              "id": "delivery.gates_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "gates",
+                "declared_count": "gate_count",
+                "declared_hash": "gates_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-gate-drop"
+              ]
+            },
+            {
+              "id": "delivery.gates_passed",
+              "family": "predicate_replay",
+              "tier": 1,
+              "predicate": {
+                "collection": "gates",
+                "id_field": "id",
+                "rule": {
+                  "field": "passed",
+                  "op": "eq",
+                  "value": true
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-gate-false"
+              ]
+            },
+            {
+              "id": "delivery.artifacts_count",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "artifacts",
+                "declared_count": "artifact_count",
+                "declared_hash": "artifacts_sha256",
+                "file_bindings": {
+                  "path_field": "path",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-file-drift"
+              ]
+            },
+            {
+              "id": "delivery.prompt_pin",
+              "family": "artifact_hash",
+              "tier": 1,
+              "predicate": {
+                "artifact_path": "desired/effective-prompt.json",
+                "declared_hash": "prompt_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-prompt-drift"
+              ]
+            },
+            {
+              "id": "delivery.avatar_pin",
+              "family": "artifact_hash",
+              "tier": 1,
+              "predicate": {
+                "artifact_path": "images/avatar.png",
+                "declared_hash": "avatar_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-avatar-drift"
+              ]
+            },
+            {
+              "id": "delivery.coverage",
+              "family": "output_field_coverage",
+              "tier": 1,
+              "predicate": {
+                "exempt": {}
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §执行段：finalize_delivery",
+              "mutants": [
+                "M-delivery-unread-field"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+ "schema_version": "series-style-09.20.1",
+ "source": "runs/20260914-employee-portraits/style-audit.json#series_style",
+ "series_reference_indices": [
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "series_style": {
+  "medium": "影视级写实人像，肤质及织物真实；角色服装服从影视版本",
+  "background": "中式民国木质书房/档案室；主体后方深海军蓝面",
+  "brand_motif": "两侧钴蓝缺口方框、细蓝弯曲连线、小量橙色节点；不增加文字",
+  "palette": "近黑海军蓝、钴蓝、暖胡桃木、米白纸张、极小橙点；角色服装可保留识别色",
+  "lighting": "暖色侧前方柔光，右侧低强度冷蓝发丝轮廓，暗背景与清晰自然面部",
+  "avatar": "方形居中胸像，完整头顶，清晰眼神，与同人展示图服装发型一致；旧图512x512",
+  "bioPicture": "横向工作场景，中近景半身、角色居中或略偏一侧、木桌与岗位相关少量道具；旧图1536x896"
+ },
+ "deliverables_per_target": [
+  "avatar",
+  "bioPicture"
+ ],
+ "sizes": {
+  "avatar": [
+   1024,
+   1024
+  ],
+  "bioPicture": [
+   1536,
+   896
+  ],
+  "legacy_avatar": [
+   512,
+   512
+  ]
+ }
+}
