@@ -2,6 +2,16 @@
   "schema_version": 1,
   "version": "10.06.1",
   "status": "package-audit-in-progress",
-  "packages": [],
+  "packages": [
+    {
+      "id": "meta-architecture-development",
+      "name": "Meta Architecture Development",
+      "path": "tools/skills/meta-architecture-development/",
+      "status": "in-development",
+      "archive": null,
+      "files_available": false,
+      "handoff": "independent development; publish when delivered"
+    }
+  ],
   "external_tools": []
 }
