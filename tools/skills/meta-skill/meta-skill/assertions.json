@@ -1,0 +1,216 @@
+{
+  "package": "meta-skill",
+  "contract_ir_version": "1.0",
+  "stages": [
+    {
+      "stage": "init_eval_workspace",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "init_eval_workspace_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "self.init.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 7 步",
+              "mutants": [
+                "M-self-init"
+              ]
+            },
+            {
+              "id": "self.init.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "required_fields": [
+                  "id",
+                  "kind",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "kind": "str",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 7 步",
+              "mutants": [
+                "M-self-init"
+              ]
+            },
+            {
+              "id": "self.init.count_hash",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "declared_count": "output_count",
+                "declared_hash": "outputs_sha256",
+                "file_bindings": {
+                  "path_field": "id",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 7 步",
+              "mutants": [
+                "M-self-init"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "run_trigger_eval",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "run_trigger_eval_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "self.trigger.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 7 步",
+              "mutants": [
+                "M-self-trigger"
+              ]
+            },
+            {
+              "id": "self.trigger.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "required_fields": [
+                  "id",
+                  "kind",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "kind": "str",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 7 步",
+              "mutants": [
+                "M-self-trigger"
+              ]
+            },
+            {
+              "id": "self.trigger.count_hash",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "declared_count": "output_count",
+                "declared_hash": "outputs_sha256",
+                "file_bindings": {
+                  "path_field": "id",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 7 步",
+              "mutants": [
+                "M-self-trigger"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "aggregate_benchmark",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "aggregate_benchmark_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "self.aggregate.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 9 步",
+              "mutants": [
+                "M-self-aggregate"
+              ]
+            },
+            {
+              "id": "self.aggregate.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "required_fields": [
+                  "id",
+                  "kind",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "kind": "str",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 9 步",
+              "mutants": [
+                "M-self-aggregate"
+              ]
+            },
+            {
+              "id": "self.aggregate.count_hash",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "declared_count": "output_count",
+                "declared_hash": "outputs_sha256",
+                "file_bindings": {
+                  "path_field": "id",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "SKILL.md §第 9 步",
+              "mutants": [
+                "M-self-aggregate"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "version": "1.0",
+  "obligations": {
+    "STAGE.DECLARATION": {
+      "source_section": "6.3",
+      "enforced_by": [
+        "validate.M7"
+      ]
+    },
+    "STAGE.ENTRY_BINDING": {
+      "source_section": "6.2",
+      "enforced_by": [
+        "validate.M8.stage_binding",
+        "validate.M8"
+      ]
+    },
+    "STAGE.CLOSURE": {
+      "source_section": "6.3",
+      "enforced_by": [
+        "validate.M8.stage_closure",
+        "validate.M8"
+      ]
+    },
+    "CONTRACT.DATA": {
+      "source_section": "6",
+      "enforced_by": [
+        "validate.M8",
+        "audit.run"
+      ]
+    },
+    "CUSTOM.EVIDENCE": {
+      "source_section": "5",
+      "enforced_by": [
+        "validate.M9.custom",
+        "validate.M10"
+      ]
+    },
+    "OPERATION.VOCAB": {
+      "source_section": "2",
+      "enforced_by": [
+        "validate.M9"
+      ]
+    },
+    "ASSERTION.MINIMUM": {
+      "source_section": "3",
+      "enforced_by": [
+        "validate.M9"
+      ]
+    },
+    "ASSERTION.NO_BACKSOLVE": {
+      "source_section": "4",
+      "enforced_by": [
+        "validate.M9"
+      ]
+    },
+    "FAMILY.TIER": {
+      "source_section": "8.0",
+      "enforced_by": [
+        "validate.M9",
+        "audit.run"
+      ]
+    },
+    "AUDITOR.EVIDENCE": {
+      "source_section": "9",
+      "enforced_by": [
+        "validate.M10"
+      ]
+    },
+    "AUDIT.FAMILY.FALSIFIABILITY": {
+      "source_section": "9",
+      "enforced_by": [
+        "audit.family.source_receipt",
+        "audit.family.schema_conformance",
+        "audit.family.count_hash",
+        "audit.family.output_subset_input",
+        "audit.family.predicate_replay",
+        "audit.family.excluded_count_set",
+        "audit.family.key_row_preservation",
+        "audit.family.field_function_replay",
+        "audit.family.key_coverage",
+        "audit.family.cardinality",
+        "audit.family.unmatched_set",
+        "audit.family.union_completeness",
+        "audit.family.pairwise_disjoint",
+        "audit.family.assignment_rule_replay",
+        "audit.family.detail_recomputation",
+        "audit.family.total_reconciliation",
+        "audit.family.each_bucket_independently_enumerable",
+        "audit.family.row_column_sheet_reconciliation",
+        "audit.family.summary_reconciliation",
+        "audit.family.artifact_hash",
+        "audit.family.receiver_receipt",
+        "audit.family.joined_value_replay",
+        "audit.family.output_field_coverage",
+        "audit.family.source_readback",
+        "audit.family.source_row_match",
+        "audit.family.existence",
+        "audit.family.nonzero_rows",
+        "audit.family.file_present"
+      ]
+    },
+    "PLACEHOLDER.FAIL_CLOSED": {
+      "source_section": "6.4",
+      "enforced_by": [
+        "validate.M11"
+      ]
+    },
+    "RENDER.COMPARE_PATHS": {
+      "source_section": "6.1",
+      "enforced_by": [
+        "audit.compare_paths"
+      ]
+    },
+    "MANIFEST.SCHEMA": {
+      "source_section": "7",
+      "enforced_by": [
+        "audit.run"
+      ]
+    },
+    "AUDIT.EXIT_CODES": {
+      "source_section": "8.1",
+      "enforced_by": [
+        "audit.run"
+      ]
+    }
+  },
+  "gates": {
+    "validate.M7": {
+      "file": "scripts/validate.py",
+      "function": "check_m7",
+      "obligations": [
+        "STAGE.DECLARATION"
+      ],
+      "implementation_sha256": "5ce0f8fa072be617964cda858336cc601a2deb4090c5da77816f9accc5b08619"
+    },
+    "validate.M8.stage_binding": {
+      "file": "scripts/validate.py",
+      "function": "_check_stage_binding",
+      "obligations": [
+        "STAGE.ENTRY_BINDING"
+      ],
+      "implementation_sha256": "ef1952a6aa40154ddf602f9eecb9070a76037479bde1bf0d9715ddad5a37c99b"
+    },
+    "validate.M8.stage_closure": {
+      "file": "scripts/validate.py",
+      "function": "_check_stage_closure",
+      "obligations": [
+        "STAGE.CLOSURE"
+      ],
+      "implementation_sha256": "167b38851e04430ccfead376652098c0cd5a2fb49ae96dd03bcb618bf01446c2"
+    },
+    "validate.M8": {
+      "file": "scripts/validate.py",
+      "function": "check_m8",
+      "obligations": [
+        "CONTRACT.DATA",
+        "STAGE.ENTRY_BINDING",
+        "STAGE.CLOSURE"
+      ],
+      "implementation_sha256": "623fab4537f7953ff48e6a88886bdad6fcfd071b89f60a69cc8e3cecbe22a6ad"
+    },
+    "validate.M9.custom": {
+      "file": "scripts/validate.py",
+      "function": "_check_custom",
+      "obligations": [
+        "CUSTOM.EVIDENCE"
+      ],
+      "implementation_sha256": "6cb20b90ebccc5564993c899720f766cd5fba79358c09b4146f9fbe81dc74f1b"
+    },
+    "validate.M9": {
+      "file": "scripts/validate.py",
+      "function": "check_m9",
+      "obligations": [
+        "OPERATION.VOCAB",
+        "ASSERTION.MINIMUM",
+        "ASSERTION.NO_BACKSOLVE",
+        "FAMILY.TIER"
+      ],
+      "implementation_sha256": "e7571bec256e054c20af171d0f430d01c1de8a44d1007138866a6a5c520bfae6"
+    },
+    "validate.M10": {
+      "file": "scripts/validate.py",
+      "function": "check_m10",
+      "obligations": [
+        "AUDITOR.EVIDENCE",
+        "CUSTOM.EVIDENCE"
+      ],
+      "implementation_sha256": "0da7ffb3bd17329a1cc6f150c71da64440e0c7614608f86f85c23a14a834abb3"
+    },
+    "validate.M11": {
+      "file": "scripts/validate.py",
+      "function": "check_m11",
+      "obligations": [
+        "PLACEHOLDER.FAIL_CLOSED"
+      ],
+      "implementation_sha256": "271a02a4e16cc81c06d73f0346f4069a2c98cc6009c15803031cc38a262acd4d"
+    },
+    "audit.compare_paths": {
+      "file": "scripts/audit.py",
+      "function": "_compare_paths",
+      "obligations": [
+        "RENDER.COMPARE_PATHS"
+      ],
+      "implementation_sha256": "05d4cdb5307150a45ab6d160f7738ec7688f489d9b35d1b2b8f0bb2591383bdd"
+    },
+    "audit.run": {
+      "file": "scripts/audit.py",
+      "function": "run_audit",
+      "obligations": [
+        "CONTRACT.DATA",
+        "FAMILY.TIER",
+        "MANIFEST.SCHEMA",
+        "AUDIT.EXIT_CODES"
+      ],
+      "implementation_sha256": "3e949680af64de1d7152dff42219bd66dff13e157b35c6433c158413f23946ed"
+    },
+    "audit.family.source_receipt": {
+      "file": "scripts/audit.py",
+      "function": "f_source_receipt",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "fb435ee2b4b29d777542b4e9b0e5092deb326cb197c240f3244d98ab7ed74aeb"
+    },
+    "audit.family.schema_conformance": {
+      "file": "scripts/audit.py",
+      "function": "f_schema_conformance",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "25bae42049a7f0254841fc001407b15904cce73ce33081e93110bfba0781c24e"
+    },
+    "audit.family.count_hash": {
+      "file": "scripts/audit.py",
+      "function": "f_count_hash",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "80d0f5c05d52c165b7e73039d2412bcbd317209eec83a7b477bc775b6b7dd4a6"
+    },
+    "audit.family.output_subset_input": {
+      "file": "scripts/audit.py",
+      "function": "f_output_subset_input",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "fd978453ccec87196bcaf65bb2e7c3f4a8644bf6c5e824bffc42809b98317abd"
+    },
+    "audit.family.predicate_replay": {
+      "file": "scripts/audit.py",
+      "function": "f_predicate_replay",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "b0e81918258bfbd43ee399be615a0ed58a181c6472030fa42e41d856cdc98be6"
+    },
+    "audit.family.excluded_count_set": {
+      "file": "scripts/audit.py",
+      "function": "f_excluded_count_set",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "3222515390c01b83f579badca0d6f3739f9bfb0ccdd20fdbe2ba6141db1d52dd"
+    },
+    "audit.family.key_row_preservation": {
+      "file": "scripts/audit.py",
+      "function": "f_key_row_preservation",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "ba61b6bad326743faa0db6d56c7e02cb10915e6644a00aba6c6423055bfc3e52"
+    },
+    "audit.family.field_function_replay": {
+      "file": "scripts/audit.py",
+      "function": "f_field_function_replay",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "1196cd414fd0fd17b75fdf0323edccc056deed1c6dbeeb6cd75721dd54ef0e01"
+    },
+    "audit.family.key_coverage": {
+      "file": "scripts/audit.py",
+      "function": "f_key_coverage",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "170f34aa137f4857702cc585db63036a6d3b1553559ac66dafeaec4339cb9f9c"
+    },
+    "audit.family.cardinality": {
+      "file": "scripts/audit.py",
+      "function": "f_cardinality",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "9cf6c84b123b0517e9be298126d5821a73f7ff1a706c4fbaadbc0a4059522dbb"
+    },
+    "audit.family.unmatched_set": {
+      "file": "scripts/audit.py",
+      "function": "f_unmatched_set",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "99672f28eb27ae28d5b684e40fc471c3c23f85844fe165b748ebe805e1054dde"
+    },
+    "audit.family.union_completeness": {
+      "file": "scripts/audit.py",
+      "function": "f_union_completeness",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "28b3a003d663f7bda66f7a98372a6c97a83ad2c4c52de90053f0fab84934f2c0"
+    },
+    "audit.family.pairwise_disjoint": {
+      "file": "scripts/audit.py",
+      "function": "f_pairwise_disjoint",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "889c77c406f0fd7e376896c2e49eadfd738f613b82c1ee09cd976824db323708"
+    },
+    "audit.family.assignment_rule_replay": {
+      "file": "scripts/audit.py",
+      "function": "f_assignment_rule_replay",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "03bd528a8034e3687c94230c2f3a13f609680f0897d72ed14aafb217d1c7eaad"
+    },
+    "audit.family.detail_recomputation": {
+      "file": "scripts/audit.py",
+      "function": "f_detail_recomputation",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "4ca50a818c79abb575ef04182327d203f36d763a34dda4dffd48d67ea06e1028"
+    },
+    "audit.family.total_reconciliation": {
+      "file": "scripts/audit.py",
+      "function": "f_total_reconciliation",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "3a6cae109eefb5f99c9fee647376c68afe646536a386a343656682c6ec81c0ae"
+    },
+    "audit.family.each_bucket_independently_enumerable": {
+      "file": "scripts/audit.py",
+      "function": "f_each_bucket_independently_enumerable",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "73c87ce36b77d348b21e3f10010822a4867060478862f937411b59264f41ab59"
+    },
+    "audit.family.row_column_sheet_reconciliation": {
+      "file": "scripts/audit.py",
+      "function": "f_row_column_sheet_reconciliation",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "88784e3450d2f45ccb4cfeb5165a1f59f0f0e04803231025294c8622551da58c"
+    },
+    "audit.family.summary_reconciliation": {
+      "file": "scripts/audit.py",
+      "function": "f_summary_reconciliation",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "3a975aff4c8b5ed2ec9e2e2a3cbb56e0d003c2a05dac4a2daa0b439d29e4d728"
+    },
+    "audit.family.artifact_hash": {
+      "file": "scripts/audit.py",
+      "function": "f_artifact_hash",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "7ea7d57320bb5b0440c6a1fa087fa2a724536b08fa419f9f474ff481898cb3ac"
+    },
+    "audit.family.receiver_receipt": {
+      "file": "scripts/audit.py",
+      "function": "f_receiver_receipt",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "f077c352ac6892bb29ff81b207c76a8cc8e903d7f899093442585feb6d8d46a0"
+    },
+    "audit.family.joined_value_replay": {
+      "file": "scripts/audit.py",
+      "function": "f_joined_value_replay",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "8b6d09a6f5e91d7b118b3f99e8d793ca9a85a825dd6c8fbba4efbb8f93c0bbf6"
+    },
+    "audit.family.output_field_coverage": {
+      "file": "scripts/audit.py",
+      "function": "f_output_field_coverage",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "1d452cebf4fb437bfc9912d7cce43db03c2107c72e16fb6ca68df4369615f9df"
+    },
+    "audit.family.source_readback": {
+      "file": "scripts/audit.py",
+      "function": "f_source_readback",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "46b6c3f160eb66fd8e91faf9e82877874466b9abf3344115afd5ba3be962472a"
+    },
+    "audit.family.source_row_match": {
+      "file": "scripts/audit.py",
+      "function": "f_source_row_match",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "f7a5dba90d9d122d7450a422456248c9d412d56db012ae3c37f5e1d014306285"
+    },
+    "audit.family.existence": {
+      "file": "scripts/audit.py",
+      "function": "f_existence",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "a593adc1e7da844963950f2e97385904875f82fd9b36739fd866e5cc1376488d"
+    },
+    "audit.family.nonzero_rows": {
+      "file": "scripts/audit.py",
+      "function": "f_nonzero_rows",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "60283f5b289fb2618614f3cf9c36f57500cd74c19349deb08148bd085096ab77"
+    },
+    "audit.family.file_present": {
+      "file": "scripts/audit.py",
+      "function": "f_file_present",
+      "obligations": [
+        "AUDIT.FAMILY.FALSIFIABILITY"
+      ],
+      "implementation_sha256": "eb116e8f00b01c91e1394656dc6f3174fdb7bbff65204439669b1baf1701d8b7"
+    }
+  }
+}

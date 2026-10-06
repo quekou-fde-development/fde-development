@@ -1,0 +1,28 @@
+{
+  "runner_binding_version": "1.0",
+  "bindings": [
+    {
+      "stage": "init_eval_workspace",
+      "adapter": "scripts/run_meta_stages.py",
+      "production_path": "scripts/init_eval_workspace.py",
+      "production_sha256": "ac4f9b95e3ad353a3f891eced53333fe5628fd96a1fe820d43fa180ca4398fb9",
+      "mechanism": "runpy"
+    },
+    {
+      "stage": "run_trigger_eval",
+      "adapter": "scripts/run_meta_stages.py",
+      "production_path": "scripts/run_trigger_eval.py",
+      "production_sha256": "72b07a9579f6bbda9f036f1fde63e9edb29c9eed2640c30a45d0febdc03a7e86",
+      "mechanism": "runpy",
+      "production_commands": ["prepare", "score"],
+      "symbols": ["cmd_prepare", "cmd_score"]
+    },
+    {
+      "stage": "aggregate_benchmark",
+      "adapter": "scripts/run_meta_stages.py",
+      "production_path": "scripts/aggregate_benchmark.py",
+      "production_sha256": "f234922f9a8a979ab533da26b062dca5b70f9753f93d3d0e83b4013dcce3d0eb",
+      "mechanism": "runpy"
+    }
+  ]
+}

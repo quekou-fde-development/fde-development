@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "suites": {
+    "oaq": {
+      "runs_root": "runs",
+      "contract": "fixtures/assertions_oaq.json",
+      "golden": "golden-task1",
+      "source": "fixtures/mock-task1.md"
+    },
+    "jh": {
+      "runs_root": "runs-jh",
+      "contract": "fixtures/assertions_jh.json",
+      "golden": "golden-jh"
+    },
+    "predicate": {
+      "runs_root": "predicate-fixtures",
+      "contract": "predicate-fixtures/assertions.json",
+      "golden": "golden"
+    }
+  },
+  "families": {
+    "source_receipt": {"function": "f_source_receipt", "gate_id": "audit.family.source_receipt", "suite": "jh", "assertion": "r0.source_receipt", "negative": "R2-fee-receipt-missing", "reason": "回执缺字段"},
+    "schema_conformance": {"function": "f_schema_conformance", "gate_id": "audit.family.schema_conformance", "suite": "oaq", "assertion": "s1.schema", "negative": "M2-schema-field-missing", "reason": "缺['sku']"},
+    "count_hash": {"function": "f_count_hash", "gate_id": "audit.family.count_hash", "suite": "oaq", "assertion": "s1.count_hash", "negative": "M1-page-total-drift", "reason": "实到 10 / 声明 11"},
+    "output_subset_input": {"function": "f_output_subset_input", "gate_id": "audit.family.output_subset_input", "suite": "oaq", "assertion": "s2.subset", "negative": "M18-filter-duplicate-row", "reason": "出集凭空多出"},
+    "predicate_replay": {"function": "f_predicate_replay", "gate_id": "audit.family.predicate_replay", "suite": "oaq", "assertion": "s2.predicate_replay", "negative": "M4-country-leak", "reason": "不满足保留谓词"},
+    "excluded_count_set": {"function": "f_excluded_count_set", "gate_id": "audit.family.excluded_count_set", "suite": "oaq", "assertion": "s2.excluded_count", "negative": "E3-silent-row-drop", "reason": "出集 6 + 删除"},
+    "key_row_preservation": {"function": "f_key_row_preservation", "gate_id": "audit.family.key_row_preservation", "suite": "oaq", "assertion": "s3.key_preservation", "negative": "M20-map-duplicate-row", "reason": "多['EF260805000001']"},
+    "field_function_replay": {"function": "f_field_function_replay", "gate_id": "audit.family.field_function_replay", "suite": "predicate", "assertion": "predicate.field_function_replay", "negative": "PF1-field-function-forged", "reason": "记FORGED/应Alpha"},
+    "key_coverage": {"function": "f_key_coverage", "gate_id": "audit.family.key_coverage", "suite": "jh", "assertion": "j1.key_coverage", "negative": "J1-join-drop-silent", "reason": "左集未覆盖也未登记未匹配"},
+    "cardinality": {"function": "f_cardinality", "gate_id": "audit.family.cardinality", "suite": "jh", "assertion": "j1.cardinality", "negative": "J2-join-fanout", "reason": "应一对一但键重复"},
+    "unmatched_set": {"function": "f_unmatched_set", "gate_id": "audit.family.unmatched_set", "suite": "jh", "assertion": "j1.unmatched_set", "negative": "J3-unmatched-unlogged", "reason": "未登记未匹配集合字段"},
+    "union_completeness": {"function": "f_union_completeness", "gate_id": "audit.family.union_completeness", "suite": "oaq", "assertion": "s4.union", "negative": "M13-tier-union-gap", "reason": "并集缺"},
+    "pairwise_disjoint": {"function": "f_pairwise_disjoint", "gate_id": "audit.family.pairwise_disjoint", "suite": "oaq", "assertion": "s4.disjoint", "negative": "M6-tier-double-listed", "reason": "同一元素落多桶"},
+    "assignment_rule_replay": {"function": "f_assignment_rule_replay", "gate_id": "audit.family.assignment_rule_replay", "suite": "oaq", "assertion": "s7.enum_rule_replay", "negative": "M8-logistics-complement-form", "reason": "记物流异常/应状态待判"},
+    "detail_recomputation": {"function": "f_detail_recomputation", "gate_id": "audit.family.detail_recomputation", "suite": "oaq", "assertion": "s8.detail_recomputation", "negative": "M16-count-list-decoupled", "reason": "清单1/计数0"},
+    "total_reconciliation": {"function": "f_total_reconciliation", "gate_id": "audit.family.total_reconciliation", "suite": "oaq", "assertion": "s8.total_reconciliation", "negative": "E7-double-count", "reason": "分项和 8 / 应 7"},
+    "each_bucket_independently_enumerable": {"function": "f_each_bucket_independently_enumerable", "gate_id": "audit.family.each_bucket_independently_enumerable", "suite": "oaq", "assertion": "s8.each_bucket_enumerable", "negative": "E9-forced-balance", "reason": "清单为 null（疑守恒反推）"},
+    "row_column_sheet_reconciliation": {"function": "f_row_column_sheet_reconciliation", "gate_id": "audit.family.row_column_sheet_reconciliation", "suite": "oaq", "assertion": "final.counts_match_source", "negative": "M10-render-count-drift", "reason": "成品件与数据源不符"},
+    "summary_reconciliation": {"function": "f_summary_reconciliation", "gate_id": "audit.family.summary_reconciliation", "suite": "oaq", "assertion": "final.summary_reconciliation", "negative": "M17-render-summary-drift", "reason": "清单0/计数1"},
+    "artifact_hash": {"function": "f_artifact_hash", "gate_id": "audit.family.artifact_hash", "suite": "jh", "assertion": "h0.artifact_hash", "negative": "H1-payload-hash-drift", "reason": "实算"},
+    "receiver_receipt": {"function": "f_receiver_receipt", "gate_id": "audit.family.receiver_receipt", "suite": "jh", "assertion": "h0.receiver_receipt", "negative": "H3-receipt-missing", "reason": "接收回执缺"},
+    "joined_value_replay": {"function": "f_joined_value_replay", "gate_id": "audit.family.joined_value_replay", "suite": "jh", "assertion": "j1.joined_value_replay", "negative": "J4-fee-swap", "reason": "右表"},
+    "output_field_coverage": {"function": "f_output_field_coverage", "gate_id": "audit.family.output_field_coverage", "suite": "oaq", "assertion": "final.output_field_coverage", "negative": "M21-render-unread-field", "reason": "pending_manual"},
+    "source_readback": {"function": "f_source_readback", "gate_id": "audit.family.source_readback", "suite": "oaq", "assertion": "s5.source_readback", "negative": "M7-prod-observation-miscopy", "reason": "账本记全完成/源为有未完成"},
+    "source_row_match": {"function": "f_source_row_match", "gate_id": "audit.family.source_row_match", "suite": "oaq", "assertion": "s1.source_rows", "negative": "M26-source-row-drift", "reason": "源独有"},
+    "existence": {"function": "f_existence", "gate_id": "audit.family.existence", "suite": "predicate", "assertion": "predicate.existence", "negative": "PF2-existence-missing", "reason": "present_value 不存在", "positive_status": "WARN"},
+    "nonzero_rows": {"function": "f_nonzero_rows", "gate_id": "audit.family.nonzero_rows", "suite": "predicate", "assertion": "predicate.nonzero_rows", "negative": "PF3-zero-rows", "reason": "rows 空集", "positive_status": "WARN"},
+    "file_present": {"function": "f_file_present", "gate_id": "audit.family.file_present", "suite": "predicate", "assertion": "predicate.file_present", "negative": "PF4-file-missing", "reason": "present.txt 不在 run_dir 内", "positive_status": "WARN"}
+  }
+}

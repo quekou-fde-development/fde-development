@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workbench App Development"
+  short_description: "Develop, validate, and deploy Workbench applications"
+  default_prompt: "Use $workbench-app-development to create, validate locally, and deploy an authenticated Workbench application."

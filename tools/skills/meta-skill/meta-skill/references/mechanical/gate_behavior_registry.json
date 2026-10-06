@@ -1,0 +1,293 @@
+{
+  "version": "1.2",
+  "directed_causes": {
+    "gate-fixtures": {
+      "G1-no-audit-script": "M8.AUDITOR.MISSING",
+      "G2-op-outside-vocab": "M9.OPERATION.OUTSIDE_VOCAB",
+      "G3-family-coverage-gap": "M9.FAMILY.MINIMUM_MISSING",
+      "G4-assertion-no-mutant": "M10.ASSERTION.MUTANTS_EMPTY",
+      "G5-placeholder-residue": "M11.PLACEHOLDER.RESIDUE",
+      "G6-slot-missing-value-domain": "M7.NUMBERED_STEP.MISSING_SLOT",
+      "G7-backsolve-not-discounted": "M9.FAMILY.MINIMUM_MISSING",
+      "G8-no-fixtures-dir": "M8.FIXTURES.MISSING",
+      "G9-mutant-not-actually-rejected": "M10.MUTANT.NOT_REJECTED",
+      "G10-golden-fails-on-positive": "M10.GOLDEN.NON_PASS",
+      "G11-golden-all-unverified": "M10.GOLDEN.UNVERIFIED",
+      "G12-runner-no-stage-flag": "M8.STAGE_BINDING.MISSING_STAGE_FLAG",
+      "G13-stage-entrypoint-stub": "M8.STAGE_BINDING.DISPATCH_UNBOUND",
+      "G14-stage-name-docstring-only": "M8.STAGE_BINDING.DISPATCH_UNBOUND",
+      "G15-runner-unrelated-to-stages": "M8.STAGE_BINDING.NO_RECOGNIZED_ENTRY",
+      "G16-dispatch-declared-not-used": "M8.STAGE_BINDING.DISPATCH_UNBOUND",
+      "G17-card-missing-value-domain": "M7.STAGE_CARD.MISSING_SLOT",
+      "G18-unmarked-exec-command": "M7.COMMAND.UNSLOTTED",
+      "G19-assertions-omits-stage": "M8.STAGE_CLOSURE.SET_MISMATCH",
+      "G20-fenced-example-only": "M7.STAGE_CARD.NO_REAL_CARD",
+      "G21-inline-command-in-prose": "M7.COMMAND.UNSLOTTED",
+      "G22-numbered-prefix-inline-command": "M7.COMMAND.UNSLOTTED",
+      "G23-git-inline-command": "M7.COMMAND.UNSLOTTED",
+      "G24-curl-inline-command": "M7.COMMAND.UNSLOTTED",
+      "G25-relative-script-command": "M7.COMMAND.UNSLOTTED",
+      "G26-poetry-wrapper-command": "M7.COMMAND.UNSLOTTED",
+      "G27-pnpm-command": "M7.COMMAND.UNSLOTTED",
+      "G28-env-prefixed-command": "M7.COMMAND.UNSLOTTED",
+      "G29-absolute-path-command": "M7.COMMAND.UNSLOTTED",
+      "G30-bare-numbered-command": "M7.COMMAND.UNSLOTTED",
+      "G31-indented-command-block": "M7.COMMAND.UNSLOTTED",
+      "G32-empty-slot-shell": "M7.COMMAND.UNSLOTTED",
+      "G33-dead-write-decoy": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G34-auditor-reads-test-answer": "M10.AUDITOR.TEST_ANSWER_DEPENDENCY",
+      "G35-constant-dead-write": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G36-post-return-write": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G37-audit-exit-row-mismatch": "M10.AUDIT_ROW.EXIT_STATUS_MISMATCH",
+      "G38-duplicate-assertion-id": "M8.CONTRACT.ASSERTION_ID_DUPLICATE",
+      "G39-duplicate-skill-stage": "M7.STAGE_CARD.DUPLICATE_NAME",
+      "G40-duplicate-contract-stage": "M8.CONTRACT.STAGE_NAME_DUPLICATE",
+      "G41-duplicate-manifest-stage": "M8.STAGE_CLOSURE.MANIFEST_STAGE_DUPLICATE",
+      "G42-paren-numbered-missing-slots": "M7.NUMBERED_STEP.MISSING_SLOT",
+      "G43-bullet-action-missing-slots": "M7.LIST_STEP.MISSING_SLOT",
+      "G44-audit-unknown-row": "M10.AUDIT_ROW.UNKNOWN_ID",
+      "G45-audit-duplicate-row": "M10.AUDIT_ROW.DUPLICATE_ID",
+      "G46-module-bound-constant-dead-write": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G47-local-bound-constant-dead-write": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G48-not-true-dead-write": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G49-short-circuit-dead-write": "M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE",
+      "G50-compare-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G51-empty-list-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G52-empty-dict-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G53-empty-tuple-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G54-len-empty-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G55-bool-zero-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G56-while-compare-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G57-assert-false-dead-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G58-runtime-external-write": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G59-runtime-network": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G60-runtime-signal": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G61-runtime-fork": "M8.STAGE_BINDING.RUNTIME_PROBE_FAILED",
+      "G62-runtime-copy-upstream": "M8.STAGE_BINDING.RUNTIME_OUTPUT.COPIED_UPSTREAM",
+      "G63-runtime-empty-artifact": "M8.STAGE_BINDING.RUNTIME_OUTPUT.EMPTY",
+      "G64-runtime-invalid-json": "M8.STAGE_BINDING.RUNTIME_OUTPUT.INVALID_JSON",
+      "G65-runtime-hollow-json": "M8.STAGE_BINDING.RUNTIME_OUTPUT.ASSERTIONS_FAILED",
+      "G66-runtime-upstream-mutation": "M8.STAGE_BINDING.RUNTIME_OUTPUT.UPSTREAM_MUTATED",
+      "G67-auditor-external-write": "M10.AUDITOR.SANDBOX_WRITE",
+      "G68-auditor-external-read": "M10.AUDITOR.SANDBOX_READ",
+      "G69-runner-capture-symlink": "M8.STAGE_BINDING.RUNTIME_OUTPUT.CAPTURE_PREOCCUPIED"
+    },
+    "custom-fixtures": {
+      "C1-junk-artifacts": "M9.CUSTOM.PAYLOAD_COLLISION",
+      "C2-anchor-file-missing": "M9.CUSTOM.SOURCE_FILE_MISSING",
+      "C3-anchor-heading-missing": "M9.CUSTOM.SOURCE_HEADING_MISSING",
+      "C4-path-escape": "M9.CUSTOM.PATH_ESCAPE",
+      "C5-same-content-diff-path": "M9.CUSTOM.PAYLOAD_COLLISION",
+      "C6-mutant-not-rejected-by-named": "M9.CUSTOM.MUTANT_NOT_REJECTED",
+      "C7-same-payload-diff-metadata": "M9.CUSTOM.PAYLOAD_COLLISION",
+      "C8-t2-family-marked-t1": "M9.FAMILY_TIER.MISMATCH",
+      "C9-anchor-substring-only": "M9.CUSTOM.SOURCE_HEADING_MISSING",
+      "C10-strong-family-marked-t2": "M9.FAMILY_TIER.MISMATCH",
+      "P1-persistent-but-empty": "M8.CONTRACT.MISSING"
+    }
+  },
+  "cause_block_baselines": {
+    "M7|M7.COMMAND.UNSLOTTED": 9,
+    "M7|M7.NUMBERED_STEP.MISSING_SLOT": 2,
+    "M8|M8.STAGE_BINDING.DISPATCH_UNBOUND": 2,
+    "M8|M8.STAGE_BINDING.UNREACHABLE_ARTIFACT_WRITE": 6,
+    "M8|M8.STAGE_BINDING.RUNTIME_PROBE_FAILED": 6,
+    "M9|M9.CUSTOM.PAYLOAD_COLLISION": 2,
+    "M9|M9.CUSTOM.SOURCE_HEADING_MISSING": 2,
+    "M9|M9.FAMILY.MINIMUM_MISSING": 2,
+    "M9|M9.FAMILY_TIER.MISMATCH": 2
+  },
+  "directed_diagnostics": {
+    "gate-fixtures": {
+      "G3-family-coverage-gap": {"kind": "m9_minimum_families", "expected": [{"operation": "s2_filtered/filter", "missing": ["predicate_replay"]}]},
+      "G6-slot-missing-value-domain": {"kind": "m7_missing_slots", "expected": [{"line": 19, "shape": "编号步", "missing": ["值域"]}]},
+      "G7-backsolve-not-discounted": {"kind": "m9_minimum_families", "expected": [{"operation": "s2_filtered/filter", "missing": ["excluded_count_set"]}]},
+      "G13-stage-entrypoint-stub": {"kind": "m8_dispatch_unbound", "expected": [{"stage": "s1_export", "script": "run_stages.py"}, {"stage": "s2_filtered", "script": "run_stages.py"}]},
+      "G14-stage-name-docstring-only": {"kind": "m8_dispatch_unbound", "expected": [{"stage": "s2_filtered", "script": "run_stages.py"}]},
+      "G16-dispatch-declared-not-used": {"kind": "m8_dispatch_unbound", "expected": [{"stage": "s1_export", "script": "run_stages.py"}, {"stage": "s2_filtered", "script": "run_stages.py"}]},
+      "G33-dead-write-decoy": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:死函数诱饵"]}]},
+      "G35-constant-dead-write": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:常量假分支"]}]},
+      "G36-post-return-write": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:return 后语句"]}]},
+      "G46-module-bound-constant-dead-write": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:绑定常量假分支"]}]},
+      "G47-local-bound-constant-dead-write": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:绑定常量假分支"]}]},
+      "G48-not-true-dead-write": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:一元取反假分支"]}]},
+      "G49-short-circuit-dead-write": {"kind": "m8_unreachable_write", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "mechanisms": ["run_stages.py:逻辑短路假分支"]}]},
+      "G50-compare-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G51-empty-list-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G52-empty-dict-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G53-empty-tuple-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G54-len-empty-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G55-bool-zero-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G56-while-compare-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "rc0_no_artifact"}]},
+      "G57-assert-false-dead-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "runtime_failed", "failure": "assertion_error"}]},
+      "G58-runtime-external-write": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "runtime_failed", "failure": "sandbox_file_write_denied"}]},
+      "G59-runtime-network": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "runtime_failed", "failure": "sandbox_network_denied"}]},
+      "G60-runtime-signal": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "runtime_failed", "failure": "sandbox_signal_denied"}]},
+      "G61-runtime-fork": {"kind": "m8_runtime_probe", "expected": [{"stage": "s1_export", "artifact": "s1_export.json", "outcome": "runtime_failed", "failure": "sandbox_fork_denied"}]},
+      "G18-unmarked-exec-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "python3 scripts/run_stages.py --stage s1_export --run-dir runs/demo"}]},
+      "G21-inline-command-in-prose": {"kind": "m7_command", "expected": [{"line": 21, "command": "python3 scripts/archive.py --out archive/"}]},
+      "G22-numbered-prefix-inline-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "python3 scripts/archive.py --out archive/"}]},
+      "G23-git-inline-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "git status --short"}]},
+      "G24-curl-inline-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "curl -fsSL https://example.invalid/data"}]},
+      "G25-relative-script-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "./x.sh --dry-run"}]},
+      "G26-poetry-wrapper-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "poetry run pytest"}]},
+      "G27-pnpm-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "pnpm test"}]},
+      "G28-env-prefixed-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "MODE=test python3 scripts/x.py"}]},
+      "G29-absolute-path-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "/usr/bin/python3 scripts/x.py"}]},
+      "G30-bare-numbered-command": {"kind": "m7_command", "expected": [{"line": 21, "command": "git status --short"}]},
+      "G31-indented-command-block": {"kind": "m7_command", "expected": [{"line": 21, "command": "git status --short"}]},
+      "G32-empty-slot-shell": {"kind": "m7_command", "expected": [{"line": 21, "command": "git status --short"}]},
+      "G42-paren-numbered-missing-slots": {"kind": "m7_missing_slots", "expected": [{"line": 21, "shape": "编号步", "missing": ["依据", "产出", "值域"]}]}
+    },
+    "custom-fixtures": {
+      "C1-junk-artifacts": {"kind": "m9_payload_collision", "expected": [{"operation": "c1_balance/custom:bucket_balance", "fingerprint": "e0b91e8f365a1817"}]},
+      "C3-anchor-heading-missing": {"kind": "m9_source_heading", "expected": [{"operation": "c1_balance/custom:bucket_balance", "anchor": "SKILL.md §从来没有这一节", "file": "SKILL.md", "heading": "从来没有这一节"}]},
+      "C5-same-content-diff-path": {"kind": "m9_payload_collision", "expected": [{"operation": "c1_balance/custom:bucket_balance", "fingerprint": "d9b70eb8056fcea1"}]},
+      "C7-same-payload-diff-metadata": {"kind": "m9_payload_collision", "expected": [{"operation": "c1_balance/custom:bucket_balance", "fingerprint": "d9b70eb8056fcea1"}]},
+      "C8-t2-family-marked-t1": {"kind": "m9_family_tier", "expected": [{"assertion": "c1_balance/custom:bucket_balance/c1.inflow_source", "family": "source_readback", "required_tier": "2", "actual_tier": "1"}]},
+      "C9-anchor-substring-only": {"kind": "m9_source_heading", "expected": [{"operation": "c1_balance/custom:bucket_balance", "anchor": "SKILL.md §配平", "file": "SKILL.md", "heading": "配平"}]},
+      "C10-strong-family-marked-t2": {"kind": "m9_family_tier", "expected": [{"assertion": "c1_balance/custom:bucket_balance/c1.balance", "family": "total_reconciliation", "required_tier": "0/1", "actual_tier": "2"}]}
+    }
+  },
+  "gates": {
+    "validate.M7": {
+      "kind": "validate_registered",
+      "suites": ["gate-fixtures"],
+      "target_gate": "M7"
+    },
+    "validate.M8.stage_binding": {
+      "kind": "validate_named",
+      "witnesses": [
+        ["gate-fixtures", "G12-runner-no-stage-flag"],
+        ["gate-fixtures", "G13-stage-entrypoint-stub"],
+        ["gate-fixtures", "G14-stage-name-docstring-only"],
+        ["gate-fixtures", "G15-runner-unrelated-to-stages"],
+        ["gate-fixtures", "G16-dispatch-declared-not-used"],
+        ["gate-fixtures", "G33-dead-write-decoy"],
+        ["gate-fixtures", "G35-constant-dead-write"],
+        ["gate-fixtures", "G36-post-return-write"],
+        ["gate-fixtures", "G46-module-bound-constant-dead-write"],
+        ["gate-fixtures", "G47-local-bound-constant-dead-write"],
+        ["gate-fixtures", "G48-not-true-dead-write"],
+        ["gate-fixtures", "G49-short-circuit-dead-write"],
+        ["gate-fixtures", "G50-compare-dead-write"],
+        ["gate-fixtures", "G51-empty-list-dead-write"],
+        ["gate-fixtures", "G52-empty-dict-dead-write"],
+        ["gate-fixtures", "G53-empty-tuple-dead-write"],
+        ["gate-fixtures", "G54-len-empty-dead-write"],
+        ["gate-fixtures", "G55-bool-zero-dead-write"],
+        ["gate-fixtures", "G56-while-compare-dead-write"],
+        ["gate-fixtures", "G57-assert-false-dead-write"],
+        ["gate-fixtures", "G58-runtime-external-write"],
+        ["gate-fixtures", "G59-runtime-network"],
+        ["gate-fixtures", "G60-runtime-signal"],
+        ["gate-fixtures", "G61-runtime-fork"],
+        ["gate-fixtures", "G62-runtime-copy-upstream"],
+        ["gate-fixtures", "G63-runtime-empty-artifact"],
+        ["gate-fixtures", "G64-runtime-invalid-json"],
+        ["gate-fixtures", "G65-runtime-hollow-json"],
+        ["gate-fixtures", "G66-runtime-upstream-mutation"],
+        ["gate-fixtures", "G69-runner-capture-symlink"]
+      ]
+    },
+    "validate.M8.stage_closure": {
+      "kind": "validate_named",
+      "witnesses": [
+        ["gate-fixtures", "G19-assertions-omits-stage"],
+        ["gate-fixtures", "G41-duplicate-manifest-stage"]
+      ]
+    },
+    "validate.M8": {
+      "kind": "validate_registered",
+      "suites": ["gate-fixtures", "custom-fixtures"],
+      "target_gate": "M8"
+    },
+    "validate.M9.custom": {
+      "kind": "validate_named",
+      "witnesses": [
+        ["custom-fixtures", "C1-junk-artifacts"],
+        ["custom-fixtures", "C2-anchor-file-missing"],
+        ["custom-fixtures", "C3-anchor-heading-missing"],
+        ["custom-fixtures", "C4-path-escape"],
+        ["custom-fixtures", "C5-same-content-diff-path"],
+        ["custom-fixtures", "C6-mutant-not-rejected-by-named"],
+        ["custom-fixtures", "C7-same-payload-diff-metadata"],
+        ["custom-fixtures", "C9-anchor-substring-only"]
+      ]
+    },
+    "validate.M9": {
+      "kind": "validate_named",
+      "witnesses": [
+        ["gate-fixtures", "G2-op-outside-vocab"],
+        ["gate-fixtures", "G3-family-coverage-gap"],
+        ["gate-fixtures", "G7-backsolve-not-discounted"],
+        ["custom-fixtures", "C8-t2-family-marked-t1"],
+        ["custom-fixtures", "C10-strong-family-marked-t2"]
+      ]
+    },
+    "validate.M10": {
+      "kind": "validate_registered",
+      "suites": ["gate-fixtures"],
+      "target_gate": "M10"
+    },
+    "validate.M11": {
+      "kind": "validate_registered",
+      "suites": ["gate-fixtures"],
+      "target_gate": "M11"
+    },
+    "audit.compare_paths": {
+      "kind": "audit_compare_paths",
+      "target_assertion": "final.render_source_replay",
+      "reason": "为空或非列表"
+    },
+    "audit.run": {
+      "kind": "audit_contract_identity",
+      "cases": {
+        "empty-stage": {
+          "reason": "stage 名须为非空字符串",
+          "cause_group": "AUDIT.CONTRACT.STAGE_NAME_EMPTY"
+        },
+        "duplicate-stage": {
+          "reason": "stage 名重复",
+          "cause_group": "AUDIT.CONTRACT.STAGE_NAME_DUPLICATE"
+        },
+        "empty-id": {
+          "reason": "断言 id 须为非空字符串",
+          "cause_group": "AUDIT.CONTRACT.ASSERTION_ID_EMPTY"
+        },
+        "duplicate-id": {
+          "reason": "断言 id 重复",
+          "cause_group": "AUDIT.CONTRACT.ASSERTION_ID_DUPLICATE"
+        }
+      }
+    },
+    "audit.family.source_receipt": {"kind": "audit_family", "family": "source_receipt"},
+    "audit.family.schema_conformance": {"kind": "audit_family", "family": "schema_conformance"},
+    "audit.family.count_hash": {"kind": "audit_family", "family": "count_hash"},
+    "audit.family.output_subset_input": {"kind": "audit_family", "family": "output_subset_input"},
+    "audit.family.predicate_replay": {"kind": "audit_family", "family": "predicate_replay"},
+    "audit.family.excluded_count_set": {"kind": "audit_family", "family": "excluded_count_set"},
+    "audit.family.key_row_preservation": {"kind": "audit_family", "family": "key_row_preservation"},
+    "audit.family.field_function_replay": {"kind": "audit_family", "family": "field_function_replay"},
+    "audit.family.key_coverage": {"kind": "audit_family", "family": "key_coverage"},
+    "audit.family.cardinality": {"kind": "audit_family", "family": "cardinality"},
+    "audit.family.unmatched_set": {"kind": "audit_family", "family": "unmatched_set"},
+    "audit.family.union_completeness": {"kind": "audit_family", "family": "union_completeness"},
+    "audit.family.pairwise_disjoint": {"kind": "audit_family", "family": "pairwise_disjoint"},
+    "audit.family.assignment_rule_replay": {"kind": "audit_family", "family": "assignment_rule_replay"},
+    "audit.family.detail_recomputation": {"kind": "audit_family", "family": "detail_recomputation"},
+    "audit.family.total_reconciliation": {"kind": "audit_family", "family": "total_reconciliation"},
+    "audit.family.each_bucket_independently_enumerable": {"kind": "audit_family", "family": "each_bucket_independently_enumerable"},
+    "audit.family.row_column_sheet_reconciliation": {"kind": "audit_family", "family": "row_column_sheet_reconciliation"},
+    "audit.family.summary_reconciliation": {"kind": "audit_family", "family": "summary_reconciliation"},
+    "audit.family.artifact_hash": {"kind": "audit_family", "family": "artifact_hash"},
+    "audit.family.receiver_receipt": {"kind": "audit_family", "family": "receiver_receipt"},
+    "audit.family.joined_value_replay": {"kind": "audit_family", "family": "joined_value_replay"},
+    "audit.family.output_field_coverage": {"kind": "audit_family", "family": "output_field_coverage"},
+    "audit.family.source_readback": {"kind": "audit_family", "family": "source_readback"},
+    "audit.family.source_row_match": {"kind": "audit_family", "family": "source_row_match"},
+    "audit.family.existence": {"kind": "audit_family", "family": "existence"},
+    "audit.family.nonzero_rows": {"kind": "audit_family", "family": "nonzero_rows"},
+    "audit.family.file_present": {"kind": "audit_family", "family": "file_present"}
+  }
+}
