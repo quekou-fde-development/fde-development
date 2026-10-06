@@ -1,0 +1,46 @@
+name: 开发规范反馈
+description: 反馈手册、工具或操作过程中的问题与建议
+title: "[反馈] "
+labels: ["待处理"]
+body:
+  - type: markdown
+    attributes:
+      value: "此仓库公开。请移除客户资料与凭据，私有项目问题提交到该项目仓库。"
+  - type: dropdown
+    id: category
+    attributes:
+      label: 反馈类型
+      options:
+        - 手册问题
+        - 工具使用问题
+        - 流程建议
+        - 链接或下载问题
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: 文件或工具及版本
+      placeholder: "文件路径/章节、工具版本或提交链接；无法确认时写未知"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题与复现步骤
+      description: "写清在哪一步遇到什么；建议类反馈说明适用场景。"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果或建议
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可公开证据（选填）
+      description: "可附脱敏截图、日志或相关链接。"
+    validations:
+      required: false
