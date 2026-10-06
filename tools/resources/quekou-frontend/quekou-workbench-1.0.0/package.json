@@ -1,0 +1,42 @@
+{
+  "name": "quekou-workbench-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tokens": "node design/build-tokens.mjs",
+    "dev": "npm run build:packages && vite --host 127.0.0.1",
+    "build": "npm run build:packages && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "build:packages": "npm run tokens && node design/build-packages.mjs",
+    "check": "npm run build && node qa/token-audit.mjs && node qa/check-token-contract.mjs && node qa/check-phase4-model.mjs",
+    "test:browser": "node scripts/test-browser.mjs",
+    "create:client": "node scripts/create-client.mjs",
+    "release": "node scripts/package-release.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.7.0",
+    "autoprefixer": "10.4.21",
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0",
+    "postcss": "8.5.28",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.7.3",
+    "vite": "6.4.3"
+  },
+  "workspaces": [
+    "packages/theme",
+    "packages/ui"
+  ],
+  "engines": {
+    "node": ">=22.12.0 <25",
+    "npm": ">=10"
+  }
+}

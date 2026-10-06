@@ -1,0 +1,77 @@
+{
+  "revision": "2026-09-28-user-selected-6-7-10",
+  "styleIds": [
+    6,
+    7,
+    10
+  ],
+  "source": "用户明确选择：6,7,10，加入偏好",
+  "colorSource": "缺口公司VI系统.pdf，第6页",
+  "phase": 5,
+  "status": "Company release preparation authorized",
+  "layoutFeedback": {
+    "date": "2026-09-28",
+    "userQuote": "现在的布局更好",
+    "appliesToRevision": "6 / 10 布局差异修订",
+    "decision": "保留当前布局作为后续基础；不视为最终风格选择或进入阶段2的指令"
+  },
+  "phase2Authorization": {
+    "date": "2026-09-28",
+    "userQuote": "进入第二阶段"
+  },
+  "phase2Review": {
+    "status": "已获用户认可",
+    "styles": [
+      6,
+      7,
+      10
+    ],
+    "parameterNames": [
+      "accentHue",
+      "density",
+      "radiusScale",
+      "surfaceMode"
+    ],
+    "validation": "qa/phase-2-验收记录.md",
+    "userQuote": "认可"
+  },
+  "phase3Review": {
+    "status": "已获用户认可",
+    "components": 28,
+    "examples": 28,
+    "packages": [
+      "@quekou/theme",
+      "@quekou/ui"
+    ],
+    "preview": "?view=components&style=6&surfaceMode=light",
+    "validation": "qa/phase-3-验收记录.md",
+    "userQuote": "认可，进入第四阶段"
+  },
+  "phase4Authorization": {
+    "date": "2026-09-28",
+    "userQuote": "认可，进入第四阶段"
+  },
+  "phase4Review": {
+    "status": "等待用户验收",
+    "recipes": [
+      "Overview",
+      "List",
+      "Detail",
+      "Settings"
+    ],
+    "blocks": 12,
+    "styles": [
+      6,
+      7,
+      10
+    ],
+    "composedPages": 12,
+    "packageVersion": "0.2.0",
+    "preview": "?view=recipes&style=6&page=overview&surfaceMode=light",
+    "validation": "qa/phase-4-验收记录.md"
+  },
+  "phase5Authorization": {
+    "date": "2026-09-28",
+    "scope": "company reuse audit, packaging, manuals and personal onboarding"
+  }
+}

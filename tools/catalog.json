@@ -1,8 +1,137 @@
 {
   "schema_version": 1,
-  "version": "10.06.1",
-  "status": "package-audit-in-progress",
+  "version": "10.06.4",
+  "status": "first-batch-published",
   "packages": [
+    {
+      "name": "Meta Skill",
+      "slug": "meta-skill",
+      "version": "3.10.1",
+      "status": "installed-source-snapshot",
+      "limitations": [
+        "Requires Python 3, an AI host with execution/evaluation capability, and the host system skill-creator quick validator.",
+        "The source contains a deliberate negative-test literal for an external-read guard; it does not contain a credential.",
+        "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
+      ],
+      "license": "No license file supplied in source archive.",
+      "sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada",
+      "bytes": 396142,
+      "archive": "tools/packages/meta-skill-3.10.1.zip",
+      "path": "tools/skills/meta-skill/",
+      "entry": "tools/skills/meta-skill/README.md",
+      "source_package_name": "packages/02-meta-skill_3.10.1.zip",
+      "member_count": 118
+    },
+    {
+      "name": "Meta Orchestrator",
+      "slug": "meta-orchestrator",
+      "version": "10.06",
+      "status": "design-reference-pre-distillation",
+      "limitations": [
+        "Design reference only; it is not an installed executable Skill.",
+        "Topology schema and validation scripts described by the design are not included.",
+        "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
+      ],
+      "license": "No license file supplied in source archive.",
+      "sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de",
+      "bytes": 29831,
+      "archive": "tools/packages/meta-orchestrator-10.06.zip",
+      "path": "tools/skills/meta-orchestrator/",
+      "entry": "tools/skills/meta-orchestrator/README.md",
+      "source_package_name": "packages/03-meta-orchestrator_10.06.zip",
+      "member_count": 2
+    },
+    {
+      "name": "Meta Agent",
+      "slug": "meta-agent",
+      "version": "10.06",
+      "status": "parameterized-candidate-not-deployed",
+      "limitations": [
+        "Candidate package; it has not been deployed as a production digital employee.",
+        "Requires authorized FDE platform API/project resources, image generation/handoff capability, and octopus-builder-cli/Builder access for the marketplace route.",
+        "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
+      ],
+      "license": "No license file supplied in source archive.",
+      "sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61",
+      "bytes": 179219,
+      "archive": "tools/packages/meta-agent-10.06.zip",
+      "path": "tools/skills/meta-agent/",
+      "entry": "tools/skills/meta-agent/README.md",
+      "source_package_name": "packages/04-meta-agent_10.06.zip",
+      "member_count": 34
+    },
+    {
+      "name": "Workbench App Development",
+      "slug": "workbench-app-development",
+      "version": "10.06",
+      "status": "installed-source-snapshot",
+      "limitations": [
+        "Requires octopus-cli, the official Workbench scaffold/Node dependencies, and an authorized platform account/team/resource context.",
+        "Publishing a Workbench app remains subject to the Skill approval checkpoints.",
+        "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
+      ],
+      "license": "No license file supplied in source archive.",
+      "sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d",
+      "bytes": 16585,
+      "archive": "tools/packages/workbench-app-development-10.06.zip",
+      "path": "tools/skills/workbench-app-development/",
+      "entry": "tools/skills/workbench-app-development/README.md",
+      "source_package_name": "packages/05-workbench-app-development_10.06.zip",
+      "member_count": 8
+    },
+    {
+      "name": "Quekou Workbench Frontend",
+      "slug": "quekou-frontend",
+      "version": "1.0.0",
+      "status": "original-unchanged",
+      "limitations": [
+        "Company/internal-and-authorized-customer reuse only under the packaged LICENSE.txt.",
+        "Requires React/ReactDOM ^18.3.1 and target Workbench compatibility validation.",
+        "Contains two nested distributable .tgz artifacts; both were separately checked for unsafe paths and credential patterns."
+      ],
+      "license": "Included: LICENSE.txt; third-party notices and license texts included in THIRD_PARTY_NOTICES.md and materials/licenses/.",
+      "sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9",
+      "bytes": 3207208,
+      "archive": "tools/packages/quekou-frontend-1.0.0.zip",
+      "path": "tools/resources/quekou-frontend/",
+      "entry": "tools/resources/quekou-frontend/quekou-workbench-1.0.0/START_HERE.md",
+      "source_package_name": "packages/06-quekou-frontend_1.0.0.zip",
+      "member_count": 390
+    },
+    {
+      "name": "Specialist Tool Guides",
+      "slug": "specialist-tool-guides",
+      "version": "10.06",
+      "status": "external-tool-integration-guide",
+      "limitations": [
+        "Documentation only: OctoPlanner, 老马 drawings, and SKU Radar services/binaries/accounts are not copied or redistributed.",
+        "Each project must verify target-version, authentication, supported input, permissions, and customer-environment behavior before use.",
+        "No license file supplied with the source document."
+      ],
+      "license": "No license file supplied with source document.",
+      "sha256": "bee4bd9424074fd3a4fe8bc4d11e7e3b1a194f3f702d858773cd47718c6ff04a",
+      "bytes": 3183,
+      "archive": "tools/packages/specialist-tool-guides-10.06.zip",
+      "path": "tools/resources/specialist-tool-guides/",
+      "entry": "tools/resources/specialist-tool-guides/README.md",
+      "source_package_name": "07-specialist-tools/README.md",
+      "member_count": 1
+    },
+    {
+      "name": "九份架构写作参照",
+      "slug": "development-design",
+      "version": "10.06",
+      "status": "nine-writing-references",
+      "archive": "tools/packages/development-design-10.06.zip",
+      "path": "tools/resources/development-design/",
+      "entry": "tools/resources/development-design/README.md",
+      "sha256": "9a6e2365b70dbc20fcb4ca44fcbc12d4ffad1b331dd1a9d58822f531fe5f66d1",
+      "bytes": 23655,
+      "source_package_name": "packages/01-development-design_10.06.zip",
+      "limitations": [
+        "Writing references only; architecture generation package is a separate deliverable."
+      ]
+    },
     {
       "id": "meta-architecture-development",
       "name": "Meta Architecture Development",
@@ -13,7 +142,26 @@
       "handoff": "independent development; publish when delivered"
     }
   ],
-  "external_tools": [],
+  "external_tools": [
+    {
+      "name": "OctoPlanner",
+      "url": "https://github.com/syngy-ai/octoplanner",
+      "purpose": "排产",
+      "distribution": "official-link-only"
+    },
+    {
+      "name": "老马 drawings",
+      "url": "https://laoma.syngy.cn/drawings",
+      "purpose": "图纸识别",
+      "distribution": "hosted-service-link-only"
+    },
+    {
+      "name": "SKU Radar",
+      "url": "https://www.skuradar.ai/",
+      "purpose": "商品与爆品分析",
+      "distribution": "hosted-service-link-only"
+    }
+  ],
   "resources": [
     {
       "id": "research-input",
@@ -22,6 +170,11 @@
       "path": "tools/resources/通用调研输入文档_10.06.md",
       "status": "blank-template",
       "sha256": "264af3bd1a666186f40876b529aaf3018c6adfcbc133351acd0a830370aec730"
+    },
+    {
+      "name": "FDE 上层流程图",
+      "path": "tools/resources/fde-flow/",
+      "status": "source-reference"
     }
   ]
 }

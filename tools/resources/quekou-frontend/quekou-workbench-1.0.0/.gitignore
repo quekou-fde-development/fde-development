@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+releases/
+clients/
+.env
+.env.*
+!.env.example
