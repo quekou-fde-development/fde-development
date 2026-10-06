@@ -1,0 +1,10 @@
+{
+  "version": "10.06.4",
+  "source": "development-handbook.md",
+  "output": "index.html",
+  "source_sha256": "a23243675f673edebc6940a9f4357406fce6a068e8b635694192a17c475c3d0b",
+  "canonical_html_sha256": "60f208ce53961752cdaac33f32bf54d290344e98dbfe61391717c2fb618757bf",
+  "html_sha256": "f2be68e5d2402383ceb011e7013a12577c145f0b59262b4d44903d23e30468f7",
+  "headings": 45,
+  "bytes": 74028
+}
