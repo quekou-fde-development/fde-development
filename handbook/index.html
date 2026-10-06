@@ -1,63 +1,47 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="a23243675f673edebc6940a9f4357406fce6a068e8b635694192a17c475c3d0b"><meta name="canonical-html-sha256" content="60f208ce53961752cdaac33f32bf54d290344e98dbfe61391717c2fb618757bf"><title>FDE 开发技术手册 · 10.06.4 待审阅</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="05bfd17a61d627cdca358916756b2fd56b248ef4b3a517456b50e4bef989fff8"><meta name="canonical-html-sha256" content="218294173e6284361d4b5bea836734cd97ecac67a5311f79594a7ed2df3c82cb"><title>FDE 开发技术手册 · 10.06.4 待审阅</title><style>
 :root{--ink:#172b40;--muted:#526476;--paper:#fff;--bg:#f1f4f7;--line:#dce4ec;--blue:#17617d;--blue-light:#eaf3f8;--gold:#8d5d12;--gold-light:#fff3d8}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}a{color:#0e648b;text-underline-offset:3px}a:hover{color:#0c415a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1686ab;outline-offset:4px}.skip{position:fixed;top:-100px;z-index:9;background:white;padding:8px 16px}.skip:focus{top:8px}
 .sidebar{width:268px;position:fixed;inset:0 auto 0 0;background:#102d41;color:#dceaf2;padding:26px 18px;overflow-y:auto}.brand{font-size:13px;letter-spacing:2px;color:#9fbbc9}.sidebar strong{display:block;font-size:21px;color:#fff;margin:6px 0 8px}.edition{font-size:12px;color:#b9d4df;margin-bottom:25px}.sidebar nav a{display:block;color:#dceaf2;text-decoration:none;line-height:1.5;padding:8px 10px;border-radius:7px;font-size:13px}.sidebar nav a:hover{background:#23455a}.sidebar .toc-level-2{font-weight:700;margin-top:12px;color:#fff}.sidebar .toc-level-3{padding-left:19px}.menu-toggle{display:none}.sidebar .print{display:block;width:100%;margin-top:28px;background:#e7f1f6;color:#17364b;border:0;padding:10px;border-radius:7px;cursor:pointer;font:inherit;font-size:13px}
 main{margin-left:268px;padding:48px 5vw 80px}.sheet{max-width:1120px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:48px 56px;box-shadow:0 8px 36px #173e5910}.eyebrow{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--blue)}.badge{display:inline-block;margin:10px 0 12px;padding:3px 10px;background:var(--gold-light);color:#755014;border-radius:30px;font-size:12px;font-weight:700}.intro{color:var(--muted);font-size:15px;margin:0 0 28px}.download-box{margin:8px 0 24px}.download-button{display:inline-block;background:#17617d;color:#fff;padding:9px 16px;border-radius:7px;text-decoration:none;font-weight:700}.download-button:hover{color:#fff;background:#124d64}.download-box small{display:block;margin-top:8px;color:var(--muted);font-size:13px}.path{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;margin:18px 0 30px}.stage{padding:18px;border-radius:9px;background:var(--blue-light);line-height:1.65}.stage span{display:block;font-size:12px;color:var(--blue);margin-bottom:5px}.stage strong{font-size:17px}.stage small{display:block;color:var(--muted);font-size:13px;margin-top:6px}.gate{align-self:center;font-size:12px;font-weight:700;text-align:center;color:var(--gold);line-height:1.5}
-h1{font-size:36px;line-height:1.3;margin:0 0 18px;letter-spacing:-.7px}h2{font-size:26px;line-height:1.5;padding-top:32px;margin:42px 0 20px;border-top:1px solid var(--line);color:#163d56}h3{font-size:21px;line-height:1.5;margin:32px 0 14px}h4{font-size:18px;line-height:1.6;margin:28px 0 10px}p{margin:12px 0 18px}li{margin:7px 0}ul,ol{padding-left:1.5em}strong{font-weight:700}code{font: .88em/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf2f6;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:#112e41;color:#e4edf3;padding:22px;border-radius:9px;overflow-x:auto;font-size:13px;line-height:1.8}pre code{background:none;padding:0;color:inherit;white-space:pre;overflow-wrap:normal}blockquote{margin:22px 0;padding:12px 20px;border-left:4px solid #b4822d;background:var(--gold-light);color:#4e431f}blockquote p{margin:4px 0}.table-wrap{width:100%;overflow-x:auto;margin:18px 0 26px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75}th{background:#eaf1f6;color:#24465c;text-align:left;font-weight:700}th,td{padding:12px 13px;border:1px solid var(--line);vertical-align:top;min-width:105px}td p{margin:0}td code{font-size:12px}thead{display:table-header-group}.provenance{font-size:12px;color:var(--muted);background:#f5f7f9;border:1px solid var(--line);border-radius:7px;padding:10px 14px;margin:12px 0 22px}.provenance summary{cursor:pointer}.provenance h2{font-size:16px;margin:14px 0;padding:0;border:0}.provenance code{word-break:break-all}.foot{margin-top:38px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
-@media(max-width:1120px){.sidebar{width:228px}main{margin-left:228px;padding:25px}.sheet{padding:35px 30px}h1{font-size:31px}}@media(max-width:760px){.sidebar{position:relative;width:100%;height:auto;padding:16px 20px}.sidebar strong{font-size:18px}.edition{margin-bottom:8px}.menu-toggle{display:inline-block;background:transparent;color:#dceaf2;border:1px solid #678899;border-radius:5px;padding:5px 10px;font:inherit;font-size:12px}.sidebar nav{max-height:240px;overflow:auto;display:none;grid-template-columns:1fr 1fr;gap:0 12px}.sidebar[data-open] nav{display:grid}.sidebar nav a{font-size:12px}.sidebar .print{width:auto;margin-top:10px;padding:6px 12px}main{margin:0;padding:14px 10px 35px}.sheet{padding:26px 18px;border-radius:9px}h1{font-size:28px}h2{font-size:23px}h3{font-size:20px}.path{grid-template-columns:1fr;gap:9px}.gate{padding:0}.stage{padding:14px}.table-wrap{font-size:13px}th,td{padding:9px;min-width:110px}body{font-size:15px}.provenance code{font-size:11px}}
-@media print{body{background:#fff;font-size:10pt;line-height:1.6}.sidebar,.skip,.provenance{display:none}main{margin:0;padding:0}.sheet{max-width:none;border:0;border-radius:0;box-shadow:none;padding:0}h1{font-size:24pt}h2{font-size:18pt;break-before:page}h3,h4{break-after:avoid}.path{break-inside:avoid}table{font-size:9pt}.table-wrap{overflow:visible}th,td{min-width:0;padding:6px}tr{break-inside:avoid}pre{white-space:pre-wrap;overflow-wrap:anywhere;color:#172b40;background:#f1f4f7}pre code{white-space:pre-wrap}a{color:#172b40;text-decoration:none}.foot{font-size:8pt}@page{size:A4;margin:17mm}}
+h1{font-size:36px;line-height:1.3;margin:0 0 18px;letter-spacing:-.7px}h2{font-size:26px;line-height:1.5;padding-top:32px;margin:42px 0 20px;border-top:1px solid var(--line);color:#163d56}h3{font-size:21px;line-height:1.5;margin:32px 0 14px}h4{font-size:18px;line-height:1.6;margin:28px 0 10px}p{margin:12px 0 18px}li{margin:7px 0}ul,ol{padding-left:1.5em}strong{font-weight:700}code{font: .88em/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf2f6;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:#112e41;color:#e4edf3;padding:22px;border-radius:9px;overflow-x:auto;font-size:13px;line-height:1.8}pre code{background:none;padding:0;color:inherit;white-space:pre;overflow-wrap:normal}blockquote{margin:22px 0;padding:12px 20px;border-left:4px solid #b4822d;background:var(--gold-light);color:#4e431f}blockquote p{margin:4px 0}.table-wrap{width:100%;overflow-x:auto;margin:18px 0 26px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75}th{background:#eaf1f6;color:#24465c;text-align:left;font-weight:700}th,td{padding:12px 13px;border:1px solid var(--line);vertical-align:top;min-width:105px}td p{margin:0}td code{font-size:12px}thead{display:table-header-group}.foot{margin-top:38px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
+@media(max-width:1120px){.sidebar{width:228px}main{margin-left:228px;padding:25px}.sheet{padding:35px 30px}h1{font-size:31px}}@media(max-width:760px){.sidebar{position:relative;width:100%;height:auto;padding:16px 20px}.sidebar strong{font-size:18px}.edition{margin-bottom:8px}.menu-toggle{display:inline-block;background:transparent;color:#dceaf2;border:1px solid #678899;border-radius:5px;padding:5px 10px;font:inherit;font-size:12px}.sidebar nav{max-height:240px;overflow:auto;display:none;grid-template-columns:1fr 1fr;gap:0 12px}.sidebar[data-open] nav{display:grid}.sidebar nav a{font-size:12px}.sidebar .print{width:auto;margin-top:10px;padding:6px 12px}main{margin:0;padding:14px 10px 35px}.sheet{padding:26px 18px;border-radius:9px}h1{font-size:28px}h2{font-size:23px}h3{font-size:20px}.path{grid-template-columns:1fr;gap:9px}.gate{padding:0}.stage{padding:14px}.table-wrap{font-size:13px}th,td{padding:9px;min-width:110px}body{font-size:15px}}
+@media print{body{background:#fff;font-size:10pt;line-height:1.6}.sidebar,.skip,main{margin:0;padding:0}.sheet{max-width:none;border:0;border-radius:0;box-shadow:none;padding:0}h1{font-size:24pt}h2{font-size:18pt;break-before:page}h3,h4{break-after:avoid}.path{break-inside:avoid}table{font-size:9pt}.table-wrap{overflow:visible}th,td{min-width:0;padding:6px}tr{break-inside:avoid}pre{white-space:pre-wrap;overflow-wrap:anywhere;color:#172b40;background:#f1f4f7}pre code{white-space:pre-wrap}a{color:#172b40;text-decoration:none}.foot{font-size:8pt}@page{size:A4;margin:17mm}}
 
-p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:3px solid #1686ab;outline-offset:2px}.download-button.secondary{background:#eaf3f8;color:#17617d;margin:6px 8px 0 0}#handbook-body>h1{margin-top:28px}.provenance{overflow-wrap:anywhere}
+p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:3px solid #1686ab;outline-offset:2px}.download-button.secondary{background:#eaf3f8;color:#17617d;margin:6px 8px 0 0}#handbook-body>h1{margin-top:28px}
 </style></head>
-<body><a class="skip" href="#content">跳到正文</a><aside class="sidebar"><div class="brand">QUEKOU · FDE</div><strong>开发技术手册</strong><div class="edition">10.06.4 · 待审阅版本</div><button class="menu-toggle" aria-controls="handbook-toc" aria-expanded="false" onclick="const s=this.closest('aside');const open=s.toggleAttribute('data-open');this.setAttribute('aria-expanded',open);this.textContent=open?'收起目录':'展开目录'">展开目录</button><nav id="handbook-toc" aria-label="章节目录"><a class="toc-level-2" href="#section-2">如何使用</a>
-<a class="toc-level-3" href="#section-3">在 FDE 全流程中的位置</a>
-<a class="toc-level-3" href="#section-4">产出格式与填写规则</a>
-<a class="toc-level-2" href="#section-5">第一部分 出架构</a>
-<a class="toc-level-3" href="#section-6">1 整理检索与调研输入，启动架构 Skill</a>
-<a class="toc-level-3" href="#section-7">2 拆解业务流</a>
-<a class="toc-level-3" href="#section-12">3 从业务流形成系统架构</a>
-<a class="toc-level-3" href="#section-13">4 完成开发九步</a>
-<a class="toc-level-3" href="#section-23">5 合成九份架构文件并提交</a>
-<a class="toc-level-2" href="#section-26">第二部分 审核通过后开发</a>
-<a class="toc-level-3" href="#section-27">6 领取批准文件，进入项目独立仓库</a>
-<a class="toc-level-3" href="#section-28">7 按依赖安排开发</a>
-<a class="toc-level-3" href="#section-29">8 落实 Arcubase 表格结构</a>
-<a class="toc-level-3" href="#section-30">9 用 Meta Agent 制作数字员工</a>
-<a class="toc-level-3" href="#section-31">10 用 Meta Skill 蒸馏技能</a>
-<a class="toc-level-3" href="#section-32">11 用 Workbench Skill 开发工作台</a>
-<a class="toc-level-3" href="#section-33">12 接入既有系统与工具</a>
-<a class="toc-level-3" href="#section-34">13 联调与技术完成复核</a>
-<a class="toc-level-3" href="#section-35">14 发布与上线测试</a>
-<a class="toc-level-3" href="#section-36">15 变更与阻塞怎样返回</a>
-<a class="toc-level-3" href="#section-37">16 提交反馈并跟踪处理</a>
-<a class="toc-level-2" href="#section-38">附录 可直接交给开发 AI 的任务说明</a>
-<a class="toc-level-2" href="#section-39">附录 专项任务与工具</a>
-<a class="toc-level-3" href="#section-40">排产：OctoPlanner</a>
-<a class="toc-level-3" href="#section-41">图纸：老马 drawings</a>
-<a class="toc-level-3" href="#section-42">选品：SKU Radar</a>
-<a class="toc-level-3" href="#section-43">网站与系统接入</a>
-<a class="toc-level-2" href="#section-44">附录 配套资源包</a></nav><button class="print" onclick="window.print()">打印 / 另存为 PDF</button></aside>
+<body><a class="skip" href="#content">跳到正文</a><aside class="sidebar"><div class="brand">QUEKOU · FDE</div><strong>开发技术手册</strong><div class="edition">10.06.4 · 待审阅版本</div><button class="menu-toggle" aria-controls="handbook-toc" aria-expanded="false" onclick="const s=this.closest('aside');const open=s.toggleAttribute('data-open');this.setAttribute('aria-expanded',open);this.textContent=open?'收起目录':'展开目录'">展开目录</button><nav id="handbook-toc" aria-label="章节目录"><a class="toc-level-2" href="#section-1">如何使用</a>
+<a class="toc-level-3" href="#section-2">在 FDE 全流程中的位置</a>
+<a class="toc-level-3" href="#section-3">产出格式与填写规则</a>
+<a class="toc-level-2" href="#section-4">第一部分 出架构</a>
+<a class="toc-level-3" href="#section-5">1 整理检索与调研输入，启动架构 Skill</a>
+<a class="toc-level-3" href="#section-6">2 拆解业务流</a>
+<a class="toc-level-3" href="#section-11">3 从业务流形成系统架构</a>
+<a class="toc-level-3" href="#section-12">4 完成开发九步</a>
+<a class="toc-level-3" href="#section-22">5 合成九份架构文件并提交</a>
+<a class="toc-level-2" href="#section-25">第二部分 审核通过后开发</a>
+<a class="toc-level-3" href="#section-26">6 领取批准文件，进入项目独立仓库</a>
+<a class="toc-level-3" href="#section-27">7 按依赖安排开发</a>
+<a class="toc-level-3" href="#section-28">8 落实 Arcubase 表格结构</a>
+<a class="toc-level-3" href="#section-29">9 用 Meta Agent 制作数字员工</a>
+<a class="toc-level-3" href="#section-30">10 用 Meta Skill 蒸馏技能</a>
+<a class="toc-level-3" href="#section-31">11 用 Workbench Skill 开发工作台</a>
+<a class="toc-level-3" href="#section-32">12 接入既有系统与工具</a>
+<a class="toc-level-3" href="#section-33">13 联调与技术完成复核</a>
+<a class="toc-level-3" href="#section-34">14 发布与上线测试</a>
+<a class="toc-level-3" href="#section-35">15 变更与阻塞怎样返回</a>
+<a class="toc-level-3" href="#section-36">16 提交反馈并跟踪处理</a>
+<a class="toc-level-2" href="#section-37">附录 可直接交给开发 AI 的任务说明</a>
+<a class="toc-level-2" href="#section-38">附录 专项任务与工具</a>
+<a class="toc-level-3" href="#section-39">排产：OctoPlanner</a>
+<a class="toc-level-3" href="#section-40">图纸：老马 drawings</a>
+<a class="toc-level-3" href="#section-41">选品：SKU Radar</a>
+<a class="toc-level-3" href="#section-42">网站与系统接入</a>
+<a class="toc-level-2" href="#section-43">附录 配套资源包</a></nav><button class="print" onclick="window.print()">打印 / 另存为 PDF</button></aside>
 <main id="content"><article class="sheet"><div class="eyebrow">从调研语料到开发、发布与反馈</div><h1 id="section-0">FDE 开发技术手册</h1><span class="badge">10.06.4 · 待审阅</span><div class="download-box"><a class="download-button" href="FDE开发配套资源包_10.06.zip" download>下载配套资源总 ZIP</a><br><a class="download-button secondary" href="development-handbook.md" download>Markdown 源文档</a><a class="download-button secondary" href="https://github.com/quekou-fde-development/fde-development">统一开发规范仓库</a><a class="download-button secondary" href="https://github.com/quekou-fde-development/fde-development/issues/new?template=feedback.yml">提交反馈</a></div>
 <div class="path" aria-label="工作路径"><div class="stage"><span>第一部分</span><strong>出架构</strong><small>调研输入 → 九份架构 Markdown<br>配套开发计划（标准化待补）</small></div><div class="gate">夏洛克审核<br>通过后进入 →</div><div class="stage"><span>第二部分</span><strong>开发与上线测试</strong><small>独立项目仓库 → 开发、测试、发布<br>问题回到仓库反馈入口</small></div></div>
 <section id="handbook-body">
-<details class="provenance"><summary>文件归属与构建入口</summary><h2 id="section-1">加载链（上下游）</h2>
-<p><strong>上游</strong>：<code>agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_overview.md §管辖文件（下游）</code> — 调研完成后，准备架构送审或执行获批开发时读取。</p>
-<p><strong>管辖文件（下游）：</strong></p>
-<ul>
-<li><code>_deliverables/development_handbook_10.06/FDE开发技术手册_10.06.html</code> — 本文的同版阅读视图；由同目录 <code>build/render.mjs</code> 从本文生成。</li>
-<li><code>_deliverables/development_handbook_10.06/FDE开发配套资源包_10.06.zip</code> — 与 HTML 一同发送的完整配套资源包。</li>
-<li><code>_skills/meta-architecture-development/SKILL.md</code> — 九份架构文档的生成入口与文件清单；开发方法线维护。</li>
-<li><code>_deliverables/development_handbook_10.06/交付说明_10.06.md</code> — 同源构建、资源清单、核验与 GitHub 交接。</li>
-<li><code>_reference/development_handbook_10.06/</code> — 内部原始资料、来源及阅读核对记录；维护时加载。</li>
-</ul>
-<p><strong>同级联动：</strong></p>
-<ul>
-<li><code>agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_reference/development_method_10.03/开发方法论材料整合_10.03.md §三 原设计包里可以确定的内容</code> — 王磊原八份设计材料及数据建模加项的来源。</li>
-<li><code>agentfs://workspace/01 Projects Zone/Quekou_FDE/_progress/经营目标与技术开发手册材料接续.md</code> — 原技术开发手册的来源与原件入口。</li>
-<li><code>agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_progress/_decisions.md</code> — 手册审阅与后续修订的推进记录。</li>
-</ul>
-</details><h2 id="section-2">如何使用</h2>
+<h2 id="section-1">如何使用</h2>
 <p>本手册面向承担方案设计与开发的架构师、FDE 和开发 AI。工作从前置检索与调研语料开始，形成九份架构设计和配套开发计划，送审通过后实施、测试、发布，并将问题送回仓库反馈入口。开发是 FDE 全流程内部的一段 loop；商务、调研、客户培训、最终客户验收和维护按上层 FDE 流程衔接。</p>
 <p>全文分为两个大部分。第一部分将检索、调研原件与通用输入交给 <strong>Meta Architecture Development</strong>，先分析业务流和系统架构，再生成九份标准 Markdown；配套开发计划一并交总架构师夏洛克审核。第二部分在取得对应版本的审核通过记录后，按架构实施 Arcubase、数字员工、技能和工作台，完成联调、发布与上线测试。</p>
 <blockquote>
@@ -112,7 +96,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 </tbody></table></div>
 <p>总架构师负责架构合理性、商务策略匹配性、开发周期和难度、可实现性的审核。PM 统筹范围、资源和客户配合；架构师负责方案及架构变更；FDE 负责按计划开发和提供实测证据。开发 AI 在指定文件和工具边界内执行。</p>
-<h3 id="section-3">在 FDE 全流程中的位置</h3>
+<h3 id="section-2">在 FDE 全流程中的位置</h3>
 <p>本手册嵌入袁黎明 FDE 流程图的架构设计、总架构师审核、实施计划、开发与试运行节点。上层流程决定项目由谁推进、谁作决定及返回哪里；本手册展开这些节点内的技术工作。A/B/C 类项目均经过总架构师审核。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
 <thead>
@@ -169,7 +153,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 </tbody></table></div>
 <p>上层流程图原件随资源包放在 <code>00-fde-flow/</code>，可离线打开。</p>
-<h3 id="section-4">产出格式与填写规则</h3>
+<h3 id="section-3">产出格式与填写规则</h3>
 <p>架构的正式产出为九份 Markdown，文件名与结构由 Meta Architecture Development 的 <code>references/design/</code> 提供。王磊八份原设计作为写作参照，独立数据结构为第 3 份。读者按下文九步理解工作内容，由 Skill 结合项目证据起草；案例中的业务、登录、技术栈与接口须按本项目和 Octopus / Arcubase 边界重新设计。</p>
 <ul>
 <li>填写通用调研输入的已知事实、客户意向、约束及来源。未知项写“未确认＋向谁或取什么材料确认”；没有该场景时写“不适用＋理由”。已有原件能够回答的内容直接附材料位置。</li>
@@ -178,8 +162,8 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <li>设计、实际实现、测试结果与审核决定分别记录。总架构师审核由夏洛克进行，工具检查通过只说明其覆盖的检查项。</li>
 </ul>
 <p>业务流、系统图、来源和澄清过程在 <code>working/</code> 中展开，结果进入九份设计相应章节。开发计划另有流程位置，标准格式以后补齐。实施后的 Schema、typed SDK、员工配置、Skill 包、代码及部署回执按相应工具原生格式保存；在项目内登记版本、实际 ID、证据位置与限制。</p>
-<h2 id="section-5">第一部分 出架构</h2>
-<h3 id="section-6">1 整理检索与调研输入，启动架构 Skill</h3>
+<h2 id="section-4">第一部分 出架构</h2>
+<h3 id="section-5">1 整理检索与调研输入，启动架构 Skill</h3>
 <p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="inputs/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
 <p>把事实、已确认规则、待核实假设分开标注，并为每条重要结论附原件位置。遇到缺样本、规则冲突、关键接口未知，登记具体缺件与负责人；由 PM 协调补齐。影响范围或技术路线的缺件在架构送审时明示，不交给开发 AI 自行补成事实。</p>
 <p>材料索引分别记录两种状态：原件是否取得并实际读取；相关能力处于文档说明、源码核对、样例验证还是目标环境实测。来源未取得正文、现场尚未验证等情况随送审包保留。</p>
@@ -194,14 +178,14 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 设计关键问题集中向我确认，清零后生成 design/ 下九份 Markdown。
 所有候选文件保持“待总架构师审核”，并报告未验证的能力。
 </code></pre>
-<h3 id="section-7">2 拆解业务流</h3>
+<h3 id="section-6">2 拆解业务流</h3>
 <p>本段借用 Meta Orchestrator 的目标分解、流程结构与依赖分析，以及 Meta Skill 蒸馏前的目标、执行段、判断段和判据分析方法。这里形成业务与系统设计；正式的员工、Skill 包编译在第二部分执行。</p>
 <p>完成时序流程后，再按 Orchestrator 判断工作形态：单条线性的工作，直接展开其执行与判断段；涉及多个主体、时间跨度、独立触发或独立完成核验的工作，再建立跨段网络。每次拆分要写出理由，避免仅按职能名称或页面数量增加节点。</p>
-<h4 id="section-8">2.1 从结果倒推完整任务</h4>
+<h4 id="section-7">2.1 从结果倒推完整任务</h4>
 <p>为选定业务写清最终结果、成功与失败条件、谁使用结果、谁有权作决定。再用一条真实案例，从触发开始顺着信息与动作走到结果：谁发起，拿到什么，做了什么，交给谁，如何知道已完成。</p>
 <p>把规则表和职责表还原为“何时、满足什么条件、做什么”的时序事实。流程图标出持续等待或中断、需要裁决的分叉、同时开展的分叉；由材料推断出的关系单独标注。保留事实清单，检查每项必要事实和动作在流程中的归宿。</p>
 <p>保留人工环节、系统外环节和异常分支。例如，业务员确认异常原因、负责人批准处理、客户补充资料，都应有输入和输出。自动化范围由任务需要和实际能力决定。</p>
-<h4 id="section-9">2.2 逐段区分执行与判断</h4>
+<h4 id="section-8">2.2 逐段区分执行与判断</h4>
 <p>执行段是按明确规则完成操作、留下可观察成果的部分；判断段根据证据作出选择，并改变后续走向。为段落编号，写明正常顺序、分支、汇合、等待、失败返回和结束条件。并行段需要说明启动前提、共同依赖、合流条件和失败接手人。</p>
 <p>为执行段填清下面内容。此时描述业务与系统所需能力；进入 Skill 蒸馏时，再按现役 Meta Skill 补齐其机器契约和验证要求。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
@@ -236,15 +220,15 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <td>是否改业务数据、发消息或触发后续动作；失败、重复、状态未知时怎样处理</td>
 </tr>
 </tbody></table></div>
-<h4 id="section-10">2.3 展开判断过程</h4>
+<h4 id="section-9">2.3 展开判断过程</h4>
 <p>每个判断段按四个相位追问：检索需要什么证据；整合时如何处理来源冲突；形成哪些候选解释或方案；审核时依据什么标准选定，并转向哪一段。</p>
 <p>最终留下三件事：<strong>判断标准、触发条件、逐分支去向</strong>。标准已有权威来源时直接引用；需要从案例提炼时同时看成功、失败和边界案例。证据不足的判断标明假设、适用条件和待补项，保留有权人员的判断位置。不得用模型生成的数字补业务阈值。</p>
 <p>每个判断段都应覆盖信息不足的情况：需要补什么、交给谁、何时重新判断。禁止把“视情况处理”作为流程终点。</p>
 <p>多段协作时，逐条检查交接：下游启动所需数据和授权是否齐备，交接者是否有权作该决定，等待是否有负责人、期限与兜底。需要独立确认完成的段，定义完成凭据；需要跨时段存活的工作，定义中断后的接手或重启条件。关键事实与必要动作都应有明确归宿。</p>
-<h4 id="section-11">2.4 用样本推演并收束</h4>
+<h4 id="section-10">2.4 用样本推演并收束</h4>
 <p>至少推演一条主流程和项目最重要的异常路径。逐段检查上游产物能否作为下游输入、对象与状态是否一致、每个分支有没有接手者和终点。发现缺口回到对应段修订；推演只说明设计的连贯性，实际运行效果在开发后验证。</p>
 <p><strong>产出：</strong> 业务流程图、段落说明、规则来源、正常及异常案例、未决事项。读者应能沿着编号复述一件业务如何完成。</p>
-<h3 id="section-12">3 从业务流形成系统架构</h3>
+<h3 id="section-11">3 从业务流形成系统架构</h3>
 <p>沿业务流逐段决定由人、既有系统、新建应用、数字员工或 Skill 承担。先确认每一段需要的能力、身份、数据和动作，再划分模块与角色。一个员工可以调用多个 Skill，一个 Skill 可以服务多个用例；是否拆分依据职责、复用、权限和运行依赖。</p>
 <p>系统架构至少说明下列关系：</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
@@ -283,48 +267,48 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>出现技术缺口时，先区分参数、版本、身份、权限、环境与能力缺失。记录需要支持的用例、预期能力、已核查证据和替代方案，交架构负责人判断；涉及对外承诺或客户投入变化时，由 PM 接回上层决策。</p>
 <p><strong>产出：</strong> 本次 <code>working/</code> 中的业务流和系统架构分析，包含流程、判断与执行说明、系统图、职责、数据流、依赖和未决事项；按相关主题映射进九份设计。分析可供追溯，送审架构文件保持九份。</p>
 <p>对照 Orchestrator 原规格，审核前使用其 Step 0—3 的事实清单、流程判别、切段和边约束方法。此时的系统图属于架构设计；依赖实际 Skill 包的最终网络声明、版本核对和运行测试，留在审核通过后的编译与联调中完成。</p>
-<h3 id="section-13">4 完成开发九步</h3>
+<h3 id="section-12">4 完成开发九步</h3>
 <p>以下九步说明 Meta Architecture Development 每份文档应怎样形成、填写什么及怎样核对。Skill 起草前实际读取同编号写作参照，将业务流和系统架构落实为开发所需的具体设计。按下列顺序起草，发现冲突时返回关联项修订。安全约束贯穿各项，数据模型与权限、页面与接口需要往返核对。</p>
-<h4 id="section-14">第 1 步 概念梳理</h4>
+<h4 id="section-13">第 1 步 概念梳理</h4>
 <p>从流程和真实样本提取业务对象、角色、术语与关系。对容易混淆的词写清含义、范围、唯一标识和边界；区分业务名称、系统内部名称及外部系统名称。把业务规则挂在对应概念上。</p>
 <p><strong>交出 <code>01-concept.md</code>：</strong> 术语表、角色与对象关系、关键约束、原始样本指针。后续用例、表格、页面和接口沿用同一含义。</p>
 <p><strong>完成检查：</strong> 同一对象跨文件可识别，关键名词有定义；未知关系明示，未被 AI 补造。</p>
-<h4 id="section-15">第 2 步 用例</h4>
+<h4 id="section-14">第 2 步 用例</h4>
 <p>按真实角色和目标写编号用例。每条用例包括发起者、触发条件、前提、输入、主流程、成功结果、失败及异常、权限要求和对应验收项。把前段业务流程编号关联进来。</p>
 <p><strong>交出 <code>02-use-cases.md</code>：</strong> 用例及验收对应表、主流程和异常样本。页面点击、员工触发和定时任务都应追到用例。</p>
 <p><strong>完成检查：</strong> 已确认的验收范围有覆盖；每条用例能说明业务完成后会留下什么可检查结果。</p>
-<h4 id="section-16">第 3 步 数据建模</h4>
+<h4 id="section-15">第 3 步 数据建模</h4>
 <p>架构负责人结合用例与样本，与 AI 逐项讨论表格结构。先确定一行代表什么，再确定唯一键、字段、关系、状态及转换、约束、来源、写入者和读取者。记录计算值的规则，区分主数据、业务事件、当前状态和派生展示。</p>
 <p>将设计落实到 Arcubase 的计划结构：App 采用既有还是新建、表与字段的稳定 key、类型、必填及合法值、关联、业务编号、访问范围和可调用入口。复用已有 App 时先回读其真实 Schema，列明保留、扩展和迁移内容。尚未创建的资源只写计划名称与 key，实际 ID 留待获批实施后回填。</p>
 <p><strong>交出 <code>03-data-model.md</code>：</strong> 表与字段字典、关系及状态图、数据来源与权威位置、样例映射、拟采用的 Arcubase 结构和待核实能力。</p>
 <p><strong>完成检查：</strong> 用例需要保存和读取的事实都有位置；重复、历史、状态变化和授权关系能表达。第三步完成后，后续建表以该版结构为依据。</p>
-<h4 id="section-17">第 4 步 权限与安全</h4>
+<h4 id="section-16">第 4 步 权限与安全</h4>
 <p>按“角色 × 对象 × 动作 × 数据范围”定义授权。区分可信登录身份、应用业务角色、对象归属与项目成员关系，明确它们的映射和唯一维护入口。敏感动作标明批准者、批准记录和审计要求。</p>
 <p><strong>交出 <code>04-security-privacy.md</code>：</strong> 权限矩阵、身份映射、授权维护方式、后端执行位置、敏感数据规则、重复操作和失败处理要求。</p>
 <p><strong>完成检查：</strong> 允许与拒绝路径都能说明；页面隐藏按钮以外，后端或数据层有对应约束；没有需要人工长期维护的多套角色名单。</p>
-<h4 id="section-18">第 5 步 站点架构</h4>
+<h4 id="section-17">第 5 步 站点架构</h4>
 <p>沿整体系统架构，为不同角色安排工作台入口、菜单、路由和任务之间的转场。列清哪些任务由页面完成，哪些进入员工会话、人工审批或外部系统。各页面注明对应的用例、对象与权限。</p>
 <p><strong>交出 <code>05-site-architecture.md</code>：</strong> 站点结构图、路由与页面清单、角色入口和跨系统交接。整体模块职责和数据流引用前面的系统架构总结。</p>
 <p><strong>完成检查：</strong> 核心用例有可达入口和返回位置；没有脱离业务与后端能力的孤立页面。</p>
-<h4 id="section-19">第 6 步 页面布局与视觉交互</h4>
+<h4 id="section-18">第 6 步 页面布局与视觉交互</h4>
 <p>逐页确定主任务、信息层级、主要操作、字段与数据来源。把加载、空、错误、成功、无权限和等待人工处理等状态画出来。按项目选定的视觉参考包，明确布局、组件、颜色、字体、密度与适配要求，并标注引用了哪个参考页面。</p>
 <p>本手册的前端基线为 <strong><code>quekou-工作台前端共享包-1.0.0.zip</code></strong>。按包内 <code>START_HERE.md</code>、<code>design/style-spec.md</code>、<code>design/page-recipes.md</code> 和组件说明读取。第 6 步写清所选风格：6 号 Bento、7 号 Glass 或 10 号 Ambient，以及 <code>accentHue / density / radiusScale / surfaceMode</code> 四项参数；未另行选择时沿包的 6 号与缺口品牌色起草，随架构送审。</p>
 <p>页面采用包内 Overview、List、Detail、Settings 配方与标准区块；每个页面选择适合其用例的配方。正式配方顺序以 <code>design/page-recipes.md</code> 为准，样品页仅作相应视觉参考。超出现有配方或参数范围的需要，先说明业务理由和视觉扩展方案，随设计审阅。</p>
 <p><strong>交出 <code>06-page-layout.md</code> 及必要原型：</strong> 关键页面布局、状态与动作说明、视觉参考、组件约定。演示数据应明确标识，不进入正式业务运行逻辑。</p>
 <p><strong>完成检查：</strong> 使用者能找到任务和操作；按钮对应真实动作；真实长文本、空数据、错误和权限状态有表达。视觉参考的业务结构须经本项目用例筛选。</p>
-<h4 id="section-20">第 7 步 API 与调用契约</h4>
+<h4 id="section-19">第 7 步 API 与调用契约</h4>
 <p>按用例列出页面、员工、Skill 和既有系统实际使用的调用入口。每项写清提供方与调用方、输入输出、身份权限、错误语义、分页或批量、幂等与重复处理、超时和结果回读方式。</p>
 <p><strong>交出 <code>07-api.md</code>：</strong> 调用契约及能力映射。采用 Arcubase 时包括 typed ingress 的计划；采用平台现成客户端时引用其真实契约；需要自建接口时说明理由、责任模块与生成方式。</p>
 <p><strong>完成检查：</strong> 页面动作和技能执行都有可达入口，调用双方理解一致。接口变更需要同时追踪数据模型、调用代码及测试。</p>
-<h4 id="section-21">第 8 步 技术选型与目录</h4>
+<h4 id="section-20">第 8 步 技术选型与目录</h4>
 <p>为已确认架构选择实施工具，写明采用、复用与新增的依据。数字员工使用 Meta Agent，技能使用 Meta Skill，Workbench 工作台使用 <code>workbench-app-development</code>。结构化业务数据按第 3 步落到选定 Arcubase App；其他系统接入沿第 7 步契约实施。</p>
 <p><strong>交出 <code>08-tech-stack-and-directory.md</code>：</strong> 工具与 Skill 的精确入口、实读版本或提交、项目代码与文档目录、认证方式、环境、依赖及锁文件、生成代码位置、部署目标和运行责任。</p>
 <p><strong>完成检查：</strong> 开发 AI 找得到全部指定文件，工具路线与平台能力相符。涉及排产、图纸识别、爆品识别时，按文末“专项任务与工具”确定入口，并将项目采用的工具、接口验证状态和验收方法写回本步骤。</p>
-<h4 id="section-22">第 9 步 实施与验证路线</h4>
+<h4 id="section-21">第 9 步 实施与验证路线</h4>
 <p>把用例拆为任务，注明输入、产物、前置依赖、负责人和完成条件。先安排一条覆盖真实数据、身份、业务动作、保存与回读的完整链路，再扩展其余用例。只有共享数据、权限和调用契约已经明确的任务，才安排并行。</p>
 <p><strong>交出 <code>09-implementation-roadmap.md</code>：</strong> 依赖顺序、阶段目标、难度与周期估算依据、关键风险、联调与测试计划、上线条件和恢复准备。</p>
 <p><strong>完成检查：</strong> 能说明先做什么、为什么、如何知道做完。该文件表达架构内的实施与验证路线；配套开发计划按 §5.1 留存，其标准化仍待补。</p>
-<h3 id="section-23">5 合成九份架构文件并提交</h3>
+<h3 id="section-22">5 合成九份架构文件并提交</h3>
 <p>Meta Architecture Development 的正式架构输出如下。第 7 份的文件名为 <code>07-api.md</code>，按同一清单提交和核对：</p>
 <pre><code class="language-text">design/
 ├── 01-concept.md
@@ -338,17 +322,17 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 └── 09-implementation-roadmap.md
 </code></pre>
 <p>执行人员检查来源、用例覆盖、对象、角色、状态、权限、入口、契约与依赖是否相互一致。九份文件与配套计划使用明确项目、版本和输出位置；来源与澄清过程可从本次 <code>input/</code>、<code>working/</code> 回查。Skill 的文件核验只证明其覆盖的机械条件，设计合理性由总架构师审核。</p>
-<h4 id="section-24">5.1 配套开发计划（标准化待补）</h4>
+<h4 id="section-23">5.1 配套开发计划（标准化待补）</h4>
 <p>在项目候选材料中保留 <code>plan/开发计划.md</code> 入口，与九份架构文件一起送审。当前可沿用项目已有的任务、依赖、负责人、时间与完成要求，标明依据的九份设计版本、尚缺信息和下一负责人。<strong>本轮不发布统一开发计划模板、生成 Skill 或验收标准。</strong> 后续标准确定后，更新此入口及资源索引。</p>
-<h4 id="section-25">5.2 总架构师夏洛克审核</h4>
+<h4 id="section-24">5.2 总架构师夏洛克审核</h4>
 <p>提交九份设计、配套计划、来源入口与未验证限制，回答夏洛克的问题并按意见修改。审核记录至少能找到审核人、时间、项目与版本、审核范围、决定、条件和意见来源；使用现有项目记录即可。</p>
 <p>收到夏洛克本人对明确版本的通过记录后，实施人员领取批准文件和条件。退回时由 PM 协调补料，架构师修订相关内容，重新提交明确版本。没有通过记录时继续架构修订。AI 可整理材料与检查引用，审核决定由夏洛克作出。</p>
-<h2 id="section-26">第二部分 审核通过后开发</h2>
-<h3 id="section-27">6 领取批准文件，进入项目独立仓库</h3>
+<h2 id="section-25">第二部分 审核通过后开发</h2>
+<h3 id="section-26">6 领取批准文件，进入项目独立仓库</h3>
 <p>FDE 核对审核通过版本、本次实施范围、条件与实际环境。PM 统筹资源、客户配合和交付安排；配套开发计划沿 §5.1 的项目入口落实，统一格式后补。</p>
 <p>每个实际项目在审核后建立独立 repository，保存批准的 <code>design/</code>、<code>plan/</code>、审核记录、代码、资源映射和测试交付资料，并记录采用的通用手册与工具版本。客户原始材料及敏感配置沿该项目的访问权限保存。公共规范仓库集中承载共用手册、工具与可公开的反馈。</p>
 <p>把批准架构与计划交给开发 AI，要求实际读取本任务指定的 Toolkit、Skill 和 references，回报已读文件、采用版本、输入和输出。开发任务写清：批准版本、用例、允许修改的目录和资源、指定工具、真实样本或授权测试记录、预期结果、完成条件和阻塞接手人。实现、实际测试和未验证项分别报告。</p>
-<h3 id="section-28">7 按依赖安排开发</h3>
+<h3 id="section-27">7 按依赖安排开发</h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
 <thead>
 <tr>
@@ -391,7 +375,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tbody></table></div>
 <p>业务事实、判断规则、数据 Schema 分别明确权威位置：事实来自相应业务记录，规则进入获批设计或知识来源，Schema 定义字段与关系；修改其中一类时追踪其对其余两类的影响。Taskboard 用于任务和项目跟踪；自动化由实际员工、Skill 与触发机制执行，审批以有权人员的真实决定记录为准。</p>
 <p>先确认身份、资源和共同契约，再启动依赖它们的实现。员工与 Skill 的设计可以依据批准文件协同推进；需要实际数据表或工具 ID 的绑定，等资源落地回读后完成。按照第 9 步先跑通一条完整用例，再展开更多功能。</p>
-<h3 id="section-29">8 落实 Arcubase 表格结构</h3>
+<h3 id="section-28">8 落实 Arcubase 表格结构</h3>
 <ol>
 <li>读取批准的 <code>03-data-model.md</code>、权限设计和调用契约，明确本次使用既有 App 还是新建 App。审核材料已明确选择的，沿用该选择；多个候选无法区分时补齐准确 ID 后再操作。</li>
 <li>按 Workbench Skill 核对 <code>profile / host / account / team</code>。团队资源查询及每次外部写入前使用 <code>octopus-cli auth whoami --json</code> 核验上下文。</li>
@@ -403,7 +387,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p><strong>交出：</strong> Schema 回读、App/表/字段/入口映射、生成代码、权限及样例验证记录。Arcubase <code>appId</code> 与 Workbench 发布 <code>projectId</code> 各自保留。</p>
 <p>开发时需要改表含义、状态、关系或授权模型，先定位受影响用例和设计文件，交架构负责人处理；涉及已批准架构的变更，重新取得相应审核决定后实施。</p>
 <p><strong>数据写入注意：</strong> 真实环境测试默认只读；写测试须有对应 App、操作和测试记录的授权。日期时间及业务编号字段先读现役 <code>arcubase-runtime-gotchas.md</code>，首条写入立即回读核对。不得自行换掉已批准的编号规则。</p>
-<h3 id="section-30">9 用 Meta Agent 制作数字员工</h3>
+<h3 id="section-29">9 用 Meta Agent 制作数字员工</h3>
 <p>把获批的业务目标、职责、用例、协作关系、知识来源、权限、工具入口、人工决定点和失败接手要求交给 Meta Agent。按实际安装版本的入口读取和执行，输出位置保存在所属项目。</p>
 <p>使用前取得项目指定的 Meta Agent 包，核对入口、目标宿主、依赖和验证状态。包尚未接入时，先完成工具准备；员工制作继续遵循 Meta Agent 路线。</p>
 <p>组织内数字员工按 FDE Meta Agent 路径准备五块规格：身份、职能、权限、面孔、环境。环境中列出实际团队、员工目录、模型与技能目录、知识库路径、工作区和所需表格。所需工作区、知识库、Arcubase 和触发任务按各自工具预先落实或另行安排；Meta Agent 负责员工构造及配置。</p>
@@ -413,14 +397,14 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>工具必须安装或接入到员工实际可访问的设备或云端环境。记录宿主、执行身份和真实工具路径，Skill 使用该路径，测试从员工侧触发并回读结果。开发者自己能调用工具，不构成员工可调用的证据。</p>
 <p>需要人工决定的动作，只读取相应对象、版本和有权人员的真实决定。未回复时等待或按已定规则升级，拒绝时进入拒绝分支；员工和 Skill 不得代替人作批准，也不得继续执行依赖该批准的动作。</p>
 <p><strong>交出：</strong> Meta Agent 生成的员工文件与配置、实际绑定、测试记录及运行边界。员工岗位正文或头像已存在，只能说明相应配置已经形成；可交付状态以实际任务结果为依据。</p>
-<h3 id="section-31">10 用 Meta Skill 蒸馏技能</h3>
+<h3 id="section-30">10 用 Meta Skill 蒸馏技能</h3>
 <p>按批准的技能划分，把业务流中的执行段、判断段、权威规则、正反样本、接口契约、输出位置和权限交给 Meta Skill。所有本项目技能蒸馏统一经 Meta Skill 入口处理。</p>
 <p>蒸馏依次完成目标与边界、段落切分、判断与执行展开、判据来源和缺料处理，再编码并检验 Skill 包。现役 Meta Skill 的机器契约、触发检验、独立检验和回流要求随包执行；手册只规定业务输入和交付要求。</p>
 <p>审核前形成的分析材料作为正式蒸馏的输入。正式制作仍走 Meta Skill 完整流程，核对输入与批准版本，并保留该次编译的实际产物与检验记录。</p>
 <p>涉及写业务数据、发消息、启动任务等副作用时，按 Meta Skill 的 stateful 工作流要求，明确重复执行、未知状态、失败恢复和人工接手。没有核清外部结果前，不直接重试同一写入。</p>
 <p>把检验通过的包部署或绑定到目标员工后，再在该宿主运行授权用例：确认 Skill 被实际触发，读取了指定规则与真实数据，执行了获准动作，结果可回读，人工决定有真实记录。定时或事件业务先明确执行员工、目标与范围、时区和业务日历、触发方式及重复执行规则，再验证真实触发、执行和结果保存的整条路径。</p>
 <p><strong>交出：</strong> Skill 包、版本、评测与运行记录、宿主绑定、未验证范围和失败回流位置。技能问题回到对应步骤或判据修订；涉及业务规则、权限或架构的改变，先进入项目变更路径。</p>
-<h3 id="section-32">11 用 Workbench Skill 开发工作台</h3>
+<h3 id="section-31">11 用 Workbench Skill 开发工作台</h3>
 <p>开发 AI 必须读取 <code>workbench-app-development/SKILL.md</code> 及相关 references。新应用使用官方 Workbench React 脚手架和 <code>octopus-cli</code>；已有应用先检查目录、依赖和生成 facade，保留现有代码。认证沿用 <code>@syngy/workbench-auth</code>。</p>
 <p>前端同时读取已归档共享包的 <code>AGENTS.md</code>、<code>.agents/skills/quekou-workbench/SKILL.md</code>、主题和组件 README。该包提供视觉与组件能力；正式项目的创建、认证、数据与部署遵循 Workbench Skill。包内 <code>scripts/create-client.mjs</code> 创建独立前端客户项目；本手册的正式 Workbench 应用保留官方脚手架和既有认证，以消费主题与组件包的方式接入视觉层。</p>
 <p>在官方应用内消费归档包 <code>artifacts/quekou-theme-1.0.0.tgz</code> 和 <code>artifacts/quekou-ui-1.0.0.tgz</code>；本版以本地包交付。按要求先导入 <code>@quekou/theme/tokens.css</code>，再导入 <code>@quekou/ui/styles.css</code>，由 <code>ThemeProvider</code> 承载所选风格和四参数。UI 包声明 React / React DOM <code>^18.3.1</code>，接入前核对目标应用的实际依赖与锁文件。使用 Tailwind preset 时核对其 Tailwind 3.4 要求；纯 CSS 消费可不引入该 preset。其他版本的兼容性缺口交架构负责人明确处理，不擅自更换已批准技术路线。</p>
@@ -433,13 +417,13 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p><strong>视觉复核：</strong> 对照第 6 步批准的参考与布局，在真实数据下检查信息层级、内容密度、主操作、长文本、空错状态、权限状态以及约定屏宽。遵循包内正文及辅助文字至少 4.5:1 的对比度要求，核对键盘与焦点、明暗和密度、弹窗取消与失败、手机页面无整体横向溢出。表格在自己的容器内滚动。原型图和实际页面并排检查，并保留关键页面截图。</p>
 <p>按包内 <code>docs/上线验收.md</code> 补验真实对象和指标口径，未知值不显示为零；保存后刷新并按权限换会话核对结果。危险操作等待真实异步结果，失败保留错误和可恢复状态。包的既有前端测试只覆盖其声明范围，目标客户浏览器、真实权限和业务运行按本项目继续验证。</p>
 <p><strong>交出：</strong> 可操作的本地应用、代码与依赖版本、真实用例证据、视觉复核结果和未完成项。</p>
-<h3 id="section-33">12 接入既有系统与工具</h3>
+<h3 id="section-32">12 接入既有系统与工具</h3>
 <p>专项任务使用文末“专项任务与工具”的指定入口：排产采用 OctoPlanner，图纸识别采用老马 drawings，爆品识别采用 SKU Radar。选定后先完成真实样本验证，再将输入输出映射到 Arcubase、员工、Skill 与 Workbench。</p>
 <p>按第 7 步调用契约实施企业系统接入。对每个接口或网页操作，先核对实际环境、网络、身份、凭据、工具所在设备及必要权限，再验证参数、返回值和业务口径。只读用例维持只读权限；写入动作使用已批准的对象和范围。</p>
 <p>优先沿已确认的 API 或工具入口实现；需要网页操作时保存可复查的定位与流程依据，页面结构变化导致定位不明就停止该动作并报告。凭据由受控环境提供，管理员密钥不得写入前端或业务文档。</p>
 <p>先完成一条可回读的操作，再扩到批量。超时、断连或返回不明时查询实际状态；未核清结果前不重复写入。接入依赖、失败点、实测结果和限制分别挂回对应用例与资源记录。</p>
 <p><strong>交出：</strong> 可达工具入口、运行环境与权限记录、字段映射、实际调用或操作证据、结果回读和失败处理。</p>
-<h3 id="section-34">13 联调与技术完成复核</h3>
+<h3 id="section-33">13 联调与技术完成复核</h3>
 <p>先选择一条编号用例，从真实身份进入，读取目标数据，触发业务操作，经过员工、Skill 或人工处理，保存结果并刷新回读。让另一位执行者按同一用例复做，核对材料是否足够、链路是否连贯。</p>
 <p>随后按项目适用面扩展测试：</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
@@ -484,13 +468,13 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tbody></table></div>
 <p>每条测试保存：用例与测试编号、代码/Schema/Skill 版本、环境与身份、对象或测试记录、操作、预期、实际、证据位置、缺陷、修复与复测结果。未测项标明原因和对交付的影响。</p>
 <p>发布前进行总架构师的技术完成复核。FDE 提交设计一致性、真实数据、权限、失败处理和测试证据，由总架构师作出结论。实现缺陷修复后复测；架构问题回到架构负责人并更新相关设计。技术复核结果随发布材料保留。</p>
-<h3 id="section-35">14 发布与上线测试</h3>
+<h3 id="section-34">14 发布与上线测试</h3>
 <p>Workbench 发布按现役 Skill 执行：先完成本地实际验证，提供本地 URL 和证据，取得发布批准；开发者明确免除交互式本地验收时，保留该授权，并完成代理侧验证。架构审核通过与上线发布批准分别记录。</p>
 <p>发布前固定代码、依赖、Schema 和 Skill 版本，核对部署目标，准备需要的数据迁移、上一可用版本和实际可执行的恢复方式。新建远程项目之前先按现役 CLI 的 <code>list/show</code> 合同排查已有项目，确认目标与复用范围。恢复方案同时核对旧页面、代码与当前数据 Schema 是否兼容。只运行项目声明的相关检查与生产构建，检查 <code>dist/index.html</code>。</p>
 <p>按官方 <code>coding projects list/show/create/publish/watch</code> 路径发布。首次创建远程项目的结果不明时，先查询已有项目。发布返回中的 <code>deployment.taskId</code> 用于跟踪任务，<code>deployment.id</code> 不作替代。<code>queued / processing</code> 时继续查询同一任务，默认每 5 秒一次、最多 10 分钟；执行时以指定 Skill 的有界跟踪合同为准。<code>failed</code> 时记录错误并停止本次发布推进；结果未知或超时时先核查实际状态。<code>active</code> 和可用 <code>workbenchUrl</code> 确认部署完成，业务完成还需下一步正式入口测试。</p>
 <p>打开正式入口，用目标身份和约定测试数据重新走核心用例，核对团队、真实读取、获准写入、写后回读、权限拒绝及视觉。员工或定时任务还需在目标宿主验证触发、执行和结果位置。发现线上错误数据时先停住受影响动作，核清范围后修复并复测；需要恢复时按已核实的恢复路径执行。</p>
 <p><strong>最终交出：</strong> 正式入口、代码/依赖/Schema/员工/Skill 版本，部署 <code>projectId / taskId / status / workbenchUrl</code>，已核验环境，上线测试与缺陷复测结果，限制、接手人及恢复资料。技术交付随后接入上层 FDE 的真实业务试运行、培训和客户验收安排；重合的试运行测试共用证据。</p>
-<h3 id="section-36">15 变更与阻塞怎样返回</h3>
+<h3 id="section-35">15 变更与阻塞怎样返回</h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
 <thead>
 <tr>
@@ -524,12 +508,12 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 </tbody></table></div>
 <p>变更记录至少保留：触发事实、影响用例、受影响文件和资源、决定人、处理决定、实施版本与复测证据。更新文件后检查跨文件对应关系，继续使用同一套架构入口。</p>
-<h3 id="section-37">16 提交反馈并跟踪处理</h3>
+<h3 id="section-36">16 提交反馈并跟踪处理</h3>
 <p>使用统一仓库的 <a href="https://github.com/quekou-fde-development/fde-development/issues/new?template=feedback.yml">反馈入口</a> 提交问题，先在<a href="https://github.com/quekou-fde-development/fde-development/issues">已有反馈</a>中检索同类记录。入口说明与收集规则在仓库 <code>feedback/</code>；本轮先由人收集和处理，数字员工自动协同挂起。</p>
 <p>选择反馈分类，填写受影响路径与版本、问题描述与步骤、期望结果；在描述中补充环境、实际结果与影响，证据栏附可公开的截图或日志。项目问题带项目关联；含客户资料的细节留在受控项目仓库，公共反馈只放脱敏描述和可授权访问的证据位置。</p>
 <p>维护者在同一 Issue 中指定 Assignee，并使用“待处理 → 处理中 → 关闭”记录进展；补料、处理决定、修订提交与验证结果均留在原 Issue。涉及架构、权限或已批准范围时，按 §15 返回相应审核。修复后由报告者或指定复核人验证，再记录结果并关闭；未解决的限制与下一步继续留在原 Issue。手册或工具更新后，标明影响版本与项目是否需要重新验证。</p>
 <p><strong>产出：</strong> 可回查的 Issue 链接、责任人、处理提交和复核结果。工具候选的反馈应保留其当前状态，单项测试通过不能改写为生产验收完成。</p>
-<h2 id="section-38">附录 可直接交给开发 AI 的任务说明</h2>
+<h2 id="section-37">附录 可直接交给开发 AI 的任务说明</h2>
 <pre><code class="language-text">本次任务与用例：
 批准的架构版本及审核记录：
 必须实际读取的架构文件、Toolkit、Skill 和 references：
@@ -542,7 +526,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 先回报实际读取的文件和当前缺件，再在上述范围内执行。
 交付时分别列明实现、实测结果和未验证项，附可回读的证据。
 </code></pre>
-<h2 id="section-39">附录 专项任务与工具</h2>
+<h2 id="section-38">附录 专项任务与工具</h2>
 <p>在业务流中识别专项任务后，第 3 步明确数据对象，第 7 步明确调用契约，第 8 步固定工具入口；§12 完成接入，§13—14 按同一批业务样本联调和线上验证。下列三个入口为本版指定工具。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
 <thead>
@@ -572,22 +556,22 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <td>商品/站点变化、报告及可用的 URL 快照或差异；保留来源、时间与业务人员复核</td>
 </tr>
 </tbody></table></div>
-<h3 id="section-40">排产：OctoPlanner</h3>
+<h3 id="section-39">排产：OctoPlanner</h3>
 <p>OctoPlanner 是 Bun-first TypeScript 命令行工具。先读取官方 README、<code>package.json</code> 与命令帮助，记录采用的提交或版本。仓库给出的准备入口为 <code>npm install</code>，工作区初始化为 <code>npm run octoplanner -- workspace init</code>；按所选版本核对 Bun、Node 和依赖要求。</p>
 <p>通过适配层把 ERP、MES 或 Excel 数据转换为 requirements、items、routings、resources JSON，检查稳定 ID 与引用关系，再加载规则并创建计划。情景调整沿 <code>plan load → plan revise --from-plan → plan diff</code> 的真实命令合同实施；Excel 回写用 <code>externalRef</code> 对齐原始行和基线，核对 diff 后按授权写入。</p>
 <p>业务建模先确定变量、硬约束、优化目标和可行性判据。用人工可核对的小样本，再用真实样本检查资源冲突、工序顺序、停机、断料和不可行情形。每次读取命令返回的 <code>ok / data / warnings / notModeled</code>，解释未排程原因与未建模范围，并保存计划、差异和异常报告。排程结果经业务人员审核后，按批准规则写回系统或触发后续任务。</p>
-<h3 id="section-41">图纸：老马 drawings</h3>
+<h3 id="section-40">图纸：老马 drawings</h3>
 <p>站点页面标题为“老码识图”。公开前端列出 DWG、DXF、PDF、PNG、JPG/JPEG 输入，提供图纸库、解析、分类、参数检索和修订版本功能。使用前确认团队会话与权限，以目标账号核对支持格式和上传限制。</p>
 <p>围绕实际业务要用到的参数设计识别任务，保留文件、图号、修订版和提取结果的对应关系。关键尺寸、单位、公差、材料等仅在项目需要且工具实际支持时接入；模糊、缺项、冲突或低可靠结果交人工复核。识别参数通过核对后，再验证报价、工艺或采购等后续业务动作的正确性。</p>
-<h3 id="section-42">选品：SKU Radar</h3>
+<h3 id="section-41">选品：SKU Radar</h3>
 <p>SKU Radar 用于收集站点与商品变化信号，辅助爆品判断和选品。公开前端可见新商品、价格变化、促销页及图片/标题变化等监测项，以及站点、商品、报告和 URL 快照/差异入口。目标项目中先核对实际账号权限与支持范围。</p>
 <p>Web 入口使用上表网址；公开前端给出的 CLI 入口为 <code>npm install -g skuradar-cli</code>，认证命令为 <code>skuradar-cli auth login</code> 与 <code>skuradar-cli auth whoami</code>。安装或运行前核对包来源、版本和当前命令帮助；本版未安装、登录或执行站点任务。</p>
 <p>把业务目标转为筛选条件，记录目标站点/商品、时间窗和信号定义。用已知变化样本核对覆盖、误报/漏报、时间与来源，再由业务人员判断是否进入采购、试销或后续分析。页面操作、查询、导出和自动化接口分别核验，只把已验证的操作写进 Skill。</p>
-<h3 id="section-43">网站与系统接入</h3>
+<h3 id="section-42">网站与系统接入</h3>
 <p>本版核验范围：OctoPlanner 已读取公开 README；老马 drawings 与 SKU Radar 已核对公开页面入口及前端能力线索。三个工具均未在本次手册编写中完成目标客户环境实测。</p>
 <p>网站通过以上链接使用。登录权限、支持格式、导出方式及 API 可用性在目标项目中验证；入口 URL 本身不证明存在可调用的 API。已确认 API 时按其实际合同接入；采用网页或人工导出时，明确操作人、文件格式、保存位置和导入映射。涉及客户图纸或商品资料的上传，沿项目已有授权范围执行。</p>
 <p>ERP 接入按实际 ERP 接口实施，分别核对网络、身份、数据口径和动作权限；直接写生产数据库按专项审核执行。每项专项接入均留下输入、调用或操作、产出、回读与失败处理证据。</p>
-<h2 id="section-44">附录 配套资源包</h2>
+<h2 id="section-43">附录 配套资源包</h2>
 <p>下载 <a href="FDE%E5%BC%80%E5%8F%91%E9%85%8D%E5%A5%97%E8%B5%84%E6%BA%90%E5%8C%85_10.06.zip">FDE 开发配套资源包</a>，解压后读 <code>README.md</code>。工具小包在 <code>packages/</code>，完整清单与 SHA-256 在 <code>manifest.json</code>。仓库 <code>tools/</code> 的目录和已发布文件由 GitHub 发布线维护；使用时固定具体提交或包校验值。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
 <thead>

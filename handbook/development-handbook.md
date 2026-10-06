@@ -10,22 +10,6 @@ scope: 调研语料、九份架构、计划送审、获批开发与反馈
 
 # FDE 开发技术手册
 
-## 加载链（上下游）
-
-**上游**：`agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_overview.md §管辖文件（下游）` — 调研完成后，准备架构送审或执行获批开发时读取。
-
-**管辖文件（下游）：**
-- `_deliverables/development_handbook_10.06/FDE开发技术手册_10.06.html` — 本文的同版阅读视图；由同目录 `build/render.mjs` 从本文生成。
-- `_deliverables/development_handbook_10.06/FDE开发配套资源包_10.06.zip` — 与 HTML 一同发送的完整配套资源包。
-- `_skills/meta-architecture-development/SKILL.md` — 九份架构文档的生成入口与文件清单；开发方法线维护。
-- `_deliverables/development_handbook_10.06/交付说明_10.06.md` — 同源构建、资源清单、核验与 GitHub 交接。
-- `_reference/development_handbook_10.06/` — 内部原始资料、来源及阅读核对记录；维护时加载。
-
-**同级联动：**
-- `agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_reference/development_method_10.03/开发方法论材料整合_10.03.md §三 原设计包里可以确定的内容` — 王磊原八份设计材料及数据建模加项的来源。
-- `agentfs://workspace/01 Projects Zone/Quekou_FDE/_progress/经营目标与技术开发手册材料接续.md` — 原技术开发手册的来源与原件入口。
-- `agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_progress/_decisions.md` — 手册审阅与后续修订的推进记录。
-
 ## 如何使用
 
 本手册面向承担方案设计与开发的架构师、FDE 和开发 AI。工作从前置检索与调研语料开始，形成九份架构设计和配套开发计划，送审通过后实施、测试、发布，并将问题送回仓库反馈入口。开发是 FDE 全流程内部的一段 loop；商务、调研、客户培训、最终客户验收和维护按上层 FDE 流程衔接。

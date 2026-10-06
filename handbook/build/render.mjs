@@ -25,13 +25,7 @@ html=html.replace(/<h([1-6])(?:\s[^>]*)?>([\s\S]*?)<\/h\1>/g,(_,level,content)=>
  return `<h${level} id="${id}">${content}</h${level}>`;
 });
 html=html.replace(/<table>/g,'<div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>').replace(/<\/table>/g,'</table></div>');
-const chain=headings.find(h=>h.title==='加载链（上下游）');
-if(chain){
- const start=html.indexOf(`<h2 id="${chain.id}">`);
- const end=html.indexOf('<h2 ',start+1);
- html=html.slice(0,start)+`<details class="provenance"><summary>文件归属与构建入口</summary>${html.slice(start,end)}</details>`+html.slice(end);
-}
-const toc=headings.filter(h=>[2,3].includes(h.level)&&h.id!==chain?.id).map(h=>`<a class="toc-level-${h.level}" href="#${h.id}">${h.title}</a>`).join('\n');
+const toc=headings.filter(h=>[2,3].includes(h.level)).map(h=>`<a class="toc-level-${h.level}" href="#${h.id}">${h.title}</a>`).join('\n');
 const titleHtml=html.match(/<h1[^>]*>[\s\S]*?<\/h1>/)?.[0] || '';
 html=html.replace(titleHtml,'');
 const css=fs.readFileSync(path.join(here,'handbook.css'),'utf8');

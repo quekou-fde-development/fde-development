@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.07.2",
+  "version": "10.07.3",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -14,13 +14,16 @@
         "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
       ],
       "license": "No license file supplied in source archive.",
-      "sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada",
-      "bytes": 396142,
+      "sha256": "0ddf7e5f527ca0c0c9b983fdf61c8cd456aeecf4dd17addb3d54550e0de5140d",
+      "bytes": 396054,
       "archive": "tools/packages/meta-skill-3.10.1.zip",
       "path": "tools/skills/meta-skill/",
       "entry": "tools/skills/meta-skill/README.md",
       "source_package_name": "packages/02-meta-skill_3.10.1.zip",
-      "member_count": 118
+      "member_count": 118,
+      "source_archive_sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
     {
       "name": "Meta Orchestrator",
@@ -33,13 +36,16 @@
         "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
       ],
       "license": "No license file supplied in source archive.",
-      "sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de",
-      "bytes": 29831,
+      "sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
+      "bytes": 29769,
       "archive": "tools/packages/meta-orchestrator-10.06.zip",
       "path": "tools/skills/meta-orchestrator/",
       "entry": "tools/skills/meta-orchestrator/README.md",
       "source_package_name": "packages/03-meta-orchestrator_10.06.zip",
-      "member_count": 2
+      "member_count": 2,
+      "source_archive_sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
     {
       "name": "Meta Agent",
@@ -52,13 +58,16 @@
         "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
       ],
       "license": "No license file supplied in source archive.",
-      "sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61",
-      "bytes": 179219,
+      "sha256": "d38ef2f065d300ab5aa105fd3bdcbc1bebaef31ed403612fe2aa816194d789db",
+      "bytes": 178815,
       "archive": "tools/packages/meta-agent-10.06.zip",
       "path": "tools/skills/meta-agent/",
       "entry": "tools/skills/meta-agent/README.md",
       "source_package_name": "packages/04-meta-agent_10.06.zip",
-      "member_count": 34
+      "member_count": 34,
+      "source_archive_sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
     {
       "name": "Workbench App Development",
@@ -71,13 +80,16 @@
         "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
       ],
       "license": "No license file supplied in source archive.",
-      "sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d",
-      "bytes": 16585,
+      "sha256": "0fda98443408293c2a2ebf770f97df14d2b10ea1d3889d58d48fccd331feb016",
+      "bytes": 16518,
       "archive": "tools/packages/workbench-app-development-10.06.zip",
       "path": "tools/skills/workbench-app-development/",
       "entry": "tools/skills/workbench-app-development/README.md",
       "source_package_name": "packages/05-workbench-app-development_10.06.zip",
-      "member_count": 8
+      "member_count": 8,
+      "source_archive_sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
     {
       "name": "Quekou Workbench Frontend",
@@ -109,13 +121,16 @@
         "No license file supplied with the source document."
       ],
       "license": "No license file supplied with source document.",
-      "sha256": "bee4bd9424074fd3a4fe8bc4d11e7e3b1a194f3f702d858773cd47718c6ff04a",
-      "bytes": 3183,
+      "sha256": "a89b14d47cc29c0e1ed170a7445facf76b39cabcd0154877b3a9b5d654198167",
+      "bytes": 3117,
       "archive": "tools/packages/specialist-tool-guides-10.06.zip",
       "path": "tools/resources/specialist-tool-guides/",
       "entry": "tools/resources/specialist-tool-guides/README.md",
       "source_package_name": "07-specialist-tools/README.md",
-      "member_count": 1
+      "member_count": 1,
+      "source_archive_sha256": "bee4bd9424074fd3a4fe8bc4d11e7e3b1a194f3f702d858773cd47718c6ff04a",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
     {
       "name": "九份架构写作参照",
@@ -125,15 +140,21 @@
       "archive": "tools/packages/development-design-10.06.zip",
       "path": "tools/resources/development-design/",
       "entry": "tools/resources/development-design/README.md",
-      "sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806",
-      "bytes": 24735,
+      "sha256": "40401df1a9b4a68f28a1babf075b5bb8d66996049f6be969c8130abf89a1402a",
+      "bytes": 24326,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
       ],
-      "reference_freeze": "frozen-candidate-9",
-      "data_model_sha256": "e53445e025cecc6048b04874026e087f1b46bdd455f37f57a2e8dafa8dcdad76",
-      "other_eight_unchanged": true
+      "data_model_sha256": "8c311ad3a73d96d95cb097127fa2cd32e35db0203664ea53e9b81f21dcf42cbd",
+      "other_eight_unchanged": false,
+      "source_archive_sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "member_count": 10,
+      "source_reference_freeze": "frozen-candidate-9",
+      "original_reference_changes": "Removed one author-local README path from reference 08; seven original reference documents are byte-identical.",
+      "reference_freeze": "public-documentation-10.07.3"
     },
     {
       "id": "meta-architecture-development",
@@ -141,26 +162,30 @@
       "name": "Meta Architecture Development",
       "version": "0.1.0-candidate",
       "archive_version": "10.06",
-      "frozen_candidate": 9,
       "status": "validated-candidate-awaiting-chief-architect-review",
       "path": "tools/skills/meta-architecture-development/",
       "entry": "tools/skills/meta-architecture-development/SKILL.md",
       "archive": "tools/packages/meta-architecture-development-10.06.zip",
-      "sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
-      "bytes": 208973,
+      "sha256": "65cf20bc5860c798063fc165f7f479e6ea70b06bfb1026a18c9ee6f9180fa6a4",
+      "bytes": 205922,
       "member_count": 268,
       "validation": {
         "mechanical": "applicable checks passed; M6 not applicable",
         "complete_input": "independent c7 full run plus targeted repairs and independent c9 recheck",
         "clarification": "blank and conflict cases stop for human clarification",
-        "source_evidence": "tools/skills/meta-architecture-development/verification.json"
+        "source_evidence": "tools/skills/meta-architecture-development/verification.json",
+        "documentation_cleanup": "runtime code unchanged; reference/navigation integrity verified for publication revision 10.07.3"
       },
       "limitations": [
         "Awaiting chief architect review; not promoted or installed as an active runtime skill.",
         "Real customer project applicability and operation after installation remain unverified.",
         "The final evidence includes targeted repair and recheck; it is not a new independent from-scratch c9 run."
       ],
-      "license": "No license file supplied in frozen package; no additional license granted by publication."
+      "license": "No license file supplied in frozen package; no additional license granted by publication.",
+      "source_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "source_frozen_candidate": 9
     },
     {
       "name": "自然语言反馈接收",
@@ -170,8 +195,8 @@
       "archive": "tools/packages/feedback-intake-10.06.1-candidate.zip",
       "path": "tools/skills/feedback-intake/",
       "entry": "tools/skills/feedback-intake/SKILL.md",
-      "sha256": "bebc43ba35469a19881f75ba51b888ec2d7433742f600b08025f9f840bb3f04f",
-      "bytes": 20514,
+      "sha256": "5af1c3eb4ac8c4e814fb9d4a07f3dbc0168b1c4809d990974f7167cca75ef9bb",
+      "bytes": 19982,
       "member_count": 20,
       "validation": {
         "mechanical": "M1-M12 passed in source evidence",
@@ -208,7 +233,10 @@
         "Single-host coordination; distributed multi-host writes not validated.",
         "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
       ],
-      "license": "No license file supplied in frozen package; no additional license granted by publication."
+      "license": "No license file supplied in frozen package; no additional license granted by publication.",
+      "source_archive_sha256": "bebc43ba35469a19881f75ba51b888ec2d7433742f600b08025f9f840bb3f04f",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     },
     {
       "name": "GitHub 反馈提交与维护",
@@ -218,8 +246,8 @@
       "archive": "tools/packages/github-feedback-maintainer-10.06.1-candidate.zip",
       "path": "tools/skills/github-feedback-maintainer/",
       "entry": "tools/skills/github-feedback-maintainer/SKILL.md",
-      "sha256": "0bf31807a72772f1d606220bbd1756d7e1077fd1f3a18128a01d89bd79393ed5",
-      "bytes": 84621,
+      "sha256": "70139fc5cf45b8bb1c4bc29a949b07c9ed45d21fc04b9767f5ff4997e88cc621",
+      "bytes": 83838,
       "member_count": 50,
       "validation": {
         "mechanical": "M1-M12 passed in source evidence",
@@ -256,7 +284,10 @@
         "Single-host coordination; distributed multi-host writes not validated.",
         "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
       ],
-      "license": "No license file supplied in frozen package; no additional license granted by publication."
+      "license": "No license file supplied in frozen package; no additional license granted by publication.",
+      "source_archive_sha256": "0bf31807a72772f1d606220bbd1756d7e1077fd1f3a18128a01d89bd79393ed5",
+      "publication_revision": "10.07.3",
+      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     }
   ],
   "external_tools": [
@@ -286,7 +317,7 @@
       "version": "10.06",
       "path": "tools/resources/通用调研输入文档_10.06.md",
       "status": "blank-template",
-      "sha256": "264af3bd1a666186f40876b529aaf3018c6adfcbc133351acd0a830370aec730"
+      "sha256": "af1382202ee88240c3676f3550137ac6eee77cd804ff772ab23d213cec30388d"
     },
     {
       "name": "FDE 上层流程图",
@@ -296,9 +327,12 @@
   ],
   "feedback_collection": {
     "archive": "tools/packages/feedback-channel-10.06.1-candidate.zip",
-    "sha256": "68a8da7755997b6dce04f9b1e38281da4b1b5c076f236819f1ba0efd4c9e4002",
-    "bytes": 105113,
+    "sha256": "fab91f7ba25c83c159429cc07b1007be6c73bb2e5f4940af657aa3f2348a57de",
+    "bytes": 103798,
     "members": 70,
-    "status": "installed-host-offline-validated-production-not-verified"
-  }
+    "status": "installed-host-offline-validated-production-not-verified",
+    "source_archive_sha256": "68a8da7755997b6dce04f9b1e38281da4b1b5c076f236819f1ba0efd4c9e4002",
+    "publication_revision": "10.07.3"
+  },
+  "publication_revision": "10.07.3"
 }
