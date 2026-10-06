@@ -1,0 +1,5 @@
+{
+  "mutation": "M-acquire-receipt",
+  "must_be_rejected_by": "acquire.receipt",
+  "doc": "remove source receipt time"
+}

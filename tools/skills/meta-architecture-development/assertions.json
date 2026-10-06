@@ -1,0 +1,274 @@
+{
+  "package": "meta-architecture-development",
+  "contract_ir_version": "1.0",
+  "stages": [
+    {
+      "stage": "acquire_sources",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "acquire_sources_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "acquire.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §acquire_sources receipt",
+              "mutants": [
+                "M-acquire-receipt"
+              ]
+            },
+            {
+              "id": "acquire.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "required_fields": [
+                  "id",
+                  "kind",
+                  "sha256"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "kind": "str",
+                  "sha256": "str"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §acquire_sources receipt",
+              "mutants": [
+                "M-acquire-schema"
+              ]
+            },
+            {
+              "id": "acquire.count_hash",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "outputs",
+                "declared_count": "output_count",
+                "declared_hash": "outputs_sha256",
+                "file_bindings": {
+                  "path_field": "id",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §acquire_sources receipt",
+              "mutants": [
+                "M-acquire-count-hash"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "render_documents",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "render_input_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "render_input.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-input-receipt"
+              ]
+            },
+            {
+              "id": "render_input.schema",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "documents",
+                "required_fields": [
+                  "id",
+                  "path",
+                  "kind",
+                  "sha256",
+                  "byte_count"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "path": "str",
+                  "kind": "str",
+                  "sha256": "str",
+                  "byte_count": "int"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-input-schema"
+              ]
+            },
+            {
+              "id": "render_input.count_hash",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "documents",
+                "declared_count": "document_count",
+                "declared_hash": "documents_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-input-count-hash"
+              ]
+            },
+            {
+              "id": "render_input.request_hash",
+              "family": "artifact_hash",
+              "tier": 1,
+              "predicate": {
+                "artifact_path": "working/render_request.json",
+                "declared_hash": "request_sha256"
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §working/render_request.json",
+              "mutants": [
+                "M-render-input-request-hash"
+              ]
+            }
+          ]
+        },
+        {
+          "op": "render",
+          "artifact": "render_documents_receipt.json",
+          "source_reachability": "machine",
+          "assertions": [
+            {
+              "id": "render.receipt",
+              "family": "source_receipt",
+              "tier": 1,
+              "predicate": {
+                "required_keys": [
+                  "source_id",
+                  "fetched_at"
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-receipt"
+              ]
+            },
+            {
+              "id": "render.rows",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "source_id",
+                    "input": {
+                      "stage": "render_documents",
+                      "artifact": "render_input_receipt.json",
+                      "path": "source_id"
+                    }
+                  },
+                  {
+                    "output": "unresolved_questions_count",
+                    "input": {
+                      "stage": "render_documents",
+                      "artifact": "render_input_receipt.json",
+                      "path": "unresolved_questions_count"
+                    }
+                  },
+                  {
+                    "output": "documents",
+                    "input": {
+                      "stage": "render_documents",
+                      "artifact": "render_input_receipt.json",
+                      "path": "documents"
+                    }
+                  }
+                ]
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-rows"
+              ]
+            },
+            {
+              "id": "render.summary",
+              "family": "summary_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "counts": {
+                  "documents": "document_count"
+                },
+                "lists": {
+                  "documents": "documents"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-summary"
+              ]
+            },
+            {
+              "id": "render.content_hash",
+              "family": "count_hash",
+              "tier": 1,
+              "predicate": {
+                "collection": "documents",
+                "declared_count": "document_count",
+                "declared_hash": "documents_sha256",
+                "file_bindings": {
+                  "path_field": "path",
+                  "hash_field": "sha256"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-content-hash"
+              ]
+            },
+            {
+              "id": "render.coverage",
+              "family": "output_field_coverage",
+              "tier": 1,
+              "predicate": {
+                "exempt": {
+                  "stage": "固定的路由标识，由 runner 的 stage dispatch 决定",
+                  "review_status": "固定为待总架构师审核；它不构成人审结论"
+                }
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §render_documents receipt",
+              "mutants": [
+                "M-render-coverage"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

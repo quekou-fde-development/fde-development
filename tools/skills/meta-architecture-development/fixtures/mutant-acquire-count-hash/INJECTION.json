@@ -1,0 +1,5 @@
+{
+  "mutation": "M-acquire-count-hash",
+  "must_be_rejected_by": "acquire.count_hash",
+  "doc": "corrupt receipt output-list hash"
+}
