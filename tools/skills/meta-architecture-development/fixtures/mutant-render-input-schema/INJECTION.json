@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-input-schema",
+  "must_be_rejected_by": "render_input.schema",
+  "doc": "change prepared document kind type"
+}

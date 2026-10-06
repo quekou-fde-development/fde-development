@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-input-request-hash",
+  "must_be_rejected_by": "render_input.request_hash",
+  "doc": "alter request after receipt"
+}

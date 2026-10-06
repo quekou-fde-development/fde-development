@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "unresolved_questions": [],
+  "documents": {
+    "01-concept.md": "# Concept\n\nFixture concept.\nChanged after receipt.",
+    "02-use-cases.md": "# Use cases\n\nFixture use cases.",
+    "03-data-model.md": "# Data model\n\nFixture data model.",
+    "04-security-privacy.md": "# Security\n\nFixture security.",
+    "05-site-architecture.md": "# Site architecture\n\nFixture architecture.",
+    "06-page-layout.md": "# Page layout\n\nFixture layout.",
+    "07-api.md": "# API\n\nFixture API.",
+    "08-tech-stack-and-directory.md": "# Technology\n\nFixture technology.",
+    "09-implementation-roadmap.md": "# Roadmap\n\nFixture roadmap."
+  }
+}
