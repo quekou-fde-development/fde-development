@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": "10.07.1",
-  "status": "published-with-feedback-candidates",
+  "version": "10.07.2",
+  "status": "published-with-validated-candidates",
   "packages": [
     {
       "name": "Meta Skill",
@@ -125,27 +125,48 @@
       "archive": "tools/packages/development-design-10.06.zip",
       "path": "tools/resources/development-design/",
       "entry": "tools/resources/development-design/README.md",
-      "sha256": "9a6e2365b70dbc20fcb4ca44fcbc12d4ffad1b331dd1a9d58822f531fe5f66d1",
-      "bytes": 23655,
+      "sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806",
+      "bytes": 24735,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
-      ]
+      ],
+      "reference_freeze": "frozen-candidate-9",
+      "data_model_sha256": "e53445e025cecc6048b04874026e087f1b46bdd455f37f57a2e8dafa8dcdad76",
+      "other_eight_unchanged": true
     },
     {
       "id": "meta-architecture-development",
+      "slug": "meta-architecture-development",
       "name": "Meta Architecture Development",
+      "version": "0.1.0-candidate",
+      "archive_version": "10.06",
+      "frozen_candidate": 9,
+      "status": "validated-candidate-awaiting-chief-architect-review",
       "path": "tools/skills/meta-architecture-development/",
-      "status": "in-development",
-      "archive": null,
-      "files_available": false,
-      "handoff": "independent development; publish when delivered"
+      "entry": "tools/skills/meta-architecture-development/SKILL.md",
+      "archive": "tools/packages/meta-architecture-development-10.06.zip",
+      "sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
+      "bytes": 208973,
+      "member_count": 268,
+      "validation": {
+        "mechanical": "applicable checks passed; M6 not applicable",
+        "complete_input": "independent c7 full run plus targeted repairs and independent c9 recheck",
+        "clarification": "blank and conflict cases stop for human clarification",
+        "source_evidence": "tools/skills/meta-architecture-development/verification.json"
+      },
+      "limitations": [
+        "Awaiting chief architect review; not promoted or installed as an active runtime skill.",
+        "Real customer project applicability and operation after installation remain unverified.",
+        "The final evidence includes targeted repair and recheck; it is not a new independent from-scratch c9 run."
+      ],
+      "license": "No license file supplied in frozen package; no additional license granted by publication."
     },
     {
       "name": "自然语言反馈接收",
       "slug": "feedback-intake",
       "version": "10.06.1-candidate",
-      "status": "locally-validated-candidate-host-integration-in-progress",
+      "status": "installed-host-offline-validated-production-not-verified",
       "archive": "tools/packages/feedback-intake-10.06.1-candidate.zip",
       "path": "tools/skills/feedback-intake/",
       "entry": "tools/skills/feedback-intake/SKILL.md",
@@ -155,12 +176,24 @@
       "validation": {
         "mechanical": "M1-M12 passed in source evidence",
         "behavior": "32 local tests passed in frozen source evidence",
-        "claim_scope": "local candidate; target-host end-to-end validation pending"
+        "claim_scope": "local and host-offline evidence only; production GitHub lifecycle unverified",
+        "local_live_api": "frozen-package TEST #2 closed: https://github.com/quekou-fde-development/fde-development/issues/2",
+        "host_offline_smoke": "passed; no live host GitHub writes performed"
       },
       "host_integration": {
-        "status": "in-progress",
+        "status": "installed-offline-smoke-passed",
+        "skills_mounted": true,
+        "bundle_files_verified": 70,
         "github_credentials_configured": false,
-        "end_to_end_verified": false
+        "expected_actor_configured": false,
+        "trusted_approval_mapping_configured": false,
+        "end_to_end_verified": false,
+        "remaining": [
+          "repository-limited GitHub credential",
+          "expected GitHub actor",
+          "trusted human approval mapping",
+          "target-host GitHub lifecycle validation"
+        ]
       },
       "dependencies": [
         "Python 3.10+",
@@ -181,7 +214,7 @@
       "name": "GitHub 反馈提交与维护",
       "slug": "github-feedback-maintainer",
       "version": "10.06.1-candidate",
-      "status": "locally-validated-candidate-host-integration-in-progress",
+      "status": "installed-host-offline-validated-production-not-verified",
       "archive": "tools/packages/github-feedback-maintainer-10.06.1-candidate.zip",
       "path": "tools/skills/github-feedback-maintainer/",
       "entry": "tools/skills/github-feedback-maintainer/SKILL.md",
@@ -191,12 +224,24 @@
       "validation": {
         "mechanical": "M1-M12 passed in source evidence",
         "behavior": "32 local tests passed in frozen source evidence",
-        "claim_scope": "local candidate; target-host end-to-end validation pending"
+        "claim_scope": "local and host-offline evidence only; production GitHub lifecycle unverified",
+        "local_live_api": "frozen-package TEST #2 closed: https://github.com/quekou-fde-development/fde-development/issues/2",
+        "host_offline_smoke": "passed; no live host GitHub writes performed"
       },
       "host_integration": {
-        "status": "in-progress",
+        "status": "installed-offline-smoke-passed",
+        "skills_mounted": true,
+        "bundle_files_verified": 70,
         "github_credentials_configured": false,
-        "end_to_end_verified": false
+        "expected_actor_configured": false,
+        "trusted_approval_mapping_configured": false,
+        "end_to_end_verified": false,
+        "remaining": [
+          "repository-limited GitHub credential",
+          "expected GitHub actor",
+          "trusted human approval mapping",
+          "target-host GitHub lifecycle validation"
+        ]
       },
       "dependencies": [
         "Python 3.10+",
@@ -254,6 +299,6 @@
     "sha256": "68a8da7755997b6dce04f9b1e38281da4b1b5c076f236819f1ba0efd4c9e4002",
     "bytes": 105113,
     "members": 70,
-    "status": "locally-validated-candidate-host-integration-in-progress"
+    "status": "installed-host-offline-validated-production-not-verified"
   }
 }

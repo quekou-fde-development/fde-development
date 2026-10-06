@@ -1,6 +1,6 @@
 ---
 title: 开发工具
-version: 10.07.1
+version: 10.07.2
 ---
 
 # 开发工具
@@ -16,9 +16,9 @@ version: 10.07.1
 | Quekou Workbench Frontend | [阅读](resources/quekou-frontend/quekou-workbench-1.0.0/START_HERE.md) | [下载](packages/quekou-frontend-1.0.0.zip) | 原始 1.0.0 前端共享包，保留原许可证与第三方声明。 |
 | Specialist Tool Guides | [阅读](resources/specialist-tool-guides/README.md) | [下载](packages/specialist-tool-guides-10.06.zip) | 排产、图纸与商品分析指引及官方入口；在线服务按其账号与接口使用。 |
 | 九份架构写作参照 | [阅读](resources/development-design/README.md) | [下载](packages/development-design-10.06.zip) | 精确九份写作参照，含新增数据结构；供架构设计阅读。 |
-| 自然语言反馈接收 | [阅读](skills/feedback-intake/SKILL.md) | [下载](packages/feedback-intake-10.06.1-candidate.zip) | 本地已验证候选；整理自然语言反馈、集中澄清并形成脱敏公开预览。 |
-| GitHub 反馈提交与维护 | [阅读](skills/github-feedback-maintainer/SKILL.md) | [下载](packages/github-feedback-maintainer-10.06.1-candidate.zip) | 本地已验证候选；提交、去重、查询、补证与受控状态维护，宿主接入中。 |
-| Meta Architecture Development | [架构设计](skills/meta-architecture-development/) | — | 从调研输入形成九份架构文档。 |
+| 自然语言反馈接收 | [阅读](skills/feedback-intake/SKILL.md) | [下载](packages/feedback-intake-10.06.1-candidate.zip) | 已挂载并通过宿主离线检查；整理反馈、集中澄清并形成脱敏公开预览。 |
+| GitHub 反馈提交与维护 | [阅读](skills/github-feedback-maintainer/SKILL.md) | [下载](packages/github-feedback-maintainer-10.06.1-candidate.zip) | 已挂载并通过宿主离线检查；提交、查询、补证与状态维护，正式 GitHub 配置待完成。 |
+| Meta Architecture Development | [阅读](skills/meta-architecture-development/SKILL.md) | [下载](packages/meta-architecture-development-10.06.zip) | 已验证候选，从调研输入形成九份待总架构师审核的设计文档；真实项目与安装后运行待验证。 |
 
 ## 调研与流程资料
 
@@ -32,4 +32,4 @@ version: 10.07.1
 
 [下载两项反馈 Skill 合集](packages/feedback-channel-10.06.1-candidate.zip)。解压后保持两目录同级，按 [运行合同](skills/github-feedback-maintainer/references/operations.md)准备宿主配置和安全凭据。
 
-当前宿主 GitHub 凭据尚未配置，黑背老六真实提交闭环尚未验证。现阶段仍可直接使用 [GitHub 反馈表单](../feedback/)。本地验证结果与宿主接入状态分列于工具清单。
+两项 Skill 已挂载黑背老六，70 文件核对与真实宿主离线检查通过；冻结包的本机真实 API 测试已完成。正式宿主仍缺限定仓库凭据、预期 GitHub 账号和可信用户批准映射，真实提交闭环尚未验证。当前可直接使用 [GitHub 反馈表单](../feedback/)。

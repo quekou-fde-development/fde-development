@@ -1,0 +1,82 @@
+{
+  "artifact": "meta-architecture-development",
+  "version": "10.06 candidate",
+  "status": "reviewable_candidate_not_installed",
+  "reference_documents": 9,
+  "original_eight_byte_identical": true,
+  "new_reference": "references/design/03-data-model.md",
+  "platforms": [
+    "Octopus",
+    "Arcubase",
+    "Syngy Workbench React"
+  ],
+  "design_files": [
+    "01-concept.md",
+    "02-use-cases.md",
+    "03-data-model.md",
+    "04-security-privacy.md",
+    "05-site-architecture.md",
+    "06-page-layout.md",
+    "07-api.md",
+    "08-tech-stack-and-directory.md",
+    "09-implementation-roadmap.md"
+  ],
+  "checks": {
+    "host_format": "PASS",
+    "mechanical_contract_and_sandbox": "PASS",
+    "source_pointers": "PASS",
+    "directed_mutants_rejected": 12,
+    "description_cases": 22,
+    "independent_trigger_judges": 3,
+    "competition_and_wrong_domain_sentinel": "PASS",
+    "behavior_smoke": "One complete synthetic input produced nine designs in an independent run. Its targeted repairs passed independent recheck. One blank-input run and three conflict-input runs stopped for human clarification. Applicable mechanical gates and both human-report routes passed."
+  },
+  "behavior_evidence_scope": {
+    "complete_input": "Independent c7 run produced all nine files; review found ambiguous native table identity, two Markdown delimiter rows, and a working UC-map defect. Root repaired these in c9. The other eight design files are byte-identical; an independent targeted recheck closed all three findings. This is not a fresh independent c9 run from scratch.",
+    "blank_and_conflict": "One blank and three conflict runs used candidate 4. Their input, analysis and clarification contracts remain unchanged. route-evidence-reuse-c7.json records exact comparisons; candidate 9 separately verifies that unresolved questions stop before the added format check.",
+    "format": "Six directed format cases passed on c8. The c9 renderer is byte-identical, and one additional c9 case confirms unresolved-question precedence.",
+    "human_report": "The complete/review-ready and clarification-required reports independently passed on c7. Subsequent changes do not alter that report contract. Complete-with-no-user-action is N/A: the design route always ends pending chief architect review.",
+    "mechanical": "Applicable persistent-skill, host-format, anchor, twelve directed-mutant, trigger and competition checks passed. M6 is SKIP because this is not a network skill."
+  },
+  "known_evidence_limitations": [
+    "Only one explicit synthetic complete brief was used and reused during iteration. No real customer or held-out complete project validates cross-project stability.",
+    "The final evidence combines an independent full run with root-authored targeted repairs and an independent recheck; it is not a new independent from-scratch success.",
+    "The original conflict3 report has source anchors offset by two lines; conflict2 does not separately anchor the interview's direct-start directive. Both stop routes were correct. Original defects and reviewer-side corrections remain in platform-provenance-notes.json.",
+    "The complete-run log contains summarized command output and does not include a per-reference read receipt. Retained artifacts alone cannot prove every bundled reference was read. The parent separately captured exact mechanical-audit stdout.",
+    "Live team binding, resource IDs, identity mapping, effective native permissions and revocation, installed-host operation, implementation and publication remain unverified."
+  ],
+  "prior_failed_candidates": [
+    {
+      "candidate": 4,
+      "issue": "Incomplete native field definitions, Link detail and business-flow mapping",
+      "evidence": "platform-behavior-review-1.json"
+    },
+    {
+      "candidate": 5,
+      "issue": "Invalid default_value_mode string none",
+      "evidence": "platform-behavior-review-c5.json"
+    },
+    {
+      "candidate": 6,
+      "issue": "Missing known type-specific native options",
+      "evidence": "platform-behavior-review-c6.json"
+    },
+    {
+      "candidate": 7,
+      "issue": "Ambiguous table stable-key wording, two malformed delimiter rows, and working UC-map drift",
+      "evidence": "platform-behavior-review-c7.json"
+    },
+    {
+      "candidate": 7,
+      "issue": "Earlier user-report wording omitted continuation/decision consequences; both revised routes subsequently passed",
+      "evidence": "human-report-usability.json"
+    }
+  ],
+  "not_verified": [
+    "真实客户项目适用性",
+    "安装后的目标宿主运行",
+    "架构师对具体项目设计的批准",
+    "开发、平台发布或上线"
+  ],
+  "scope": "行为试跑使用随包空白输入和显式标注的合成资料；这些结果不代表跨项目统计稳定性。"
+}
