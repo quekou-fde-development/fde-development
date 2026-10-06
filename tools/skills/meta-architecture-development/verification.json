@@ -3,7 +3,7 @@
   "version": "10.06 candidate",
   "status": "reviewable_candidate_not_installed",
   "reference_documents": 9,
-  "original_eight_byte_identical": true,
+  "original_eight_byte_identical": false,
   "new_reference": "references/design/03-data-model.md",
   "platforms": [
     "Octopus",
@@ -78,5 +78,12 @@
     "架构师对具体项目设计的批准",
     "开发、平台发布或上线"
   ],
-  "scope": "行为试跑使用随包空白输入和显式标注的合成资料；这些结果不代表跨项目统计稳定性。"
+  "scope": "行为试跑使用随包空白输入和显式标注的合成资料；这些结果不代表跨项目统计稳定性。",
+  "source_candidate_original_eight_byte_identical": true,
+  "public_distribution": {
+    "revision": "10.07.3",
+    "changes": "Removed internal navigation and author-machine path metadata; executable code and design requirements unchanged.",
+    "source_frozen_candidate": 9,
+    "behavioral_evidence": "Validation above refers to the source candidate; no new independent full behavior run for this documentation cleanup."
+  }
 }

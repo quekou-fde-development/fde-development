@@ -253,7 +253,7 @@
   "generated_files": [
     {
       "export": "README.md",
-      "category": "share_context_status_and_loading_chain",
+      "category": "share_context_and_status",
       "source_sha256": null,
       "export_sha256": "5a471bb6873c8b28b0d5edb9f245fc7cde2f05a90e390307db7186e6ead5fbe9"
     },
@@ -262,5 +262,6 @@
       "category": "sanitization_record",
       "source_sha256": null
     }
-  ]
+  ],
+  "publication_revision": "10.07.3"
 }

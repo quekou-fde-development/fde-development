@@ -1,6 +1,6 @@
 # fixtures · mock-task1 / mock-task3 手工推导 golden + 预注册预期
 
-推导人：瑶光，2026-08-06。依据 = A 包 SKILL.md 判据逐条 + mock 表原文。**本文件在跑 matrix 之前写定**（预注册纪律：先写预期再跑，跑完对照，不对上先疑 harness）。
+2026-08-06。依据 = A 包 SKILL.md 判据逐条 + mock 表原文。**本文件在跑 matrix 之前写定**（预注册纪律：先写预期再跑，跑完对照，不对上先疑 harness）。
 
 ## task1 逐段推导
 

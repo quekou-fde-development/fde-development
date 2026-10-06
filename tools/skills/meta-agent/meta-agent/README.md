@@ -2,27 +2,15 @@
 title: Meta Agent 参数化分享副本
 kind: share_snapshot
 status: candidate_not_deployed
-source_snapshot: enterprise-brain-v1/streams/09-meta-agent
-load_chain:
-  - README.md
-  - design/spec-09-meta-agent.md
-  - design/architecture.md
-  - design/skill-layout.md
-  - skills/fde-meta-agent/SKILL.md
-  - skills/builder-agent/SKILL.md
 sanitization_manifest: sanitization-manifest.json
 ---
 
 # Meta Agent 参数化分享副本
 
-本目录是从 Meta Agent 开发源导出的**参数化候选副本**。其中的项目平台实体标识已替换为一致的占位符；内部逻辑路径导航已改为本说明。原始运行记录、评测工作区、夹具、编译记录、scratchpad 与状态原文均未随包提供。
+本目录是从 Meta Agent 开发源导出的**参数化候选副本**。其中的项目平台实体标识已替换为一致的占位符；原始运行记录、评测工作区、夹具、编译记录、scratchpad 与状态原文均未随包提供。
 
-## 加载链
 
-1. 先读本说明和 `sanitization-manifest.json`，确认副本范围及参数化类别。
-2. 读 `design/spec-09-meta-agent.md`、`design/architecture.md`、`design/skill-layout.md`，确定席位、平台边界与两类 Meta Agent 的分工。
-3. 按目标选择 `skills/fde-meta-agent/` 或 `skills/builder-agent/`。每个候选包只处理一个席位或一个产品；批量循环由外层驱动。
-4. 在接入目标平台前，用本组织已批准的席位/产品定义、权限、KB、工作区与数据资源替换参数化占位符，并建立本组织的运行证据目录。
+组织内数字员工使用 `skills/fde-meta-agent/`；市场产品使用 `skills/builder-agent/`。
 
 ## 当前状态与使用边界
 

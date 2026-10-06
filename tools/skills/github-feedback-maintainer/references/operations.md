@@ -6,10 +6,6 @@ version: "10.06.1"
 
 # 反馈适配器运行合同
 
-## 加载链（上下游）
-
-**上游**：`../SKILL.md §提交与查询` — 首次安装、提交、维护或恢复时读取。
-
 ## 安装与宿主边界
 
 两个 Skill 目录放在同一技能根。需要 Python 3.10+、POSIX 文件锁，以及一种由宿主批准的 GitHub 传输：已认证的 GitHub CLI（transport=gh），或 Python 标准库 HTTPS（transport=python）。无需 pip 依赖。运行 `python3 github-feedback-maintainer/scripts/feedback.py --help`。在宿主私有目录建立 config、approval、journal；这些文件不能进入公开工具包。宿主将脚本作为固定工具调用，只允许本文子命令，不能给反馈用户提供任意 shell。

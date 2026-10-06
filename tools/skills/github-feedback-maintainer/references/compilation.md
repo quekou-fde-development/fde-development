@@ -7,18 +7,6 @@ updated: "2026-10-07"
 
 # GitHub 反馈维护编译记录
 
-## 加载链（上下游）
-
-**上游**：../SKILL.md §GitHub 反馈提交与维护 — 宿主收到已确认预览、查询或维护状态请求时读取。
-
-**管辖文件（下游）：**
-- operations.md — 安装、宿主配置、批准文件、命令和恢复边界。
-- ../stateful_contract.json — 当前状态事务的 effect boundary 与严格验证阻断。
-
-**同级联动：**
-- ../../feedback-intake/references/intake-contract.md — 读取公开字段合同。
-- https://github.com/quekou-fde-development/fde-development — 固定公开 Issue 目标仓库。
-
 ## 第 1 步：目标与环境
 
 目标是返回真实 Issue URL 和经过回读的当前状态，或返回 duplicate、reconcile-required、权限不足或未确认失败回执。固定目标为 quekou-fde-development/fde-development 的 GitHub Issue；feedback 目录只保存导航与示例，不能另写实时状态台账。

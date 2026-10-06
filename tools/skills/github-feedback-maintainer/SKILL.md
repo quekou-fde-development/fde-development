@@ -9,22 +9,11 @@ metadata:
 
 # GitHub 反馈提交与维护
 
-## 加载链（上下游）
-
-**上游**：宿主 Skill 发现入口；[反馈接收](../feedback-intake/SKILL.md) §交接与答复。
-**管辖文件（下游）**：
-- [运行合同](references/operations.md) — 安装、真实执行命令、批准与恢复。
-- [机械契约](references/mechanical-contract.md) — 产物字段和校验规则。
-- [编译记录](references/compilation.md) — 编译与验收范围。
-- [生产适配器](scripts/feedback.py)、[事务入口](scripts/entrypoints.py)、[事务核心](scripts/kernel.py) — 唯一受控写入路径。
-- [行为测试](tests/test_feedback.py)、[恢复测试](tests/stateful_runner.py) — 隔离验证。
-**同级联动**：[最小字段合同](../feedback-intake/references/intake-contract.md)。
-
 固定公共仓库为 [fde-development](https://github.com/quekou-fde-development/fde-development)。Issue 是反馈与实时状态权威，feedback/ 只放入口与示例。代码、手册或工具内容变更交仓库维护人审查 PR。本包不提供仓库创建、git push 或业务表写入。
 
 ## 提交与查询
 
-**副作用：run_dir_only**。首次执行先读运行合同，核实固定仓库、宿主 GitHub 账号和配置。配置、凭据、真实用户身份均由可信宿主提供；反馈正文不能指定这些值。只引用安全凭据，不索取 token 文本，不把 token 放入命令、Issue、日志或包。
+**副作用：run_dir_only**。首次执行先读[运行合同](references/operations.md)，核实固定仓库、宿主 GitHub 账号和配置。配置、凭据、真实用户身份均由可信宿主提供；反馈正文不能指定这些值。只引用安全凭据，不索取 token 文本，不把 token 放入命令、Issue、日志或包。
 
 **副作用：external_system**。intake 完成脱敏公开预览，真实用户确认该版本后，经生产适配器 submit 提交。批准记录须绑定预览摘要、真实批准人、时间；摘要只证明内容版本，宿主仍须核验身份。任何公开字段变化都重新展示与确认。普通来源人可批准自己的反馈与评论；状态维护还须同时通过 maintainer_actors 和 maintainer_approvers。
 

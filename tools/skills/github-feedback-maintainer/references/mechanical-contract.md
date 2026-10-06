@@ -6,10 +6,6 @@ version: "10.06.1"
 
 # GitHub 反馈执行段机械契约
 
-## 加载链（上下游）
-
-**上游**：`../SKILL.md §机械执行段` — 运行本地契约验证时加载；`../assertions.json` — 机械断言的来源。
-
 ## process_feedback receipt
 
 验证入口读取显式运行目录中的 input/request.json；只使用隔离传输，调用实际生产 transaction 函数生成、提交并重复回查同一反馈。网络与凭据均不进入此验证入口。生产 CLI 继续以宿主的真实连接运行，同一 transaction 内的写入调用 entrypoints.py 的受控入口。

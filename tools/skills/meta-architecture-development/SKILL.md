@@ -9,25 +9,6 @@ metadata:
 
 # Meta Architecture Development
 
-## 加载链（上下游）
-
-**上游**：调用者通过技能目录或显式名称进入本 Skill，在项目需要形成或修订九份开发设计、提交总架构师审核时加载。
-
-**管辖文件（下游）：**
-- `references/input-and-evidence.md` — 收到调研输入、原件或人类回答时读取，确定来源、事实、推断与缺件。
-- `references/pre-review-analysis.md` — 从材料形成业务流和系统架构理解时读取。
-- `references/clarification-and-decision-loop.md` — 出现设计关键缺口、冲突或方案选择时读取。
-- `references/nine-document-authoring.md` — 起草或复核九份设计文档时读取。
-- `references/design/01-concept.md` 至 `references/design/09-implementation-roadmap.md` — 起草每一份对应设计文件前，实际读取同名编号的写作参照。
-- `references/mechanical-contract.md` — 调用随包 `acquire_sources` 或 `render_documents` 确定性辅助段时读取。
-
-**同级联动：**
-- 总架构师审核通过后，由项目指定的开发流程与 Meta Agent、Meta Skill、Workbench 工具承接实施。
-
-**编制来源**：`agentfs://workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_overview.md` 记录本包的项目来源；外部接收者使用随包内容即可运行。
-
-**便携运行：** 随包的 `assets/`、`references/`、`scripts/` 和契约文件构成运行所需的正文、写作参照与确定性辅助能力。以上 `agentfs://` 指针仅说明本工作库中的来源与联动；外部接收者不需要读取本机旧手册或其他工作库文件，除非调用者把它们作为本项目输入资料明确提供。
-
 ## 目标与边界
 
 把指定的通用调研输入及其原始证据，收束成以下九份候选设计文件：
@@ -122,7 +103,7 @@ design/
 
 ## 起草九份文件
 
-读取 [九份文件写作](references/nine-document-authoring.md)，并在每份正文起草前实际读取 `references/design/` 中同编号的参照文件，以来源支持的项目语言、范围与章节粒度写作。八份案例参照的文件名已映射到当前九件序号，正文保持王磊原文件字节不变，因此其标题和文内旧编号仅作案例风格参考。案例中的 Ticket、特定语言、缓存、部署、路由、身份系统和业务规则不能复制到新项目。
+读取 [九份文件写作](references/nine-document-authoring.md)，并在每份正文起草前实际读取 `references/design/` 中同编号的参照文件，以来源支持的项目语言、范围与章节粒度写作。八份案例参照的文件名已映射到当前九件序号，沿用王磊原文件的业务正文，已去除本机路径；其标题和文内旧编号仅作案例风格参考。案例中的 Ticket、特定语言、缓存、部署、路由、身份系统和业务规则不能复制到新项目。
 
 逐份读取参照；读取结果截断时，分段补读到文件末尾再起草，在已有 `working/` 分析中记录读取范围。只得到标题、摘要或被截断的合并输出时，先补读对应原文。
 

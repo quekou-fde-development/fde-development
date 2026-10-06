@@ -2,7 +2,7 @@
   "run_id": "golden-basic",
   "package_hash": "564c3c020c1cf200",
   "contract_hash": "2bf8e5ed38e69621",
-  "run_dir_resolved": "/Users/sherlock/Intelligence_Network/Workspace/01 Projects Zone/Quekou_FDE/FDE_Methodology/_skills/meta-architecture-development/fixtures/golden-basic",
+  "run_dir_resolved": "/example/project/fixtures/golden-basic",
   "run_dir_source": "explicit_arg",
   "started_at": "2026-10-06T23:00:05",
   "stages": [
