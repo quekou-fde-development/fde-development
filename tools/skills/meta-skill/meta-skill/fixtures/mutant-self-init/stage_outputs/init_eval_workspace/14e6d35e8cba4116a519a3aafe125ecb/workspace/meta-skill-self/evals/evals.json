@@ -1,0 +1,24 @@
+{
+  "skill_name": "meta-skill-self",
+  "evals": [
+    {
+      "id": 0,
+      "eval_type": "end_state",
+      "prompt": "（填：用户任务 prompt）",
+      "files": [],
+      "expected_output": "（填：期望产物描述）",
+      "expectations": [
+        "（填：可客观验证的断言）"
+      ]
+    },
+    {
+      "id": 1,
+      "eval_type": "route_convergence",
+      "prompt": "（填：触发该 skill 的任务 prompt）",
+      "files": [],
+      "expected_route": "（填：已知正确路由）",
+      "reference_solution": "（填：这条路由为何对）",
+      "dry_run": true
+    }
+  ]
+}

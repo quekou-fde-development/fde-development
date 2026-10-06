@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "skill_name": "meta-skill-self",
+    "executor_model": "",
+    "timestamp": "2026-09-07T00:56:57",
+    "evals_run": 2,
+    "runs_per_configuration": 1,
+    "expected_runs": 4,
+    "valid_runs": 4,
+    "status": "COMPLETE",
+    "evals_sha256": "258f0116c2041c04a3c62854efb74e7088c54651f4aa785a9eea82fb1b6fd416"
+  },
+  "runs": [
+    {
+      "directory": "eval-0-with_skill-run1",
+      "eval_id": 0,
+      "eval_type": "end_state",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "primary_metric": "pass_rate",
+        "pass_rate": 0.75,
+        "route_match": null
+      },
+      "actual_route": null,
+      "expectations": [],
+      "notes": []
+    },
+    {
+      "directory": "eval-0-without_skill-run1",
+      "eval_id": 0,
+      "eval_type": "end_state",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "primary_metric": "pass_rate",
+        "pass_rate": 0.75,
+        "route_match": null
+      },
+      "actual_route": null,
+      "expectations": [],
+      "notes": []
+    },
+    {
+      "directory": "eval-1-with_skill-run1",
+      "eval_id": 1,
+      "eval_type": "route_convergence",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "primary_metric": "route_match_rate",
+        "pass_rate": null,
+        "route_match": false
+      },
+      "actual_route": "fixture-wrong-route",
+      "expectations": [],
+      "notes": []
+    },
+    {
+      "directory": "eval-1-without_skill-run1",
+      "eval_id": 1,
+      "eval_type": "route_convergence",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "primary_metric": "route_match_rate",
+        "pass_rate": null,
+        "route_match": false
+      },
+      "actual_route": "fixture-wrong-route",
+      "expectations": [],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "by_eval_type": {
+        "end_state": {
+          "evals": 1,
+          "complete": true,
+          "pass_k": 0.0,
+          "pass_rate": 0.75
+        },
+        "route_convergence": {
+          "evals": 1,
+          "complete": true,
+          "pass_k": 0.0,
+          "route_match_rate": 0.0,
+          "convergence_rate": 1.0
+        }
+      },
+      "primary_metric": "mixed",
+      "pass_rate": 0.75,
+      "route_match_rate": 0.0,
+      "convergence_rate": 1.0
+    },
+    "without_skill": {
+      "by_eval_type": {
+        "end_state": {
+          "evals": 1,
+          "complete": true,
+          "pass_k": 0.0,
+          "pass_rate": 0.75
+        },
+        "route_convergence": {
+          "evals": 1,
+          "complete": true,
+          "pass_k": 0.0,
+          "route_match_rate": 0.0,
+          "convergence_rate": 1.0
+        }
+      },
+      "primary_metric": "mixed",
+      "pass_rate": 0.75,
+      "route_match_rate": 0.0,
+      "convergence_rate": 1.0
+    },
+    "delta": {
+      "end_state": {
+        "pass_rate": 0.0,
+        "pass_k": 0.0
+      },
+      "route_convergence": {
+        "route_match_rate": 0.0,
+        "convergence_rate": 0.0,
+        "pass_k": 0.0
+      }
+    }
+  },
+  "errors": [],
+  "notes": [
+    "pass_k is the observed fraction of cases with all k runs correct."
+  ]
+}

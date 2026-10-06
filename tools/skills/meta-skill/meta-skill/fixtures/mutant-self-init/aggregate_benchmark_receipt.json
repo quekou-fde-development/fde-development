@@ -1,0 +1,19 @@
+{
+  "source_id": "scripts/aggregate_benchmark.py",
+  "fetched_at": "deterministic-self-check",
+  "output_count": 2,
+  "outputs_sha256": "924a9153d0f34a1c",
+  "outputs": [
+    {
+      "id": "stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.json",
+      "kind": "file",
+      "sha256": "94aa51f124187d24"
+    },
+    {
+      "id": "stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.md",
+      "kind": "file",
+      "sha256": "8cdf7c2d586c8cf1"
+    }
+  ],
+  "evidence_kind": "deterministic_fixture"
+}

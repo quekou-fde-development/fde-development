@@ -1,0 +1,266 @@
+{
+  "format_version": "1.0",
+  "scope": "parameterized meta-agent sharing snapshot",
+  "source_snapshot": "enterprise-brain-v1/streams/09-meta-agent",
+  "status": "candidate_not_deployed",
+  "files": [
+    {
+      "source": "spec-09-meta-agent.md",
+      "export": "design/spec-09-meta-agent.md",
+      "source_sha256": "e68213240767419b178157e47f0812e4f5392357c30016a1095a5f295410baac",
+      "export_sha256": "587c8890b54d08b00c233f7a5dbf9037bdae290decc6da270e0a39c768071376",
+      "changes": [
+        {
+          "category": "internal_agentfs_navigation_replaced",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "source": "architecture.md",
+      "export": "design/architecture.md",
+      "source_sha256": "8541b106a9a70cbffe8ea8e4a635ae965485231e7db1e17307d4760e7e8700eb",
+      "export_sha256": "724cfe3d6c56c0d28c79b8dad9f7e7929fe1408b1c425b1f8deb1e2412c3b3ea",
+      "changes": [
+        {
+          "category": "platform_entity_identifier_parameterized",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "skill-layout.md",
+      "export": "design/skill-layout.md",
+      "source_sha256": "e9cfd5b86f14ea4f5caf3b3630da3038e64f17430efcd07a5262370a5b619b99",
+      "export_sha256": "e9cfd5b86f14ea4f5caf3b3630da3038e64f17430efcd07a5262370a5b619b99",
+      "changes": []
+    },
+    {
+      "source": "contracts/image-handoff.md",
+      "export": "design/contracts/image-handoff.md",
+      "source_sha256": "52b283b15c1e3161e9fb306671e1f7533307d81803c28d8f4572fbe48a5c1e24",
+      "export_sha256": "52b283b15c1e3161e9fb306671e1f7533307d81803c28d8f4572fbe48a5c1e24",
+      "changes": []
+    },
+    {
+      "source": "contracts/outputs.md",
+      "export": "design/contracts/outputs.md",
+      "source_sha256": "436a30c5c0374e67e149db9f17562e386845cfb859fc253ba839d475f2463e74",
+      "export_sha256": "436a30c5c0374e67e149db9f17562e386845cfb859fc253ba839d475f2463e74",
+      "changes": []
+    },
+    {
+      "source": "contracts/prompt-segments.md",
+      "export": "design/contracts/prompt-segments.md",
+      "source_sha256": "e67379f2e70e00a819970e84fdee933f4db0ca22b031d0323b7c534795c07f2f",
+      "export_sha256": "e67379f2e70e00a819970e84fdee933f4db0ca22b031d0323b7c534795c07f2f",
+      "changes": []
+    },
+    {
+      "source": "contracts/seat-spec.md",
+      "export": "design/contracts/seat-spec.md",
+      "source_sha256": "591894980cf47143071bc0a76ebb0c1b4961f19e2fa8642a4a337b76f1880b7e",
+      "export_sha256": "591894980cf47143071bc0a76ebb0c1b4961f19e2fa8642a4a337b76f1880b7e",
+      "changes": []
+    },
+    {
+      "source": "contracts/series-style-09.20.json",
+      "export": "design/contracts/series-style-09.20.json",
+      "source_sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f",
+      "export_sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/SKILL.md",
+      "export": "skills/fde-meta-agent/SKILL.md",
+      "source_sha256": "231c2c00d0e18695de9dc79ab29e93ed02c5e9ee8a9bf1d9eb1ed1e85ca77ff9",
+      "export_sha256": "231c2c00d0e18695de9dc79ab29e93ed02c5e9ee8a9bf1d9eb1ed1e85ca77ff9",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/assertions.json",
+      "export": "skills/fde-meta-agent/assertions.json",
+      "source_sha256": "7da02e3e623c34e84788831e98587fcfe3f8e6a8d1e8274bcae9ddf2ee1a349c",
+      "export_sha256": "7da02e3e623c34e84788831e98587fcfe3f8e6a8d1e8274bcae9ddf2ee1a349c",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/contract_ir.json",
+      "export": "skills/fde-meta-agent/references/contract_ir.json",
+      "source_sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf",
+      "export_sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/image-handoff.md",
+      "export": "skills/fde-meta-agent/references/image-handoff.md",
+      "source_sha256": "124e1236e4c9f565175d1571ed134bcf9dab53f6cd64b372fba1551dfc1ceeca",
+      "export_sha256": "124e1236e4c9f565175d1571ed134bcf9dab53f6cd64b372fba1551dfc1ceeca",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/outputs.md",
+      "export": "skills/fde-meta-agent/references/outputs.md",
+      "source_sha256": "3391975e3520f96ec89fa85b19132d3a2f6cd409a003134949ade710d91d4313",
+      "export_sha256": "3391975e3520f96ec89fa85b19132d3a2f6cd409a003134949ade710d91d4313",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/prompt-segments.md",
+      "export": "skills/fde-meta-agent/references/prompt-segments.md",
+      "source_sha256": "9bd98ca2786d453ddff4e4e144c6dedc19ebb8443ffe323801fdbdcfea6bbafb",
+      "export_sha256": "9bd98ca2786d453ddff4e4e144c6dedc19ebb8443ffe323801fdbdcfea6bbafb",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/seat-spec.md",
+      "export": "skills/fde-meta-agent/references/seat-spec.md",
+      "source_sha256": "5e69f8f6acf0abfbb4e5cb56e848ce6813f78b42a8b19fccd79b07b946772e07",
+      "export_sha256": "5e69f8f6acf0abfbb4e5cb56e848ce6813f78b42a8b19fccd79b07b946772e07",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/series-style-09.20.json",
+      "export": "skills/fde-meta-agent/references/series-style-09.20.json",
+      "source_sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f",
+      "export_sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/references/职能席.md",
+      "export": "skills/fde-meta-agent/references/职能席.md",
+      "source_sha256": "6d7b7ca7083c2559cbb5964a24268229ad2cf04c1c33f92665e00bd8b0bffe46",
+      "export_sha256": "6d7b7ca7083c2559cbb5964a24268229ad2cf04c1c33f92665e00bd8b0bffe46",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/scripts/audit.py",
+      "export": "skills/fde-meta-agent/scripts/audit.py",
+      "source_sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238",
+      "export_sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/scripts/execute_stage.py",
+      "export": "skills/fde-meta-agent/scripts/execute_stage.py",
+      "source_sha256": "7e8312cd1c5d6a225bb58773536f90aedad3b21a721d67b5df00d9ba71cf1773",
+      "export_sha256": "7e8312cd1c5d6a225bb58773536f90aedad3b21a721d67b5df00d9ba71cf1773",
+      "changes": []
+    },
+    {
+      "source": "skills/fde-meta-agent/scripts/run_pipeline.py",
+      "export": "skills/fde-meta-agent/scripts/run_pipeline.py",
+      "source_sha256": "e8df663de229ffede6eddbbbc125084b338f56247ecba44e16dcb00945f58e4c",
+      "export_sha256": "e8df663de229ffede6eddbbbc125084b338f56247ecba44e16dcb00945f58e4c",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/SKILL.md",
+      "export": "skills/builder-agent/SKILL.md",
+      "source_sha256": "3c4be89528a1d13a0ae2e2cdb864bed3826a2eb04001acbb35a6cfa8ff91cc6a",
+      "export_sha256": "3c4be89528a1d13a0ae2e2cdb864bed3826a2eb04001acbb35a6cfa8ff91cc6a",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/assertions.json",
+      "export": "skills/builder-agent/assertions.json",
+      "source_sha256": "a4999ea3fa417b093f1fc7a151ab06a7146d17c3648d352c01ee1a6598603a6e",
+      "export_sha256": "a4999ea3fa417b093f1fc7a151ab06a7146d17c3648d352c01ee1a6598603a6e",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/references/builder-product.md",
+      "export": "skills/builder-agent/references/builder-product.md",
+      "source_sha256": "726ca35f29390cb26dd379763de26a49b81e3ac9d03a926834c24818e733a17c",
+      "export_sha256": "c532fece105972718536bafcd97d21983c0ab503fefe58fc0f99318e0516e409",
+      "changes": [
+        {
+          "category": "platform_entity_identifier_parameterized",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "source": "skills/builder-agent/references/contract_ir.json",
+      "export": "skills/builder-agent/references/contract_ir.json",
+      "source_sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf",
+      "export_sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/references/image-handoff.md",
+      "export": "skills/builder-agent/references/image-handoff.md",
+      "source_sha256": "124e1236e4c9f565175d1571ed134bcf9dab53f6cd64b372fba1551dfc1ceeca",
+      "export_sha256": "124e1236e4c9f565175d1571ed134bcf9dab53f6cd64b372fba1551dfc1ceeca",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/references/outputs.md",
+      "export": "skills/builder-agent/references/outputs.md",
+      "source_sha256": "3391975e3520f96ec89fa85b19132d3a2f6cd409a003134949ade710d91d4313",
+      "export_sha256": "3391975e3520f96ec89fa85b19132d3a2f6cd409a003134949ade710d91d4313",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/references/prompt-segments.md",
+      "export": "skills/builder-agent/references/prompt-segments.md",
+      "source_sha256": "9bd98ca2786d453ddff4e4e144c6dedc19ebb8443ffe323801fdbdcfea6bbafb",
+      "export_sha256": "9bd98ca2786d453ddff4e4e144c6dedc19ebb8443ffe323801fdbdcfea6bbafb",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/references/series-style-09.20.json",
+      "export": "skills/builder-agent/references/series-style-09.20.json",
+      "source_sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f",
+      "export_sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/scripts/audit.py",
+      "export": "skills/builder-agent/scripts/audit.py",
+      "source_sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238",
+      "export_sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/scripts/execute_stage.py",
+      "export": "skills/builder-agent/scripts/execute_stage.py",
+      "source_sha256": "2b3740235f7121c2a755a7e9821036959074c255fcaa2ac1fdec38ecf31f9810",
+      "export_sha256": "2b3740235f7121c2a755a7e9821036959074c255fcaa2ac1fdec38ecf31f9810",
+      "changes": []
+    },
+    {
+      "source": "skills/builder-agent/scripts/run_pipeline.py",
+      "export": "skills/builder-agent/scripts/run_pipeline.py",
+      "source_sha256": "87c23da9176d13acf1431cb59e486754510f35e6840e9f43874e77b17b468e2f",
+      "export_sha256": "87c23da9176d13acf1431cb59e486754510f35e6840e9f43874e77b17b468e2f",
+      "changes": []
+    }
+  ],
+  "parameterization_policy": {
+    "platform_entity_identifier": "Each repeated source identifier maps consistently to a category-indexed placeholder.",
+    "internal_agentfs_navigation": "Redirected to the same-package README explanation; internal evidence is excluded."
+  },
+  "excluded_by_construction": [
+    "STATUS.md",
+    "_compile/**",
+    "scratchpad/**",
+    "skills/*/fixtures/**",
+    "skills/*/scripts/generate_fixtures.py",
+    "runs/**",
+    "eval-workspaces/**"
+  ],
+  "generated_files": [
+    {
+      "export": "README.md",
+      "category": "share_context_status_and_loading_chain",
+      "source_sha256": null,
+      "export_sha256": "5a471bb6873c8b28b0d5edb9f245fc7cde2f05a90e390307db7186e6ead5fbe9"
+    },
+    {
+      "export": "sanitization-manifest.json",
+      "category": "sanitization_record",
+      "source_sha256": null
+    }
+  ]
+}

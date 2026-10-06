@@ -1,0 +1,5 @@
+{
+  "mutation": "M-self-trigger",
+  "must_be_rejected_by": "self.trigger.receipt/self.trigger.schema/self.trigger.count_hash",
+  "doc": "Remove receipt timestamp and a file hash; alter declared count."
+}

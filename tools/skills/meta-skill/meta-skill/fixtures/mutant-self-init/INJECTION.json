@@ -1,0 +1,5 @@
+{
+  "mutation": "M-self-init",
+  "must_be_rejected_by": "self.init.receipt/self.init.schema/self.init.count_hash",
+  "doc": "Remove receipt timestamp and a file hash; alter declared count."
+}

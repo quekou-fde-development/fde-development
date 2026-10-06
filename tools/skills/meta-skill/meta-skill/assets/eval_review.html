@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>触发 eval 复核 · __SKILL_NAME_PLACEHOLDER__</title>
+<!--
+  meta-skill 第 7 步 · 触发 eval 人审模板。
+  generate_review.py --trigger 会把三个占位符替换掉：
+    __SKILL_NAME_PLACEHOLDER__        skill 名
+    __SKILL_DESCRIPTION_PLACEHOLDER__ 当前/最优 description
+    __EVAL_DATA_PLACEHOLDER__         trigger_set JSON 数组（[{query, should_trigger}, ...]）
+  人核每条 should_trigger 标对没标对，尤其 near-miss（共享关键词但不该触发）。
+  改完点「导出」存 eval_set.json，再喂回 run_trigger_eval.py。单机用，纯前端，无后端。
+-->
+<style>
+ body{font-family:system-ui,"Microsoft YaHei",sans-serif;margin:0;background:#f6f7f9;color:#1a1a1a}
+ header{background:#222;color:#fff;padding:12px 20px}
+ header h1{font-size:16px;margin:0} header p{font-size:12px;color:#bbb;margin:6px 0 0}
+ .wrap{max-width:900px;padding:20px}
+ .desc{background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:12px 16px;margin-bottom:16px;font-size:13px}
+ table{border-collapse:collapse;width:100%;background:#fff}
+ th,td{border:1px solid #ddd;padding:8px 12px;text-align:left;font-size:13px}
+ th{background:#efefef}
+ .yes{color:#0a7d23;font-weight:600} .no{color:#c0271a;font-weight:600}
+ select{font-size:13px} button{font-size:13px;padding:6px 14px;margin-top:14px;cursor:pointer}
+ .near{background:#fff8e6}
+ .hint{font-size:12px;color:#666;margin:4px 0 12px}
+</style>
+</head>
+<body>
+<header>
+ <h1>触发 eval 复核 · __SKILL_NAME_PLACEHOLDER__</h1>
+ <p>核每条用例的 should_trigger 标注是否正确。near-miss（黄底）最值钱：共享关键词但实则不该触发。</p>
+</header>
+<div class="wrap">
+ <div class="desc"><b>当前 description：</b><br>__SKILL_DESCRIPTION_PLACEHOLDER__</div>
+ <p class="hint">改下拉框可改标注；改完点「导出 eval_set.json」存盘，再喂回 run_trigger_eval.py。</p>
+ <table id="tbl">
+  <tr><th style="width:60px">#</th><th>query（用户说法）</th><th style="width:160px">should_trigger</th></tr>
+ </table>
+ <button onclick="exportJson()">导出 eval_set.json</button>
+</div>
+<script>
+ const DATA = __EVAL_DATA_PLACEHOLDER__;
+ const tbl = document.getElementById('tbl');
+ DATA.forEach((row, i) => {
+   const tr = document.createElement('tr');
+   const isFalse = row.should_trigger === false;
+   if (isFalse) tr.className = 'near';
+   tr.innerHTML =
+     `<td>${i}</td><td>${(row.query||'').replace(/</g,'&lt;')}</td>` +
+     `<td><select data-i="${i}">
+        <option value="true"  ${row.should_trigger ? 'selected':''}>true（该触发）</option>
+        <option value="false" ${!row.should_trigger ? 'selected':''}>false（不该触发）</option>
+      </select></td>`;
+   tbl.appendChild(tr);
+ });
+ function exportJson(){
+   document.querySelectorAll('select[data-i]').forEach(s => {
+     DATA[+s.dataset.i].should_trigger = (s.value === 'true');
+   });
+   const blob = new Blob([JSON.stringify(DATA, null, 2)], {type:'application/json'});
+   const a = document.createElement('a');
+   a.href = URL.createObjectURL(blob);
+   a.download = 'eval_set.json';
+   a.click();
+ }
+</script>
+</body>
+</html>

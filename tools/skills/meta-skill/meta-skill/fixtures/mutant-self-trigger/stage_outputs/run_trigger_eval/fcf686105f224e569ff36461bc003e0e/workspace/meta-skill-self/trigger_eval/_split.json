@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "version": "original",
+  "description": "把一条「长链复杂判断工作流」蒸馏成可自动执行的 SKILL.md。创建任何新 skill 时调用；重写或加固已有 skill 时调用。输入可以是已完成的访谈语料 / 案例集 / 现役 skill 文本，或一个已成型的判据库（如某 agent 规则文件）。输出一份纯命令式 SKILL.md。",
+  "description_src": "fixture://package/SKILL.md",
+  "train_ids": [
+    2,
+    1
+  ],
+  "test_ids": [
+    3,
+    0
+  ],
+  "runs": 1,
+  "seed": 42,
+  "split": {
+    "train": 0.6,
+    "test": 0.4
+  },
+  "trigger_set_sha256": "89be0ce4f766c28d3fd6472b3bbddb699e2dcf11afc11df7f4a8c8b3501673a6",
+  "comparison_key": "c56b986027f9ef34ce9cd9a1b33fe915601c13eb546adb729b9c49e96298f552",
+  "eval_fingerprint": "6cf22704a020c64c4a8f1a6840914ed352b8ecd4a0d67fdd11dfb0efb20d1f60"
+}

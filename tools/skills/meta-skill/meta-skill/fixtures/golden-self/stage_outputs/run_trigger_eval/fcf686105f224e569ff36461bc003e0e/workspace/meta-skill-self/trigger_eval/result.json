@@ -1,0 +1,51 @@
+{
+  "skill_name": "meta-skill-self",
+  "original_description": "把一条「长链复杂判断工作流」蒸馏成可自动执行的 SKILL.md。创建任何新 skill 时调用；重写或加固已有 skill 时调用。输入可以是已完成的访谈语料 / 案例集 / 现役 skill 文本，或一个已成型的判据库（如某 agent 规则文件）。输出一份纯命令式 SKILL.md。",
+  "best_description": "把一条「长链复杂判断工作流」蒸馏成可自动执行的 SKILL.md。创建任何新 skill 时调用；重写或加固已有 skill 时调用。输入可以是已完成的访谈语料 / 案例集 / 现役 skill 文本，或一个已成型的判据库（如某 agent 规则文件）。输出一份纯命令式 SKILL.md。",
+  "best_version": "original",
+  "best_test_score": 0.5,
+  "runs_per_query": 1,
+  "comparison_key": "c56b986027f9ef34ce9cd9a1b33fe915601c13eb546adb729b9c49e96298f552",
+  "split": {
+    "train": 0.6,
+    "test": 0.4
+  },
+  "best_scope": "current-comparison-key",
+  "current_version": "original",
+  "current_evaluation_pass": false,
+  "best_evaluation_pass": false,
+  "input_validation": "COMPLETE",
+  "evaluation_pass": false,
+  "method": "independent-agent-votes",
+  "iterations": [
+    {
+      "version": "original",
+      "description": "把一条「长链复杂判断工作流」蒸馏成可自动执行的 SKILL.md。创建任何新 skill 时调用；重写或加固已有 skill 时调用。输入可以是已完成的访谈语料 / 案例集 / 现役 skill 文本，或一个已成型的判据库（如某 agent 规则文件）。输出一份纯命令式 SKILL.md。",
+      "comparison_key": "c56b986027f9ef34ce9cd9a1b33fe915601c13eb546adb729b9c49e96298f552",
+      "eval_fingerprint": "6cf22704a020c64c4a8f1a6840914ed352b8ecd4a0d67fdd11dfb0efb20d1f60",
+      "train_score": 0.5,
+      "test_score": 0.5,
+      "train_failures": [
+        {
+          "id": 2,
+          "query": "Repair an existing skill",
+          "should_trigger": true,
+          "fired": false,
+          "reason": "MISMATCH"
+        }
+      ],
+      "test_failures": [
+        {
+          "id": 3,
+          "query": "Summarize a skills training class",
+          "should_trigger": false,
+          "fired": true,
+          "reason": "MISMATCH"
+        }
+      ],
+      "validated_runs": 1,
+      "scored_at": "2026-09-07T00:56:56"
+    }
+  ],
+  "updated_at": "2026-09-07T00:56:56"
+}

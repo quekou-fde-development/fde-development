@@ -1,0 +1,19 @@
+{
+  "evidence_kind": "deterministic_fixture",
+  "trigger_cases": [
+    {"id": 0, "query": "Create a reusable skill", "should_trigger": true},
+    {"id": 1, "query": "Run an existing skill", "should_trigger": false},
+    {"id": 2, "query": "Repair an existing skill", "should_trigger": true},
+    {"id": 3, "query": "Summarize a skills training class", "should_trigger": false}
+  ],
+  "trigger_votes": [
+    {"id": 0, "decision": "TRIGGER"},
+    {"id": 1, "decision": "SKIP"},
+    {"id": 2, "decision": "SKIP"},
+    {"id": 3, "decision": "TRIGGER"}
+  ],
+  "gradings": {
+    "end_state": {"eval_type": "end_state", "summary": {"pass_rate": 0.75}, "expectations": []},
+    "route_convergence": {"eval_type": "route_convergence", "route_result": {"route_match": false, "actual_route": "fixture-wrong-route", "expected_route": "fixture-right-route"}}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source_id": "scripts/run_trigger_eval.py",
+  "output_count": 4,
+  "outputs_sha256": "337efb98fca10b53",
+  "outputs": [
+    {
+      "id": "stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_split.json",
+      "kind": "file"
+    },
+    {
+      "id": "stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_judge_card.md",
+      "kind": "file",
+      "sha256": "0f6b484c2154110d"
+    },
+    {
+      "id": "stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/result.json",
+      "kind": "file",
+      "sha256": "279514fddd48a883"
+    }
+  ],
+  "evidence_kind": "deterministic_fixture"
+}

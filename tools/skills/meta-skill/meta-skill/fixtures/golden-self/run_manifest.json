@@ -1,0 +1,72 @@
+{
+  "run_id": "golden-self",
+  "package_hash": "UNRECORDED（未给 --package）",
+  "contract_hash": "7a6f719a4bd19d19",
+  "run_dir_resolved": "fixture://run",
+  "run_dir_source": "explicit_arg",
+  "started_at": "2026-09-07T00:56:57",
+  "stages": [
+    {
+      "stage": "init_eval_workspace",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "init_eval_workspace_receipt.json",
+          "source_reachability": "machine"
+        }
+      ],
+      "audit_tiers_run": [
+        1
+      ],
+      "assertions": {
+        "passed": 3,
+        "failed": 0,
+        "unverified": 0
+      },
+      "verdict": "PASS",
+      "unresolved_coverage": []
+    },
+    {
+      "stage": "run_trigger_eval",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "run_trigger_eval_receipt.json",
+          "source_reachability": "machine"
+        }
+      ],
+      "audit_tiers_run": [
+        1
+      ],
+      "assertions": {
+        "passed": 3,
+        "failed": 0,
+        "unverified": 0
+      },
+      "verdict": "PASS",
+      "unresolved_coverage": []
+    },
+    {
+      "stage": "aggregate_benchmark",
+      "operations": [
+        {
+          "op": "acquire",
+          "artifact": "aggregate_benchmark_receipt.json",
+          "source_reachability": "machine"
+        }
+      ],
+      "audit_tiers_run": [
+        1
+      ],
+      "assertions": {
+        "passed": 3,
+        "failed": 0,
+        "unverified": 0
+      },
+      "verdict": "PASS",
+      "unresolved_coverage": []
+    }
+  ],
+  "final_verdict": "PASS",
+  "retention": "always"
+}
