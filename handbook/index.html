@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="dbdecff81842011d6903c3c4d71f67dcfbf92f6da3c5ea373a1fb77b2aca2d2e"><meta name="canonical-html-sha256" content="e3757151307d2feb63e68d305dbd988240e671a4ce62a0ff1ea92a0c49e62d5d"><title>FDE 开发技术手册 · 10.06.4</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="5333e8bd35e51ff7680d3096a052e06a4596d267077250bedddfbc14967a99e4"><meta name="canonical-html-sha256" content="5684370bec9763829057ac22eaf469d7d4bfe593a6e9e8e98f4e3e611d78f4d1"><title>FDE 开发技术手册 · 10.06.4</title><style>
 :root{--ink:#172b40;--muted:#526476;--paper:#fff;--bg:#f1f4f7;--line:#dce4ec;--blue:#17617d;--blue-light:#eaf3f8;--gold:#8d5d12;--gold-light:#fff3d8}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}a{color:#0e648b;text-underline-offset:3px}a:hover{color:#0c415a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1686ab;outline-offset:4px}.skip{position:fixed;top:-100px;z-index:9;background:white;padding:8px 16px}.skip:focus{top:8px}
 .sidebar{width:268px;position:fixed;inset:0 auto 0 0;background:#102d41;color:#dceaf2;padding:26px 18px;overflow-y:auto}.brand{font-size:13px;letter-spacing:2px;color:#9fbbc9}.sidebar strong{display:block;font-size:21px;color:#fff;margin:6px 0 8px}.edition{font-size:12px;color:#b9d4df;margin-bottom:25px}.sidebar nav a{display:block;color:#dceaf2;text-decoration:none;line-height:1.5;padding:8px 10px;border-radius:7px;font-size:13px}.sidebar nav a:hover{background:#23455a}.sidebar .toc-level-2{font-weight:700;margin-top:12px;color:#fff}.sidebar .toc-level-3{padding-left:19px}.menu-toggle{display:none}.sidebar .print{display:block;width:100%;margin-top:28px;background:#e7f1f6;color:#17364b;border:0;padding:10px;border-radius:7px;cursor:pointer;font:inherit;font-size:13px}
@@ -42,6 +42,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <div class="path" aria-label="工作路径"><div class="stage"><span>第一部分</span><strong>出架构</strong><small>调研输入 → 九份架构 Markdown<br>配套开发计划（标准化待补）</small></div><div class="gate">夏洛克审核<br>通过后进入 →</div><div class="stage"><span>第二部分</span><strong>开发与上线测试</strong><small>独立项目仓库 → 开发、测试、发布<br>问题回到仓库反馈入口</small></div></div>
 <section id="handbook-body">
 <h2 id="section-1">如何使用</h2>
+<p>先看 <a href="FDE_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E5%86%85%E9%83%A8%E6%89%A7%E8%A1%8C%E7%89%88.html">FDE 总流程图（内部执行版）</a>，了解项目整体阶段、角色、决策和交接，再按本手册展开技术开发环节。总流程图与本手册 HTML 同目录保存时，该链接可离线打开。</p>
 <p>本手册面向承担方案设计与开发的架构师、FDE 和开发 AI。工作从前置检索与调研语料开始，形成九份架构设计和配套开发计划，送审通过后实施、测试、发布，并将问题送回仓库反馈入口。开发是 FDE 全流程内部的一段 loop；商务、调研、客户培训、最终客户验收和维护按上层 FDE 流程衔接。</p>
 <p>全文分为两个大部分。第一部分将检索、调研原件与通用输入交给 <strong>Meta Architecture Development</strong>，先分析业务流和系统架构，再生成九份标准 Markdown；配套开发计划一并交总架构师夏洛克审核。第二部分在取得对应版本的审核通过记录后，按架构实施 Arcubase、数字员工、技能和工作台，完成联调、发布与上线测试。</p>
 <blockquote>
@@ -167,8 +168,8 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="inputs/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
 <p>把事实、已确认规则、待核实假设分开标注，并为每条重要结论附原件位置。遇到缺样本、规则冲突、关键接口未知，登记具体缺件与负责人；由 PM 协调补齐。影响范围或技术路线的缺件在架构送审时明示，不交给开发 AI 自行补成事实。</p>
 <p>材料索引分别记录两种状态：原件是否取得并实际读取；相关能力处于文档说明、源码核对、样例验证还是目标环境实测。来源未取得正文、现场尚未验证等情况随送审包保留。</p>
-<p><strong>工具入口：</strong> <a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/skills/meta-architecture-development">Meta Architecture Development</a>。</p>
-<p><strong>怎样启动：</strong> 把填过的输入副本、原件位置和一个新的 <code>run-dir</code> 交给开发 AI，要求实际读取 <code>tools/skills/meta-architecture-development/SKILL.md</code> 与随包 references。输入允许部分填写；Skill 依次取源、分析业务流与系统架构、集中澄清、起草和核对九份设计。设计关键问题尚未解决时保留工作稿，补料后继续。</p>
+<p><strong>工具入口：</strong> <a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-architecture-development">Meta Architecture Development</a>。</p>
+<p><strong>怎样启动：</strong> 把填过的输入副本、原件位置和一个新的 <code>run-dir</code> 交给开发 AI，要求实际读取 <code>tools/meta-architecture-development/source/SKILL.md</code> 与随包 references。输入允许部分填写；Skill 依次取源、分析业务流与系统架构、集中澄清、起草和核对九份设计。设计关键问题尚未解决时保留工作稿，补料后继续。</p>
 <p><strong>填写重点：</strong> 调研范围和角色、真实作业路径、异常与决定权、单据和样本、现有系统、目标与交付范围、验收依据、Octopus / Arcubase / Workbench 已知环境及授权。既有 App 记录真实 ID 与 Schema；拟新建 App 写计划与依据。</p>
 <p><strong>产出：</strong> 通用输入项目副本、来源快照与缺件记录，进入本次运行的 <code>input/</code>、<code>working/</code>。沿用已有调研成果，只针对架构缺口补证。</p>
 <pre><code class="language-text">请按 meta-architecture-development/SKILL.md 处理本项目。
@@ -583,10 +584,10 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/skills/meta-architecture-development">Meta Architecture Development</a></td>
+<td><a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-architecture-development">Meta Architecture Development</a></td>
 <td>通用调研输入、原件、业务约束和新的运行目录；§1—5 起草架构</td>
 <td>九份 <code>design/*.md</code>、来源与渲染回执、限制</td>
-<td>读工具目录的 <code>SKILL.md</code> 与 references；采用版本和验证范围按工具清单核对</td>
+<td>读工具入口说明及 <code>source/SKILL.md</code> 与 references；采用版本和验证范围按工具清单核对</td>
 </tr>
 <tr>
 <td>Meta Skill · <code>02-meta-skill_3.10.1.zip</code></td>

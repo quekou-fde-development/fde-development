@@ -2,7 +2,7 @@
 title: Meta Agent 参数化分享副本
 kind: share_snapshot
 status: candidate_not_deployed
-sanitization_manifest: sanitization-manifest.json
+sanitization_manifest: source/sanitization-manifest.json
 ---
 
 # Meta Agent 参数化分享副本
@@ -10,7 +10,11 @@ sanitization_manifest: sanitization-manifest.json
 本目录是从 Meta Agent 开发源导出的**参数化候选副本**。其中的项目平台实体标识已替换为一致的占位符；原始运行记录、评测工作区、夹具、编译记录、scratchpad 与状态原文均未随包提供。
 
 
-组织内数字员工使用 `skills/fde-meta-agent/`；市场产品使用 `skills/builder-agent/`。
+组织内数字员工的源码见 [FDE Skill](source/skills/fde-meta-agent/SKILL.md)，市场产品的源码见 [Builder Skill](source/skills/builder-agent/SKILL.md)。
+
+此副本含设计、合同和双包运行核心；具体参数化修改类别及源文件、导出文件摘要见 [sanitization-manifest.json](source/sanitization-manifest.json)。
+
+[下载候选 ZIP](meta-agent-10.06.zip)。解压后先读 `meta-agent/README.md`，按路线选择包内的 `skills/fde-meta-agent/` 或 `skills/builder-agent/`。这两个目录分别是 Skill 根；仓库中的 `source/skills/` 提供对应源码。
 
 ## 当前状态与使用边界
 

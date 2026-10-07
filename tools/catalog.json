@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.07.3",
+  "version": "10.07.4",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -16,15 +16,18 @@
       "license": "No license file supplied in source archive.",
       "sha256": "0ddf7e5f527ca0c0c9b983fdf61c8cd456aeecf4dd17addb3d54550e0de5140d",
       "bytes": 396054,
-      "archive": "tools/packages/meta-skill-3.10.1.zip",
-      "path": "tools/skills/meta-skill/",
-      "entry": "tools/skills/meta-skill/README.md",
+      "archive": "tools/meta-skill/meta-skill-3.10.1.zip",
+      "path": "tools/meta-skill/",
+      "entry": "tools/meta-skill/README.md",
       "source_package_name": "packages/02-meta-skill_3.10.1.zip",
       "member_count": 118,
       "source_archive_sha256": "26ac8d164143c39656edeeda4d8fa46dd29d1b3507354fdc534c957b8f6da8cd",
-      "publication_revision": "10.07.3",
+      "publication_revision": "10.07.4",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
-      "original_archive_sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada"
+      "original_archive_sha256": "592be62092a164738a58b109c00619d3d305982caae0aaef818d01e9d8f42ada",
+      "source_root": "tools/meta-skill/source/",
+      "install_from": "versioned-archive",
+      "archive_install_root": "meta-skill/"
     },
     {
       "name": "Meta Orchestrator",
@@ -39,15 +42,16 @@
       "license": "No license file supplied in source archive.",
       "sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
       "bytes": 29769,
-      "archive": "tools/packages/meta-orchestrator-10.06.zip",
-      "path": "tools/skills/meta-orchestrator/",
-      "entry": "tools/skills/meta-orchestrator/README.md",
+      "archive": "tools/meta-orchestrator/meta-orchestrator-10.06.zip",
+      "path": "tools/meta-orchestrator/",
+      "entry": "tools/meta-orchestrator/README.md",
       "source_package_name": "packages/03-meta-orchestrator_10.06.zip",
       "member_count": 2,
       "source_archive_sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
-      "publication_revision": "10.07.3",
+      "publication_revision": "10.07.4",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
-      "original_archive_sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de"
+      "original_archive_sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de",
+      "source_root": "tools/meta-orchestrator/source/"
     },
     {
       "name": "Meta Agent",
@@ -62,15 +66,21 @@
       "license": "No license file supplied in source archive.",
       "sha256": "d38ef2f065d300ab5aa105fd3bdcbc1bebaef31ed403612fe2aa816194d789db",
       "bytes": 178815,
-      "archive": "tools/packages/meta-agent-10.06.zip",
-      "path": "tools/skills/meta-agent/",
-      "entry": "tools/skills/meta-agent/README.md",
+      "archive": "tools/meta-agent/meta-agent-10.06.zip",
+      "path": "tools/meta-agent/",
+      "entry": "tools/meta-agent/README.md",
       "source_package_name": "packages/04-meta-agent_10.06.zip",
       "member_count": 34,
       "source_archive_sha256": "c0f6b6a44a6f9f5dfcc0e66e1bdd35ec2d4f3b0c8c6bc8020be057ba59413806",
-      "publication_revision": "10.07.3",
+      "publication_revision": "10.07.4",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
-      "original_archive_sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61"
+      "original_archive_sha256": "2835bdc098eca7feaa494ca8c1b6ce8c5676119877cffc13b49a2799f0a47e61",
+      "source_root": "tools/meta-agent/source/",
+      "install_from": "versioned-archive",
+      "archive_install_roots": [
+        "meta-agent/skills/fde-meta-agent/",
+        "meta-agent/skills/builder-agent/"
+      ]
     },
     {
       "name": "Workbench App Development",
@@ -85,15 +95,18 @@
       "license": "No license file supplied in source archive.",
       "sha256": "0fda98443408293c2a2ebf770f97df14d2b10ea1d3889d58d48fccd331feb016",
       "bytes": 16518,
-      "archive": "tools/packages/workbench-app-development-10.06.zip",
-      "path": "tools/skills/workbench-app-development/",
-      "entry": "tools/skills/workbench-app-development/README.md",
+      "archive": "tools/workbench-app-development/workbench-app-development-10.06.zip",
+      "path": "tools/workbench-app-development/",
+      "entry": "tools/workbench-app-development/README.md",
       "source_package_name": "packages/05-workbench-app-development_10.06.zip",
       "member_count": 8,
       "source_archive_sha256": "0fda98443408293c2a2ebf770f97df14d2b10ea1d3889d58d48fccd331feb016",
-      "publication_revision": "10.07.3",
+      "publication_revision": "10.07.4",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
-      "original_archive_sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d"
+      "original_archive_sha256": "26d21fcac23237ae67ec88d8932e457195b3eac606cbdc403445414ca1947d1d",
+      "source_root": "tools/workbench-app-development/source/",
+      "install_from": "versioned-archive",
+      "archive_install_root": "workbench-app-development/"
     },
     {
       "name": "Quekou Workbench Frontend",
@@ -108,46 +121,28 @@
       "license": "Included: LICENSE.txt; third-party notices and license texts included in THIRD_PARTY_NOTICES.md and materials/licenses/.",
       "sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9",
       "bytes": 3207208,
-      "archive": "tools/packages/quekou-frontend-1.0.0.zip",
-      "path": "tools/resources/quekou-frontend/",
-      "entry": "tools/resources/quekou-frontend/quekou-workbench-1.0.0/START_HERE.md",
+      "archive": "tools/quekou-frontend/quekou-frontend-1.0.0.zip",
+      "path": "tools/quekou-frontend/",
+      "entry": "tools/quekou-frontend/README.md",
       "source_package_name": "packages/06-quekou-frontend_1.0.0.zip",
       "member_count": 390,
       "original_archive_sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9",
-      "source_archive_sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9"
-    },
-    {
-      "name": "Specialist Tool Guides",
-      "slug": "specialist-tool-guides",
-      "version": "10.06",
-      "status": "external-tool-integration-guide",
-      "limitations": [
-        "Documentation only: OctoPlanner, 老马 drawings, and SKU Radar services/binaries/accounts are not copied or redistributed.",
-        "Each project must verify target-version, authentication, supported input, permissions, and customer-environment behavior before use.",
-        "No license file supplied with the source document."
-      ],
-      "license": "No license file supplied with source document.",
-      "sha256": "a89b14d47cc29c0e1ed170a7445facf76b39cabcd0154877b3a9b5d654198167",
-      "bytes": 3117,
-      "archive": "tools/packages/specialist-tool-guides-10.06.zip",
-      "path": "tools/resources/specialist-tool-guides/",
-      "entry": "tools/resources/specialist-tool-guides/README.md",
-      "source_package_name": "07-specialist-tools/README.md",
-      "member_count": 1,
-      "source_archive_sha256": "bee4bd9424074fd3a4fe8bc4d11e7e3b1a194f3f702d858773cd47718c6ff04a",
-      "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
+      "source_archive_sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9",
+      "publication_revision": "10.07.4",
+      "source_root": "tools/quekou-frontend/source/",
+      "archive_install_root": "quekou-workbench-1.0.0/",
+      "install_from": "versioned-archive"
     },
     {
       "name": "九份架构写作参照",
       "slug": "development-design",
       "version": "10.06",
       "status": "nine-writing-references",
-      "archive": "tools/packages/development-design-10.06.zip",
-      "path": "tools/resources/development-design/",
-      "entry": "tools/resources/development-design/README.md",
-      "sha256": "40401df1a9b4a68f28a1babf075b5bb8d66996049f6be969c8130abf89a1402a",
-      "bytes": 24326,
+      "archive": "handbook/architecture-reference/development-design-10.06.zip",
+      "path": "handbook/architecture-reference/",
+      "entry": "handbook/architecture-reference/README.md",
+      "sha256": "bc0d0fb81195eeac6764c2797dae8866bbed05ff9bb7008fb800f540b9359493",
+      "bytes": 24507,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
@@ -155,7 +150,7 @@
       "data_model_sha256": "8c311ad3a73d96d95cb097127fa2cd32e35db0203664ea53e9b81f21dcf42cbd",
       "other_eight_unchanged": false,
       "source_archive_sha256": "3d5617490051aad5b99716f9f89b981b52fce6dae335257aca52252476e9cd30",
-      "publication_revision": "10.07.3",
+      "publication_revision": "10.07.4",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
       "member_count": 10,
       "source_reference_freeze": "frozen-candidate-9",
@@ -170,9 +165,9 @@
       "version": "0.1.0-candidate",
       "archive_version": "10.06",
       "status": "validated-candidate-awaiting-chief-architect-review",
-      "path": "tools/skills/meta-architecture-development/",
-      "entry": "tools/skills/meta-architecture-development/SKILL.md",
-      "archive": "tools/packages/meta-architecture-development-10.06.zip",
+      "path": "tools/meta-architecture-development/",
+      "entry": "tools/meta-architecture-development/README.md",
+      "archive": "tools/meta-architecture-development/meta-architecture-development-10.06.zip",
       "sha256": "65cf20bc5860c798063fc165f7f479e6ea70b06bfb1026a18c9ee6f9180fa6a4",
       "bytes": 205922,
       "member_count": 268,
@@ -180,7 +175,7 @@
         "mechanical": "applicable checks passed; M6 not applicable",
         "complete_input": "independent c7 full run plus targeted repairs and independent c9 recheck",
         "clarification": "blank and conflict cases stop for human clarification",
-        "source_evidence": "tools/skills/meta-architecture-development/verification.json",
+        "source_evidence": "tools/meta-architecture-development/source/verification.json",
         "documentation_cleanup": "runtime code unchanged; reference/navigation integrity verified for publication revision 10.07.3"
       },
       "limitations": [
@@ -190,30 +185,13 @@
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
       "source_archive_sha256": "c3ce260081da69495914bf85c0572704bdc4c4862b9022c08126e7b03a5afe5b",
-      "publication_revision": "10.07.3",
+      "publication_revision": "10.07.4",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
       "source_frozen_candidate": 9,
-      "original_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305"
-    }
-  ],
-  "external_tools": [
-    {
-      "name": "OctoPlanner",
-      "url": "https://github.com/syngy-ai/octoplanner",
-      "purpose": "排产",
-      "distribution": "official-link-only"
-    },
-    {
-      "name": "老马 drawings",
-      "url": "https://laoma.syngy.cn/drawings",
-      "purpose": "图纸识别",
-      "distribution": "hosted-service-link-only"
-    },
-    {
-      "name": "SKU Radar",
-      "url": "https://www.skuradar.ai/",
-      "purpose": "商品与爆品分析",
-      "distribution": "hosted-service-link-only"
+      "original_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
+      "source_root": "tools/meta-architecture-development/source/",
+      "install_from": "versioned-archive",
+      "archive_install_root": "meta-architecture-development/"
     }
   ],
   "resources": [
@@ -221,15 +199,15 @@
       "id": "research-input",
       "name": "通用调研输入文档",
       "version": "10.06",
-      "path": "tools/resources/通用调研输入文档_10.06.md",
+      "path": "handbook/inputs/通用调研输入文档_10.06.md",
       "status": "blank-template",
       "sha256": "af1382202ee88240c3676f3550137ac6eee77cd804ff772ab23d213cec30388d"
     },
     {
       "name": "FDE 上层流程图",
-      "path": "tools/resources/fde-flow/",
+      "path": "handbook/FDE_流程图_内部执行版.html",
       "status": "source-reference"
     }
   ],
-  "publication_revision": "10.07.3"
+  "publication_revision": "10.07.4"
 }

@@ -11,6 +11,8 @@ scope: 调研语料、九份架构、计划送审、获批开发与反馈
 
 ## 如何使用
 
+先看 [FDE 总流程图（内部执行版）](<FDE_流程图_内部执行版.html>)，了解项目整体阶段、角色、决策和交接，再按本手册展开技术开发环节。总流程图与本手册 HTML 同目录保存时，该链接可离线打开。
+
 本手册面向承担方案设计与开发的架构师、FDE 和开发 AI。工作从前置检索与调研语料开始，形成九份架构设计和配套开发计划，送审通过后实施、测试、发布，并将问题送回仓库反馈入口。开发是 FDE 全流程内部的一段 loop；商务、调研、客户培训、最终客户验收和维护按上层 FDE 流程衔接。
 
 全文分为两个大部分。第一部分将检索、调研原件与通用输入交给 **Meta Architecture Development**，先分析业务流和系统架构，再生成九份标准 Markdown；配套开发计划一并交总架构师夏洛克审核。第二部分在取得对应版本的审核通过记录后，按架构实施 Arcubase、数字员工、技能和工作台，完成联调、发布与上线测试。
@@ -71,9 +73,9 @@ scope: 调研语料、九份架构、计划送审、获批开发与反馈
 
 材料索引分别记录两种状态：原件是否取得并实际读取；相关能力处于文档说明、源码核对、样例验证还是目标环境实测。来源未取得正文、现场尚未验证等情况随送审包保留。
 
-**工具入口：** [Meta Architecture Development](https://github.com/quekou-fde-development/fde-development/tree/main/tools/skills/meta-architecture-development)。
+**工具入口：** [Meta Architecture Development](https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-architecture-development)。
 
-**怎样启动：** 把填过的输入副本、原件位置和一个新的 `run-dir` 交给开发 AI，要求实际读取 `tools/skills/meta-architecture-development/SKILL.md` 与随包 references。输入允许部分填写；Skill 依次取源、分析业务流与系统架构、集中澄清、起草和核对九份设计。设计关键问题尚未解决时保留工作稿，补料后继续。
+**怎样启动：** 把填过的输入副本、原件位置和一个新的 `run-dir` 交给开发 AI，要求实际读取 `tools/meta-architecture-development/source/SKILL.md` 与随包 references。输入允许部分填写；Skill 依次取源、分析业务流与系统架构、集中澄清、起草和核对九份设计。设计关键问题尚未解决时保留工作稿，补料后继续。
 
 **填写重点：** 调研范围和角色、真实作业路径、异常与决定权、单据和样本、现有系统、目标与交付范围、验收依据、Octopus / Arcubase / Workbench 已知环境及授权。既有 App 记录真实 ID 与 Schema；拟新建 App 写计划与依据。
 
@@ -496,7 +498,7 @@ ERP 接入按实际 ERP 接口实施，分别核对网络、身份、数据口�
 
 | 工具 / 小包 | 用途与所需输入 | 产物 | 适用状态与入口 |
 |---|---|---|---|
-| [Meta Architecture Development](https://github.com/quekou-fde-development/fde-development/tree/main/tools/skills/meta-architecture-development) | 通用调研输入、原件、业务约束和新的运行目录；§1—5 起草架构 | 九份 `design/*.md`、来源与渲染回执、限制 | 读工具目录的 `SKILL.md` 与 references；采用版本和验证范围按工具清单核对 |
+| [Meta Architecture Development](https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-architecture-development) | 通用调研输入、原件、业务约束和新的运行目录；§1—5 起草架构 | 九份 `design/*.md`、来源与渲染回执、限制 | 读工具入口说明及 `source/SKILL.md` 与 references；采用版本和验证范围按工具清单核对 |
 | Meta Skill · `02-meta-skill_3.10.1.zip` | 执行/判断段、规则、正反样本、调用与结果要求；§10 蒸馏技能 | Skill 包、契约、评测与运行记录 | 已安装源文件快照；读取 `meta-skill/SKILL.md`，目标宿主验证按项目完成 |
 | Meta Orchestrator · `03-meta-orchestrator_10.06.zip` | 业务目标、时序、段落和交接；§2—3 分析协作 | 流程分段、关系与依赖分析 | 设计方法参考；读 `README.md` 与 `meta-orchestrator-design/spec.md`，完整编译所需实现不在此包 |
 | Meta Agent · `04-meta-agent_10.06.zip` | 获批目标、职责、权限、环境、工具与人工决定点；§9 制作员工 | 员工配置、绑定、回读及测试记录 | 参数化候选包；读 `meta-agent/README.md`，目标宿主验收须另行完成 |

@@ -1,27 +1,25 @@
 ---
 title: 开发工具
-version: 10.07.3
+version: "10.07.4"
 ---
 
 # 开发工具
 
-选择需要的工具，阅读入口说明后下载 ZIP。包版本、来源包名、SHA-256、依赖和适用条件见 [完整清单](catalog.json)。
+按任务选择工具。同一工具的说明、源码和版本 ZIP 放在同一目录；版本、SHA-256、依赖和验证范围见 [工具清单](catalog.json)。
 
-| 工具 | 阅读入口 | ZIP | 内容与适用范围 |
+| 工具 | 阅读入口 | ZIP | 用途与状态 |
 |---|---|---|---|
-| Meta Skill | [阅读](skills/meta-skill/README.md) | [下载](packages/meta-skill-3.10.1.zip) | 技能蒸馏工作流、references、scripts、agents 与 fixtures；固定源快照。 |
-| Meta Orchestrator | [阅读](skills/meta-orchestrator/README.md) | [下载](packages/meta-orchestrator-10.06.zip) | 业务流与协作分段设计规格；完整编译实现不在此包。 |
-| Meta Agent | [阅读](skills/meta-agent/README.md) | [下载](packages/meta-agent-10.06.zip) | 参数化候选、两条路线与配套合同/代码；按目标宿主完成验证。 |
-| Workbench App Development | [阅读](skills/workbench-app-development/README.md) | [下载](packages/workbench-app-development-10.06.zip) | Workbench 开发 Skill 与完整 references；准备平台依赖与授权后使用。 |
-| Quekou Workbench Frontend | [阅读](resources/quekou-frontend/quekou-workbench-1.0.0/START_HERE.md) | [下载](packages/quekou-frontend-1.0.0.zip) | 原始 1.0.0 前端共享包，保留原许可证与第三方声明。 |
-| Specialist Tool Guides | [阅读](resources/specialist-tool-guides/README.md) | [下载](packages/specialist-tool-guides-10.06.zip) | 排产、图纸与商品分析指引及官方入口；在线服务按其账号与接口使用。 |
-| 九份架构写作参照 | [阅读](resources/development-design/README.md) | [下载](packages/development-design-10.06.zip) | 精确九份写作参照，含新增数据结构；供架构设计阅读。 |
-| Meta Architecture Development | [阅读](skills/meta-architecture-development/SKILL.md) | [下载](packages/meta-architecture-development-10.06.zip) | 已验证候选，从调研输入形成九份待总架构师审核的设计文档；真实项目与安装后运行待验证。 |
+| Meta Architecture Development | [阅读](meta-architecture-development/) | [下载](meta-architecture-development/meta-architecture-development-10.06.zip) | 调研输入生成九份架构文档；验证候选，待总架构师审核与目标环境验证 |
+| Meta Skill | [阅读](meta-skill/) | [下载](meta-skill/meta-skill-3.10.1.zip) | 技能蒸馏工作流与完整配套源码，3.10.1 固定快照 |
+| Meta Agent | [阅读](meta-agent/) | [下载](meta-agent/meta-agent-10.06.zip) | 数字员工与市场产品两条制作路线；参数化候选，目标宿主待验收 |
+| Meta Orchestrator | [阅读](meta-orchestrator/) | [下载](meta-orchestrator/meta-orchestrator-10.06.zip) | 业务流、系统分段与协作关系设计参考；完整编译实现未随包提供 |
+| Workbench App Development | [阅读](workbench-app-development/) | [下载](workbench-app-development/workbench-app-development-10.06.zip) | 工作台开发 Skill；按包内要求准备平台依赖和授权 |
+| 缺口前端共享包 | [阅读](quekou-frontend/) | [下载](quekou-frontend/quekou-frontend-1.0.0.zip) | 原始 1.0.0 前端包，保留许可证、组件和第三方声明 |
 
-## 调研与流程资料
+## 使用与安装
 
-- [通用调研输入空表](resources/通用调研输入文档_10.06.md)：填写后的客户材料保存在对应项目的受控仓库。
-- [FDE 上层流程图](resources/fde-flow/)：查看开发小环所处的流程。
-- [开发手册](../handbook/)：每一步的输入、产出、工具和审核关系。
+安装以各条目列出的 ZIP 为准，解压后按包内说明选择安装根。`source/` 保存可读源码，外层下载文件不纳入 Skill 安装。Meta Agent 的两个安装根位于其解压包的 `meta-agent/skills/`；前端原包的版本目录与许可证保持原样。
 
-来源包没有附许可证的条目在清单中照实记录；仓库未替原作者增授许可。实际项目记录采用的工具版本与验证条件。
+来源包未附许可证的情况在清单中记录；使用范围按原包条款与项目授权执行。实际项目记录采用的工具版本和验证条件。
+
+[开发手册](../handbook/) · [调研输入空表](../handbook/inputs/通用调研输入文档_10.06.md) · [九份架构写作参照](../handbook/architecture-reference/) · [上层 FDE 流程图](../handbook/FDE_流程图_内部执行版.html) · [提交反馈](../feedback/)
