@@ -11,4 +11,4 @@ HTML 下载后可在浏览器打开；配套 ZIP 与 HTML 放在同一目录即�
 
 [调研输入空表](inputs/通用调研输入文档_10.06.md) · [开发工具](../tools/) · [提交反馈](../feedback/)
 
-Markdown 是正文编辑源，HTML 由同目录 `build/render.mjs` 生成；版本与源文件摘要见 [build-manifest.json](build-manifest.json)。修改正文后，在本目录运行 `node build/render.mjs` 更新阅读版。当前手册为 10.06.4 待审阅版，具体项目仍须取得总架构师的版本审核记录。
+Markdown 是正文编辑源，HTML 由同目录 `build/render.mjs` 生成；版本与源文件摘要见 [build-manifest.json](build-manifest.json)。修改正文后，在本目录运行 `node build/render.mjs` 更新阅读版。当前手册为 10.06.4 版，具体项目仍须取得总架构师的版本审核记录。

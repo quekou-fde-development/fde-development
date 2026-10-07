@@ -1,7 +1,6 @@
 ---
 title: FDE 开发技术手册
 version: "10.06.4"
-status: 待审阅
 created: 2026-10-06
 updated: 2026-10-06
 owner: Quekou FDE
@@ -16,7 +15,7 @@ scope: 调研语料、九份架构、计划送审、获批开发与反馈
 
 全文分为两个大部分。第一部分将检索、调研原件与通用输入交给 **Meta Architecture Development**，先分析业务流和系统架构，再生成九份标准 Markdown；配套开发计划一并交总架构师夏洛克审核。第二部分在取得对应版本的审核通过记录后，按架构实施 Arcubase、数字员工、技能和工作台，完成联调、发布与上线测试。
 
-> **当前版本：10.06.4，待审阅。** 实际项目的架构批准、真实数据写入和发布授权，分别按项目记录执行。
+> **当前版本：10.06.4。** 实际项目的架构批准、真实数据写入和发布授权，分别按项目记录执行。
 
 统一发布入口是 [quekou-fde-development/fde-development](https://github.com/quekou-fde-development/fde-development)，主要目录为 `handbook/`（开发手册）、`tools/`（开发工具）和 `feedback/`（反馈）。仓库 Markdown 与 HTML 阅读版来自同一份正文；离线使用时一同下载 HTML 与[配套资源总 ZIP](<FDE开发配套资源包_10.06.zip>)，按文末资源索引选择小包。
 
