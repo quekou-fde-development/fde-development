@@ -1,5 +1,0 @@
-{
-  "mutation": "M-observed-files",
-  "must_be_rejected_by": "observed.files",
-  "doc": "Remove or corrupt one declared predicate from a valid generated fixture."
-}

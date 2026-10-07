@@ -22,14 +22,4 @@ status: active
 
 修复并验证后按 Completed 关闭；重复、移交或不采纳时说明原因及关联地址，按 Not planned 关闭。需要重做时重开原 Issue。进入新状态时移除旧状态标签。
 
-反馈事实和处理状态只维护在对应 Issue。本目录保存填写方法与示例。当前手工提交与处理保持可用；数字员工的正式 GitHub 接入按下方条件完成。
-
-## 数字员工反馈接口
-
-已提供 [反馈接收 Skill](../tools/skills/feedback-intake/SKILL.md)、[GitHub 提交与维护 Skill](../tools/skills/github-feedback-maintainer/SKILL.md)及[合集 ZIP](../tools/packages/feedback-channel-10.06.1-candidate.zip)。两项 Skill 已挂载黑背老六，70 文件核对和真实宿主离线检查通过；冻结版本的本机真实 API [TEST #2](https://github.com/quekou-fde-development/fde-development/issues/2) 已关闭。正式宿主仍缺限定仓库的 GitHub 凭据、预期执行账号及可信用户批准映射，真实会话下的提交、查询与关闭闭环尚未验证。当前可使用上方手工表单提交反馈。
-
-接口工作顺序为：自然语言描述 → 一次集中补齐必要信息 → 展示脱敏公开预览 → 本人确认该版本 → 提交并回读 GitHub Issue → 返回实际链接与状态。公开字段有变化时重新确认；缺少批准或凭据时保留草稿并报告缺件。
-
-补充证据采用新的公开预览与确认；关闭、重开和负责人变更需受信维护人授权。请求重试先回查原请求和已有 Issue，结果不明时停止自动重发。Issue 仍为唯一实时状态来源，手册与代码修改由仓库维护人走受控 PR。
-
-宿主配置、凭据、身份与批准记录、持久 journal 存放在宿主安全区。配置要求和恢复命令见 [运行合同](../tools/skills/github-feedback-maintainer/references/operations.md)；此仓库不分发私有宿主配置。
+反馈事实和处理状态只维护在对应 Issue。本目录保存填写方法与示例。提交后以 GitHub Issue 的实际状态与处理记录为准。

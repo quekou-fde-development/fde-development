@@ -194,108 +194,6 @@
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
       "source_frozen_candidate": 9,
       "original_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305"
-    },
-    {
-      "name": "自然语言反馈接收",
-      "slug": "feedback-intake",
-      "version": "10.06.1-candidate",
-      "status": "installed-host-offline-validated-production-not-verified",
-      "archive": "tools/packages/feedback-intake-10.06.1-candidate.zip",
-      "path": "tools/skills/feedback-intake/",
-      "entry": "tools/skills/feedback-intake/SKILL.md",
-      "sha256": "d54e19029778cc3f2b869662cd7a6d5750a31aa0f925de2f056bbe45613bf11e",
-      "bytes": 20007,
-      "member_count": 20,
-      "validation": {
-        "mechanical": "M1-M12 passed in source evidence",
-        "behavior": "32 local tests passed in frozen source evidence",
-        "claim_scope": "local and host-offline evidence only; production GitHub lifecycle unverified",
-        "local_live_api": "frozen-package TEST #2 closed: https://github.com/quekou-fde-development/fde-development/issues/2",
-        "host_offline_smoke": "passed; no live host GitHub writes performed"
-      },
-      "host_integration": {
-        "status": "installed-offline-smoke-passed",
-        "skills_mounted": true,
-        "bundle_files_verified": 70,
-        "github_credentials_configured": false,
-        "expected_actor_configured": false,
-        "trusted_approval_mapping_configured": false,
-        "end_to_end_verified": false,
-        "remaining": [
-          "repository-limited GitHub credential",
-          "expected GitHub actor",
-          "trusted human approval mapping",
-          "target-host GitHub lifecycle validation"
-        ]
-      },
-      "dependencies": [
-        "Python 3.10+",
-        "POSIX file locking",
-        "both skills installed as siblings",
-        "host-approved GitHub transport: authenticated gh or Python HTTPS",
-        "host-provided private configuration, trusted approval records and persistent journal"
-      ],
-      "limitations": [
-        "GitHub credentials must be provisioned separately in the host secure area.",
-        "The target digital employee has not completed a verified GitHub create/query/close lifecycle.",
-        "Single-host coordination; distributed multi-host writes not validated.",
-        "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
-      ],
-      "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "source_archive_sha256": "d54e19029778cc3f2b869662cd7a6d5750a31aa0f925de2f056bbe45613bf11e",
-      "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
-    },
-    {
-      "name": "GitHub 反馈提交与维护",
-      "slug": "github-feedback-maintainer",
-      "version": "10.06.1-candidate",
-      "status": "installed-host-offline-validated-production-not-verified",
-      "archive": "tools/packages/github-feedback-maintainer-10.06.1-candidate.zip",
-      "path": "tools/skills/github-feedback-maintainer/",
-      "entry": "tools/skills/github-feedback-maintainer/SKILL.md",
-      "sha256": "70139fc5cf45b8bb1c4bc29a949b07c9ed45d21fc04b9767f5ff4997e88cc621",
-      "bytes": 83838,
-      "member_count": 50,
-      "validation": {
-        "mechanical": "M1-M12 passed in source evidence",
-        "behavior": "32 local tests passed in frozen source evidence",
-        "claim_scope": "local and host-offline evidence only; production GitHub lifecycle unverified",
-        "local_live_api": "frozen-package TEST #2 closed: https://github.com/quekou-fde-development/fde-development/issues/2",
-        "host_offline_smoke": "passed; no live host GitHub writes performed"
-      },
-      "host_integration": {
-        "status": "installed-offline-smoke-passed",
-        "skills_mounted": true,
-        "bundle_files_verified": 70,
-        "github_credentials_configured": false,
-        "expected_actor_configured": false,
-        "trusted_approval_mapping_configured": false,
-        "end_to_end_verified": false,
-        "remaining": [
-          "repository-limited GitHub credential",
-          "expected GitHub actor",
-          "trusted human approval mapping",
-          "target-host GitHub lifecycle validation"
-        ]
-      },
-      "dependencies": [
-        "Python 3.10+",
-        "POSIX file locking",
-        "both skills installed as siblings",
-        "host-approved GitHub transport: authenticated gh or Python HTTPS",
-        "host-provided private configuration, trusted approval records and persistent journal"
-      ],
-      "limitations": [
-        "GitHub credentials must be provisioned separately in the host secure area.",
-        "The target digital employee has not completed a verified GitHub create/query/close lifecycle.",
-        "Single-host coordination; distributed multi-host writes not validated.",
-        "Public-preview confirmation remains required; pattern scanning is not semantic privacy proof."
-      ],
-      "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "source_archive_sha256": "70139fc5cf45b8bb1c4bc29a949b07c9ed45d21fc04b9767f5ff4997e88cc621",
-      "publication_revision": "10.07.3",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged."
     }
   ],
   "external_tools": [
@@ -333,14 +231,5 @@
       "status": "source-reference"
     }
   ],
-  "feedback_collection": {
-    "archive": "tools/packages/feedback-channel-10.06.1-candidate.zip",
-    "sha256": "1987d943574811f34a0cb71cfdf26a43c0ef21232089a5558577091b46c5c52e",
-    "bytes": 103823,
-    "members": 70,
-    "status": "installed-host-offline-validated-production-not-verified",
-    "source_archive_sha256": "1987d943574811f34a0cb71cfdf26a43c0ef21232089a5558577091b46c5c52e",
-    "publication_revision": "10.07.3"
-  },
   "publication_revision": "10.07.3"
 }

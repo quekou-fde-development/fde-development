@@ -1,5 +1,0 @@
-{
-  "mutation": "M-schema",
-  "must_be_rejected_by": "feedback.schema",
-  "doc": "Remove or corrupt one declared predicate from a valid generated fixture."
-}
