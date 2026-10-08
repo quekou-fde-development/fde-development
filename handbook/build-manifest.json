@@ -1,10 +1,10 @@
 {
-  "version": "10.06.4",
+  "version": "10.08",
   "source": "development-handbook.md",
   "output": "index.html",
-  "source_sha256": "5333e8bd35e51ff7680d3096a052e06a4596d267077250bedddfbc14967a99e4",
-  "canonical_html_sha256": "5684370bec9763829057ac22eaf469d7d4bfe593a6e9e8e98f4e3e611d78f4d1",
-  "html_sha256": "1622365768cb311b928615045681ee98ea3f7167a423d0b85fc48fe9aeeaf763",
+  "source_sha256": "951f5351628e81efc7b8ce5e01682f0162c556125b060a6b698366d68367b9a4",
+  "canonical_html_sha256": "3dee0612bd27357ea62d1fd9d726dfbb3da1bf785195df45df0996fc6d24cb14",
+  "html_sha256": "786e248f19a918eb4241c62c3edc3df576fb41be9187618d280ae496aecc8c74",
   "headings": 44,
-  "bytes": 72068
+  "bytes": 82978
 }
