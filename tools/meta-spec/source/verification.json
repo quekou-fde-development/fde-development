@@ -1,5 +1,5 @@
 {
-  "artifact": "meta-architecture-development",
+  "artifact": "meta-spec",
   "version": "10.06 candidate",
   "status": "reviewable_candidate_not_installed",
   "reference_documents": 9,
@@ -85,5 +85,13 @@
     "changes": "Removed internal navigation and author-machine path metadata; executable code and design requirements unchanged.",
     "source_frozen_candidate": 9,
     "behavioral_evidence": "Validation above refers to the source candidate; no new independent full behavior run for this documentation cleanup."
+  },
+  "name_change": {
+    "date": "2026-10-09",
+    "previous_name": "meta-architecture-development",
+    "current_name": "meta-spec",
+    "scope": "Name, paths and distribution references only; existing behavior and candidate qualification retained.",
+    "baseline_commit": "69083b23f49e5e00d96e46cdd9790989e3067fc8",
+    "behavioral_evidence": "Existing checks describe the unchanged source candidate; this rename does not add semantic stability or installed-host evidence."
   }
 }

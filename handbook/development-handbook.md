@@ -1,8 +1,8 @@
 ---
 title: FDE 开发技术手册
-version: "10.08"
+version: "10.09"
 created: 2026-10-06
-updated: 2026-10-08
+updated: 2026-10-09
 owner: Quekou FDE
 scope: 调研语料、业务流程、九份 spec、计划送审、获批开发与反馈
 ---
@@ -544,8 +544,8 @@ ERP 接入按实际 ERP 接口实施，分别核对网络、身份、数据口�
 
 | 工具 / 小包 | 用途与所需输入 | 产物 | 适用状态与入口 |
 |---|---|---|---|
-| Meta Workflow（暂名） | 调研输入、原件、目标与业务约束；§1—3 设计业务流程 | `workflow/` 下的业务流程、业务架构、系统分工、依据及澄清结果 | 按 Meta Skill 与 Meta Orchestrator 的理论结构设计；独立 Skill 列入本次工具改造事项 |
-| Meta Spec | 明确版本的业务流程成果、相关来源及技术约束；§4—5 编写规格 | 九份 `design/*.md`、流程到规格的对应、来源与渲染回执、限制 | 从[原 Meta Architecture Development](https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-architecture-development) 改造并更名；现有下载保留原名，改造验收后更新目录与包 |
+| Meta Workflow（暂名） | 调研输入、原件、目标与业务约束；§1—3 设计业务流程 | `workflow/` 下的业务流程、业务架构、系统分工、依据及澄清结果 | 沿用 Meta Skill 与 Meta Orchestrator 的现有方法组织业务流程；独立 Skill 蒸馏暂缓 |
+| Meta Spec | 明确版本的业务流程成果、相关来源及技术约束；§4—5 编写规格 | 九份 `design/*.md`、流程到规格的对应、来源与渲染回执、限制 | [Meta Spec 工具目录](https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-spec)；名称已统一，现有功能与九份文档结构沿用 |
 | [开发计划模板](<inputs/开发计划模板_10.08.md>) | 开发文档、人员、依赖及交付条件；§5.1 填写 | 对应场景开发目录中的 `plan/开发计划.md` | PM 组织填写，随开发文档一并送审 |
 | Meta Skill · `02-meta-skill_3.10.1.zip` | 执行/判断段、规则、正反样本、调用与结果要求；§10 蒸馏技能 | Skill 包、契约、评测与运行记录 | 已安装源文件快照；读取 `meta-skill/SKILL.md`，目标宿主验证按项目完成 |
 | Meta Orchestrator · `03-meta-orchestrator_10.06.zip` | 业务目标、时序、段落和交接；§2—3 分析协作 | 流程分段、关系与依赖分析 | 设计方法参考；读 `README.md` 与 `meta-orchestrator-design/spec.md`，完整编译所需实现不在此包 |

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.07.4",
+  "version": "10.09",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -141,8 +141,8 @@
       "archive": "handbook/architecture-reference/development-design-10.06.zip",
       "path": "handbook/architecture-reference/",
       "entry": "handbook/architecture-reference/README.md",
-      "sha256": "bc0d0fb81195eeac6764c2797dae8866bbed05ff9bb7008fb800f540b9359493",
-      "bytes": 24507,
+      "sha256": "ef21285c9566bb6624fc06be04b7504f40b94b4660fca0cc823c0827f5a7f50c",
+      "bytes": 24498,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
@@ -150,7 +150,7 @@
       "data_model_sha256": "8c311ad3a73d96d95cb097127fa2cd32e35db0203664ea53e9b81f21dcf42cbd",
       "other_eight_unchanged": false,
       "source_archive_sha256": "3d5617490051aad5b99716f9f89b981b52fce6dae335257aca52252476e9cd30",
-      "publication_revision": "10.07.4",
+      "publication_revision": "10.09",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
       "member_count": 10,
       "source_reference_freeze": "frozen-candidate-9",
@@ -159,24 +159,25 @@
       "original_archive_sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806"
     },
     {
-      "id": "meta-architecture-development",
-      "slug": "meta-architecture-development",
-      "name": "Meta Architecture Development",
+      "id": "meta-spec",
+      "slug": "meta-spec",
+      "name": "Meta Spec",
       "version": "0.1.0-candidate",
-      "archive_version": "10.06",
+      "archive_version": "10.09",
       "status": "validated-candidate-awaiting-chief-architect-review",
-      "path": "tools/meta-architecture-development/",
-      "entry": "tools/meta-architecture-development/README.md",
-      "archive": "tools/meta-architecture-development/meta-architecture-development-10.06.zip",
-      "sha256": "65cf20bc5860c798063fc165f7f479e6ea70b06bfb1026a18c9ee6f9180fa6a4",
-      "bytes": 205922,
+      "path": "tools/meta-spec/",
+      "entry": "tools/meta-spec/README.md",
+      "archive": "tools/meta-spec/meta-spec-10.09.zip",
+      "sha256": "3c86fc85c54bbd72aec1650e6f360485abbc44bbcbcafe4fc4fe293d5892d0b4",
+      "bytes": 195343,
       "member_count": 268,
       "validation": {
         "mechanical": "applicable checks passed; M6 not applicable",
         "complete_input": "independent c7 full run plus targeted repairs and independent c9 recheck",
         "clarification": "blank and conflict cases stop for human clarification",
-        "source_evidence": "tools/meta-architecture-development/source/verification.json",
-        "documentation_cleanup": "runtime code unchanged; reference/navigation integrity verified for publication revision 10.07.3"
+        "source_evidence": "tools/meta-spec/source/verification.json",
+        "documentation_cleanup": "runtime code unchanged; reference/navigation integrity verified for publication revision 10.07.3",
+        "name_change": "Only identifiers, labels and distribution references changed; previous behavioral evidence remains scoped to its original candidate."
       },
       "limitations": [
         "Awaiting chief architect review; not promoted or installed as an active runtime skill.",
@@ -185,13 +186,13 @@
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
       "source_archive_sha256": "c3ce260081da69495914bf85c0572704bdc4c4862b9022c08126e7b03a5afe5b",
-      "publication_revision": "10.07.4",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "publication_revision": "10.09",
+      "distribution": "Name-only distribution update; existing candidate functionality and limitations preserved.",
       "source_frozen_candidate": 9,
       "original_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
-      "source_root": "tools/meta-architecture-development/source/",
+      "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
-      "archive_install_root": "meta-architecture-development/"
+      "archive_install_root": "meta-spec/"
     }
   ],
   "resources": [

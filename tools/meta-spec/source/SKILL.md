@@ -1,5 +1,5 @@
 ---
-name: meta-architecture-development
+name: meta-spec
 description: 从项目调研文档、访谈和既有设计中澄清业务目标与约束，生成或修订九份待总架构师审核的开发设计 Markdown；输入空白、部分填写或互相冲突时先集中追问。用于开发前的架构设计，不用于直接实施、发布、纯排版或单纯蒸馏其他 Skill。
 metadata:
   version: 0.1.0-candidate
@@ -7,7 +7,7 @@ metadata:
   workflow_mode: artifact
 ---
 
-# Meta Architecture Development
+# Meta Spec
 
 ## 目标与边界
 

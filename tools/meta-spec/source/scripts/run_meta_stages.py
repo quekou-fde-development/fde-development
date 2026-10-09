@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical artifact stages for meta-architecture-development.
+"""Mechanical artifact stages for meta-spec.
 
 This module snapshots supplied files and writes pre-authored Markdown bodies.  It
 does not inspect, generate, rank, or approve architecture content.
