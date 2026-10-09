@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-native-fields",
+  "must_be_rejected_by": "render.native_fields",
+  "doc": "Native select item key is a string. Frozen input and both receipts are also re-signed; only the native-field assertion should reject."
+}

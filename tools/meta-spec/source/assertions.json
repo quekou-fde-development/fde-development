@@ -251,6 +251,85 @@
               ]
             },
             {
+              "id": "render.structure",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "documents",
+                "required_fields": [
+                  "id",
+                  "path",
+                  "kind",
+                  "sha256",
+                  "byte_count"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "path": "str",
+                  "kind": "str",
+                  "sha256": "str",
+                  "byte_count": "int"
+                },
+                "reference_structure": true
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §结构检查",
+              "mutants": [
+                "M-render-structure"
+              ]
+            },
+            {
+              "id": "render.native_fields",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "documents",
+                "required_fields": [
+                  "id",
+                  "path",
+                  "kind",
+                  "sha256",
+                  "byte_count"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "path": "str",
+                  "kind": "str",
+                  "sha256": "str",
+                  "byte_count": "int"
+                },
+                "native_field_options": true
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §原生字段检查",
+              "mutants": [
+                "M-render-native-fields"
+              ]
+            },
+            {
+              "id": "render.content",
+              "family": "row_column_sheet_reconciliation",
+              "tier": 1,
+              "predicate": {
+                "compare_paths": [
+                  {
+                    "output": "documents",
+                    "input": {
+                      "stage": "render_documents",
+                      "artifact": "render_input_receipt.json",
+                      "path": "documents"
+                    }
+                  }
+                ],
+                "content_readback": true
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §内容回读",
+              "mutants": [
+                "M-render-content"
+              ]
+            },
+            {
               "id": "render.coverage",
               "family": "output_field_coverage",
               "tier": 1,

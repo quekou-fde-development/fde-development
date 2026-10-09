@@ -1,0 +1,74 @@
+{
+  "stage": "render_documents",
+  "source_id": "working/render_request.json",
+  "fetched_at": "2026-10-08T11:12:40+00:00",
+  "document_count": 9,
+  "documents_sha256": "464f1e1baa6b5e4c",
+  "unresolved_questions_count": 0,
+  "review_status": "PENDING_CHIEF_ARCHITECT_REVIEW",
+  "documents": [
+    {
+      "id": "01-concept.md",
+      "path": "design/01-concept.md",
+      "kind": "markdown",
+      "sha256": "0a1e8f4e4e57b5e9",
+      "byte_count": 738
+    },
+    {
+      "id": "02-use-cases.md",
+      "path": "design/02-use-cases.md",
+      "kind": "markdown",
+      "sha256": "8b9464153867b2c6",
+      "byte_count": 814
+    },
+    {
+      "id": "03-data-model.md",
+      "path": "design/03-data-model.md",
+      "kind": "markdown",
+      "sha256": "17f4e4a39d1a54d7",
+      "byte_count": 2516
+    },
+    {
+      "id": "04-security-privacy.md",
+      "path": "design/04-security-privacy.md",
+      "kind": "markdown",
+      "sha256": "63fac5fecec22121",
+      "byte_count": 1739
+    },
+    {
+      "id": "05-site-architecture.md",
+      "path": "design/05-site-architecture.md",
+      "kind": "markdown",
+      "sha256": "a9fcdab12995a4aa",
+      "byte_count": 734
+    },
+    {
+      "id": "06-page-layout.md",
+      "path": "design/06-page-layout.md",
+      "kind": "markdown",
+      "sha256": "5818d03279701313",
+      "byte_count": 392
+    },
+    {
+      "id": "07-api.md",
+      "path": "design/07-api.md",
+      "kind": "markdown",
+      "sha256": "fb4a5b59026abeb3",
+      "byte_count": 614
+    },
+    {
+      "id": "08-tech-stack-and-directory.md",
+      "path": "design/08-tech-stack-and-directory.md",
+      "kind": "markdown",
+      "sha256": "2d620f78c17f5835",
+      "byte_count": 818
+    },
+    {
+      "id": "09-implementation-roadmap.md",
+      "path": "design/09-implementation-roadmap.md",
+      "kind": "markdown",
+      "sha256": "d21f7e6210bdb2a1",
+      "byte_count": 1360
+    }
+  ]
+}

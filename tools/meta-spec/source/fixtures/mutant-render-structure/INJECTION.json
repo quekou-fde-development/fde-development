@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-structure",
+  "must_be_rejected_by": "render.structure",
+  "doc": "Change a fixed heading and reconcile every input/output hash; only reference-structure checking must reject it."
+}

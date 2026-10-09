@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "kind": "CONTENT_REVIEW_PREVIEW",
+  "status": "DRAFT_PREVIEW_NOT_REVIEWED",
+  "source_id": "working/render_request.json",
+  "request_sha256": "f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f",
+  "document_count": 9,
+  "documents": [
+    {
+      "id": "01-concept.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/01-concept.md",
+      "sha256": "a220ec0d77e9b4810fde618b02fb2430831bc07b155929220d48fb5ce85acedd",
+      "byte_count": 760
+    },
+    {
+      "id": "02-use-cases.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/02-use-cases.md",
+      "sha256": "8b9464153867b2c63d5128d2c92c68c2e316959f4776e8a0271ea4352363e4f5",
+      "byte_count": 814
+    },
+    {
+      "id": "03-data-model.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/03-data-model.md",
+      "sha256": "17f4e4a39d1a54d7a227f36d6300e27bf0b0ac8510689acf2ba97f299e9067df",
+      "byte_count": 2516
+    },
+    {
+      "id": "04-security-privacy.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/04-security-privacy.md",
+      "sha256": "63fac5fecec22121acea5e44524b016195921bde7d984bcd5c485c7e53fbcaca",
+      "byte_count": 1739
+    },
+    {
+      "id": "05-site-architecture.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/05-site-architecture.md",
+      "sha256": "a9fcdab12995a4aa3a431de07ea97c38c54c6109fe8da0f5720eae1d89fce8db",
+      "byte_count": 734
+    },
+    {
+      "id": "06-page-layout.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/06-page-layout.md",
+      "sha256": "5818d032797013135ecd64e1b1c3a0095e1610f91d6eefc407d2f45cfffbb4b6",
+      "byte_count": 392
+    },
+    {
+      "id": "07-api.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/07-api.md",
+      "sha256": "fb4a5b59026abeb3d33fc2487aa0d2a6073d94c76fe14b766f5a91bed9696bcd",
+      "byte_count": 614
+    },
+    {
+      "id": "08-tech-stack-and-directory.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/08-tech-stack-and-directory.md",
+      "sha256": "2d620f78c17f58358f42014d70de7af148682a62686d560bf68a97eae5a913ed",
+      "byte_count": 818
+    },
+    {
+      "id": "09-implementation-roadmap.md",
+      "path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/design/09-implementation-roadmap.md",
+      "sha256": "d21f7e6210bdb2a1ff24eb89d30e9727e5337eb867b9ddede10b88873ed87d35",
+      "byte_count": 1360
+    }
+  ],
+  "documents_sha256": "ddcd08aa314799b0c938916729feff2ecf02a7c7a5ca224dfaa09b3378772597",
+  "limits": "Mechanical compilation only. Content review, business semantics, chief architect approval and implementation are not evaluated."
+}

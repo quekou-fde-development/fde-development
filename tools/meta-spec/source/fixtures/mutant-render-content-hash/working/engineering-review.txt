@@ -1,0 +1,2 @@
+Engineering fixture declaration. No business content or human approval is evaluated.
+engineering-fixture: 业务表.code

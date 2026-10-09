@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "source": "nine-document-authoring.md §固定结构与项目变量; unchanged original design references, 03 delimiter correction only",
+  "reference_sha256": {
+    "01-concept.md": "72abad136cbc817dfba56024dcb68508ec81ea31a61c59396c1a140a5154695a",
+    "02-use-cases.md": "07ce9f6b314229b8b954834c788b736886ba11cda7c21963c1364cddc20e844d",
+    "03-data-model.md": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611",
+    "04-security-privacy.md": "36a526b06a69190dfe4c87c5c8153380f7dfc85caf11dff91dbab81b5902f758",
+    "05-site-architecture.md": "3c1c17cd8371cf824712f3778f6daa1f37b140e6f30aa1489542506c54fee5dd",
+    "06-page-layout.md": "499763295280c869cf042059cedee0516a43dbba6c41b7a838542e2d6de4bca0",
+    "07-api.md": "22e675041e9b5c80ca770ba1bea88fc9d5fbed4fae504d6354fd2dc7e1f63d7e",
+    "08-tech-stack-and-directory.md": "7c97b455e0153baaf527d6bc82b5aec405f9ccbe24118b8274c9ba4f82e50970",
+    "09-implementation-roadmap.md": "df14d6577daf479e60f6fd9df68e9b6ece146b805eadaa1cd3cc1777b4b5b8dd"
+  },
+  "documents": {
+    "01-concept.md": [
+      {
+        "reference_heading": "兑换码系统概念(Concept)",
+        "title": "{project}概念(Concept)"
+      },
+      {
+        "reference_heading": "概念(Glossary)",
+        "form": "bullet"
+      },
+      {
+        "reference_heading": "角色边界"
+      },
+      {
+        "reference_heading": "券码 Meta 与标签",
+        "title": "{special_topic}",
+        "form": "bullet"
+      },
+      {
+        "reference_heading": "结构关系树",
+        "form": "tree"
+      },
+      {
+        "reference_heading": "单一路径约束",
+        "form": "bullet"
+      }
+    ],
+    "02-use-cases.md": [
+      {
+        "reference_heading": "用例文档(Use Cases)"
+      },
+      {
+        "reference_heading": "范围与假设",
+        "form": "bullet"
+      },
+      {
+        "reference_heading": "平台管理员用例",
+        "title": "{item}用例",
+        "repeat": "roles"
+      },
+      {
+        "reference_heading": "关键场景"
+      },
+      {
+        "reference_heading": "场景 A：BotWorks 套餐卡券",
+        "title": "场景 {index}：{item}",
+        "repeat": "scenarios",
+        "form": "ordered"
+      }
+    ],
+    "03-data-model.md": [
+      {
+        "reference_heading": "03 - 数据模型（Data Model）"
+      },
+      {
+        "reference_heading": "1. 总共有哪几张表"
+      },
+      {
+        "reference_heading": "2. 每张表分别有哪些字段"
+      },
+      {
+        "reference_heading": "《Arcubase 表名》",
+        "title": "{item}",
+        "repeat": "tables"
+      },
+      {
+        "reference_heading": "3. 多维表格之间的 Link 及关系"
+      },
+      {
+        "reference_heading": "4. 这些表与 Link 承载怎样的业务流"
+      },
+      {
+        "reference_heading": "`BF-xx / UC-xx`《业务流名称》",
+        "title": "{item}",
+        "repeat": "flows",
+        "form": "flow",
+        "tables": []
+      }
+    ],
+    "04-security-privacy.md": [
+      {
+        "reference_heading": "03 - 安全与隐私要求(Security & Privacy)",
+        "title": "04 - 安全与隐私要求(Security & Privacy)"
+      },
+      {
+        "reference_heading": "1. 目标与边界"
+      },
+      {
+        "reference_heading": "2. 信息透明度分级(硬约束)"
+      },
+      {
+        "reference_heading": "2.1 Web URL 透明度"
+      },
+      {
+        "reference_heading": "2.2 API Path 透明度"
+      },
+      {
+        "reference_heading": "3. 标识符可见性规则"
+      },
+      {
+        "reference_heading": "4. 路由与接口设计约束"
+      },
+      {
+        "reference_heading": "4.1 允许/禁止示例"
+      },
+      {
+        "reference_heading": "4.2 项目上下文推导"
+      },
+      {
+        "reference_heading": "5. 认证与鉴权要求"
+      },
+      {
+        "reference_heading": "6. 隐私与数据最小化"
+      },
+      {
+        "reference_heading": "7. 审计与追踪"
+      },
+      {
+        "reference_heading": "8. 数据透传原则(固定)"
+      },
+      {
+        "reference_heading": "8.1 白名单透传"
+      },
+      {
+        "reference_heading": "8.2 黑名单透传"
+      },
+      {
+        "reference_heading": "8.3 透传处理链路"
+      },
+      {
+        "reference_heading": "8.4 令牌化透传"
+      },
+      {
+        "reference_heading": "8.5 幂等与重放防护"
+      },
+      {
+        "reference_heading": "8.6 对外最小暴露"
+      },
+      {
+        "reference_heading": "9. 一致性检查清单(供01~07引用)",
+        "title": "9. 一致性检查清单(供01~09引用)"
+      }
+    ],
+    "05-site-architecture.md": [
+      {
+        "reference_heading": "网站架构图（菜单与路由）"
+      },
+      {
+        "reference_heading": "角色边界"
+      },
+      {
+        "reference_heading": "通用路由约束",
+        "form": "bullet"
+      },
+      {
+        "reference_heading": "租户管理端",
+        "title": "{item}",
+        "repeat": "surfaces",
+        "form": "tree"
+      },
+      {
+        "reference_heading": "禁止项",
+        "form": "bullet"
+      }
+    ],
+    "06-page-layout.md": [
+      {
+        "reference_heading": "页面元素与布局"
+      },
+      {
+        "reference_heading": "通用交互规范",
+        "form": "bullet"
+      },
+      {
+        "reference_heading": "租户管理端",
+        "title": "{item}",
+        "repeat": "surfaces",
+        "form": "bullet"
+      },
+      {
+        "reference_heading": "禁止项",
+        "form": "bullet"
+      }
+    ],
+    "07-api.md": [
+      {
+        "reference_heading": "06 - API 体系设计",
+        "title": "07 - API 体系设计"
+      },
+      {
+        "reference_heading": "1. API 分组"
+      },
+      {
+        "reference_heading": "2. 通用响应"
+      },
+      {
+        "reference_heading": "3. 平台 API",
+        "title": "{api_index}. {item} API",
+        "repeat": "api_groups"
+      },
+      {
+        "reference_heading": "7. 禁止项",
+        "title": "{api_end}. 禁止项",
+        "form": "bullet"
+      }
+    ],
+    "08-tech-stack-and-directory.md": [
+      {
+        "reference_heading": "07 - 技术栈与目录规划(Tech Stack & Directory)",
+        "title": "08 - 技术栈与目录规划(Tech Stack & Directory)"
+      },
+      {
+        "reference_heading": "1. 技术栈总览"
+      },
+      {
+        "reference_heading": "1.1 前端"
+      },
+      {
+        "reference_heading": "1.2 后端"
+      },
+      {
+        "reference_heading": "1.3 数据与基础设施(推荐)"
+      },
+      {
+        "reference_heading": "2. 目录规划(建议 Monorepo)",
+        "title": "2. 目录规划",
+        "form": "tree"
+      },
+      {
+        "reference_heading": "3. 前后端边界约束(落地到目录)"
+      },
+      {
+        "reference_heading": "4. 本地开发与端口建议(沿用16xxx)",
+        "title": "4. 本地开发与端口建议"
+      },
+      {
+        "reference_heading": "5. 开发顺序建议"
+      }
+    ],
+    "09-implementation-roadmap.md": [
+      {
+        "reference_heading": "08 - 宏观实现路线(Implementation Roadmap)",
+        "title": "09 - 宏观实现路线(Implementation Roadmap)"
+      },
+      {
+        "reference_heading": "0. 总原则(强制)"
+      },
+      {
+        "reference_heading": "1. 阶段A: 后端优先落地",
+        "labels": [
+          "目标",
+          "输出物",
+          "完成门槛"
+        ]
+      },
+      {
+        "reference_heading": "2. 阶段B: TS 类库生成先行",
+        "labels": [
+          "目标",
+          "执行",
+          "输出物",
+          "完成门槛"
+        ]
+      },
+      {
+        "reference_heading": "3. 阶段C: 前端构建与业务实现",
+        "labels": [
+          "前置条件",
+          "目标",
+          "执行顺序(建议)",
+          "完成门槛"
+        ]
+      },
+      {
+        "reference_heading": "4. 阶段D: 全链路类型验证(最终门禁)",
+        "labels": [
+          "验证链路(必须全通过)",
+          "阻断规则"
+        ]
+      },
+      {
+        "reference_heading": "5. 里程碑定义"
+      },
+      {
+        "reference_heading": "6. 变更控制要求"
+      }
+    ]
+  }
+}

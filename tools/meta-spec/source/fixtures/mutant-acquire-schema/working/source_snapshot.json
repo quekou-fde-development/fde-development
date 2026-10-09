@@ -5,8 +5,8 @@
     {
       "id": "brief",
       "source_path_sha256": "423f73a0c0131a33459938e52f30f90ff7131608cca9eb6017230a619d30519c",
-      "content_sha256": "02aa71f1ff2199828a80e9568a0e2a0c67760a6a1cca5ab09a04397625e09108",
-      "byte_count": 66,
+      "content_sha256": "d22a1db05371e5d154f3c7f917700d0f7f106ffb8aa67117dcb6f3e22b605b6a",
+      "byte_count": 55,
       "snapshot_path": "working/sources/brief.bin"
     }
   ]

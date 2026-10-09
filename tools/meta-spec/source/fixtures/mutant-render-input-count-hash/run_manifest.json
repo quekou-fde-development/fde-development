@@ -1,10 +1,10 @@
 {
-  "run_id": "golden-basic",
-  "package_hash": "564c3c020c1cf200",
-  "contract_hash": "2bf8e5ed38e69621",
-  "run_dir_resolved": "/example/project/fixtures/golden-basic",
+  "run_id": "golden",
+  "package_hash": "41feef30e84385d3",
+  "contract_hash": "37432523fe37e969",
+  "run_dir_resolved": "/Users/sherlock/.codex/runs/meta-architecture-development-stability-20261007/preview-gate-generator-01/golden",
   "run_dir_source": "explicit_arg",
-  "started_at": "2026-10-06T23:00:05",
+  "started_at": "2026-10-08T19:12:40",
   "stages": [
     {
       "stage": "acquire_sources",
@@ -44,7 +44,7 @@
         1
       ],
       "assertions": {
-        "passed": 9,
+        "passed": 12,
         "failed": 0,
         "unverified": 0
       },

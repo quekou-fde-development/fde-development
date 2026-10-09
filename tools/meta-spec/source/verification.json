@@ -1,15 +1,15 @@
 {
   "artifact": "meta-spec",
-  "version": "10.06 candidate",
-  "status": "reviewable_candidate_not_installed",
+  "version": "10.09.1",
+  "status": "user-approved-release-with-known-limitations",
+  "source_version": "10.08.4-candidate / frozen-v14",
+  "authorization_date": "2026-10-09",
+  "authorization_scope": "Release this tested version under the Meta Spec name; defer remaining fixes.",
+  "runtime_functionality_changed_from_frozen_v14": false,
+  "description_changed": false,
   "reference_documents": 9,
-  "original_eight_byte_identical": false,
-  "new_reference": "references/design/03-data-model.md",
-  "platforms": [
-    "Octopus",
-    "Arcubase",
-    "Syngy Workbench React"
-  ],
+  "original_eight_byte_identical": true,
+  "reference_members_unchanged_from_frozen_v14": 17,
   "design_files": [
     "01-concept.md",
     "02-use-cases.md",
@@ -21,77 +21,70 @@
     "08-tech-stack-and-directory.md",
     "09-implementation-roadmap.md"
   ],
-  "checks": {
-    "host_format": "PASS",
-    "mechanical_contract_and_sandbox": "PASS",
-    "source_pointers": "PASS",
-    "directed_mutants_rejected": 12,
-    "description_cases": 22,
-    "independent_trigger_judges": 3,
-    "competition_and_wrong_domain_sentinel": "PASS",
-    "behavior_smoke": "One complete synthetic input produced nine designs in an independent run. Its targeted repairs passed independent recheck. One blank-input run and three conflict-input runs stopped for human clarification. Applicable mechanical gates and both human-report routes passed."
-  },
-  "behavior_evidence_scope": {
-    "complete_input": "Independent c7 run produced all nine files; review found ambiguous native table identity, two Markdown delimiter rows, and a working UC-map defect. Root repaired these in c9. The other eight design files are byte-identical; an independent targeted recheck closed all three findings. This is not a fresh independent c9 run from scratch.",
-    "blank_and_conflict": "One blank and three conflict runs used candidate 4. Their input, analysis and clarification contracts remain unchanged. route-evidence-reuse-c7.json records exact comparisons; candidate 9 separately verifies that unresolved questions stop before the added format check.",
-    "format": "Six directed format cases passed on c8. The c9 renderer is byte-identical, and one additional c9 case confirms unresolved-question precedence.",
-    "human_report": "The complete/review-ready and clarification-required reports independently passed on c7. Subsequent changes do not alter that report contract. Complete-with-no-user-action is N/A: the design route always ends pending chief architect review.",
-    "mechanical": "Applicable persistent-skill, host-format, anchor, twelve directed-mutant, trigger and competition checks passed. M6 is SKIP because this is not a network skill."
-  },
-  "known_evidence_limitations": [
-    "Only one explicit synthetic complete brief was used and reused during iteration. No real customer or held-out complete project validates cross-project stability.",
-    "The final evidence combines an independent full run with root-authored targeted repairs and an independent recheck; it is not a new independent from-scratch success.",
-    "The original conflict3 report has source anchors offset by two lines; conflict2 does not separately anchor the interview's direct-start directive. Both stop routes were correct. Original defects and reviewer-side corrections remain in platform-provenance-notes.json.",
-    "The complete-run log contains summarized command output and does not include a per-reference read receipt. Retained artifacts alone cannot prove every bundled reference was read. The parent separately captured exact mechanical-audit stdout.",
-    "Live team binding, resource IDs, identity mapping, effective native permissions and revocation, installed-host operation, implementation and publication remain unverified."
-  ],
-  "prior_failed_candidates": [
-    {
-      "candidate": 4,
-      "issue": "Incomplete native field definitions, Link detail and business-flow mapping",
-      "evidence": "platform-behavior-review-1.json"
+  "behavior_evidence": {
+    "loan": {
+      "documents": 9,
+      "mechanical": "15/15 PASS",
+      "fixed_acceptance": "11/11 PASS"
     },
-    {
-      "candidate": 5,
-      "issue": "Invalid default_value_mode string none",
-      "evidence": "platform-behavior-review-c5.json"
+    "customer": {
+      "documents": 9,
+      "mechanical": "15/15 PASS",
+      "fixed_acceptance": "12/12 PASS"
     },
-    {
-      "candidate": 6,
-      "issue": "Missing known type-specific native options",
-      "evidence": "platform-behavior-review-c6.json"
+    "inspection": {
+      "documents": 9,
+      "mechanical": "15/15 PASS",
+      "fixed_acceptance": "9/13 FAIL"
     },
-    {
-      "candidate": 7,
-      "issue": "Ambiguous table stable-key wording, two malformed delimiter rows, and working UC-map drift",
-      "evidence": "platform-behavior-review-c7.json"
-    },
-    {
-      "candidate": 7,
-      "issue": "Earlier user-report wording omitted continuation/decision consequences; both revised routes subsequently passed",
-      "evidence": "human-report-usability.json"
+    "training_registration": {
+      "documents": 9,
+      "mechanical": "15/15 PASS",
+      "fixed_acceptance": "16/17 FAIL",
+      "nine_document_content": "PASS in this case",
+      "failed_item": "Review handoff: order, return/pause consequences, copyable replies"
     }
-  ],
-  "not_verified": [
-    "真实客户项目适用性",
-    "安装后的目标宿主运行",
-    "架构师对具体项目设计的批准",
-    "开发、平台发布或上线"
-  ],
-  "scope": "行为试跑使用随包空白输入和显式标注的合成资料；这些结果不代表跨项目统计稳定性。",
-  "source_candidate_original_eight_byte_identical": true,
-  "public_distribution": {
-    "revision": "10.07.3",
-    "changes": "Removed internal navigation and author-machine path metadata; executable code and design requirements unchanged.",
-    "source_frozen_candidate": 9,
-    "behavioral_evidence": "Validation above refers to the source candidate; no new independent full behavior run for this documentation cleanup."
   },
-  "name_change": {
-    "date": "2026-10-09",
-    "previous_name": "meta-architecture-development",
-    "current_name": "meta-spec",
-    "scope": "Name, paths and distribution references only; existing behavior and candidate qualification retained.",
-    "baseline_commit": "69083b23f49e5e00d96e46cdd9790989e3067fc8",
-    "behavioral_evidence": "Existing checks describe the unchanged source candidate; this rename does not add semantic stability or installed-host evidence."
-  }
+  "known_limitations": [
+    "Inspection case: task-date field read permission omitted an allowed inspector role.",
+    "Inspection case: blanket input prohibition conflicted with an allowed supervisor-selected task owner.",
+    "Training case: the generated handoff report omitted required review instructions.",
+    "These results do not establish stable output across cases or repeated executions.",
+    "Complete synthetic inputs do not establish real-customer generalization; v14 repeated, blank/conflict, isolated-report and blind-comparison rounds were not completed.",
+    "Real platform permissions, native write behavior, concurrency, performance and target-host installation remain unverified."
+  ],
+  "mechanical_publication_checks": {
+    "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
+    "skill_creator_quick_validate": "PASS",
+    "meta_skill_persistent": "PASS; applicable checks M1-M5 and M7-M12; M6 not applicable",
+    "meta_skill_mutants": {
+      "golden": "PASS",
+      "directed_mutants_rejected": 15
+    },
+    "generator_regression": {
+      "verdict": "PASS",
+      "cases": 18
+    },
+    "structure_regression": {
+      "verdict": "PASS",
+      "directed_rejections": 15,
+      "golden": "PASS"
+    },
+    "native_fields_regression": {
+      "verdict": "PASS",
+      "cases": 13
+    },
+    "warning_disposition": "verification.json retained as the public validation and known-limitations record.",
+    "initial_environment_failure": "quick_validate initially lacked PyYAML; rerun passed with the existing isolated validator dependency. Skill content was unchanged."
+  },
+  "prior_engineering_evidence": "v14 engineering checks passed before the independent case runs; publication checks are recorded separately below.",
+  "evidence_provenance": "Original execution and independent-grading artifacts are retained in the project private test records.",
+  "evidence_sha256": {
+    "v14_three_case_result": "707f763e2d5bb67ed05528e42b3740fbe3ed723f1c4cac50932343ff1488c3d1",
+    "training_grade": "33217079a2616b62032f37355ab905d0e0efcf4953f6836278629071ac79298d",
+    "training_integrity": "f1994508ed80f60ff2b173e44f85d0f2d09cc2bd66d4dfaff39e1ed9946180f6"
+  },
+  "project_design_review": "All generated nine-file project designs remain pending chief architect review.",
+  "deployment": "NOT_RUN; repository publication does not install a runtime skill.",
+  "unfinished_v15_included": false
 }

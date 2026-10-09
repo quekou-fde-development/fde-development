@@ -1,6 +1,7 @@
 # 07 - 技术栈与目录规划(Tech Stack & Directory)
 
 本文档给出兑换码系统的推荐技术栈与仓库目录规划.
+技术栈参考: `/Users/wanglei/Projects/teamatai/README.md`.
 
 ## 1. 技术栈总览
 

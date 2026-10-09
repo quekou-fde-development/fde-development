@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "decision": "CONTENT_REVIEW_COMPLETED",
+  "scope": "CONTENT_ONLY",
+  "reviewer": "engineering-fixture-no-business-verdict",
+  "reviewed_at": "2026-10-08T11:28:32.907975+00:00",
+  "render_request_sha256": "f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f",
+  "preview_receipt_path": "working/previews/f01284c10c8991da010c2e42a650d9627c2f92c04f45b154a29a504f0b72ab7f/preview_receipt.json",
+  "preview_documents_sha256": "ddcd08aa314799b0c938916729feff2ecf02a7c7a5ca224dfaa09b3378772597",
+  "source_snapshot_sha256": "12228559e42f02f942646c7539b52e36bdc7291ef72a2e60058c5565f3e261cd",
+  "coverage_path": "working/engineering-review.txt",
+  "coverage_sha256": "84dc4f06181d31fc10eaafa2593edb13d0069fdb0e3781654d86fc4ce80b133b",
+  "field_checks": [
+    {
+      "table": "业务表",
+      "field_key": "code",
+      "source_anchor": "engineering-fixture"
+    }
+  ]
+}

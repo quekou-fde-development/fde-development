@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Mechanical artifact stages for meta-spec.
 
-This module snapshots supplied files and writes pre-authored Markdown bodies.  It
-does not inspect, generate, rank, or approve architecture content.
+This module snapshots sources and compiles supplied business-content slots into
+reference-derived Markdown. It does not decide or approve architecture content.
 """
 import argparse
 import hashlib
@@ -12,6 +12,8 @@ import re
 import stat
 import sys
 import uuid
+from document_structure import validate as validate_document_structure
+from document_content import compile_documents
 from datetime import datetime, timezone
 
 
@@ -296,26 +298,19 @@ def _render_request(run_dir):
     _assert_regular(path, "working/render_request.json")
     request, raw = _read_json(path, "working/render_request.json")
     if not isinstance(request, dict) or set(request) != {
-            "schema_version", "unresolved_questions", "documents"}:
-        raise ContractError("render_request.json 须只含 schema_version、unresolved_questions、documents")
-    if request.get("schema_version") != "1.0":
-        raise ContractError("render_request.json 的 schema_version 必须为 1.0")
+            "schema_version", "unresolved_questions", "documents", "structure_bindings"}:
+        raise ContractError("render_request.json 须只含 schema_version、unresolved_questions、documents、structure_bindings")
+    if request.get("schema_version") != "2.0":
+        raise ContractError("render_request.json 的 schema_version 必须为 2.0；正文须为结构化内容槽位")
     if not isinstance(request.get("unresolved_questions"), list):
         raise ContractError("unresolved_questions 必须为数组")
     documents = request.get("documents")
-    if not isinstance(documents, dict) or set(documents) != set(DOCUMENT_NAMES):
-        missing = sorted(set(DOCUMENT_NAMES) - set(documents or {}))
-        extra = sorted(set(documents or {}) - set(DOCUMENT_NAMES))
+    if not isinstance(documents, dict):
+        raise ContractError("documents 必须为九份文件的内容对象")
+    if set(documents) != set(DOCUMENT_NAMES):
+        missing = sorted(set(DOCUMENT_NAMES) - set(documents))
+        extra = sorted(set(documents) - set(DOCUMENT_NAMES))
         raise ContractError(f"documents 文件名必须恰为九份目标；缺 {missing}，多 {extra}")
-    if any(not isinstance(documents[name], str) for name in DOCUMENT_NAMES):
-        raise ContractError("documents 的九份正文都必须为字符串")
-    for name in DOCUMENT_NAMES:
-        body = documents[name]
-        if not body.strip():
-            raise ContractError(f"documents.{name} 为空或只含空白，不能作为最终文档")
-        for pattern in PLACEHOLDER_PATTERNS:
-            if pattern.search(body):
-                raise ContractError(f"documents.{name} 含常见待填占位残留，不能作为最终文档")
     return path, raw, request
 
 
@@ -369,6 +364,213 @@ def _check_markdown_tables(name, body):
         previous = line
 
 
+def compile_request(request):
+    """Compile and validate candidate bytes without writing a final artifact."""
+    if request["unresolved_questions"]:
+        raise RenderBlocked("存在未决问题；不能生成完整候选预览或最终文档")
+    def reject_placeholders(value, where):
+        if isinstance(value, str):
+            if any(pattern.search(value) for pattern in PLACEHOLDER_PATTERNS):
+                raise ContractError(where + " 含常见待填占位残留，不能作为最终文档")
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                reject_placeholders(item, where + "/" + str(key))
+        elif isinstance(value, list):
+            for index, item in enumerate(value):
+                reject_placeholders(item, where + "/" + str(index))
+    reject_placeholders(request["documents"], "documents")
+    try:
+        rendered = compile_documents(request["documents"], request["structure_bindings"])
+    except (ValueError, TypeError, KeyError, OSError) as error:
+        raise ContractError(str(error)) from error
+    for name, body in rendered.items():
+        for pattern in PLACEHOLDER_PATTERNS:
+            if pattern.search(body):
+                raise ContractError(f"documents.{name} 含常见待填占位残留，不能作为最终文档")
+    errors = validate_document_structure(rendered, request["structure_bindings"])
+    if errors:
+        raise ContractError("文档结构不符合参照：\n" + "\n".join(errors))
+    # Reject malformed tables before writing any final document or receipt.
+    for name in DOCUMENT_NAMES:
+        _check_markdown_tables(name, rendered[name])
+    return rendered
+
+
+def _full_content_hash(value):
+    return _sha256_bytes(json.dumps(value, ensure_ascii=False, sort_keys=True,
+                                   separators=(",", ":")).encode("utf-8"))
+
+
+def _preview_material(request_raw, rendered):
+    prefix = "working/previews/" + _sha256_bytes(request_raw)
+    documents = []
+    for filename in DOCUMENT_NAMES:
+        data = rendered[filename].encode("utf-8")
+        rel = prefix + "/design/" + filename
+        documents.append({"id": filename, "path": rel,
+                          "sha256": _sha256_bytes(data), "byte_count": len(data)})
+    receipt = {
+        "schema_version": "1.0",
+        "kind": "CONTENT_REVIEW_PREVIEW",
+        "status": "DRAFT_PREVIEW_NOT_REVIEWED",
+        "source_id": "working/render_request.json",
+        "request_sha256": _sha256_bytes(request_raw),
+        "document_count": len(documents),
+        "documents": documents,
+        "documents_sha256": _full_content_hash(documents),
+        "limits": "Mechanical compilation only. Content review, business semantics, chief architect approval and implementation are not evaluated.",
+    }
+    receipt_path = prefix + "/preview_receipt.json"
+    planned = [(item["path"], rendered[item["id"]].encode("utf-8")) for item in documents]
+    planned.append((receipt_path, _json_bytes(receipt)))
+    return receipt_path, receipt, planned
+
+
+def _preflight_writes(run_dir, planned):
+    for rel, data in planned:
+        target = _relative_child(run_dir, rel)
+        cursor = target
+        while not os.path.lexists(cursor):
+            cursor = os.path.dirname(cursor)
+        if cursor != target and not os.path.isdir(cursor):
+            raise ContractError(f"产物父路径不是目录: {rel}")
+        if os.path.lexists(target):
+            if _read_bytes(target, f"既有产物 {rel}") != data:
+                raise ContractError(f"拒绝覆盖内容不同的既有产物: {rel}")
+
+
+def preview_documents(run_dir):
+    """Compile an immutable working preview; do not certify business content."""
+    for rel in ("render_input_receipt.json", "render_documents_receipt.json"):
+        if os.path.lexists(_relative_child(run_dir, rel)):
+            raise ContractError("最终渲染回执已存在；新的内容修订须使用新的候选运行目录")
+    request_path, request_raw, request = _render_request(run_dir)
+    rendered = compile_request(request)
+    receipt_path, receipt, planned = _preview_material(request_raw, rendered)
+    _preflight_writes(run_dir, planned)
+    if _read_bytes(request_path, "working/render_request.json") != request_raw:
+        raise ContractError("编译期间内容请求发生变化；未写预览，请核对请求后重试")
+    for rel, data in planned:
+        _write_new_or_identical(run_dir, rel, data)
+    return {"status": "DRAFT_PREVIEW_NOT_REVIEWED", "document_count": receipt["document_count"],
+            "preview_receipt": receipt_path, "request_sha256": receipt["request_sha256"]}
+
+
+def _check_content_review(run_dir, request_raw, request, rendered):
+    """Validate review bindings and declared fields, not the reviewer's judgment."""
+    proof_path = _relative_child(run_dir, "working/content_review_proof.json")
+    proof, proof_raw = _read_json(proof_path, "working/content_review_proof.json")
+    keys = {"schema_version", "decision", "scope", "reviewer", "reviewed_at",
+            "render_request_sha256", "preview_receipt_path", "preview_documents_sha256",
+            "source_snapshot_sha256", "coverage_path", "coverage_sha256", "field_checks"}
+    if not isinstance(proof, dict) or set(proof) != keys:
+        raise ContractError("content_review_proof.json 键集合不符合机械合同")
+    if (proof["schema_version"] != "1.0" or proof["decision"] != "CONTENT_REVIEW_COMPLETED"
+            or proof["scope"] != "CONTENT_ONLY"):
+        raise ContractError("需要本版内容复核完成声明；不能用总架构师批准或机械通过代替")
+    if not isinstance(proof["reviewer"], str) or not proof["reviewer"].strip():
+        raise ContractError("reviewer 须为非空的复核者声明")
+    try:
+        reviewed_at = datetime.fromisoformat(proof["reviewed_at"].replace("Z", "+00:00"))
+        if reviewed_at.tzinfo is None or reviewed_at > datetime.now(timezone.utc):
+            raise ValueError("复核时间须带时区且不晚于当前时间")
+    except (ValueError, TypeError, AttributeError) as error:
+        raise ContractError("reviewed_at 须为实际已发生的带时区时间") from error
+    receipt_path, receipt, planned = _preview_material(request_raw, rendered)
+    if (proof["render_request_sha256"] != receipt["request_sha256"]
+            or proof["preview_receipt_path"] != receipt_path
+            or proof["preview_documents_sha256"] != receipt["documents_sha256"]):
+        raise ContractError("内容复核声明与当前请求或预览不一致；重新预览并复核")
+    # Recompile above and compare every preview byte. Never copy a preview into final design/.
+    frozen_inputs = [(proof_path, proof_raw)]
+    for rel, expected in planned:
+        path = _relative_child(run_dir, rel)
+        actual = _read_bytes(path, f"已复核预览 {rel}")
+        if actual != expected:
+            raise ContractError(f"已复核预览与当前编译结果不符: {rel}")
+        frozen_inputs.append((path, actual))
+    snapshot_path = _relative_child(run_dir, "working/source_snapshot.json")
+    snapshot, snapshot_raw = _read_json(snapshot_path, "working/source_snapshot.json")
+    if proof["source_snapshot_sha256"] != _sha256_bytes(snapshot_raw):
+        raise ContractError("内容复核声明与来源快照不一致")
+    frozen_inputs.append((snapshot_path, snapshot_raw))
+    if not isinstance(snapshot, dict) or not isinstance(snapshot.get("sources"), list) or not snapshot["sources"]:
+        raise ContractError("来源快照缺 sources")
+    for row in snapshot["sources"]:
+        if not isinstance(row, dict) or not isinstance(row.get("snapshot_path"), str):
+            raise ContractError("来源快照条目格式错误")
+        rel = row["snapshot_path"]
+        if not rel.startswith("working/sources/"):
+            raise ContractError("来源快照路径须在 working/sources/ 内")
+        path = _relative_child(run_dir, rel)
+        raw = _read_bytes(path, "原始来源快照")
+        if _sha256_bytes(raw) != row.get("content_sha256") or len(raw) != row.get("byte_count"):
+            raise ContractError("原始来源快照的字节与声明不符")
+        frozen_inputs.append((path, raw))
+    manifest_path, manifest_raw, sources = _source_manifest(run_dir)
+    expected_sources = []
+    for source in sources:
+        original = _read_bytes(source["path"], f"实际来源 {source['id']}")
+        expected_sources.append({
+            "id": source["id"],
+            "source_path_sha256": _sha256_bytes(source["declared_path"].encode("utf-8")),
+            "content_sha256": _sha256_bytes(original), "byte_count": len(original),
+            "snapshot_path": f"working/sources/{source['id']}.bin",
+        })
+        frozen_inputs.append((source["path"], original))
+    if snapshot != {"schema_version": "1.0", "source_manifest_sha256": _sha256_bytes(manifest_raw),
+                    "sources": expected_sources}:
+        raise ContractError("内容复核来源快照与实际 source_manifest 或原始资料不一致")
+    frozen_inputs.append((manifest_path, manifest_raw))
+    acquired_path = _relative_child(run_dir, "acquire_sources_receipt.json")
+    acquired, acquired_raw = _read_json(acquired_path, "acquire_sources_receipt.json")
+    expected_outputs = [{"id": "working/source_snapshot.json", "kind": "file",
+                         "sha256": _sha256_bytes(snapshot_raw)[:16]}]
+    expected_outputs.extend({"id": row["snapshot_path"], "kind": "file",
+                             "sha256": row["content_sha256"][:16]} for row in expected_sources)
+    if (not isinstance(acquired, dict)
+            or set(acquired) != {"stage", "source_id", "fetched_at", "source_count", "output_count", "outputs_sha256", "outputs"}
+            or acquired.get("stage") != "acquire_sources"
+            or acquired.get("source_id") != "sha256:" + _sha256_bytes(manifest_raw)
+            or acquired.get("source_count") != len(expected_sources)
+            or acquired.get("output_count") != len(expected_outputs)
+            or acquired.get("outputs") != expected_outputs
+            or acquired.get("outputs_sha256") != _content_hash(expected_outputs)
+            or not isinstance(acquired.get("fetched_at"), str) or not acquired["fetched_at"].strip()):
+        raise ContractError("内容复核来源与 acquire_sources 回执不一致")
+    frozen_inputs.append((acquired_path, acquired_raw))
+    rel = proof["coverage_path"]
+    if (not isinstance(rel, str) or not rel.startswith("working/")
+            or rel.startswith(("working/previews/", "working/sources/"))
+            or rel in {"working/render_request.json", "working/source_snapshot.json", "working/content_review_proof.json"}):
+        raise ContractError("coverage_path 须指向 working/ 内独立的来源逐项复核记录")
+    path = _relative_child(run_dir, rel)
+    raw = _read_bytes(path, "来源逐项复核记录")
+    if not raw.strip() or _sha256_bytes(raw) != proof["coverage_sha256"]:
+        raise ContractError("来源逐项复核记录为空或已变化")
+    try:
+        coverage_text = raw.decode("utf-8")
+    except UnicodeDecodeError as error:
+        raise ContractError("来源逐项复核记录须为 UTF-8 文本") from error
+    frozen_inputs.append((path, raw))
+    checks = proof["field_checks"]
+    if not isinstance(checks, list):
+        raise ContractError("field_checks 须为数组；原生元数据等无字段项的依据写入覆盖记录")
+    for index, check in enumerate(checks):
+        if (not isinstance(check, dict) or set(check) != {"table", "field_key", "source_anchor"}
+                or not all(isinstance(v, str) and v.strip() for v in check.values())):
+            raise ContractError(f"field_checks[{index}] 须含非空 table、field_key、source_anchor")
+        table = check["table"]
+        if table not in request["structure_bindings"]["tables"]:
+            raise ContractError(f"field_checks[{index}] 引用了未声明的表: {table}")
+        rows = request["documents"]["03-data-model.md"][table]["tables"][0]
+        if check["field_key"] not in {row[1].strip() for row in rows}:
+            raise ContractError(f"field_checks[{index}] 声明的必要事实没有对应字段: {table}.{check['field_key']}")
+        if any(check[key] not in coverage_text for key in ("table", "field_key", "source_anchor")):
+            raise ContractError(f"field_checks[{index}] 的表、字段或来源位置未出现在本版逐项复核记录中")
+    return frozen_inputs
+
+
 def render_documents(run_dir):
     request_path, request_raw, request = _render_request(run_dir)
     questions = request["unresolved_questions"]
@@ -381,13 +583,12 @@ def render_documents(run_dir):
         }
         _write_new_or_identical(run_dir, "working/render_blocked.json", _json_bytes(blocked))
         raise RenderBlocked("存在未决问题；已写 working/render_blocked.json，未写 design/")
-    # Reject malformed tables before writing any final document or receipt.
-    for name in DOCUMENT_NAMES:
-        _check_markdown_tables(name, request["documents"][name])
+    rendered = compile_request(request)
+    review_inputs = _check_content_review(run_dir, request_raw, request, rendered)
     documents = []
     planned = []
     for name in DOCUMENT_NAMES:
-        body = request["documents"][name].encode("utf-8")
+        body = rendered[name].encode("utf-8")
         rel = f"design/{name}"
         documents.append({"id": name, "path": rel, "kind": "markdown",
                           "sha256": _sha256_bytes(body)[:16], "byte_count": len(body)})
@@ -415,15 +616,13 @@ def render_documents(run_dir):
     }
     # Check every eventual write first. Existing byte-identical final documents are
     # accepted for resumable verification but are never rewritten.
-    for rel, data in planned:
-        target = _relative_child(run_dir, rel)
-        if os.path.lexists(target):
-            _assert_regular(target, f"既有设计文档 {rel}")
-            if _read_bytes(target, f"既有设计文档 {rel}") != data:
-                raise ContractError(f"拒绝覆盖内容不同的既有设计文档: {rel}")
+    _preflight_writes(run_dir, planned)
     for rel in ("render_input_receipt.json", "render_documents_receipt.json"):
         if os.path.lexists(_relative_child(run_dir, rel)):
             raise ContractError(f"{rel} 已存在；请使用新的候选运行目录")
+    for path, raw in [(request_path, request_raw), *review_inputs]:
+        if _read_bytes(path, "写入前输入复查") != raw:
+            raise ContractError("写入前输入已变化；停止最终渲染")
     for rel, data in planned:
         _write_new_or_identical(run_dir, rel, data)
     _write_new_or_identical(run_dir, "render_input_receipt.json", _json_bytes(input_receipt))
@@ -443,9 +642,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage", required=True, choices=sorted(STAGES))
     parser.add_argument("--run-dir", required=True)
+    parser.add_argument("--preview", action="store_true")
     args = parser.parse_args()
+    if args.preview and args.stage != "render_documents":
+        parser.error("--preview 只用于 render_documents")
     try:
-        result = STAGES[args.stage](_prepare_run_dir(args.run_dir))
+        run_dir = _prepare_run_dir(args.run_dir)
+        if args.preview:
+            result = preview_documents(run_dir)
+        else:
+            result = STAGES[args.stage](run_dir)
     except RenderBlocked as error:
         print(str(error), file=sys.stderr)
         return 3

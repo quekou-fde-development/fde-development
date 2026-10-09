@@ -1,3 +1,1 @@
-# Test source
-
-This is a deterministic mechanical fixture source.
+固定格式工程夹具，不代表业务正确性。

@@ -458,6 +458,331 @@ def contained_file(root, relative):
     return path
 
 
+from pathlib import Path
+
+STRUCTURE_PACKAGE = Path(__file__).resolve().parent.parent
+
+
+def _structure_norm(text):
+    return ' '.join(text.replace('`', '').split())
+
+
+def _structure_columns(line):
+    import html
+    line = line.strip()
+    if line.startswith('|'):
+        line = line[1:]
+    if line.endswith('|') and not line.endswith('\\|'):
+        line = line[:-1]
+    return [_structure_norm(html.unescape(c.replace('\\|', '|'))) for c in re.split(r'(?<!\\)\|', line)]
+
+
+def _structure_outline(text):
+    lines = text.splitlines()
+    start = 0
+    if lines and lines[0] == '---':
+        try:
+            start = lines.index('---', 1) + 1
+        except ValueError:
+            raise ValueError('YAML 未闭合')
+    heads, fence = [], None
+    for i in range(start, len(lines)):
+        m = re.match(r'^ {0,3}(`{3,}|~{3,})(.*)', lines[i])
+        if m:
+            if fence is None:
+                fence = m[1]
+            elif m[1][0] == fence[0] and len(m[1]) >= len(fence):
+                fence = None
+            continue
+        if fence is None:
+            m = re.match(r'^ {0,3}(#{1,6})\s+(.+?)\s*#*\s*$', lines[i])
+            if m:
+                heads.append((i, len(m[1]), m[2]))
+    if fence:
+        raise ValueError('代码围栏未闭合')
+    result = []
+    for j, (line, level, title) in enumerate(heads):
+        end = heads[j + 1][0] if j + 1 < len(heads) else len(lines)
+        body = '\n'.join(lines[line + 1:end]).strip()
+        visible = re.sub(r'(?ms)^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?^ {0,3}\1\s*$', '', body)
+        tables, data = [], visible.splitlines()
+        for k in range(1, len(data)):
+            if '|' not in data[k] or '|' not in data[k - 1]:
+                continue
+            sep = _structure_columns(data[k])
+            if sep and all(re.fullmatch(r':?-+:?', c) for c in sep):
+                header = _structure_columns(data[k - 1])
+                if len(sep) != len(header):
+                    raise ValueError(f'{title}: 表格分隔行错误')
+                count = 0
+                for row in data[k + 1:]:
+                    if not row.strip() or '|' not in row:
+                        break
+                    count += 1
+                    if len(_structure_columns(row)) != len(header):
+                        raise ValueError(f'{title}: 数据行列数错误')
+                if count == 0:
+                    raise ValueError(f'{title}: 空表')
+                tables.append(header)
+        result.append({'level': level, 'title': title, 'tables': tables,
+                       'body': body, 'visible': visible, 'line': line + 1})
+    return result
+
+
+def _audit_document_structure(run_dir):
+    root = Path(run_dir).resolve()
+    def read(path):
+        for parent in [path, *path.parents]:
+            if parent == root:
+                break
+            if parent.is_symlink():
+                raise ValueError('结构审核拒绝符号链接')
+        if root not in path.resolve().parents or not path.is_file():
+            raise ValueError('结构审核文件缺失或路径越界')
+        return path.read_text()
+    try:
+        contract = json.loads((STRUCTURE_PACKAGE / 'references/document-structure.json').read_text())
+        request = json.loads(read(root / 'working/render_request.json'))
+        binding = request['structure_bindings']
+        list_keys = ['roles', 'surfaces', 'api_groups', 'tables', 'scenarios', 'flows']
+        keys = {'project', 'special_topic', 'sources', *list_keys}
+        if set(binding) != keys or set(binding['sources']) != keys - {'sources'}:
+            raise ValueError('项目绑定键集合错误')
+        for key in list_keys:
+            values = binding[key]
+            if (not isinstance(values, list) or not values or len(values) > 100
+                    or not all(isinstance(v, str) and v.strip() and not re.search(r'[\r\n#|<>`]', v) for v in values)
+                    or len(set(values)) != len(values)):
+                raise ValueError('项目重复绑定非法: ' + key)
+        if not all(isinstance(v, str) and v.strip() for v in binding['sources'].values()):
+            raise ValueError('项目绑定缺来源')
+        if {p.name for p in (root / 'design').glob('*.md')} != set(contract['documents']):
+            raise ValueError('最终文件名集合不等于九份契约')
+        errors = []
+        for name, rules in contract['documents'].items():
+            ref = STRUCTURE_PACKAGE / 'references/design' / name
+            if hashlib.sha256(ref.read_bytes()).hexdigest() != contract['reference_sha256'][name]:
+                raise ValueError('原参照指纹与结构契约不符: ' + name)
+            source = {s['title']: s for s in _structure_outline(ref.read_text())}
+            expected = []
+            for rule in rules:
+                prototype = source[rule['reference_heading']]
+                values = binding[rule['repeat']] if 'repeat' in rule else [None]
+                for index, item in enumerate(values, 1):
+                    slots = {**binding, 'item': item, 'index': index,
+                             'api_index': index + 2, 'api_end': len(binding['api_groups']) + 3}
+                    expected.append({**prototype,
+                        'title': rule.get('title', prototype['title']).format_map(slots),
+                        'tables': rule.get('tables', prototype['tables']),
+                        'form': rule.get('form'), 'fixed_labels': rule.get('labels', [])})
+            actual = _structure_outline(read(root / 'design' / name))
+            if [(s['level'], _structure_norm(s['title'])) for s in actual] != [(s['level'], _structure_norm(s['title'])) for s in expected]:
+                errors.append(name + ': 标题树与原参照结构不符')
+                continue
+            for index, (got, want) in enumerate(zip(actual, expected)):
+                where = name + ':' + str(got['line'])
+                if got['tables'] != want['tables']:
+                    errors.append(where + ': 表格列名/顺序/数量不符')
+                group = index + 1 < len(actual) and actual[index + 1]['level'] > got['level']
+                if got['level'] > 1 and not got['body'] and not group:
+                    errors.append(where + ': 空章节')
+                form = want['form']
+                if form == 'tree' and not re.search(r'(?m)^```text\s*$', got['body']):
+                    errors.append(where + ': 缺少 text 树')
+                if form == 'bullet' and not re.search(r'(?m)^\s*[-*+]\s+\S', got['visible']):
+                    errors.append(where + ': 缺少项目符号列表')
+                if form in ('flow', 'ordered') and not re.search(r'(?m)^\s*1[.)]\s+\S', got['visible']):
+                    errors.append(where + ': 缺少编号流程')
+                if form == 'flow':
+                    for label in ['触发与读取', '判断与动作', '状态与回读', '异常与人工决定']:
+                        if not re.search(r'(?m)^\s*\d[.)]\s+\*\*' + label + r'[:：]\*\*', got['visible']):
+                            errors.append(where + ': 缺流程标签 ' + label)
+                for label in want['fixed_labels']:
+                    if not re.search(r'(?m)^' + re.escape(label) + r'[:：]\s*$', got['visible']):
+                        errors.append(where + ': 缺阶段标签 ' + label)
+            if name in ('01-concept.md', '05-site-architecture.md'):
+                section = next(s for s in actual if s['title'] == '角色边界')
+                rows = [_structure_columns(line) for line in section['visible'].splitlines() if line.strip().startswith('|')]
+                key = 'roles' if name.startswith('01') else 'surfaces'
+                if [row[0] for row in rows[2:]] != binding[key]:
+                    errors.append(name + ': 清单与项目角色/端绑定不一致')
+        use_cases = {}
+        for block in _structure_outline(read(root / 'design/02-use-cases.md')):
+            if block['tables'] != [['编号', '用例', '主流程', '验收']]:
+                continue
+            lines = [line for line in block['visible'].splitlines() if line.lstrip().startswith('|')]
+            for line in lines[2:]:
+                record = _structure_columns(line)
+                ident, title = record[0], record[1]
+                if not re.fullmatch(r'UC-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', ident) or ident in use_cases or not title:
+                    errors.append('02: 用例编号或名称无效/重复')
+                use_cases[ident] = title
+        for title in binding['flows']:
+            refs = re.findall(r'UC-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*', title)
+            if not refs:
+                errors.append('03: 业务流未引用用例')
+            for ident in refs:
+                if ident not in use_cases or use_cases[ident] not in _structure_norm(title):
+                    errors.append('03: 用例编号/完整名称与 02 用例表错位: ' + ident)
+        return errors
+    except (OSError, KeyError, ValueError, TypeError, StopIteration) as exc:
+        return ['结构审核未通过: ' + str(exc)]
+
+
+
+def _audit_document_content(run_dir):
+    """Independent literal replay from the frozen content slots and references.
+
+    Do not import the producer. Receipt hashes alone cannot detect a producer
+    that dropped or changed a business cell before signing its output.
+    """
+    try:
+        root = Path(run_dir).resolve()
+        request = json.loads(Path(contained_file(root, 'working/render_request.json')).read_text())
+        if request.get('schema_version') != '2.0' or request.get('unresolved_questions') != []:
+            raise ValueError('须使用问题清零的 2.0 内容请求')
+        contract = json.loads((STRUCTURE_PACKAGE / 'references/document-structure.json').read_text())
+        binding = request['structure_bindings']
+        if set(request['documents']) != set(contract['documents']):
+            raise ValueError('内容请求须恰有九份')
+        errors = []
+        for name, rules in contract['documents'].items():
+            refs = {s['title']: s for s in _structure_outline(
+                (STRUCTURE_PACKAGE / 'references/design' / name).read_text())}
+            expected = []
+            for rule in rules:
+                prototype = refs[rule['reference_heading']]
+                for i, item in enumerate(binding[rule['repeat']] if 'repeat' in rule else [None], 1):
+                    title = rule.get('title', prototype['title']).format_map({**binding,
+                        'item': item, 'index': i, 'api_index': i + 2,
+                        'api_end': len(binding['api_groups']) + 3})
+                    expected.append((title, rule.get('tables', prototype['tables']),
+                                     rule.get('form'), rule.get('labels', [])))
+            values = request['documents'][name]
+            actual = _structure_outline(Path(contained_file(root, 'design/' + name)).read_text())
+            if (not isinstance(values, dict) or set(values) != {s[0] for s in expected}
+                    or [s['title'] for s in actual] != [s[0] for s in expected]):
+                errors.append(name + ': 内容槽位与落盘章节不对应')
+                continue
+            for got, (title, headers, form, labels) in zip(actual, expected):
+                value = values[title]
+                keys = {'text'}
+                blocks = []
+                prose = value['text'].strip()
+                if prose:
+                    blocks.append(prose)
+                if form in ('bullet', 'ordered'):
+                    keys.add('items')
+                    blocks.append('\n'.join(('- ' if form == 'bullet' else f'{i}. ')
+                        + text.strip() for i, text in enumerate(value['items'], 1)))
+                if form == 'tree':
+                    keys.add('tree')
+                    blocks.append('```text\n' + value['tree'].strip() + '\n```')
+                if form == 'flow':
+                    keys.add('steps')
+                    step_labels = ['触发与读取', '判断与动作', '状态与回读', '异常与人工决定']
+                    if set(value['steps']) != set(step_labels):
+                        raise ValueError(name + ': 业务流槽位改变')
+                    blocks.append('\n'.join(f'{i}. **{label}：**' + value['steps'][label].strip()
+                                            for i, label in enumerate(step_labels, 1)))
+                if labels:
+                    keys.add('labels')
+                    if set(value['labels']) != set(labels):
+                        raise ValueError(name + ': 阶段标签槽位改变')
+                    blocks.extend(label + '：\n\n' + value['labels'][label].strip() for label in labels)
+                if headers:
+                    keys.add('tables')
+                    if len(value['tables']) != len(headers):
+                        raise ValueError(name + ': 表格槽位数量改变')
+                    for header, rows in zip(headers, value['tables']):
+                        lines = ['| ' + ' | '.join(header) + ' |',
+                                 '| ' + ' | '.join(['---'] * len(header)) + ' |']
+                        if not rows:
+                            raise ValueError(name + ': 缺数据行')
+                        for row in rows:
+                            if len(row) != len(header):
+                                raise ValueError(name + ': 内容数据列数不符')
+                            encoded = []
+                            for cell in row:
+                                # Literal per-character codec, separately implemented.
+                                escapes = {'&': '&amp;', '<': '&lt;', '>': '&gt;',
+                                           '\\': '&#92;', '|': '&#124;', '\n': '<br>'}
+                                encoded.append(''.join(escapes.get(c, c) for c in cell.strip()))
+                            lines.append('| ' + ' | '.join(encoded) + ' |')
+                        blocks.append('\n'.join(lines))
+                if set(value) != keys or got['body'] != '\n\n'.join(blocks):
+                    errors.append(name + ' / ' + title + ': 落盘正文与冻结内容槽位不一致')
+        return errors
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+        return ['内容回读未通过: ' + str(exc)]
+
+
+def _audit_native_fields(run_dir):
+    """Read actual Markdown cells and check native options independently."""
+    import html
+    errors = []
+    try:
+        root = Path(run_dir).resolve()
+        request = json.loads(Path(contained_file(root, 'working/render_request.json')).read_text())
+        document = Path(contained_file(root, 'design/03-data-model.md')).read_text()
+        sections = {s['title']: s for s in _structure_outline(document)}
+        allowed = ('text', 'textarea', 'number', 'datetime', 'boolean', 'select',
+                   'status', 'member', 'file', 'linkto', 'lookup', 'rollup', 'formula', 'serialnumber')
+        for table in request['structure_bindings']['tables']:
+            section = sections[table]
+            lines = section['body'].splitlines()
+            header = next(i for i, line in enumerate(lines) if line.startswith('|'))
+            rows = []
+            for line in lines[header + 2:]:
+                if not line.startswith('|'):
+                    break
+                rows.append([html.unescape(cell.replace('<br>', '\n')).strip()
+                             for cell in line.strip()[1:-1].split('|')])
+            if not rows:
+                raise ValueError(table + ': 无原生字段行')
+            for row in rows:
+                if len(row) != 11:
+                    raise ValueError(table + ': 字段行须为十一列')
+                label = '03 / ' + table + ' / ' + row[1]
+                native_type = row[2].strip('`')
+                if native_type not in allowed:
+                    errors.append(label + ': 未知 FieldVO 类型')
+                    continue
+                if native_type not in ('text', 'textarea', 'datetime', 'select'):
+                    continue
+                try:
+                    value = json.loads(row[7].strip('`'))
+                    if not isinstance(value, dict):
+                        raise ValueError('options 不是对象')
+                    if native_type == 'text' and value.get('type') != 'text':
+                        raise ValueError('缺 text 原生选项')
+                    if native_type == 'textarea' and type(value.get('html')) is not bool:
+                        raise ValueError('缺 textarea 原生选项')
+                    if native_type == 'datetime' and value.get('type') not in ('date', 'datetime'):
+                        raise ValueError('缺 datetime 原生选项')
+                    if native_type == 'select':
+                        config = value.get('options', {})
+                        if not isinstance(config, dict) or config.get('mode') != 'custom':
+                            raise ValueError('select 固定选项须为 custom')
+                        choices = config.get('items')
+                        if not isinstance(choices, list) or len(choices) == 0:
+                            raise ValueError('select 缺 items')
+                        keys = []
+                        for choice in choices:
+                            if not isinstance(choice, dict):
+                                raise ValueError('select item 不是对象')
+                            if type(choice.get('key')) != int or not isinstance(choice.get('value'), str) or not choice['value'].strip():
+                                raise ValueError('select 须有整数 item key 和非空 value')
+                            keys.append(choice['key'])
+                        if len(keys) != len(set(keys)):
+                            raise ValueError('select item key 重复')
+                except (ValueError, TypeError) as exc:
+                    errors.append(label + ': ' + str(exc))
+        return errors
+    except (OSError, ValueError, KeyError, TypeError, StopIteration) as exc:
+        return ['原生字段回读未通过: ' + str(exc)]
+
+
 def f_schema_conformance(art, spec, ctx):
     """字段集**与声明类型**双验。
 
@@ -498,6 +823,10 @@ def f_schema_conformance(art, spec, ctx):
                 bad.append(f"[{i}].{fld}=bool 冒充 {tname}")
             elif not isinstance(v, exp):
                 bad.append(f"[{i}].{fld}={type(v).__name__} 应 {tname}")
+    if p.get("reference_structure"):
+        bad.extend(_audit_document_structure(ctx["run_dir"]))
+    if p.get("native_field_options"):
+        bad.extend(_audit_native_fields(ctx["run_dir"]))
     return not bad, "; ".join(bad[:5])
 
 
@@ -1017,7 +1346,11 @@ def f_row_column_sheet_reconciliation(art, spec, ctx):
         if p.get("compare_map") or p.get("rendered_rows"):
             return False, ("compare_paths 与 compare_map/rendered_rows 同时声明"
                            "——同一条断言两种口径，判据取哪个由实现顺序决定（契约错）")
-        return _compare_paths(art, p, ctx)
+        passed, detail = _compare_paths(art, p, ctx)
+        if p.get('content_readback'):
+            errors = _audit_document_content(ctx['run_dir'])
+            return passed and not errors, '; '.join([detail, *errors])
+        return passed, detail
     if p.get("compare_map"):
         _touch_deep(art, p["compare_map"])
         got = _get(art, p["compare_map"])

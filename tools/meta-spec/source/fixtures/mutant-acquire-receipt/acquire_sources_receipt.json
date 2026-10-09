@@ -3,17 +3,17 @@
   "source_id": "sha256:7c9228fae37dddf759416f9f674915ea8ca29f010231832dcdc0c8ef102fe42f",
   "source_count": 1,
   "output_count": 2,
-  "outputs_sha256": "5d6f8876183f02de",
+  "outputs_sha256": "fadc8cf407b19433",
   "outputs": [
     {
       "id": "working/source_snapshot.json",
       "kind": "file",
-      "sha256": "4ae05050cd746da6"
+      "sha256": "12228559e42f02f9"
     },
     {
       "id": "working/sources/brief.bin",
       "kind": "file",
-      "sha256": "02aa71f1ff219982"
+      "sha256": "d22a1db05371e5d1"
     }
   ]
 }

@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-content",
+  "must_be_rejected_by": "render.content",
+  "doc": "Change a business cell and re-sign both receipts; input stays frozen."
+}

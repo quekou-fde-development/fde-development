@@ -141,58 +141,102 @@
       "archive": "handbook/architecture-reference/development-design-10.06.zip",
       "path": "handbook/architecture-reference/",
       "entry": "handbook/architecture-reference/README.md",
-      "sha256": "ef21285c9566bb6624fc06be04b7504f40b94b4660fca0cc823c0827f5a7f50c",
-      "bytes": 24498,
+      "sha256": "ba73c751534e89adba53cdd58212c1962d03a71048e1e041f4cae7bf6624abe8",
+      "bytes": 24543,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
       ],
-      "data_model_sha256": "8c311ad3a73d96d95cb097127fa2cd32e35db0203664ea53e9b81f21dcf42cbd",
-      "other_eight_unchanged": false,
-      "source_archive_sha256": "3d5617490051aad5b99716f9f89b981b52fce6dae335257aca52252476e9cd30",
-      "publication_revision": "10.09",
-      "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
+      "data_model_sha256": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611",
+      "other_eight_unchanged": true,
+      "source_archive_sha256": "ba73c751534e89adba53cdd58212c1962d03a71048e1e041f4cae7bf6624abe8",
+      "publication_revision": "10.09.1",
+      "distribution": "Nine v14 references; eight original documents preserved byte-for-byte.",
       "member_count": 10,
-      "source_reference_freeze": "frozen-candidate-9",
-      "original_reference_changes": "Removed one author-local README path from reference 08; seven original reference documents are byte-identical.",
-      "reference_freeze": "public-documentation-10.07.3",
+      "source_reference_freeze": "frozen-v14",
+      "original_reference_changes": "None; all eight original Wang Lei documents retain their source bytes.",
+      "reference_freeze": "frozen-v14",
       "original_archive_sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806"
     },
     {
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "0.1.0-candidate",
-      "archive_version": "10.09",
-      "status": "validated-candidate-awaiting-chief-architect-review",
+      "version": "10.09.1",
+      "archive_version": "10.09.1",
+      "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-10.09.zip",
-      "sha256": "3c86fc85c54bbd72aec1650e6f360485abbc44bbcbcafe4fc4fe293d5892d0b4",
-      "bytes": 195343,
-      "member_count": 268,
+      "archive": "tools/meta-spec/meta-spec-10.09.1.zip",
+      "sha256": "13c52919a703e5c30b11271308b19b96962275d63117f92a40f5aff066ff56c8",
+      "bytes": 521774,
+      "member_count": 530,
       "validation": {
-        "mechanical": "applicable checks passed; M6 not applicable",
-        "complete_input": "independent c7 full run plus targeted repairs and independent c9 recheck",
-        "clarification": "blank and conflict cases stop for human clarification",
-        "source_evidence": "tools/meta-spec/source/verification.json",
-        "documentation_cleanup": "runtime code unchanged; reference/navigation integrity verified for publication revision 10.07.3",
-        "name_change": "Only identifiers, labels and distribution references changed; previous behavioral evidence remains scoped to its original candidate."
+        "publication": {
+          "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
+          "skill_creator_quick_validate": "PASS",
+          "meta_skill_persistent": "PASS; applicable checks M1-M5 and M7-M12; M6 not applicable",
+          "meta_skill_mutants": {
+            "golden": "PASS",
+            "directed_mutants_rejected": 15
+          },
+          "generator_regression": {
+            "verdict": "PASS",
+            "cases": 18
+          },
+          "structure_regression": {
+            "verdict": "PASS",
+            "directed_rejections": 15,
+            "golden": "PASS"
+          },
+          "native_fields_regression": {
+            "verdict": "PASS",
+            "cases": 13
+          },
+          "warning_disposition": "verification.json retained as the public validation and known-limitations record.",
+          "initial_environment_failure": "quick_validate initially lacked PyYAML; rerun passed with the existing isolated validator dependency. Skill content was unchanged."
+        },
+        "behavior": {
+          "loan": {
+            "documents": 9,
+            "mechanical": "15/15 PASS",
+            "fixed_acceptance": "11/11 PASS"
+          },
+          "customer": {
+            "documents": 9,
+            "mechanical": "15/15 PASS",
+            "fixed_acceptance": "12/12 PASS"
+          },
+          "inspection": {
+            "documents": 9,
+            "mechanical": "15/15 PASS",
+            "fixed_acceptance": "9/13 FAIL"
+          },
+          "training_registration": {
+            "documents": 9,
+            "mechanical": "15/15 PASS",
+            "fixed_acceptance": "16/17 FAIL",
+            "nine_document_content": "PASS in this case",
+            "failed_item": "Review handoff: order, return/pause consequences, copyable replies"
+          }
+        },
+        "source_evidence": "tools/meta-spec/source/verification.json"
       },
       "limitations": [
-        "Awaiting chief architect review; not promoted or installed as an active runtime skill.",
-        "Real customer project applicability and operation after installation remain unverified.",
-        "The final evidence includes targeted repair and recheck; it is not a new independent from-scratch c9 run."
+        "Inspection case: task-date field read permission omitted an allowed inspector role.",
+        "Inspection case: blanket input prohibition conflicted with an allowed supervisor-selected task owner.",
+        "Training case: the generated handoff report omitted required review instructions.",
+        "These results do not establish stable output across cases or repeated executions.",
+        "Complete synthetic inputs do not establish real-customer generalization; v14 repeated, blank/conflict, isolated-report and blind-comparison rounds were not completed.",
+        "Real platform permissions, native write behavior, concurrency, performance and target-host installation remain unverified."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "source_archive_sha256": "c3ce260081da69495914bf85c0572704bdc4c4862b9022c08126e7b03a5afe5b",
-      "publication_revision": "10.09",
-      "distribution": "Name-only distribution update; existing candidate functionality and limitations preserved.",
-      "source_frozen_candidate": 9,
-      "original_archive_sha256": "ee8d59c24a71bed5589d2840aa50db95d12f5e00c49769fc50be06d44c75b305",
+      "publication_revision": "10.09.1",
+      "distribution": "User-approved v14 release; name and version identifiers updated; runtime behavior and all original references preserved.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
-      "archive_install_root": "meta-spec/"
+      "archive_install_root": "meta-spec/",
+      "source_version": "frozen-v14"
     }
   ],
   "resources": [
@@ -202,7 +246,7 @@
       "version": "10.06",
       "path": "handbook/inputs/通用调研输入文档_10.06.md",
       "status": "blank-template",
-      "sha256": "251e7550c587d546b53cf58da068ea3ce6d1604c1210b830353a3d0138c85470"
+      "sha256": "9de89283367873f4e13e1d1503e002409495dce8cf7a17545a6f5e019f9a4e0b"
     },
     {
       "name": "FDE 上层流程图",
@@ -210,5 +254,5 @@
       "status": "source-reference"
     }
   ],
-  "publication_revision": "10.09"
+  "publication_revision": "10.09.1"
 }
