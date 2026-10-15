@@ -15,4 +15,4 @@ version: "10.09.1"
 
 这些结果尚不能证明跨案例和重复运行的稳定性。真实客户项目、目标宿主安装与平台执行未验收。生成的项目设计仍须总架构师审核。
 
-[九份架构写作参照](../../handbook/architecture-reference/)供人工阅读。Skill 自带同一组 `source/references/design/`；王磊八份原件保留字节，新增第 3 份数据结构参照。
+[九份架构写作参照](../../handbook/04-development/architecture-reference/)供人工阅读。Skill 自带同一组 `source/references/design/`；王磊八份原件保留字节，新增第 3 份数据结构参照。

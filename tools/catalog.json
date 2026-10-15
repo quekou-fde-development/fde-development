@@ -138,19 +138,19 @@
       "slug": "development-design",
       "version": "10.06",
       "status": "nine-writing-references",
-      "archive": "handbook/architecture-reference/development-design-10.06.zip",
-      "path": "handbook/architecture-reference/",
-      "entry": "handbook/architecture-reference/README.md",
-      "sha256": "ba73c751534e89adba53cdd58212c1962d03a71048e1e041f4cae7bf6624abe8",
-      "bytes": 24543,
+      "archive": "handbook/04-development/architecture-reference/development-design-10.06.zip",
+      "path": "handbook/04-development/architecture-reference/",
+      "entry": "handbook/04-development/architecture-reference/README.md",
+      "sha256": "b04805dbe5fa632a845f93d4713268f823a50c41eded6f222fb03bd5fb6339a7",
+      "bytes": 24548,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
       ],
       "data_model_sha256": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611",
       "other_eight_unchanged": true,
-      "source_archive_sha256": "ba73c751534e89adba53cdd58212c1962d03a71048e1e041f4cae7bf6624abe8",
-      "publication_revision": "10.09.1",
+      "source_archive_sha256": "b04805dbe5fa632a845f93d4713268f823a50c41eded6f222fb03bd5fb6339a7",
+      "publication_revision": "10.15.1",
       "distribution": "Nine v14 references; eight original documents preserved byte-for-byte.",
       "member_count": 10,
       "source_reference_freeze": "frozen-v14",
@@ -244,15 +244,15 @@
       "id": "research-input",
       "name": "通用调研输入文档",
       "version": "10.06",
-      "path": "handbook/inputs/通用调研输入文档_10.06.md",
+      "path": "handbook/03-architecture/inputs/通用调研输入文档_10.06.md",
       "status": "blank-template",
       "sha256": "9de89283367873f4e13e1d1503e002409495dce8cf7a17545a6f5e019f9a4e0b"
     },
     {
       "name": "FDE 上层流程图",
-      "path": "handbook/FDE_流程图_内部执行版.html",
+      "path": "handbook/01-workflow/FDE_流程图_内部执行版.html",
       "status": "source-reference"
     }
   ],
-  "publication_revision": "10.09.1"
+  "publication_revision": "10.15.1"
 }

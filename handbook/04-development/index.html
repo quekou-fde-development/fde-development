@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="6c3ccbf4041d90266f81e67fe12dc6d4e1f4e5e64fd7625e386aedd06edf6708"><meta name="canonical-html-sha256" content="e2b2bf1959d6d346ef179b8c6119a385c03ab09d12b3f32a6f63d6c7bae4e462"><title>FDE 开发技术手册 · 10.09.2</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="befa4b4fb6b2eb1a4e3448eb8ede92cc21ce6de898dcab64b504e69aee09b46f"><meta name="canonical-html-sha256" content="17f1f01c0c2c1d292d0d5e736d415f388a38c6065845f5d527fbf2bb8a7ab48c"><title>FDE 开发技术手册 · 10.09.2</title><style>
 :root{--ink:#172b40;--muted:#526476;--paper:#fff;--bg:#f1f4f7;--line:#dce4ec;--blue:#17617d;--blue-light:#eaf3f8;--gold:#8d5d12;--gold-light:#fff3d8}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}a{color:#0e648b;text-underline-offset:3px}a:hover{color:#0c415a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1686ab;outline-offset:4px}.skip{position:fixed;top:-100px;z-index:9;background:white;padding:8px 16px}.skip:focus{top:8px}
 .sidebar{width:268px;position:fixed;inset:0 auto 0 0;background:#102d41;color:#dceaf2;padding:26px 18px;overflow-y:auto}.brand{font-size:13px;letter-spacing:2px;color:#9fbbc9}.sidebar strong{display:block;font-size:21px;color:#fff;margin:6px 0 8px}.edition{font-size:12px;color:#b9d4df;margin-bottom:25px}.sidebar nav a{display:block;color:#dceaf2;text-decoration:none;line-height:1.5;padding:8px 10px;border-radius:7px;font-size:13px}.sidebar nav a:hover{background:#23455a}.sidebar .toc-level-2{font-weight:700;margin-top:12px;color:#fff}.sidebar .toc-level-3{padding-left:19px}.menu-toggle{display:none}.sidebar .print{display:block;width:100%;margin-top:28px;background:#e7f1f6;color:#17364b;border:0;padding:10px;border-radius:7px;cursor:pointer;font:inherit;font-size:13px}
@@ -43,7 +43,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <div class="path" aria-label="工作路径"><div class="stage"><span>第一部分</span><strong>开发架构与计划送审</strong><small>Arcubase 登记 → 母项目仓库与场景目录<br>Meta Workflow → A；Meta Spec → B；编制计划<br>开发架构（A+B）＋计划，邮件异步送审</small></div><div class="gate">夏洛克异步审核<br>通过后进入 →</div><div class="stage"><span>第二部分</span><strong>开发与上线测试</strong><small>releases/ 开发 → tests/ 测试与复测<br>技术复核与发布批准 → 上线、交接与反馈</small></div></div>
 <section id="handbook-body">
 <h2 id="section-1">如何使用</h2>
-<p>先看 <a href="FDE_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E5%86%85%E9%83%A8%E6%89%A7%E8%A1%8C%E7%89%88.html">FDE 总流程图（内部执行版）</a>，了解项目整体阶段、角色、决策和交接，再按本手册展开技术开发环节。总流程图与本手册 HTML 同目录保存时，该链接可离线打开。</p>
+<p>先看 <a href="../01-workflow/FDE_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E5%86%85%E9%83%A8%E6%89%A7%E8%A1%8C%E7%89%88.html">FDE 总流程图（内部执行版）</a>，了解项目整体阶段、角色、决策和交接，再按本手册展开技术开发环节。下载整个仓库并保留目录结构后，该链接可离线打开。</p>
 <p>本手册面向项目经理、承担方案设计与开发的架构师、FDE 和开发 AI。项目经理先在 Arcubase 登记母项目与场景，再建立对应的内部开发仓库及场景目录。团队按以下顺序工作，由项目经理统一送审：</p>
 <ol>
 <li><strong>先登记，再建库和场景目录。</strong> 在 Arcubase 确认母项目编码、客户名称、期号及所属场景；在 <code>quekou-fde-development</code> 组织新建该母项目的 private 开发仓库，仓库名由“母项目编码＋客户名称＋期号”组成。仓库根目录承载母项目，每个场景建立独立文件夹，具体命名与结构见 §0。</li>
@@ -58,7 +58,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <blockquote>
 <p><strong>当前版本：10.09.2。</strong> 实际项目的架构批准、真实数据写入和发布授权，分别按项目记录执行。</p>
 </blockquote>
-<p>共用规范与工具从 <a href="https://github.com/quekou-fde-development/fde-development">quekou-fde-development/fde-development</a> 获取，主要目录为 <code>handbook/</code>（开发手册）、<code>tools/</code>（开发工具）和 <code>feedback/</code>（共用工具反馈）。每个母项目的开发交互使用 §0 新建并登记的独立仓库。手册 Markdown 与 HTML 阅读版来自同一份正文；离线使用时一同下载 HTML 与<a href="FDE%E5%BC%80%E5%8F%91%E9%85%8D%E5%A5%97%E8%B5%84%E6%BA%90%E5%8C%85_10.06.zip">配套资源总 ZIP</a>，按文末资源索引选择小包。</p>
+<p>共用规范与工具从 <a href="https://github.com/quekou-fde-development/fde-development">quekou-fde-development/fde-development</a> 获取，主要目录为 <code>handbook/</code>（总流程、项目管理手册、架构设计手册与FDE开发手册）、<code>tools/</code>（开发工具）和 <code>feedback/</code>（共用工具反馈）。每个母项目的开发交互使用 §0 新建并登记的独立仓库。手册 Markdown 与 HTML 阅读版来自同一份正文；离线使用时一同下载 HTML 与<a href="FDE%E5%BC%80%E5%8F%91%E9%85%8D%E5%A5%97%E8%B5%84%E6%BA%90%E5%8C%85_10.06.zip">配套资源总 ZIP</a>，按文末资源索引选择小包。</p>
 <p>整条开发链基于 <strong>Octopus + Arcubase</strong>：Workbench 承载页面与可信会话，Octopus 提供组织及 Host 能力，Arcubase 保存共享持久业务数据。工具包的“候选”“方法参考”“文件快照”状态见资源索引，项目采用前核对版本及目标环境证据。</p>
 <p><strong>GitHub 项目仓库定位为内部开发协作台。</strong> 仓库只维护开发架构（A+B）、开发计划、实现代码及配置、测试与发布记录、技术变更和开发问题。客户背景、业务说明、调研原件、沟通解释、经营资料、项目推进、关键决定及验收依据保存在 Arcubase；开发文件按需引用对应链接。</p>
 <p>两边以母项目编码、场景编号、固定仓库名和目录链接关联。GitHub 中的 A+B 只表达开发所需的流程结构、规则、职责、数据、接口和验收要求；项目事实、背景解释和决定原文从 Arcubase 读取。项目经理、场景负责人、当前阶段、卡点和支持事项以 Arcubase 为准。仓库 README 限于标识、关联链接、场景目录和开发文件入口。</p>
@@ -221,7 +221,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>审核通过后先进入开发，在场景下建立 <code>releases/</code>，保存开发版本及产物；形成可测试版本后再进入测试，建立 <code>tests/</code>，保存对应版本的测试、缺陷和复测记录。后续发布与技术交接资料继续归入相应开发版本。开发实现按所选工具和框架组织，不统一要求建立 <code>src/</code>；跨场景共用模块在开发中有实际需要时再组织。</p>
 <p>完成登记、建库、场景目录和关联链接后，再进入 §1—5 形成开发架构与计划。提交审核和后续开发持续使用该仓库及对应场景目录。</p>
 <h3 id="section-6">1 整理检索与调研输入，启动业务流程设计</h3>
-<p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="inputs/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
+<p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="../03-architecture/inputs/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
 <p>把事实、已确认规则、待核实假设分开标注，并为每条重要结论附原件位置。遇到缺样本、规则冲突、关键接口未知，登记具体缺件与负责人；由 PM 协调补齐。影响范围或技术路线的缺件在架构送审时明示，不交给开发 AI 自行补成事实。</p>
 <p>材料索引分别记录两种状态：原件是否取得并实际读取；相关能力处于文档说明、源码核对、样例验证还是目标环境实测。来源未取得正文、现场尚未验证等情况随送审包保留。</p>
 <p><strong>工具路线：</strong> Meta Workflow 负责文件组 A，采用 Meta Skill 与 Meta Orchestrator 的理论结构；Meta Spec 以 A 为设计输入，编写文件组 B 的九份 spec。工具拆分与现有源码入口见文末资源索引。</p>
