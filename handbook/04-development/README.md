@@ -16,12 +16,14 @@ status: 发布索引
 
 ## 模板、参照与资源
 
+现有模板与人工阅读参照统一收在[项目管理手册模板目录](../02-project-management/templates/README.md)，下表直达对应文件。
+
 | 内容 | 入口 |
 |---|---|
-| 开发计划模板 | [Markdown](inputs/开发计划模板_10.08.md) |
-| 九份 spec 写作参照 | [参照目录](architecture-reference/) |
+| 开发计划模板 | [Markdown](../02-project-management/templates/04-development/开发计划模板_10.08.md) |
+| 九份 spec 写作参照 | [参照目录](../02-project-management/templates/03-solution/architecture-reference/) |
 | 开发配套资源总包 | [下载 ZIP](FDE开发配套资源包_10.06.zip) |
-| 通用调研输入空表 | [架构设计手册中的空表](../03-architecture/inputs/通用调研输入文档_10.06.md) |
+| 通用调研输入空表 | [项目管理手册中的空表](../02-project-management/templates/02-research/通用调研输入文档_10.06.md) |
 
 ## 开发工具
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="befa4b4fb6b2eb1a4e3448eb8ede92cc21ce6de898dcab64b504e69aee09b46f"><meta name="canonical-html-sha256" content="17f1f01c0c2c1d292d0d5e736d415f388a38c6065845f5d527fbf2bb8a7ab48c"><title>FDE 开发技术手册 · 10.09.2</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="dc44e927f60968ff32a2e8744566e2b3645a72d213aef474a7650d185be99bd3"><meta name="canonical-html-sha256" content="509357374205c977e1bf15efbd28074ab34740de34d68b17683e1c773c945906"><title>FDE 开发技术手册 · 10.09.2</title><style>
 :root{--ink:#172b40;--muted:#526476;--paper:#fff;--bg:#f1f4f7;--line:#dce4ec;--blue:#17617d;--blue-light:#eaf3f8;--gold:#8d5d12;--gold-light:#fff3d8}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}a{color:#0e648b;text-underline-offset:3px}a:hover{color:#0c415a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1686ab;outline-offset:4px}.skip{position:fixed;top:-100px;z-index:9;background:white;padding:8px 16px}.skip:focus{top:8px}
 .sidebar{width:268px;position:fixed;inset:0 auto 0 0;background:#102d41;color:#dceaf2;padding:26px 18px;overflow-y:auto}.brand{font-size:13px;letter-spacing:2px;color:#9fbbc9}.sidebar strong{display:block;font-size:21px;color:#fff;margin:6px 0 8px}.edition{font-size:12px;color:#b9d4df;margin-bottom:25px}.sidebar nav a{display:block;color:#dceaf2;text-decoration:none;line-height:1.5;padding:8px 10px;border-radius:7px;font-size:13px}.sidebar nav a:hover{background:#23455a}.sidebar .toc-level-2{font-weight:700;margin-top:12px;color:#fff}.sidebar .toc-level-3{padding-left:19px}.menu-toggle{display:none}.sidebar .print{display:block;width:100%;margin-top:28px;background:#e7f1f6;color:#17364b;border:0;padding:10px;border-radius:7px;cursor:pointer;font:inherit;font-size:13px}
@@ -192,7 +192,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <li>需求、流程、用例、数据、角色、页面、调用和测试使用稳定编号；业务流程、九份 spec 和开发计划中的同一对象保持一致。</li>
 <li>设计、实际实现、测试结果与审核决定分别记录。总架构师审核由夏洛克进行，工具检查通过只说明其覆盖的检查项。</li>
 </ul>
-<p>来源快照、草稿和澄清过程在 <code>working/</code> 中保留；收束后的业务流程、整体架构图和 graph 进入 <code>workflow/</code>，构成 A；<code>design/</code> 下九份 spec 构成 B。A+B 作为开发架构一起送审。开发计划按<a href="inputs/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">统一模板</a>填写，独立保存在 <code>plan/开发计划.md</code>。实施后的 Schema、typed SDK、员工配置、Skill 包、代码及部署回执按相应工具原生格式保存；在项目内登记版本、实际 ID、证据位置与限制。</p>
+<p>来源快照、草稿和澄清过程在 <code>working/</code> 中保留；收束后的业务流程、整体架构图和 graph 进入 <code>workflow/</code>，构成 A；<code>design/</code> 下九份 spec 构成 B。A+B 作为开发架构一起送审。开发计划按<a href="../02-project-management/templates/04-development/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">统一模板</a>填写，独立保存在 <code>plan/开发计划.md</code>。实施后的 Schema、typed SDK、员工配置、Skill 包、代码及部署回执按相应工具原生格式保存；在项目内登记版本、实际 ID、证据位置与限制。</p>
 <p>上述 <code>workflow/</code>、<code>design/</code>、<code>plan/</code> 均放入 §0 建立的对应场景文件夹。确需跨场景复用的开发模块可放在仓库根目录的 <code>shared/</code>，并列明使用它的场景；各场景仍保留自己的开发入口。Arcubase 保存原始业务资料、关键澄清、决定与解释，GitHub 只引用这些记录。<code>input/</code>、<code>working/</code> 中的调研原件、运行草稿和取源快照保留于获授权的本地工作区或 Arcubase，不提交到 GitHub。</p>
 <h2 id="section-4">第一部分 先登记建库，再形成 A、B 与开发计划并送审</h2>
 <h3 id="section-5">0 先在 Arcubase 登记，再建立母项目仓库与场景文件夹</h3>
@@ -221,7 +221,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>审核通过后先进入开发，在场景下建立 <code>releases/</code>，保存开发版本及产物；形成可测试版本后再进入测试，建立 <code>tests/</code>，保存对应版本的测试、缺陷和复测记录。后续发布与技术交接资料继续归入相应开发版本。开发实现按所选工具和框架组织，不统一要求建立 <code>src/</code>；跨场景共用模块在开发中有实际需要时再组织。</p>
 <p>完成登记、建库、场景目录和关联链接后，再进入 §1—5 形成开发架构与计划。提交审核和后续开发持续使用该仓库及对应场景目录。</p>
 <h3 id="section-6">1 整理检索与调研输入，启动业务流程设计</h3>
-<p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="../03-architecture/inputs/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
+<p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="../02-project-management/templates/02-research/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
 <p>把事实、已确认规则、待核实假设分开标注，并为每条重要结论附原件位置。遇到缺样本、规则冲突、关键接口未知，登记具体缺件与负责人；由 PM 协调补齐。影响范围或技术路线的缺件在架构送审时明示，不交给开发 AI 自行补成事实。</p>
 <p>材料索引分别记录两种状态：原件是否取得并实际读取；相关能力处于文档说明、源码核对、样例验证还是目标环境实测。来源未取得正文、现场尚未验证等情况随送审包保留。</p>
 <p><strong>工具路线：</strong> Meta Workflow 负责文件组 A，采用 Meta Skill 与 Meta Orchestrator 的理论结构；Meta Spec 以 A 为设计输入，编写文件组 B 的九份 spec。工具拆分与现有源码入口见文末资源索引。</p>
@@ -439,7 +439,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tbody></table></div>
 <p><strong>九份 spec 共同组成 B；开发架构由 A+B 共同组成。开发计划单独成文、单独提供阅读链接。</strong> B 中的 <code>09-implementation-roadmap.md</code> 说明技术实施与验证路线；独立开发计划把该路线落实到人员、日期、工具、用量和交付安排，并与之保持一致。</p>
 <p>送审材料范围为 <code>workflow/</code>、<code>design/</code> 和 <code>plan/</code>。开发计划提前写明测试与发布安排；代码、测试产物和发布记录在审核通过、进入开发后形成，无需在送审时提供。</p>
-<p><strong>开发计划必须具体到可执行的任务。</strong> 使用本仓库的<a href="inputs/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">开发计划模板</a>，由项目经理组织架构师和 FDE 填写。每项任务应能追溯到 A 的流程或 graph 节点，以及 B 的规格章节，并填写：</p>
+<p><strong>开发计划必须具体到可执行的任务。</strong> 使用本仓库的<a href="../02-project-management/templates/04-development/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">开发计划模板</a>，由项目经理组织架构师和 FDE 填写。每项任务应能追溯到 A 的流程或 graph 节点，以及 B 的规格章节，并填写：</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
 <thead>
 <tr>
@@ -780,7 +780,7 @@ GitHub 仓库：母项目编码-客户名称-期号，仓库链接
 <td><a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-spec">Meta Spec 工具目录</a>；名称已统一，现有功能与九份文档结构沿用</td>
 </tr>
 <tr>
-<td><a href="inputs/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">开发计划模板</a></td>
+<td><a href="../02-project-management/templates/04-development/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">开发计划模板</a></td>
 <td>A+B、人员、时间、工具、用量估算和交付条件；§5.1 填写</td>
 <td>独立的 <code>plan/开发计划.md</code>，落实开发时间、方式、token 预算和验收</td>
 <td>PM 组织填写，与开发架构（A+B）作为两部分送审</td>

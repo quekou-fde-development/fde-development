@@ -138,19 +138,19 @@
       "slug": "development-design",
       "version": "10.06",
       "status": "nine-writing-references",
-      "archive": "handbook/04-development/architecture-reference/development-design-10.06.zip",
-      "path": "handbook/04-development/architecture-reference/",
-      "entry": "handbook/04-development/architecture-reference/README.md",
-      "sha256": "b04805dbe5fa632a845f93d4713268f823a50c41eded6f222fb03bd5fb6339a7",
-      "bytes": 24548,
+      "archive": "handbook/02-project-management/templates/03-solution/architecture-reference/development-design-10.06.zip",
+      "path": "handbook/02-project-management/templates/03-solution/architecture-reference/",
+      "entry": "handbook/02-project-management/templates/03-solution/architecture-reference/README.md",
+      "sha256": "69f63e5f888887822563d70302fecb3e2858f5a0021ff2144c22c12bc55cb8f4",
+      "bytes": 24645,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
       ],
       "data_model_sha256": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611",
       "other_eight_unchanged": true,
-      "source_archive_sha256": "b04805dbe5fa632a845f93d4713268f823a50c41eded6f222fb03bd5fb6339a7",
-      "publication_revision": "10.15.1",
+      "source_archive_sha256": "69f63e5f888887822563d70302fecb3e2858f5a0021ff2144c22c12bc55cb8f4",
+      "publication_revision": "10.15.3",
       "distribution": "Nine v14 references; eight original documents preserved byte-for-byte.",
       "member_count": 10,
       "source_reference_freeze": "frozen-v14",
@@ -244,7 +244,7 @@
       "id": "research-input",
       "name": "通用调研输入文档",
       "version": "10.06",
-      "path": "handbook/03-architecture/inputs/通用调研输入文档_10.06.md",
+      "path": "handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md",
       "status": "blank-template",
       "sha256": "9de89283367873f4e13e1d1503e002409495dce8cf7a17545a6f5e019f9a4e0b"
     },
@@ -254,5 +254,5 @@
       "status": "source-reference"
     }
   ],
-  "publication_revision": "10.15.1"
+  "publication_revision": "10.15.3"
 }

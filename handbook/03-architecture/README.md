@@ -14,9 +14,11 @@ status: 发布索引
 
 ## 输入与配套工具
 
+已有模板统一从[项目管理手册模板目录](../02-project-management/templates/README.md)进入。
+
 | 内容 | 文件 | 文档 Skill |
 |---|---|---|
-| 通用调研输入空表 | [Markdown](inputs/通用调研输入文档_10.06.md) | |
+| 通用调研输入空表 | [Markdown](../02-project-management/templates/02-research/通用调研输入文档_10.06.md) | |
 | 场景量与调研基线模板 | | |
 
 场景量表和取样条件沿手册 §5.2 填写；独立模板当前留空。
