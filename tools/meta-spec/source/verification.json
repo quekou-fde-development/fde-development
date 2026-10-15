@@ -1,15 +1,15 @@
 {
   "artifact": "meta-spec",
-  "version": "10.09.1",
+  "version": "10.15.1",
   "status": "user-approved-release-with-known-limitations",
-  "source_version": "10.08.4-candidate / frozen-v14",
-  "authorization_date": "2026-10-09",
-  "authorization_scope": "Release this tested version under the Meta Spec name; defer remaining fixes.",
-  "runtime_functionality_changed_from_frozen_v14": false,
+  "source_version": "10.09.1 / frozen-v14 engine + 10.15 review interface",
+  "authorization_date": "2026-10-15",
+  "authorization_scope": "Align the published manuals and Meta Spec review interface with the approved 2026-10-15 team lecture; retain the existing nine-document engine and references.",
+  "runtime_functionality_changed_from_frozen_v14": true,
   "description_changed": false,
   "reference_documents": 9,
   "original_eight_byte_identical": true,
-  "reference_members_unchanged_from_frozen_v14": 17,
+  "reference_members_unchanged_from_frozen_v14": 15,
   "design_files": [
     "01-concept.md",
     "02-use-cases.md",
@@ -51,7 +51,11 @@
     "Training case: the generated handoff report omitted required review instructions.",
     "These results do not establish stable output across cases or repeated executions.",
     "Complete synthetic inputs do not establish real-customer generalization; v14 repeated, blank/conflict, isolated-report and blind-comparison rounds were not completed.",
-    "Real platform permissions, native write behavior, concurrency, performance and target-host installation remain unverified."
+    "Real platform permissions, native write behavior, concurrency, performance and target-host installation remain unverified.",
+    "10.15.1 scoped review test: an approved-solution handoff omitted pause/refusal consequences and used unexplained internal terms.",
+    "10.15.1 scoped changed-scope handoff contradicted itself about when parallel B preparation may start.",
+    "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
+    "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions."
   ],
   "mechanical_publication_checks": {
     "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
@@ -84,7 +88,132 @@
     "training_grade": "33217079a2616b62032f37355ab905d0e0efcf4953f6836278629071ac79298d",
     "training_integrity": "f1994508ed80f60ff2b173e44f85d0f2d09cc2bd66d4dfaff39e1ed9946180f6"
   },
-  "project_design_review": "All generated nine-file project designs remain pending chief architect review.",
+  "project_design_review": "PM submits solution review first, then development review against the approved solution. Parallel technical candidates remain pending solution review until that decision is evidenced.",
   "deployment": "NOT_RUN; repository publication does not install a runtime skill.",
-  "unfinished_v15_included": false
+  "unfinished_v15_included": false,
+  "deterministic_engine_changed_from_10_09_1": false,
+  "runtime_change_scope": "Skill input and human review handoff instructions changed; deterministic renderer, design references and platform implementation unchanged.",
+  "historical_behavior_scope": "behavior_evidence and mechanical_publication_checks concern frozen-v14 / 10.09.1. Current 10.15.1 interface checks appear in review_interface_checks and do not establish full generation or deployment.",
+  "review_interface_checks": {
+    "status": "PARTIAL_WITH_DISCLOSED_FAILURES",
+    "checked_at_utc": "2026-10-15T08:45:11.657714+00:00",
+    "scope": "Input identification and review-stage/handoff behavior only; no new full nine-document generation or platform execution.",
+    "host_quick_validate": "PASS",
+    "persistent_mechanical": "PASS M1-M5 and M7-M12; M6 not applicable",
+    "generator_regression": {
+      "verdict": "PASS",
+      "cases": 18
+    },
+    "structure_regression": {
+      "verdict": "PASS",
+      "golden": "PASS",
+      "directed_rejections": 15
+    },
+    "native_fields_regression": {
+      "verdict": "PASS",
+      "cases": 13
+    },
+    "description_trigger_eval": "NOT_RERUN; description unchanged",
+    "round1": [
+      {
+        "run": "parallel-r1",
+        "route_verdict": "PASS",
+        "observed": "Solution pending; technical candidates may be prepared in parallel subject to complete inputs; no development approval.",
+        "handoff_verdict": "NOT_INDEPENDENTLY_GRADED",
+        "report": {
+          "file": "review-test/outputs/parallel-r1/report.txt",
+          "sha256": "0e5b06d6508977464f32da8d431bb0893590605ccf1f7f1d79ce59c2b7efb101"
+        }
+      },
+      {
+        "run": "approved-r1",
+        "route_verdict": "PASS",
+        "observed": "Approved solution retained; B absent; development-review package not ready.",
+        "handoff_verdict": "FAIL",
+        "handoff_failure": "Independent reader could not recover pause/refusal consequences; internal terms and continuation authorization ambiguous.",
+        "report": {
+          "file": "review-test/outputs/approved-r1/report.txt",
+          "sha256": "af88eb0ad1030112fc0229d543a6cb5f750596fe93bb249bcc0415fcd4944203"
+        },
+        "timing_limit": "Final hash command exceeded the original local window; report timestamps do not establish a timely full run."
+      },
+      {
+        "run": "changed-r1",
+        "route_verdict": "PASS",
+        "observed": "New payment scope returned to solution review; no development approval.",
+        "handoff_verdict": "FAIL",
+        "handoff_failure": "One sentence says payment B preparation waits for solution approval, while the next permits parallel preparation.",
+        "report": {
+          "file": "review-test/outputs/changed-r1/report.txt",
+          "sha256": "fbbfa98f329af57b51623ae89f34b335c98f6ec78dce6caa341dad403eea8a41"
+        }
+      }
+    ],
+    "round2": [
+      {
+        "run": "parallel-final-clean-a",
+        "reported_execution_status": "COMPLETED_LIMITED",
+        "report": {
+          "file": "review-test/outputs/parallel-final-clean-a/report.txt",
+          "sha256": "5efff3e3d97ede86b7c06644e3a3581ece5cabb1b7d4c9e15f169c15806f3380"
+        },
+        "evidence": {
+          "file": "review-test/outputs/parallel-final-clean-a/evidence.json",
+          "sha256": "af9a34daeaff1c3e24fdccf6fbd79cd849e59691addd8873f0025f59e602cfcc"
+        },
+        "route_verdict": "PASS_LIMITED_OBSERVATION",
+        "independent_comparison": "INCOMPLETE; dispatch/timing stops prevent a complete three-way comparison",
+        "observed": "Solution pending; parallel candidate preparation with missing inputs; no development approval.",
+        "integrity": "530 members and input verified before and near end.",
+        "execution_limitation": "Some command output was truncated; exact first-progress/report completion timing not fully evidenced."
+      },
+      {
+        "run": "parallel-final-b-contract2",
+        "reported_execution_status": "STOPPED_AT_TIME_LIMIT",
+        "report": {
+          "file": "review-test/outputs/parallel-final-b-contract2/report.txt",
+          "sha256": "efe8e245e251048aa6618fc0eca8c64846f2aaed1991fe20696d4d639aeecfad"
+        },
+        "evidence": {
+          "file": "review-test/outputs/parallel-final-b-contract2/evidence.json",
+          "sha256": "a8f7d14a444458dd6ae76d09c89686041c38cc6437cb75fff58aec9e01d917e9"
+        },
+        "route_verdict": "PASS_LIMITED_OBSERVATION",
+        "independent_comparison": "INCOMPLETE; dispatch/timing stops prevent a complete three-way comparison",
+        "observed": "Solution pending; parallel candidate preparation allowed; PM submits solution first.",
+        "integrity": "Initial 530 members and input verified; post-task hash recheck NOT_RUN at stop."
+      },
+      {
+        "run": "parallel-final-c-contract2",
+        "reported_execution_status": "STOPPED",
+        "report": {
+          "file": "review-test/outputs/parallel-final-c-contract2/report.txt",
+          "sha256": "9c1cc822435ff224f46e16116aade78c0e9bf62242f01a2ffe4e4c6fbff6114b"
+        },
+        "evidence": {
+          "file": "review-test/outputs/parallel-final-c-contract2/evidence.json",
+          "sha256": "f11dba0f06c8c6c05c20480f37ca2367a1c1d54e55ff189cad76e0adf2f8c4fa"
+        },
+        "route_verdict": "NOT_RUN",
+        "independent_comparison": "INCOMPLETE; dispatch/timing stops prevent a complete three-way comparison",
+        "execution_limitation": "Stopped after initial verification exceeded first-progress deadline; semantic input not read."
+      }
+    ],
+    "round2_overall": "INCOMPLETE; no three-way reproducibility claim",
+    "independent_report_readability": {
+      "verdict": "FAIL",
+      "report_sha256": "af88eb0ad1030112fc0229d543a6cb5f750596fe93bb249bcc0415fcd4944203",
+      "review_sha256": "c1d58a5fee023b96fe0687637fef67ee7048e7ef30652df374c8214fcc19eaee",
+      "finding": "Pause/refusal consequences omitted; internal terms and next-action authorization ambiguous."
+    },
+    "mechanical_log_sha256": {
+      "persistent-final.log": "015620ba07fbe3adf8cfaec86faea7205498eaec61159ea89c7267c7baedf408",
+      "generator.log": "195039e556507e456179b681351012c61f9244e71ab699973bcfc72f1e4d9af6",
+      "structure.log": "8fb5b479c460b57143e27f0bf3b7a3b1875b487b079a80d39b22662718e89f82",
+      "native.log": "ea848ce375544fefa772556261bc84d07092feef3b605f7d9abf44b8f79dcc6c"
+    },
+    "full_new_nine_document_generation": "NOT_RUN",
+    "target_host_installation": "NOT_RUN",
+    "real_customer_project": "NOT_RUN"
+  }
 }

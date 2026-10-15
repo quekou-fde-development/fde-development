@@ -13,6 +13,7 @@ body:
       options:
         - 手册问题
         - 工具使用问题
+        - 工具需求或改进
         - 流程建议
         - 链接或下载问题
     validations:
@@ -42,5 +43,12 @@ body:
     attributes:
       label: 可公开证据（选填）
       description: "可附脱敏截图、日志或相关链接。"
+    validations:
+      required: false
+  - type: textarea
+    id: tool_need
+    attributes:
+      label: 工具需求的节点、输入、输出与判断
+      description: "工具需求或改进时填写；普通反馈可留空。说明在流程哪一步、现有输入、希望产出什么、依据什么判断及可公开样例。"
     validations:
       required: false

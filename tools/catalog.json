@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.09",
+  "version": "10.15.4",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -162,14 +162,14 @@
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "10.09.1",
-      "archive_version": "10.09.1",
+      "version": "10.15.1",
+      "archive_version": "10.15.1",
       "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-10.09.1.zip",
-      "sha256": "13c52919a703e5c30b11271308b19b96962275d63117f92a40f5aff066ff56c8",
-      "bytes": 521774,
+      "archive": "tools/meta-spec/meta-spec-10.15.1.zip",
+      "sha256": "63792de92f864f75d2bfb270da2314f5c90238567af94832b65a3ecb7e307439",
+      "bytes": 525607,
       "member_count": 530,
       "validation": {
         "publication": {
@@ -228,31 +228,37 @@
         "Training case: the generated handoff report omitted required review instructions.",
         "These results do not establish stable output across cases or repeated executions.",
         "Complete synthetic inputs do not establish real-customer generalization; v14 repeated, blank/conflict, isolated-report and blind-comparison rounds were not completed.",
-        "Real platform permissions, native write behavior, concurrency, performance and target-host installation remain unverified."
+        "Real platform permissions, native write behavior, concurrency, performance and target-host installation remain unverified.",
+        "10.15.1 scoped review test: an approved-solution handoff omitted pause/refusal consequences and used unexplained internal terms.",
+        "10.15.1 scoped changed-scope handoff contradicted itself about when parallel B preparation may start.",
+        "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
+        "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "publication_revision": "10.09.1",
-      "distribution": "User-approved v14 release; name and version identifiers updated; runtime behavior and all original references preserved.",
+      "publication_revision": "10.15.4",
+      "distribution": "Review-interface update; deterministic engine and nine design references preserved.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "frozen-v14"
+      "source_version": "10.09.1 / frozen-v14 engine + 10.15 review interface"
     }
   ],
   "resources": [
     {
       "id": "research-input",
       "name": "通用调研输入文档",
-      "version": "10.06",
+      "version": "10.15.4",
       "path": "handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md",
       "status": "blank-template",
-      "sha256": "9de89283367873f4e13e1d1503e002409495dce8cf7a17545a6f5e019f9a4e0b"
+      "sha256": "c466a6f83f89e2c5b6bfcc1cb189a9f3f8c4ecd975d139b90ab33e40e65000f9"
     },
     {
       "name": "FDE 上层流程图",
       "path": "handbook/01-workflow/FDE_流程图_内部执行版.html",
-      "status": "source-reference"
+      "status": "current-workflow-with-two-reviews",
+      "sha256": "a022f62b9dc07bd0272fb822aa79df2e1f5258d3739fe6264de7aa73324c7e56",
+      "version": "10.15.4"
     }
   ],
-  "publication_revision": "10.15.3"
+  "publication_revision": "10.15.4"
 }

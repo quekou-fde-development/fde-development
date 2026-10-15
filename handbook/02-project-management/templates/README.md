@@ -1,6 +1,6 @@
 ---
 title: 项目管理模板与参考目录
-version: "10.15"
+version: "10.15.4"
 status: 已有材料归集；缺失文件留空
 ---
 
@@ -28,8 +28,8 @@ status: 已有材料归集；缺失文件留空
 | 企业、仓库、客服、财务调研 | [现场调研表单](02-research/现场调研_企业仓库客服财务.md) | Markdown；V1.6原有问题与表格脱敏 |
 | 生产报表、仓库收货调研 | [现场调研表单](02-research/现场调研_生产报表仓库收货.md) | Markdown；V1.0原有问题与表格脱敏 |
 | 对客调研安排 | [客户版现场调研计划](02-research/客户版现场调研计划.md) | Markdown；原讨论稿五部分栏目 |
-| 基线与试点结果 | [基线与试点对比记录表](02-research/基线与试点对比记录表.md) | Markdown；原现场手册附C |
-| 调研材料归纳 | [通用调研输入空表](02-research/通用调研输入文档_10.06.md) | Markdown；已有10.06模板 |
+| 基线与试点结果 | [基线与试点对比记录表](02-research/基线与试点对比记录表.md) | Markdown；沿原现场手册附C，补充基线口径与客户确认 |
+| 调研材料归纳 | [通用调研输入空表](02-research/通用调研输入文档_10.06.md) | Markdown；现有输入结构，补充基线与方案审核接口 |
 
 ## 3. 方案与送审
 
@@ -37,7 +37,7 @@ status: 已有材料归集；缺失文件留空
 |---|---|---|
 | 客户建设范围、分期与报价 | [范围分期与报价](03-solution/范围分期与报价.md) | |
 | B组九份spec写作参照 | [目录](03-solution/architecture-reference/README.md) · [下载ZIP](03-solution/architecture-reference/development-design-10.06.zip) | [Meta Spec](../../../tools/meta-spec/README.md) |
-| 开发架构与计划异步送审 | [送审邮件格式](03-solution/送审邮件.md) | |
+| 方案审核与开发审核异步送审 | [送审邮件格式](03-solution/送审邮件.md) | |
 
 方案方法和两闸清单见[架构设计手册](../../03-architecture/architecture-handbook.md)；A组具体写法见[FDE开发手册](../../04-development/development-handbook.md)。独立模板未取得的内容仍按对应手册查阅。
 
@@ -59,7 +59,7 @@ status: 已有材料归集；缺失文件留空
 | 试运行与验收 | [C6](05-communication/C6.md) |
 | 交接与维保 | [C7](05-communication/C7.md) |
 
-C1—C7沿手册10.15.1已有分阶段草稿；发送时间见[每日操作](../project-management-handbook.md#daily)。
+C1—C7沿现有分阶段格式，说明当日工作、下一步及客户配合；发送时间见[每日操作](../project-management-handbook.md#daily)。
 
 ## 6. 历史文件栏目参考
 
