@@ -1,12 +1,12 @@
 {
   "artifact": "meta-spec",
-  "version": "10.15.1",
+  "version": "10.16",
   "status": "user-approved-release-with-known-limitations",
-  "source_version": "10.09.1 / frozen-v14 engine + 10.15 review interface",
-  "authorization_date": "2026-10-15",
-  "authorization_scope": "Align the published manuals and Meta Spec review interface with the approved 2026-10-15 team lecture; retain the existing nine-document engine and references.",
+  "source_version": "10.09.1 / frozen-v14 engine + 10.16 product/technical input interface",
+  "authorization_date": "2026-10-16",
+  "authorization_scope": "Integrate and push the approved problem/product definition, AI contribution, information-flow and customer-experience revisions across handbooks and existing tool interfaces.",
   "runtime_functionality_changed_from_frozen_v14": true,
-  "description_changed": false,
+  "description_changed": true,
   "reference_documents": 9,
   "original_eight_byte_identical": true,
   "reference_members_unchanged_from_frozen_v14": 15,
@@ -55,7 +55,8 @@
     "10.15.1 scoped review test: an approved-solution handoff omitted pause/refusal consequences and used unexplained internal terms.",
     "10.15.1 scoped changed-scope handoff contradicted itself about when parallel B preparation may start.",
     "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
-    "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions."
+    "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions.",
+    "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open."
   ],
   "mechanical_publication_checks": {
     "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
@@ -93,7 +94,7 @@
   "unfinished_v15_included": false,
   "deterministic_engine_changed_from_10_09_1": false,
   "runtime_change_scope": "Skill input and human review handoff instructions changed; deterministic renderer, design references and platform implementation unchanged.",
-  "historical_behavior_scope": "behavior_evidence and mechanical_publication_checks concern frozen-v14 / 10.09.1. Current 10.15.1 interface checks appear in review_interface_checks and do not establish full generation or deployment.",
+  "historical_behavior_scope": "behavior_evidence and mechanical_publication_checks concern frozen-v14 / 10.09.1; review_interface_checks records 10.15.1 historical results. The 10.16 scope is listed separately and does not establish full generation or deployment.",
   "review_interface_checks": {
     "status": "PARTIAL_WITH_DISCLOSED_FAILURES",
     "checked_at_utc": "2026-10-15T08:45:11.657714+00:00",
@@ -215,5 +216,18 @@
     "full_new_nine_document_generation": "NOT_RUN",
     "target_host_installation": "NOT_RUN",
     "real_customer_project": "NOT_RUN"
+  },
+  "product_input_alignment_checks": {
+    "checked_at_utc": "2026-10-16T10:45:05.287176+00:00",
+    "scope": "Documentation and packaging only; no new nine-document behavioral generation.",
+    "skill_creator_quick_validate": "PASS",
+    "source_members": 530,
+    "unchanged_members_compared_to_10_15_1": 524,
+    "unchanged_scope": "All members except the five input/review documentation files and verification.json; scripts, fixtures and all nine reference documents retained byte-for-byte.",
+    "input_contract_review": "Solution definition and technical A are separately identified; product AI rationale, stepwise information processing and complete customer experience are upstream inputs; missing decisions remain open and return to the project architect; review order and signed-version constraints retained.",
+    "description_trigger_eval": "NOT_RERUN",
+    "full_nine_document_generation": "NOT_RERUN",
+    "target_host_installation": "NOT_RUN",
+    "platform_execution": "NOT_RUN"
   }
 }

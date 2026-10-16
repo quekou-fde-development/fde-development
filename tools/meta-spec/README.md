@@ -1,19 +1,19 @@
 ---
 title: Meta Spec
-version: "10.15.1"
+version: "10.16"
 ---
 # Meta Spec
 
-以明确版本的A、方案审核状态、调研证据和技术约束，形成B组九份候选开发设计。项目架构师提出技术可行性，PM组织总架构师审核。
+以明确版本的方案文档、技术流程与整体架构（A）、方案审核状态、调研证据和技术约束，形成B组九份候选开发设计。项目架构师提出技术可行性，PM组织总架构师审核。
 
-[阅读 Skill](source/SKILL.md) · [下载 ZIP](meta-spec-10.15.1.zip) · [查看验证说明](source/verification.json)
+[阅读 Skill](source/SKILL.md) · [下载 ZIP](meta-spec-10.16.zip) · [查看验证说明](source/verification.json)
 
 方案与技术材料可以并行准备。方案待审时保留并行候选；正式开发审核对应已通过的方案版本。影响问题、产品、目标、范围或报价的差异先返回方案审核。B之外的独立开发计划沿[现有模板](../../handbook/02-project-management/templates/04-development/开发计划模板_10.08.md)填写。
 
-本版更新输入与人类审核交接接口，确定性渲染器及九份参照沿用frozen-v14。安装以ZIP为准，解压后的`meta-spec/`为安装根；仓库`source/`与安装包文件逐项一致。此次仓库发布不安装到运行宿主。
+10.16区分问题与产品方案、技术A两类输入，承接AI采用依据与贡献、逐步信息流和完整客户体验流；更新输入与人类审核交接接口，确定性渲染器及九份参照沿用frozen-v14。安装以ZIP为准，解压后的`meta-spec/`为安装根；仓库`source/`与安装包文件逐项一致。此次仓库发布不安装到运行宿主。
 
 验证分开记录：10.15.1的接口检查见`verification.json`中`review_interface_checks`；既有四案例的九文档生成结果属于frozen-v14／10.09.1。历史上借用案例11/11、客户案例12/12、巡检案例9/13、培训报名案例16/17；后两者保留权限、输入约束或汇报缺陷。当前接口测试不证明这些历史内容缺陷已修复，也不证明真实客户、重复生成、目标宿主或平台执行通过。
 
-本轮三类输入的阶段判断符合预期；生成的送审汇报仍出现暂缓后果遗漏、术语未解释和并行准备时点表述矛盾。三路重复验证未完成，完整九文档生成及宿主验收未重跑。使用者仍需人工核对送审说明。
+10.15.1历史检查中，三类输入的阶段判断符合预期；生成的送审汇报仍出现暂缓后果遗漏、术语未解释和并行准备时点表述矛盾。该轮三路重复验证未完成。10.16仅核对Skill格式、输入与审核合同、源包一致性及引擎和参照字节完整性；完整九文档生成与宿主验收未重跑。使用者仍需人工核对送审说明。
 
-[九份架构写作参照](../../handbook/02-project-management/templates/03-solution/architecture-reference/)供人工阅读。Skill自带同一组`source/references/design/`；八份原件保留字节，第3份为已有数据结构参照。
+[九份架构写作参照](../../handbook/02-project-management/templates/04-development/architecture-reference/)供人工阅读。Skill自带同一组`source/references/design/`；八份原件保留字节，第3份为已有数据结构参照。

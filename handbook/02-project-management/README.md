@@ -1,6 +1,6 @@
 ---
 title: 项目管理手册（项目经理）
-version: "10.15.4"
+version: "10.16"
 status: 基础版与已有模板已归集
 ---
 # 项目管理手册（项目经理）
@@ -11,8 +11,8 @@ status: 基础版与已有模板已归集
 |---|---|
 | 接手项目与建群 | [手册操作](project-management-handbook.md#takeover) · [交接资料包](templates/01-handover/项目交接资料包.md) · [群公告](templates/05-communication/群公告.md) |
 | 调研 | [表单目录](templates/02-research/README.md) |
-| 方案与送审 | [范围分期报价](templates/03-solution/范围分期与报价.md) · [九份spec参照](templates/03-solution/architecture-reference/README.md) · [送审邮件](templates/03-solution/送审邮件.md) |
-| 开发计划 | [模板](templates/04-development/开发计划模板_10.08.md) |
+| 方案与送审 | [解决方案模板](templates/03-solution/解决方案.md) · [范围分期报价](templates/03-solution/范围分期与报价.md) · [送审邮件](templates/03-solution/送审邮件.md) |
+| 技术架构与开发计划 | [九份spec参照](templates/04-development/architecture-reference/README.md) · [计划模板](templates/04-development/开发计划模板_10.08.md) |
 | 内部日报与客户群消息 | [I1、C1—C7](project-management-handbook.md#messages) · [项目事项表](templates/05-communication/项目事项表.md) |
 | 启动、验收、延期与结项旧样例 | [历史栏目参考](examples/README.md) |
 

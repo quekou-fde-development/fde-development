@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="c209807ac47e42fdb1d40f63abaf0f979b08f196fb27c940d1efebab7f4a23c2"><meta name="canonical-html-sha256" content="e9be9e42adff3a2d32f59f11a3cebc3bd94eac4cd62607163c513486fbddfa94"><title>FDE 开发技术手册 · 10.15.4</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="488fddebd16a580d9dfd76cb6b7b2c46427d4d8a077d68d89fba6736ea073554"><meta name="canonical-html-sha256" content="9ed0f490bb8c81b77373e4b49de74629a9ba4798049f7855ec7381e5b159d73b"><title>FDE 开发技术手册 · 10.16</title><style>
 :root{--ink:#172b40;--muted:#526476;--paper:#fff;--bg:#f1f4f7;--line:#dce4ec;--blue:#17617d;--blue-light:#eaf3f8;--gold:#8d5d12;--gold-light:#fff3d8}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}a{color:#0e648b;text-underline-offset:3px}a:hover{color:#0c415a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1686ab;outline-offset:4px}.skip{position:fixed;top:-100px;z-index:9;background:white;padding:8px 16px}.skip:focus{top:8px}
 .sidebar{width:268px;position:fixed;inset:0 auto 0 0;background:#102d41;color:#dceaf2;padding:26px 18px;overflow-y:auto}.brand{font-size:13px;letter-spacing:2px;color:#9fbbc9}.sidebar strong{display:block;font-size:21px;color:#fff;margin:6px 0 8px}.edition{font-size:12px;color:#b9d4df;margin-bottom:25px}.sidebar nav a{display:block;color:#dceaf2;text-decoration:none;line-height:1.5;padding:8px 10px;border-radius:7px;font-size:13px}.sidebar nav a:hover{background:#23455a}.sidebar .toc-level-2{font-weight:700;margin-top:12px;color:#fff}.sidebar .toc-level-3{padding-left:19px}.menu-toggle{display:none}.sidebar .print{display:block;width:100%;margin-top:28px;background:#e7f1f6;color:#17364b;border:0;padding:10px;border-radius:7px;cursor:pointer;font:inherit;font-size:13px}
@@ -10,7 +10,7 @@ h1{font-size:36px;line-height:1.3;margin:0 0 18px;letter-spacing:-.7px}h2{font-s
 
 p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:3px solid #1686ab;outline-offset:2px}.download-button.secondary{background:#eaf3f8;color:#17617d;margin:6px 8px 0 0}#handbook-body>h1{margin-top:28px}
 </style></head>
-<body><a class="skip" href="#content">跳到正文</a><aside class="sidebar"><div class="brand">QUEKOU · FDE</div><strong>开发技术手册</strong><div class="edition">10.15.4</div><button class="menu-toggle" aria-controls="handbook-toc" aria-expanded="false" onclick="const s=this.closest('aside');const open=s.toggleAttribute('data-open');this.setAttribute('aria-expanded',open);this.textContent=open?'收起目录':'展开目录'">展开目录</button><nav id="handbook-toc" aria-label="章节目录"><a class="toc-level-2" href="#section-1">如何使用</a>
+<body><a class="skip" href="#content">跳到正文</a><aside class="sidebar"><div class="brand">QUEKOU · FDE</div><strong>开发技术手册</strong><div class="edition">10.16</div><button class="menu-toggle" aria-controls="handbook-toc" aria-expanded="false" onclick="const s=this.closest('aside');const open=s.toggleAttribute('data-open');this.setAttribute('aria-expanded',open);this.textContent=open?'收起目录':'展开目录'">展开目录</button><nav id="handbook-toc" aria-label="章节目录"><a class="toc-level-2" href="#section-1">如何使用</a>
 <a class="toc-level-3" href="#section-2">在 FDE 全流程中的位置</a>
 <a class="toc-level-3" href="#section-3">产出格式与填写规则</a>
 <a class="toc-level-2" href="#section-4">第一部分 先登记建库，再形成 A、B 与开发计划并送审</a>
@@ -39,25 +39,25 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <a class="toc-level-3" href="#section-42">选品：SKU Radar</a>
 <a class="toc-level-3" href="#section-43">网站与系统接入</a>
 <a class="toc-level-2" href="#section-44">附录 配套资源包</a></nav><button class="print" onclick="window.print()">打印 / 另存为 PDF</button></aside>
-<main id="content"><article class="sheet"><div class="eyebrow">从调研语料到开发、发布与反馈</div><h1 id="section-0">FDE 开发技术手册</h1><span class="badge">10.15.4</span><div class="download-box"><a class="download-button" href="FDE开发配套资源包_10.06.zip" download>下载配套资源总 ZIP</a><br><a class="download-button secondary" href="development-handbook.md" download>Markdown 源文档</a><a class="download-button secondary" href="https://github.com/quekou-fde-development/fde-development">共用规范与工具</a><a class="download-button secondary" href="https://github.com/quekou-fde-development/fde-development/issues/new?template=feedback.yml">提交反馈</a></div>
-<div class="path" aria-label="工作路径"><div class="stage"><span>第一部分</span><strong>开发架构与计划送审</strong><small>Arcubase 登记 → 母项目仓库与场景目录<br>Meta Workflow → A；Meta Spec → B；编制计划<br>开发架构（A+B）＋计划，邮件异步送审</small></div><div class="gate">夏洛克异步审核<br>通过后进入 →</div><div class="stage"><span>第二部分</span><strong>开发与上线测试</strong><small>releases/ 开发 → tests/ 测试与复测<br>技术复核与发布批准 → 上线、交接与反馈</small></div></div>
+<main id="content"><article class="sheet"><div class="eyebrow">从产品方案到技术开发、发布与反馈</div><h1 id="section-0">FDE 开发技术手册</h1><span class="badge">10.16</span><div class="download-box"><a class="download-button" href="FDE开发配套资源包_10.06.zip" download>下载配套资源总 ZIP</a><br><a class="download-button secondary" href="development-handbook.md" download>Markdown 源文档</a><a class="download-button secondary" href="https://github.com/quekou-fde-development/fde-development">共用规范与工具</a><a class="download-button secondary" href="https://github.com/quekou-fde-development/fde-development/issues/new?template=feedback.yml">提交反馈</a></div>
+<div class="path" aria-label="工作路径"><div class="stage"><span>第一部分</span><strong>开发架构与计划送审</strong><small>Arcubase 登记 → 母项目仓库与场景目录<br>方案及审核依据 → 技术A → 九份B；编制计划<br>开发架构（A+B）＋计划，邮件异步送审</small></div><div class="gate">夏洛克异步审核<br>通过后进入 →</div><div class="stage"><span>第二部分</span><strong>开发与上线测试</strong><small>releases/ 开发 → tests/ 测试与复测<br>技术复核与发布批准 → 上线、交接与反馈</small></div></div>
 <section id="handbook-body">
 <h2 id="section-1">如何使用</h2>
 <p>先看 <a href="../01-workflow/FDE_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E5%86%85%E9%83%A8%E6%89%A7%E8%A1%8C%E7%89%88.html">FDE 总流程图（内部执行版）</a>，了解项目整体阶段、角色、决策和交接，再按本手册展开技术开发环节。下载整个仓库并保留目录结构后，该链接可离线打开。</p>
 <p>本手册面向项目经理、承担方案设计与开发的架构师、FDE 和开发 AI。项目经理先在 Arcubase 登记母项目与场景，再建立对应的内部开发仓库及场景目录。团队按以下顺序工作，由项目经理统一送审：</p>
 <ol>
 <li><strong>先登记，再建库和场景目录。</strong> 在 Arcubase 确认母项目编码、客户名称、期号及所属场景；在 <code>quekou-fde-development</code> 组织新建该母项目的 private 开发仓库，仓库名由“母项目编码＋客户名称＋期号”组成。仓库根目录承载母项目，每个场景建立独立文件夹，具体命名与结构见 §0。</li>
-<li><strong>以调研和场景基线形成方案及A组材料。</strong> 项目架构师使用Meta Workflow梳理业务流，定义问题和产品，说明基线、目标、客户价值与范围报价，形成A的业务流程、整体架构及graph。方法见<a href="../03-architecture/architecture-handbook.md">架构手册</a>。</li>
-<li><strong>项目经理组织方案审核（闸1）。</strong> 总架构师审核商业可行性：解决什么问题、产品怎样产生价值、场景改善及报价依据。</li>
-<li><strong>项目架构师提出技术可行性，团队形成B与计划。</strong> Meta Spec以明确版本的A、方案决定及技术约束形成九份spec；FDE参与验证并编制独立开发计划。说明数据结构、数据流、信息流及实现条件。</li>
+<li><strong>接收明确版本的方案及调研依据。</strong> 项目架构师按<a href="../03-architecture/architecture-handbook.md">架构手册</a>定义问题和产品，说明经营意义、baseline、target、产品价值、AI采用依据及贡献、信息流和客户体验流，形成方案文档并关联范围报价。</li>
+<li><strong>项目经理组织方案审核（闸1）。</strong> 总架构师审核商业可行性：客户问题及意义、产品目标和价值、AI采用依据、信息流与客户体验流、范围报价及条件。</li>
+<li><strong>项目架构师提出技术可行性，团队形成技术架构与计划。</strong> 将方案展开为A的技术流程、整体架构及graph；Meta Spec读取方案、A及技术约束形成B的九份spec。FDE参与AI能力和贡献等关键条件的验证并编制独立开发计划。</li>
 <li><strong>项目经理组织开发审核（闸2）。</strong> 对应已通过的方案版本，提交开发架构A+B、项目架构师的可行性结论和独立开发计划；材料push到已登记母项目仓库及场景目录，邮件提供固定版本链接。</li>
 <li><strong>开发审核通过并落实开工条件后先开发，再测试。</strong> FDE领取获批的A+B和计划，在场景下先建立<code>releases/</code>，形成可测试版本后建立<code>tests/</code>，记录测试、缺陷和复测。测试通过并取得发布批准后上线。</li>
 </ol>
 <p><strong>方案与技术材料可以并行准备，审核先方案后开发。</strong> 并行草稿注明所依据的方案版本及待审状态；正式开发审核前核对方案审核结论与全部差异。方案通过不等于开发获批。</p>
-<p><strong>开发架构 = A（业务方案的流程、整体架构及graph）+ B（九份具体开发规格）。开发计划独立成文。</strong> 开发审核的A、B和计划采用同一固定技术版本，并引用已通过的方案及审核依据。</p>
+<p><strong>开发架构 = A（承接方案的技术流程、整体架构及graph）+ B（九份具体开发规格）。开发计划独立成文。</strong> 开发审核的A、B和计划采用同一固定技术版本，并引用已通过的方案及审核依据。</p>
 <p>手册第一部分说明上述材料怎样形成与送审，第二部分说明获批后的开发、测试、发布和反馈。开发是 FDE 全流程内部的一段 loop；商务、调研、客户培训（当前暂缓）、最终客户验收和维护按上层 FDE 流程衔接。</p>
 <blockquote>
-<p><strong>当前版本：10.15.4。</strong> 实际项目的架构批准、真实数据写入和发布授权，分别按项目记录执行。</p>
+<p><strong>当前版本：10.16。</strong> 实际项目的架构批准、真实数据写入和发布授权，分别按项目记录执行。</p>
 </blockquote>
 <p>共用规范与工具从 <a href="https://github.com/quekou-fde-development/fde-development">quekou-fde-development/fde-development</a> 获取，主要目录为 <code>handbook/</code>（总流程、项目管理手册、架构设计手册与FDE开发手册）、<code>tools/</code>（开发工具）和 <code>feedback/</code>（共用工具反馈）。每个母项目的开发交互使用 §0 新建并登记的独立仓库。手册 Markdown 与 HTML 阅读版来自同一份正文；离线使用时一同下载 HTML 与<a href="FDE%E5%BC%80%E5%8F%91%E9%85%8D%E5%A5%97%E8%B5%84%E6%BA%90%E5%8C%85_10.06.zip">配套资源总 ZIP</a>，按文末资源索引选择小包。</p>
 <p>整条开发链基于 <strong>Octopus + Arcubase</strong>：Workbench 承载页面与可信会话，Octopus 提供组织及 Host 能力，Arcubase 保存共享持久业务数据。工具包的“候选”“方法参考”“文件快照”状态见资源索引，项目采用前核对版本及目标环境证据。</p>
@@ -85,14 +85,14 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <td>来源可读，事实和未确认项有区分</td>
 </tr>
 <tr>
-<td>A · 业务流程与整体架构</td>
-<td>用 Meta Workflow 拆解业务，梳理执行与判断、规则、交接及系统分工，形成 graph</td>
+<td>A · 技术流程与整体架构</td>
+<td>读取明确版本的方案、业务信息流和体验流，用 Meta Workflow 展开执行与判断、规则、交接及系统分工，形成 graph</td>
 <td><code>workflow/</code> 文件组 A：业务流程、整体架构图和 graph</td>
 <td>关键路径、关系图、来源及未决事项可审阅，足以作为 B 的设计输入</td>
 </tr>
 <tr>
 <td>B · 开发 spec</td>
-<td>Meta Spec 读取明确版本的 A 和技术约束，按开发九步写规格</td>
+<td>Meta Spec 读取明确版本的方案、A 和技术约束，按开发九步写规格</td>
 <td><code>design/</code> 文件组 B：九份 spec Markdown</td>
 <td>与 A 对应，设计关键问题已回答，跨文件含义一致</td>
 </tr>
@@ -104,7 +104,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 <tr>
 <td>方案审核／闸1</td>
-<td>PM提交问题、产品、基线目标、A及范围报价依据</td>
+<td>PM提交方案文档，包含问题与产品定义、AI采用依据、信息流和体验流，关联范围报价</td>
 <td>夏洛克 → 方案商业可行性结论</td>
 <td>明确方案版本、范围与条件</td>
 </tr>
@@ -151,7 +151,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 <tr>
 <td>④ 调研与架构设计</td>
-<td>调研与基线 → Meta Workflow形成A及解决方案 → 方案审核；技术材料可并行准备，正式开发审核前对齐已审方案</td>
+<td>调研与基线 → 定义问题和产品 → 方案审核；Meta Workflow承接方案形成技术A，Meta Spec形成B；技术准备可并行，正式开发审核前对齐已审方案</td>
 <td>问题、产品、价值与报价依据，以及A+B、开发计划和未决项</td>
 </tr>
 <tr>
@@ -190,12 +190,12 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <td>PM 提交商务负责人决定，按其指定节点返回</td>
 </tr>
 </tbody></table></div>
-<p>总流程图10.15.4随资源包放在 <code>00-fde-flow/</code>，可离线打开。</p>
+<p>总流程图10.16随资源包放在 <code>00-fde-flow/</code>，可离线打开。</p>
 <h3 id="section-3">产出格式与填写规则</h3>
-<p>开发架构由文件组 A 和文件组 B 共同组成。A 保存在 <code>workflow/</code>，按 §2—3 交付业务流程、整体业务与系统架构图及 graph；B 保存在 <code>design/</code>，由 Meta Spec 基于明确版本的 A 编写九份规格 Markdown，沿用现有九份文件名及写作参照。王磊八份原设计作为写作参照，独立数据结构为第 3 份。案例中的业务、登录、技术栈与接口须按本项目和 Octopus / Arcubase 边界重新设计。</p>
+<p>开发架构由文件组 A 和文件组 B 共同组成。A 保存在 <code>workflow/</code>，按 §2—3 交付业务流程、整体业务与系统架构图及 graph；B 保存在 <code>design/</code>，由 Meta Spec 基于明确版本的方案、A及技术约束编写九份规格 Markdown，沿用现有九份文件名及写作参照。王磊八份原设计作为写作参照，独立数据结构为第 3 份。案例中的业务、登录、技术栈与接口须按本项目和 Octopus / Arcubase 边界重新设计。</p>
 <ul>
 <li>填写通用调研输入的已知事实、客户意向、约束及来源。未知项写“未确认＋向谁或取什么材料确认”；没有该场景时写“不适用＋理由”。已有原件能够回答的内容直接附材料位置。</li>
-<li>业务流程和规格设计中的关键问题分别集中澄清。Meta Spec 发现业务目标、规则、职责或流程仍有缺口时，返回业务流程环节补齐；九份规格引用明确的业务流程版本。能力未实测和上线前验证要求写为限制，保留负责人和下一步。</li>
+<li>业务流程和规格设计中的关键问题分别集中澄清。Meta Spec 发现问题、产品目标、业务规则、信息流或体验仍有缺口时，交项目架构师补齐产品设计或技术流程的对应内容；九份规格引用明确的业务流程版本。能力未实测和上线前验证要求写为限制，保留负责人和下一步。</li>
 <li>需求、流程、用例、数据、角色、页面、调用和测试使用稳定编号；业务流程、九份 spec 和开发计划中的同一对象保持一致。</li>
 <li>设计、实际实现、测试结果与审核决定分别记录。总架构师审核由夏洛克进行，工具检查通过只说明其覆盖的检查项。</li>
 </ul>
@@ -228,40 +228,31 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>审核通过后先进入开发，在场景下建立 <code>releases/</code>，保存开发版本及产物；形成可测试版本后再进入测试，建立 <code>tests/</code>，保存对应版本的测试、缺陷和复测记录。后续发布与技术交接资料继续归入相应开发版本。开发实现按所选工具和框架组织，不统一要求建立 <code>src/</code>；跨场景共用模块在开发中有实际需要时再组织。</p>
 <p>完成登记、建库、场景目录和关联链接后，再进入 §1—5 形成开发架构与计划。提交审核和后续开发持续使用该仓库及对应场景目录。</p>
 <h3 id="section-6">1 整理检索与调研输入，启动业务流程设计</h3>
-<p>架构负责人先收集并核对前置检索结果、调研原件和已经确认的需求，建立同一项目的材料入口。填写现有<a href="../02-project-management/templates/02-research/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入文档</a>的项目副本；资源总包的 <code>inputs/</code> 中也提供同一空表。至少能找到：业务目标与交付范围、参与角色、关键场景、真实样本、当前规则与异常、既有系统和可用接口、验收范围与验收标准，以及客户必要的授权和配合事项。</p>
-<p>把事实、已确认规则、待核实假设分开标注，并为每条重要结论附原件位置。遇到缺样本、规则冲突、关键接口未知，登记具体缺件与负责人；由 PM 协调补齐。影响范围或技术路线的缺件在架构送审时明示，不交给开发 AI 自行补成事实。</p>
-<p>材料索引分别记录两种状态：原件是否取得并实际读取；相关能力处于文档说明、源码核对、样例验证还是目标环境实测。来源未取得正文、现场尚未验证等情况随送审包保留。</p>
-<p><strong>工具路线：</strong> Meta Workflow 负责文件组 A，采用 Meta Skill 与 Meta Orchestrator 的理论结构；Meta Spec 以 A 为设计输入，编写文件组 B 的九份 spec。工具拆分与现有源码入口见文末资源索引。</p>
-<p><strong>怎样启动：</strong> 把填过的输入副本、原件位置和本次工作目录交给业务流程设计环节。输入允许部分填写；先取源、梳理流程与业务架构，再集中澄清。将业务流程、整体架构图和 graph 作为文件组 A 保存到 <code>workflow/</code>，核对 §3 的交付清单并标明版本和来源，方案准备按架构手册定义问题、产品及价值并进入方案审核；把明确版本的A和方案审核状态交给Meta Spec。技术材料可以并行起草，正式开发审核前须对齐已通过方案。九份规格中的设计选择应能回到业务流程或有权人的明确决定。</p>
-<p><strong>填写重点：</strong> 调研范围和角色、真实作业路径、异常与决定权、单据和样本、现有系统、目标与交付范围、验收依据、Octopus / Arcubase / Workbench 已知环境及授权。既有 App 记录真实 ID 与 Schema；拟新建 App 写计划与依据。</p>
-<p><strong>产出：</strong> 通用输入项目副本、来源快照与缺件记录，进入本次运行的 <code>input/</code>、<code>working/</code>；正式业务流程材料进入 <code>workflow/</code>。沿用已有调研成果，只针对业务流程与架构缺口补证。</p>
-<pre><code class="language-text">母项目编码、场景编号及 Arcubase 记录：&lt;填写&gt;
-输入文档与原件位置：&lt;填写可访问的文件或链接&gt;
-目标仓库：&lt;已登记的母项目编码-客户名称-期号仓库 URL&gt;
-场景开发目录：&lt;该仓库下的场景编号文件夹&gt;
-本地输入与工作目录：&lt;调研原件与运行草稿的授权位置，不提交到 GitHub&gt;
+<p>开发准备接收两类已有输入：一是方案文档，包含问题和产品定义、目标与价值、AI采用依据及贡献、信息流和客户体验流；二是调研证据、既有系统条件及技术约束。记录方案版本、审核结论或待审状态，以及资料位置。</p>
+<p>技术设计沿现有场景目录组织：<code>workflow/</code>保存技术流程、整体系统架构和协作graph，<code>design/</code>保存九份spec，<code>plan/</code>保存独立开发计划。技术材料引用方案的对应部分，并说明怎样实现它。方案文档保存在知识库，GitHub保留方案链接、版本标识和必要的技术摘要。</p>
+<p>本册和既有工具中，A沿用为<code>workflow/</code>技术流程与整体架构资料的别名，B为<code>design/</code>九份spec的别名。项目管理与送审使用“方案文档”“技术架构资料”全称。</p>
+<p>填写<a href="../02-project-management/templates/02-research/%E9%80%9A%E7%94%A8%E8%B0%83%E7%A0%94%E8%BE%93%E5%85%A5%E6%96%87%E6%A1%A3_10.06.md">通用调研输入</a>的已有事实、约束和来源；空白项保留待确认。方案格式见<a href="../02-project-management/templates/03-solution/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.md">解决方案模板</a>。</p>
+<pre><code class="language-text">母项目编码、场景编号及项目记录：&lt;填写&gt;
+方案文档：&lt;知识库入口、版本、审核结论或待审状态&gt;
+调研原件和技术约束：&lt;可访问的文件或链接&gt;
+目标仓库与场景目录：&lt;已登记私有仓库及目录&gt;
+本地输入与工作目录：&lt;获授权的资料和草稿位置&gt;
 
-第 1 步：使用 Meta Workflow 读取调研与原件，拆解业务。
-在 workflow/ 形成文件组 A：业务流程、整体架构图和 graph，
-附流程与图中对象的稳定编号、来源、未决事项和未验证能力。
-关键业务问题集中确认；不足以支持规格设计时，列明缺件及确认人。
+第1步：读取方案中的问题、产品目标和价值、AI采用依据、信息流与体验流。
+缺少产品判断时，交项目架构师补齐；保留事实来源、未决项与实际审核状态。
+第2步：用Meta Workflow把方案展开为workflow/中的技术流程、整体架构及graph，构成A。
+将明确版本的方案、A、调研证据和技术约束交Meta Spec，形成design/中的九份B规格。
+逐项核对信息处理、数据、权限、页面和接口怎样支撑产品，验证AI关键能力与预期贡献。
+第3步：按技术设计与实际资源填写plan/开发计划.md，注明时间、人员、工具、用量、依赖和验证。
 
-第 2 步：按架构手册完成问题、产品、价值及范围报价，交PM组织方案审核。
-技术材料可并行准备，注明方案版本及待审状态。
-将明确版本的整组A、方案决定和技术约束交给Meta Spec，
-按手册清单生成 design/ 下九份 Markdown，构成文件组 B。
-逐项核对 A 与 B 的流程、对象、规则、权限和接口一致。
-
-第 3 步：依据 A+B 和真实资源条件填写 plan/开发计划.md，
-包含逐任务时间、负责人、开发方式与工具、预计 token、依赖和验收。
-
-最终返回两个阅读入口：开发架构（A+B）和开发计划。
-正式开发审核前对齐已通过方案。A、B和计划保持同一技术版本，交项目经理核对、push，再邮件异步送审。
-方案未审通过时标为“并行草稿／待方案审核”；对齐已通过方案后标为“待开发审核”。
+技术候选可与方案并行准备，注明依据版本及待审状态。
+正式开发审核前对齐已通过的方案；提供同一commit的技术架构资料和独立计划两个入口，
+另关联知识库中的方案与审核原文，由PM邮件异步送审。
 </code></pre>
 <h3 id="section-7">2 使用 Meta Workflow 拆解业务流，形成 A 的流程部分</h3>
 <p>Meta Workflow 以 Meta Orchestrator 的目标分解、流程结构与依赖分析，以及 Meta Skill 的目标、执行段、判断段和判据分析为理论基础。本节与 §3 共同形成文件组 A，包含业务流程、整体架构图及 graph；正式的员工、Skill 包编译在第二部分执行。</p>
 <p>完成时序流程后，再按 Orchestrator 判断工作形态：单条线性的工作，直接展开其执行与判断段；涉及多个主体、时间跨度、独立触发或独立完成核验的工作，再建立跨段网络。每次拆分要写出理由，避免仅按职能名称或页面数量增加节点。</p>
+<p>技术流程承接已定义产品的业务信息流与客户体验流。逐节点说明原始输入、信息拆解、处理、中间产出、去向及反馈如何实现；逐步对应客户的入口、页面、信息层次、操作、反馈和完成结果。业务规则、流向或交互未定时交项目架构师补齐产品设计。AI节点引用方案中的采用依据，结合可行工程方案验证关键能力及贡献，保留样本、比较条件、结果和限制。</p>
 <h4 id="section-8">2.1 从结果倒推完整任务</h4>
 <p>为选定业务写清最终结果、成功与失败条件、谁使用结果、谁有权作决定。再用一条真实案例，从触发开始顺着信息与动作走到结果：谁发起，拿到什么，做了什么，交给谁，如何知道已完成。</p>
 <p>把规则表和职责表还原为“何时、满足什么条件、做什么”的时序事实。流程图标出持续等待或中断、需要裁决的分叉、同时开展的分叉；由材料推断出的关系单独标注。保留事实清单，检查每项必要事实和动作在流程中的归宿。</p>
@@ -375,7 +366,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p>A 的阅读入口写明母项目编码、场景编号、版本和上述开发文件链接，来源与已确认决定引用知识库原件和Arcubase对应记录；影响开发的未决项保留摘要与链接。<strong>完整文件组 A 随后作为 Meta Spec 的输入，并保留为开发架构的正式组成部分。</strong> B编写过程中发现需要改变业务规则或职责时，先由项目架构师核对对方案的影响；涉及问题、产品、目标、范围或报价时返回方案审核，再同步A并修订对应spec。</p>
 <p>对照 Orchestrator 原规格，审核前使用其 Step 0—3 的事实清单、流程判别、切段和边约束方法。此时的系统图属于架构设计；依赖实际 Skill 包的最终网络声明、版本核对和运行测试，留在审核通过后的编译与联调中完成。</p>
 <h3 id="section-13">4 使用 Meta Spec，以 A 为输入编写文件组 B（九份 spec）</h3>
-<p>以下九步说明 Meta Spec 每份文档应怎样形成、填写什么及怎样核对。起草前完整读取明确版本的 A（业务流程、整体架构图和 graph）、相关来源、技术约束与同编号写作参照，将业务流程和业务架构落实为开发所需的具体规格。按下列顺序起草，发现冲突时返回关联项修订；需要改变业务范围、规则或职责的事项，回到业务流程环节澄清并同步两个部分。安全约束贯穿各项，数据模型与权限、页面与接口需要往返核对。</p>
+<p>以下九步说明 Meta Spec 每份文档应怎样形成、填写什么及怎样核对。起草前完整读取明确版本的方案（含AI采用依据、信息流和体验流）、A（技术流程、整体架构图和 graph）、相关来源、技术约束与同编号写作参照，将业务流程和业务架构落实为开发所需的具体规格。按下列顺序起草，发现冲突时返回关联项修订；需要改变业务范围、规则或职责的事项，回到业务流程环节澄清并同步两个部分。安全约束贯穿各项，数据模型与权限、页面与接口需要往返核对。</p>
 <h4 id="section-14">第 1 步 概念梳理</h4>
 <p>从流程和真实样本提取业务对象、角色、术语与关系。对容易混淆的词写清含义、范围、唯一标识和边界；区分业务名称、系统内部名称及外部系统名称。把业务规则挂在对应概念上。</p>
 <p><strong>交出 <code>01-concept.md</code>：</strong> 术语表、角色与对象关系、关键约束、原始样本指针。后续用例、表格、页面和接口沿用同一含义。</p>
@@ -429,7 +420,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 ├── 08-tech-stack-and-directory.md
 └── 09-implementation-roadmap.md
 </code></pre>
-<p>执行人员检查业务流程、九份 spec 与开发计划中的范围、对象、角色、状态、权限、入口、契约、依赖及完成要求是否一致。三者使用明确的项目、版本和输出位置；来源与澄清过程可从本次 <code>input/</code>、<code>working/</code> 回查。Skill 的文件核验只证明其覆盖的机械条件，业务与技术设计的合理性由总架构师审核。</p>
+<p>执行人员对照方案中的问题、目标、产品设计及AI采用依据、信息流与体验流，检查技术流程、九份 spec 与开发计划中的范围、对象、角色、状态、权限、入口、契约、依赖及完成要求是否一致。三者使用明确的项目、版本和输出位置；来源与澄清过程可从本次 <code>input/</code>、<code>working/</code> 回查。Skill 的文件核验只证明其覆盖的机械条件，业务与技术设计的合理性由总架构师审核。</p>
 <h4 id="section-24">5.1 两项送审交付物：开发架构（A+B）和开发计划</h4>
 <p>每次正式开发审核包含以下两个大部分，由项目经理核对已通过的方案版本、项目架构师的可行性判断及材料齐备情况后统一提交：</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="横向滚动查看表格"><table>
@@ -443,7 +434,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <tbody><tr>
 <td><strong>开发架构（A+B）</strong></td>
 <td>场景开发目录的 README，链接 <code>workflow/</code> 与 <code>design/</code></td>
-<td>A：Meta Workflow 形成的业务流程、整体架构图及 graph；B：Meta Spec 基于 A 形成的九份规格 Markdown</td>
+<td>A：Meta Workflow 形成的业务流程、整体架构图及 graph；B：Meta Spec 基于方案依据、A和技术约束形成的九份规格 Markdown</td>
 </tr>
 <tr>
 <td><strong>开发计划</strong></td>
@@ -498,6 +489,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <p><strong>送审采用异步方式，不要求总架构师即时响应。</strong> 项目经理发出邮件后等待异步审核意见，并安排团队继续推进不依赖该审核决定的准备工作。IM 发包、聊天中询问“是否可以开发”或临时要求同步审阅，均不作为正式送审方式。材料需让审核人按自己的时间独立读取、判断和回复；技术答疑及修订由项目经理统一组织。</p>
 <p><strong>三、在 Arcubase 留存审核与推进结果。</strong> 项目经理将夏洛克本人对明确开发版本的审核结论及意见来源关联到对应母项目和场景，记录审核人、时间、送审 commit、各场景获批范围、决定和条件。GitHub 保留被审核的开发版本及对应 Arcubase 记录链接。实施人员依据各场景的通过记录领取批准文件和条件；退回时由项目经理在 Arcubase 组织补料与问题处理，架构师修订开发架构，push 新 commit 后由项目经理重新发邮件送审。</p>
 <p>邮件已发送只表示完成送审。尚未取得通过记录的场景范围继续保持待审；按审核结论和实际推进情况更新 Arcubase 场景阶段，阶段流转记录写明变更原因和影响，“新版本／依据链接”关联相应审核依据与开发版本。母项目的“项目交付流程”维护整体交付环节，场景进展按所属关系汇总。AI 可整理材料与检查引用，审核决定由夏洛克作出。</p>
+<p>后续开发和测试使用业务样本，沿已定信息路径核对每步处理、中间结果、传递和反馈，再沿客户体验步骤核对入口、页面信息、操作、信息下沉与完成结果。保留实际使用验证状态，并按现有测试、发布和签字验收安排接续。</p>
 <h2 id="section-26">第二部分 审核通过后开发</h2>
 <h3 id="section-27">6 领取批准文件，在原项目仓库开发</h3>
 <p>FDE核对方案审核与开发审核均已通过、技术版本及本次实施范围、条件与实际环境。PM 按 §5.1 已提交的开发计划统筹资源、客户配合和交付安排，并落实审核附带的条件。</p>
@@ -766,15 +758,15 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </thead>
 <tbody><tr>
 <td>Meta Workflow</td>
-<td>调研输入、原件、目标与业务约束；§1—3 拆解业务并设计整体架构</td>
+<td>方案版本、调研证据与技术约束；§1—3 承接产品的信息流和体验流，展开技术流程与整体架构</td>
 <td><code>workflow/</code> 文件组 A：业务流程、整体架构图、graph、依据及未决事项</td>
 <td>沿用 Meta Skill 与 Meta Orchestrator 的现有方法组织业务流程；独立 Skill 蒸馏暂缓</td>
 </tr>
 <tr>
 <td>Meta Spec</td>
-<td>明确版本的文件组 A、方案审核状态与依据、相关来源及技术约束；§4—5 编写规格</td>
+<td>明确版本的方案文档与文件组A、方案审核状态、相关来源及技术约束；§4—5 编写规格</td>
 <td>文件组 B：九份 <code>design/*.md</code>，附 A 到 B 的对应、来源、渲染回执与限制</td>
-<td><a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-spec">Meta Spec 工具目录</a>；10.15.1补齐方案与开发审核接口；九份结构与确定性渲染器沿用</td>
+<td><a href="https://github.com/quekou-fde-development/fde-development/tree/main/tools/meta-spec">Meta Spec 工具目录</a>；10.16区分方案与技术A输入，承接AI采用依据、信息流和体验流；九份结构与确定性渲染器沿用，完整任务生成未在本次重验</td>
 </tr>
 <tr>
 <td><a href="../02-project-management/templates/04-development/%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF_10.08.md">开发计划模板</a></td>
@@ -822,7 +814,7 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 <td>FDE 流程图 · <code>00-fde-flow/</code></td>
 <td>查看上层流程、职责与技术小环位置</td>
 <td>流程衔接依据</td>
-<td>HTML 10.15.4，可离线阅读；含方案审核与开发审核</td>
+<td>HTML 10.16，可离线阅读；含方案审核与开发审核</td>
 </tr>
 <tr>
 <td>专项工具 · <code>07-specialist-tools/README.md</code></td>
@@ -832,4 +824,4 @@ p,a{overflow-wrap:anywhere}.sheet{min-width:0}.table-wrap:focus-visible{outline:
 </tr>
 </tbody></table></div>
 <p>资源包提供本次核对版本的快照。进入实际项目时记录采用版本、宿主、依赖、账号授权与真实测试范围。工具的文件清单、版本与验证范围从仓库 <code>tools/</code> 核对。开发计划模板见 §5.1，反馈按 §16 在 GitHub Issue 中处理。</p>
-</section><footer class="foot">缺口 FDE · 10.15.4。本文与 Markdown 同源；正文及本地配套资料可离线阅读，GitHub 与网站服务需联网。</footer></article></main></body></html>
+</section><footer class="foot">缺口 FDE · 10.16。本文与 Markdown 同源；正文及本地配套资料可离线阅读，GitHub 与网站服务需联网。</footer></article></main></body></html>
