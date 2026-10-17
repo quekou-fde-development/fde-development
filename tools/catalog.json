@@ -269,10 +269,10 @@
     {
       "name": "FDE 上层流程图",
       "path": "handbook/01-workflow/FDE_流程图_内部执行版.html",
-      "status": "current-workflow-with-two-reviews",
-      "sha256": "1579114736f905b08c7917cab23b3227f5449ec5c6c27f55dfbc4b32647c5d36",
-      "version": "10.16"
+      "status": "original-source-preserved",
+      "sha256": "9cc48abe95b584af03f6d874f1ab3d62cf438de079aa883a50d294e8522dfad9",
+      "version": "10.03"
     }
   ],
-  "publication_revision": "10.16"
+  "publication_revision": "10.17"
 }
