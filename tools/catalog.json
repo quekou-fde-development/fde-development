@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.16",
+  "version": "10.17",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -141,8 +141,8 @@
       "archive": "handbook/02-project-management/templates/04-development/architecture-reference/development-design-10.06.zip",
       "path": "handbook/02-project-management/templates/04-development/architecture-reference/",
       "entry": "handbook/02-project-management/templates/04-development/architecture-reference/README.md",
-      "sha256": "69f63e5f888887822563d70302fecb3e2858f5a0021ff2144c22c12bc55cb8f4",
-      "bytes": 24645,
+      "sha256": "d9d16a1e5cc4044a097676c463efc9360ba69650ca42976bf4c5caa253a23b04",
+      "bytes": 24787,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
@@ -150,7 +150,7 @@
       "data_model_sha256": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611",
       "other_eight_unchanged": true,
       "source_archive_sha256": "69f63e5f888887822563d70302fecb3e2858f5a0021ff2144c22c12bc55cb8f4",
-      "publication_revision": "10.15.3",
+      "publication_revision": "10.17",
       "distribution": "Nine v14 references; eight original documents preserved byte-for-byte.",
       "member_count": 10,
       "source_reference_freeze": "frozen-v14",
@@ -162,14 +162,14 @@
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "10.16",
-      "archive_version": "10.16",
+      "version": "10.17",
+      "archive_version": "10.17",
       "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-10.16.zip",
-      "sha256": "27c0c4738bd5edaec21cdcb4899d8929b13e78a6b9db7d8d6591b1f6150c496a",
-      "bytes": 527046,
+      "archive": "tools/meta-spec/meta-spec-10.17.zip",
+      "sha256": "af61c6bb6c6aeca790350ee2fbe169750595ea3f5836e0ffa2070f64161557fa",
+      "bytes": 528363,
       "member_count": 530,
       "validation": {
         "publication": {
@@ -233,6 +233,43 @@
           "full_nine_document_generation": "NOT_RERUN",
           "target_host_installation": "NOT_RUN",
           "platform_execution": "NOT_RUN"
+        },
+        "review_sequence": {
+          "scope": "Input and review sequencing, document/package consistency, scoped independent handoff behavior; no full nine-document semantic generation or target-host installation.",
+          "skill_creator_quick_validate": "PASS",
+          "meta_skill_applicable_mechanical_gates": "PASS",
+          "mechanical_notes": [
+            "M4: verification.json is intentional distribution evidence.",
+            "M6: non-network skill; not applicable."
+          ],
+          "generator_regression": {
+            "verdict": "PASS",
+            "cases": 18
+          },
+          "structure_regression": {
+            "verdict": "PASS",
+            "directed_rejections": 15
+          },
+          "native_fields_regression": {
+            "verdict": "PASS",
+            "cases": 13
+          },
+          "handoff_cases": {
+            "AB_pending": "PASS: defer B generation until the solution review passes.",
+            "C_combined": "PASS: submit solution and development materials together, retain two review conclusions.",
+            "unknown_category": "PASS: clarify category before selecting the pending-solution route."
+          },
+          "behavior_limits": [
+            "One independent handoff run per scenario; unknown-category case rerun after clarifying generation versus submission prerequisites.",
+            "No full nine-document semantic generation, repeated-generation study or target-host deployment.",
+            "Prior domain-content failures remain open."
+          ],
+          "unchanged_skill_members": 524,
+          "total_skill_members": 530,
+          "unchanged_scope": "Generator, audit, fixtures, nine design references and all other package members retained byte-for-byte.",
+          "description_trigger_eval": "NOT_RUN",
+          "target_host_installation": "NOT_RUN",
+          "platform_execution": "NOT_RUN"
         }
       },
       "limitations": [
@@ -246,25 +283,26 @@
         "10.15.1 scoped changed-scope handoff contradicted itself about when parallel B preparation may start.",
         "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
         "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions.",
-        "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open."
+        "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open.",
+        "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "publication_revision": "10.16",
-      "distribution": "Product/technical input documentation update; deterministic engine and nine design references preserved.",
+      "publication_revision": "10.17",
+      "distribution": "Customer analysis and client-category review interface update; deterministic engine and nine design references retained.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "10.09.1 / frozen-v14 engine + 10.16 product/technical input interface"
+      "source_version": "10.09.1 / frozen-v14 engine + 10.17 customer-analysis and client-category review interface"
     }
   ],
   "resources": [
     {
       "id": "research-input",
       "name": "通用调研输入文档",
-      "version": "10.16",
+      "version": "10.17",
       "path": "handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md",
       "status": "blank-template",
-      "sha256": "d42075070a010a074a52b441a948ac8aef5ac9d9c012ae1994358c85d671002e"
+      "sha256": "acf0d347abfd788b7b83abc62f5de2935325ee4c5877acb6d6c730dfba145ff0"
     },
     {
       "name": "FDE 上层流程图",

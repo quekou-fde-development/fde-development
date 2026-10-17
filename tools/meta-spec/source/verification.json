@@ -1,10 +1,10 @@
 {
   "artifact": "meta-spec",
-  "version": "10.16",
+  "version": "10.17",
   "status": "user-approved-release-with-known-limitations",
-  "source_version": "10.09.1 / frozen-v14 engine + 10.16 product/technical input interface",
-  "authorization_date": "2026-10-16",
-  "authorization_scope": "Integrate and push the approved problem/product definition, AI contribution, information-flow and customer-experience revisions across handbooks and existing tool interfaces.",
+  "source_version": "10.09.1 / frozen-v14 engine + 10.17 customer-analysis and client-category review interface",
+  "authorization_date": "2026-10-17",
+  "authorization_scope": "Apply approved audit corrections: customer analysis precedes solution design, AB reviews sequentially, C may prepare development early and submit both reviews together.",
   "runtime_functionality_changed_from_frozen_v14": true,
   "description_changed": true,
   "reference_documents": 9,
@@ -56,7 +56,8 @@
     "10.15.1 scoped changed-scope handoff contradicted itself about when parallel B preparation may start.",
     "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
     "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions.",
-    "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open."
+    "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open.",
+    "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised."
   ],
   "mechanical_publication_checks": {
     "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
@@ -227,6 +228,43 @@
     "input_contract_review": "Solution definition and technical A are separately identified; product AI rationale, stepwise information processing and complete customer experience are upstream inputs; missing decisions remain open and return to the project architect; review order and signed-version constraints retained.",
     "description_trigger_eval": "NOT_RERUN",
     "full_nine_document_generation": "NOT_RERUN",
+    "target_host_installation": "NOT_RUN",
+    "platform_execution": "NOT_RUN"
+  },
+  "review_sequence_checks": {
+    "scope": "Input and review sequencing, document/package consistency, scoped independent handoff behavior; no full nine-document semantic generation or target-host installation.",
+    "skill_creator_quick_validate": "PASS",
+    "meta_skill_applicable_mechanical_gates": "PASS",
+    "mechanical_notes": [
+      "M4: verification.json is intentional distribution evidence.",
+      "M6: non-network skill; not applicable."
+    ],
+    "generator_regression": {
+      "verdict": "PASS",
+      "cases": 18
+    },
+    "structure_regression": {
+      "verdict": "PASS",
+      "directed_rejections": 15
+    },
+    "native_fields_regression": {
+      "verdict": "PASS",
+      "cases": 13
+    },
+    "handoff_cases": {
+      "AB_pending": "PASS: defer B generation until the solution review passes.",
+      "C_combined": "PASS: submit solution and development materials together, retain two review conclusions.",
+      "unknown_category": "PASS: clarify category before selecting the pending-solution route."
+    },
+    "behavior_limits": [
+      "One independent handoff run per scenario; unknown-category case rerun after clarifying generation versus submission prerequisites.",
+      "No full nine-document semantic generation, repeated-generation study or target-host deployment.",
+      "Prior domain-content failures remain open."
+    ],
+    "unchanged_skill_members": 524,
+    "total_skill_members": 530,
+    "unchanged_scope": "Generator, audit, fixtures, nine design references and all other package members retained byte-for-byte.",
+    "description_trigger_eval": "NOT_RUN",
     "target_host_installation": "NOT_RUN",
     "platform_execution": "NOT_RUN"
   }

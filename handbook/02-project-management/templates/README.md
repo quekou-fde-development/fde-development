@@ -1,6 +1,6 @@
 ---
 title: 项目管理模板与参考目录
-version: "10.16"
+version: "10.17"
 status: 已有材料归集；缺失文件留空
 ---
 
@@ -31,6 +31,8 @@ status: 已有材料归集；缺失文件留空
 | 基线与试点结果 | [基线与试点对比记录表](02-research/基线与试点对比记录表.md) | Markdown；沿原现场手册附C，补充基线口径与客户确认 |
 | 调研材料归纳 | [通用调研输入空表](02-research/通用调研输入文档_10.06.md) | Markdown；现有输入结构，补充基线与方案审核接口 |
 
+客户分析A在定义问题和产品前形成，沿[开发手册已有workflow写法](../../04-development/development-handbook.md#3-补齐整体架构图和-graph交付完整文件组-a)整理业务流、整体架构图及graph。原文保存在知识库，开发仓库保留同版引用；Meta Workflow独立Skill待补。
+
 ## 3. 方案与送审
 
 | 内容 | 文件 | 文档Skill |
@@ -39,13 +41,12 @@ status: 已有材料归集；缺失文件留空
 | 客户建设范围、分期与报价 | [范围分期与报价](03-solution/范围分期与报价.md) | |
 | 方案审核与开发审核异步送审 | [送审邮件格式](03-solution/送审邮件.md) | |
 
-方案方法和两闸清单见[架构设计手册](../../03-architecture/architecture-handbook.md)；A组具体写法见[FDE开发手册](../../04-development/development-handbook.md)。方案文档先提交方案审核；技术资料与独立开发计划对应已通过的方案进入开发审核。
+方案方法和两闸清单见[架构设计手册](../../03-architecture/architecture-handbook.md)；A组具体写法见[FDE开发手册](../../04-development/development-handbook.md)。方案审核先提供客户分析A及baseline，再提供方案文档和范围报价。A/B客户方案通过后准备开发方案、计划与技术可行性评估；C客户允许提前准备并合并送审。
 
 ## 4. 技术架构与开发计划
 
 | 内容 | 文件 | 使用位置或工具 |
 |---|---|---|
-| 技术流程、整体架构与graph | [开发手册workflow写法](../../04-development/development-handbook.md#3-补齐整体架构图和-graph交付完整文件组-a) | 场景目录workflow/；Meta Workflow独立Skill待补 |
 | B组九份spec写作参照 | [目录](04-development/architecture-reference/README.md) · [下载ZIP](04-development/architecture-reference/development-design-10.06.zip) | [Meta Spec](../../../tools/meta-spec/README.md) |
 | 独立开发计划 | [开发计划模板](04-development/开发计划模板_10.08.md) | 项目私有仓库的场景目录下plan/开发计划.md |
 
