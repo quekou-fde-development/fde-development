@@ -1,6 +1,6 @@
 ---
 title: FDE开发手册（FDE）
-version: "10.17"
+version: "10.19"
 status: 发布索引
 ---
 
@@ -10,7 +10,7 @@ status: 发布索引
 
 | 版本 | Markdown | HTML |
 |---|---|---|
-| 10.17 · 发布版 | [阅读手册](development-handbook.md) | [下载阅读版](https://github.com/quekou-fde-development/fde-development/raw/refs/heads/main/handbook/04-development/index.html) |
+| 10.19 · 发布版 | [阅读手册](development-handbook.md) | [下载阅读版](https://github.com/quekou-fde-development/fde-development/raw/refs/heads/main/handbook/04-development/index.html) |
 
 架构设计阶段与开发阶段的试行衔接见[架构设计手册入口](../03-architecture/README.md#阅读与执行)。
 

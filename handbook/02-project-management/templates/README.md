@@ -1,6 +1,6 @@
 ---
 title: 项目管理模板与参考目录
-version: "10.17"
+version: "10.19"
 status: 已有材料归集；缺失文件留空
 ---
 
@@ -29,7 +29,7 @@ status: 已有材料归集；缺失文件留空
 | 生产报表、仓库收货调研 | [现场调研表单](02-research/现场调研_生产报表仓库收货.md) | Markdown；V1.0原有问题与表格脱敏 |
 | 对客调研安排 | [客户版现场调研计划](02-research/客户版现场调研计划.md) | Markdown；原讨论稿五部分栏目 |
 | 基线与试点结果 | [基线与试点对比记录表](02-research/基线与试点对比记录表.md) | Markdown；沿原现场手册附C，补充基线口径与客户确认 |
-| 调研材料归纳 | [通用调研输入空表](02-research/通用调研输入文档_10.06.md) | Markdown；现有输入结构，补充基线与方案审核接口 |
+| 调研材料归纳 | [通用调研输入空表](02-research/通用调研输入文档_10.06.md) | Markdown；现有输入结构，补充基线与整套送审接口 |
 
 客户分析A在定义问题和产品前形成，沿[开发手册已有workflow写法](../../04-development/development-handbook.md#3-补齐整体架构图和-graph交付完整文件组-a)整理业务流、整体架构图及graph。原文保存在知识库，开发仓库保留同版引用；Meta Workflow独立Skill待补。
 
@@ -39,9 +39,9 @@ status: 已有材料归集；缺失文件留空
 |---|---|---|
 | 定义问题、定义产品的项目解决方案 | [解决方案模板](03-solution/解决方案.md) | |
 | 客户建设范围、分期与报价 | [范围分期与报价](03-solution/范围分期与报价.md) | |
-| 方案审核与开发审核异步送审 | [送审邮件格式](03-solution/送审邮件.md) | |
+| 整套方案异步送审 | [送审邮件格式](03-solution/送审邮件.md) | |
 
-方案方法和两闸清单见[架构设计手册](../../03-architecture/architecture-handbook.md)；A组具体写法见[FDE开发手册](../../04-development/development-handbook.md)。方案审核先提供客户分析A及baseline，再提供方案文档和范围报价。A/B客户方案通过后准备开发方案、计划与技术可行性评估；C客户允许提前准备并合并送审。
+方案方法和整体审核清单见[架构设计手册](../../03-architecture/architecture-handbook.md)；A组写法见[FDE开发手册](../../04-development/development-handbook.md)。先由客户分析A形成解决方案，再用Meta Spec生成技术架构B，补齐计划与可行性、核对范围报价，整套一次送审。
 
 ## 4. 技术架构与开发计划
 

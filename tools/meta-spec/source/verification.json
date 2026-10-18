@@ -1,12 +1,12 @@
 {
   "artifact": "meta-spec",
-  "version": "10.17",
+  "version": "10.19",
   "status": "user-approved-release-with-known-limitations",
-  "source_version": "10.09.1 / frozen-v14 engine + 10.17 customer-analysis and client-category review interface",
-  "authorization_date": "2026-10-17",
-  "authorization_scope": "Apply approved audit corrections: customer analysis precedes solution design, AB reviews sequentially, C may prepare development early and submit both reviews together.",
+  "source_version": "10.09.1 / frozen-v14 engine + 10.19 solution-to-technical single-review interface",
+  "authorization_date": "2026-10-19",
+  "authorization_scope": "Audit built-in product-to-technical derivation and apply one integrated review after solution, technical design, independent plan and feasibility assessment.",
   "runtime_functionality_changed_from_frozen_v14": true,
-  "description_changed": true,
+  "description_changed": false,
   "reference_documents": 9,
   "original_eight_byte_identical": true,
   "reference_members_unchanged_from_frozen_v14": 15,
@@ -57,7 +57,8 @@
     "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
     "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions.",
     "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open.",
-    "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised."
+    "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised.",
+    "10.19: method audit supports direct solution-to-technical derivation. The selected-case generation initially bypassed required clarification; mechanical PASS did not establish semantic correctness. A strict rerun stopped on unresolved design decisions. No successful complete nine-document semantic generation, repeated-generation study, live-platform run or target-host installation is claimed."
   ],
   "mechanical_publication_checks": {
     "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
@@ -267,5 +268,50 @@
     "description_trigger_eval": "NOT_RUN",
     "target_host_installation": "NOT_RUN",
     "platform_execution": "NOT_RUN"
+  },
+  "single_review_checks": {
+    "scope": "Built-in product-to-technical method audit, scoped review-routing behavior, clarification boundary, source/package consistency and deterministic engineering regressions.",
+    "method_audit": "SUPPORTED: existing requirements/source registry, temporal decomposition, BF-to-UC binding and 01/02/03-to-04/09 derivation provide the logical bridge.",
+    "independent_disagreement": "Generation evaluator classified missing machine validation of source-to-spec semantics as a method-level gap. Root retains it as an unresolved execution/assurance limitation: the operations are explicitly defined in the Skill and performed in working analysis; absence of mechanical proof does not establish an absent logical transformation.",
+    "generation_attempt": {
+      "verdict": "FAIL: first attempt bypassed unresolved design decisions despite 15 mechanical PASS assertions; outputs retained as failed evidence.",
+      "strict_retry": "BLOCKED_AS_REQUIRED: rc=3; existing/new App, role/object authorization and production integration decisions unresolved; no final design directory.",
+      "successful_complete_nine_document_semantic_generation": false
+    },
+    "handoff_cases": {
+      "A_pending_solution": "PASS: can form B when actual design inputs and decisions are complete; no prior chief approval required.",
+      "unknown_customer_category": "PASS: category does not block B; source/constraints and design decisions still required.",
+      "unresolved_authorization_and_App": "PASS: clarification required; final render blocked.",
+      "plan_and_feasibility_absent": "PASS: B may precede them; formal whole-package submission waits for both."
+    },
+    "review_consistency": "PASS after CR-01/02/03 repairs; original failed review retained.",
+    "schema_confirmation_boundary": "PASS after clarification: humans confirm business/data/authority boundaries; Skill derives schema from use-case reads/writes.",
+    "skill_creator_quick_validate": "PASS",
+    "meta_skill_applicable_mechanical_gates": "PASS",
+    "mechanical_notes": [
+      "M4 verification.json retained as distribution evidence.",
+      "M6 non-network node; not applicable."
+    ],
+    "generator_regression": {
+      "verdict": "PASS",
+      "cases": 18
+    },
+    "structure_regression": {
+      "verdict": "PASS",
+      "directed_rejections": 15
+    },
+    "native_fields_regression": {
+      "verdict": "PASS",
+      "cases": 13
+    },
+    "description_trigger_eval": "NOT_RERUN: description unchanged from 10.17; this does not imply previous trigger limitations resolved.",
+    "target_host_installation": "NOT_RUN",
+    "platform_execution": "NOT_RUN",
+    "limitations": [
+      "One existing case; no successful complete nine-document semantic generation.",
+      "Semantic coverage and clarification completeness still require actual source-to-output review; mechanical checks cannot certify them.",
+      "No repeated-generation, cross-domain reliability or live customer/platform verification.",
+      "Historical domain-content failures remain open."
+    ]
   }
 }

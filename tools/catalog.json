@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.17",
+  "version": "10.19",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -141,8 +141,8 @@
       "archive": "handbook/02-project-management/templates/04-development/architecture-reference/development-design-10.06.zip",
       "path": "handbook/02-project-management/templates/04-development/architecture-reference/",
       "entry": "handbook/02-project-management/templates/04-development/architecture-reference/README.md",
-      "sha256": "d9d16a1e5cc4044a097676c463efc9360ba69650ca42976bf4c5caa253a23b04",
-      "bytes": 24787,
+      "sha256": "f8b546a60c9ea444ff1e1ab00187db2d69fd99eb46fca5584ebb12596438031f",
+      "bytes": 24758,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
@@ -162,14 +162,14 @@
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "10.17",
-      "archive_version": "10.17",
+      "version": "10.19",
+      "archive_version": "10.19",
       "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-10.17.zip",
-      "sha256": "af61c6bb6c6aeca790350ee2fbe169750595ea3f5836e0ffa2070f64161557fa",
-      "bytes": 528363,
+      "archive": "tools/meta-spec/meta-spec-10.19.zip",
+      "sha256": "7c519b9a8c3f3d5633e9e621635a0827e450cde15ade37294e76c25633ee89f4",
+      "bytes": 529189,
       "member_count": 530,
       "validation": {
         "publication": {
@@ -270,6 +270,51 @@
           "description_trigger_eval": "NOT_RUN",
           "target_host_installation": "NOT_RUN",
           "platform_execution": "NOT_RUN"
+        },
+        "single_review": {
+          "scope": "Built-in product-to-technical method audit, scoped review-routing behavior, clarification boundary, source/package consistency and deterministic engineering regressions.",
+          "method_audit": "SUPPORTED: existing requirements/source registry, temporal decomposition, BF-to-UC binding and 01/02/03-to-04/09 derivation provide the logical bridge.",
+          "independent_disagreement": "Generation evaluator classified missing machine validation of source-to-spec semantics as a method-level gap. Root retains it as an unresolved execution/assurance limitation: the operations are explicitly defined in the Skill and performed in working analysis; absence of mechanical proof does not establish an absent logical transformation.",
+          "generation_attempt": {
+            "verdict": "FAIL: first attempt bypassed unresolved design decisions despite 15 mechanical PASS assertions; outputs retained as failed evidence.",
+            "strict_retry": "BLOCKED_AS_REQUIRED: rc=3; existing/new App, role/object authorization and production integration decisions unresolved; no final design directory.",
+            "successful_complete_nine_document_semantic_generation": false
+          },
+          "handoff_cases": {
+            "A_pending_solution": "PASS: can form B when actual design inputs and decisions are complete; no prior chief approval required.",
+            "unknown_customer_category": "PASS: category does not block B; source/constraints and design decisions still required.",
+            "unresolved_authorization_and_App": "PASS: clarification required; final render blocked.",
+            "plan_and_feasibility_absent": "PASS: B may precede them; formal whole-package submission waits for both."
+          },
+          "review_consistency": "PASS after CR-01/02/03 repairs; original failed review retained.",
+          "schema_confirmation_boundary": "PASS after clarification: humans confirm business/data/authority boundaries; Skill derives schema from use-case reads/writes.",
+          "skill_creator_quick_validate": "PASS",
+          "meta_skill_applicable_mechanical_gates": "PASS",
+          "mechanical_notes": [
+            "M4 verification.json retained as distribution evidence.",
+            "M6 non-network node; not applicable."
+          ],
+          "generator_regression": {
+            "verdict": "PASS",
+            "cases": 18
+          },
+          "structure_regression": {
+            "verdict": "PASS",
+            "directed_rejections": 15
+          },
+          "native_fields_regression": {
+            "verdict": "PASS",
+            "cases": 13
+          },
+          "description_trigger_eval": "NOT_RERUN: description unchanged from 10.17; this does not imply previous trigger limitations resolved.",
+          "target_host_installation": "NOT_RUN",
+          "platform_execution": "NOT_RUN",
+          "limitations": [
+            "One existing case; no successful complete nine-document semantic generation.",
+            "Semantic coverage and clarification completeness still require actual source-to-output review; mechanical checks cannot certify them.",
+            "No repeated-generation, cross-domain reliability or live customer/platform verification.",
+            "Historical domain-content failures remain open."
+          ]
         }
       },
       "limitations": [
@@ -284,25 +329,26 @@
         "10.15.1 repeated three-way routing comparison was incomplete because of dispatch/timing stops; no stable repeatability claim is made.",
         "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions.",
         "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open.",
-        "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised."
+        "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised.",
+        "10.19: method audit supports direct solution-to-technical derivation. The selected-case generation initially bypassed required clarification; mechanical PASS did not establish semantic correctness. A strict rerun stopped on unresolved design decisions. No successful complete nine-document semantic generation, repeated-generation study, live-platform run or target-host installation is claimed."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "publication_revision": "10.17",
-      "distribution": "Customer analysis and client-category review interface update; deterministic engine and nine design references retained.",
+      "publication_revision": "10.19",
+      "distribution": "Solution-to-technical derivation and one integrated review; deterministic engine and design references retained.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "10.09.1 / frozen-v14 engine + 10.17 customer-analysis and client-category review interface"
+      "source_version": "10.09.1 / frozen-v14 engine + 10.19 solution-to-technical single-review interface"
     }
   ],
   "resources": [
     {
       "id": "research-input",
       "name": "通用调研输入文档",
-      "version": "10.17",
+      "version": "10.19",
       "path": "handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md",
       "status": "blank-template",
-      "sha256": "acf0d347abfd788b7b83abc62f5de2935325ee4c5877acb6d6c730dfba145ff0"
+      "sha256": "cf1ee84eb7c2cc9e7349eeac68a0e79ab06b9743211cf0caa93da42990f0238d"
     },
     {
       "name": "FDE 上层流程图",
@@ -312,5 +358,5 @@
       "version": "10.03"
     }
   ],
-  "publication_revision": "10.17"
+  "publication_revision": "10.19"
 }
