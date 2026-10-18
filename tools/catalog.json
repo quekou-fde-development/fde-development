@@ -141,7 +141,7 @@
       "archive": "handbook/02-project-management/templates/04-development/architecture-reference/development-design-10.06.zip",
       "path": "handbook/02-project-management/templates/04-development/architecture-reference/",
       "entry": "handbook/02-project-management/templates/04-development/architecture-reference/README.md",
-      "sha256": "f8b546a60c9ea444ff1e1ab00187db2d69fd99eb46fca5584ebb12596438031f",
+      "sha256": "b81eed03d8563b891cb7edbbdc5caa3305104e3f2a5d21a3c4ca6cca120bb6d5",
       "bytes": 24758,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
