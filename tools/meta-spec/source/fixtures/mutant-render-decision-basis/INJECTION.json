@@ -1,0 +1,5 @@
+{
+  "mutation": "M-render-decision-basis",
+  "must_be_rejected_by": "render.decision_basis",
+  "doc": "Frozen source decision remains open while request says []; acquisition, snapshot and review hashes are re-signed. The independent decision-basis assertion must reject."
+}

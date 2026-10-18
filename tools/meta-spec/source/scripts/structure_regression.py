@@ -14,6 +14,29 @@ from document_structure import NAMES, parse, specification, validate
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def prepare_decision_fixture(root):
+    """Synthetic source premises for engineering tests only, never project facts."""
+    manifest_path = root / 'input/source_manifest.json'
+    manifest = json.loads(manifest_path.read_text())
+    source = root / 'input/sources/decision-premises.txt'
+    premises = ['工程测试假设：方案提出新建独立业务 App，表、字段与 Link 由技术设计推导。',
+                '工程测试假设：执行员录入本人记录，主管审核本组记录，跨组不可写。',
+                '工程测试假设：仅通过 Workbench 手工录入与 Arcubase 持久化，不写外部系统。']
+    source.write_text('\n'.join(premises) + '\n')
+    decisions = [{'id': 'D-' + str(i), 'topic': topic, 'state': 'proposed',
+                  'statement': premises[i-1], 'owner': 'hypothetical-fixture-solution-owner',
+                  'evidence': [{'source_id': 'decision-premises', 'line_start': i,
+                                'line_end': i, 'quote': premises[i-1]}]}
+                 for i, topic in enumerate(['app_target', 'role_authorization', 'system_boundary'], 1)]
+    (root / 'input/sources/decision-register.json').write_text(json.dumps(
+        {'schema_version': '1.0', 'decisions': decisions}, ensure_ascii=False, indent=2) + '\n')
+    manifest['sources'] += [{'id': 'decision-premises', 'path': 'sources/decision-premises.txt',
+                             'kind': 'project-evidence'},
+                            {'id': 'decision-register', 'path': 'sources/decision-register.json',
+                             'kind': 'decision-register'}]
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+
+
 def prepare_review_fixture(root):
     """Test input declaration only; never use this helper for business review."""
     args = [sys.executable, str(ROOT / 'scripts/run_meta_stages.py'),
@@ -154,6 +177,7 @@ def run(root):
     (golden / 'working').mkdir()
     (golden / 'input/sources/brief.md').write_text('机械夹具资料，不代表业务验收。\n')
     (golden / 'input/source_manifest.json').write_text(json.dumps({'schema_version': '1.0', 'source_roots': ['sources'], 'sources': [{'id': 'brief', 'path': 'sources/brief.md', 'kind': 'markdown'}]}))
+    prepare_decision_fixture(golden)
     (golden / 'working/render_request.json').write_text(json.dumps(content_fixture(), ensure_ascii=False, indent=2) + '\n')
     commands = []
     for args in [

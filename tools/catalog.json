@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.19",
+  "version": "10.19.1",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -162,15 +162,15 @@
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "10.19",
-      "archive_version": "10.19",
+      "version": "10.19.1",
+      "archive_version": "10.19.1",
       "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-10.19.zip",
-      "sha256": "7c519b9a8c3f3d5633e9e621635a0827e450cde15ade37294e76c25633ee89f4",
-      "bytes": 529189,
-      "member_count": 530,
+      "archive": "tools/meta-spec/meta-spec-10.19.1.zip",
+      "sha256": "ea10375215785663a1865a05c20c275b2fbfd2cf939da6fe56863843711854a4",
+      "bytes": 610364,
+      "member_count": 630,
       "validation": {
         "publication": {
           "checked_at_utc": "2026-10-09T06:23:52.005220+00:00",
@@ -315,6 +315,76 @@
             "No repeated-generation, cross-domain reliability or live customer/platform verification.",
             "Historical domain-content failures remain open."
           ]
+        },
+        "clarification_guard": {
+          "scope": "Frozen business-decision provenance, state and uniqueness before preview/final output, plus independent output audit. Semantic entailment and actual authority remain content-review duties.",
+          "guard_regression": {
+            "verdict": "PASS",
+            "cases": 19,
+            "includes_unmodified_previous_failed_request": true
+          },
+          "mechanical_contract": {
+            "verdict": "PASS",
+            "assertions": 16,
+            "golden": "PASS",
+            "directed_mutants_rejected": 16,
+            "new_assertion": "render.decision_basis"
+          },
+          "skill_creator_quick_validate": "PASS using existing isolated PyYAML environment",
+          "meta_skill_applicable_mechanical_gates": "PASS; verification.json retained as evidence; non-network M6 not applicable",
+          "generator_regression": {
+            "verdict": "PASS",
+            "cases": 18
+          },
+          "structure_regression": {
+            "verdict": "PASS",
+            "directed_rejections": 15
+          },
+          "native_fields_regression": {
+            "verdict": "PASS",
+            "cases": 13
+          },
+          "independent_adversarial_review": {
+            "open_decision_with_empty_array": "preview/final blocked",
+            "simulation_source": "preview/final rejected",
+            "changed_frozen_register": "preview/final rejected",
+            "resigned_open_output": "independent audit rejects with render.decision_basis",
+            "duplicate_current_topic": "initial independent attack passed; after repair, preview/final rc2 and independent audit rc1, only render.decision_basis failed; original failed artifacts retained",
+            "defined_or_proposed_premises": "candidate generation and schema derivation accepted without prior chief approval"
+          },
+          "independent_actual_forward": {
+            "source_count": 14,
+            "acquire_assertions": "3/3 PASS",
+            "open_decisions": 7,
+            "frozen_evaluation_skill": "preview rc3; no design directory; explicit-question preview stop receipt missing",
+            "current_candidate_recheck": "preview and final rc3; both write render_blocked.json; no design directory",
+            "full_nine_document_output": false
+          },
+          "independent_defined_forward": {
+            "verdict": "COMPLETED_ONE_SYNTHETIC_FORWARD_RUN",
+            "input": "Versioned fictitious project solution test-1; no real customer or platform assertions",
+            "design_documents": 9,
+            "candidate_status": "PENDING_CHIEF_ARCHITECT_REVIEW",
+            "mechanical_audit": "16/16 PASS with frozen evaluation package; 16/16 PASS rechecked with current candidate",
+            "initial_errors_retained": [
+              "Chinese labels used instead of required decision topic identifiers; new run directory created",
+              "Non-ISO timestamp offset rejected",
+              "Markdown contract path supplied to JSON audit option, then corrected"
+            ],
+            "semantic_scope": "Executor performed source-to-preview coverage review and preserved source line mapping. Root did not independently grade every statement in the nine documents; no cross-domain semantic reliability claim.",
+            "handoff_review": "Root found a material-status error: handoff and coverage still described B as missing. Original evidence retained; handoff corrected and separate coverage erratum added. Frozen coverage, proof, preview, design and receipts unchanged. This correction does not expand semantic acceptance.",
+            "platform_execution": "NOT_RUN"
+          },
+          "review_interface": "Solution then technical design, independent plan and feasibility, then one integrated review. No chief preapproval and no tenth project deliverable.",
+          "reference_documents": "All nine references unchanged; original eight retained byte-for-byte",
+          "description_trigger_eval": "NOT_RERUN: description unchanged",
+          "target_host_installation": "NOT_RUN",
+          "platform_execution": "NOT_RUN",
+          "limits": [
+            "A matching source quote does not mechanically prove entailment, truthful classification or the named owner authority.",
+            "No cross-domain repeatability claim. Historical domain-content and handoff failures remain open.",
+            "Technical/platform feasibility and runtime behavior require separate actual verification."
+          ]
         }
       },
       "limitations": [
@@ -330,15 +400,17 @@
         "10.15.1 full nine-document generation was not rerun; current interface tests only exercise input/stage/handoff decisions.",
         "10.16 input documentation and package checks do not establish the behavior of full nine-document generation, description triggering or target-host use; prior failures remain open.",
         "10.17 validates input/review handoffs and package consistency; complete nine-document semantic generation, trigger routing and target-host installation were not exercised.",
-        "10.19: method audit supports direct solution-to-technical derivation. The selected-case generation initially bypassed required clarification; mechanical PASS did not establish semantic correctness. A strict rerun stopped on unresolved design decisions. No successful complete nine-document semantic generation, repeated-generation study, live-platform run or target-host installation is claimed."
+        "10.19: method audit supports direct solution-to-technical derivation. The selected-case generation initially bypassed required clarification; mechanical PASS did not establish semantic correctness. A strict rerun stopped on unresolved design decisions. No successful complete nine-document semantic generation, repeated-generation study, live-platform run or target-host installation is claimed.",
+        "10.19.1 guards frozen source identity, quotes and declared decision state, including replay of the earlier bypass. The machine does not establish truthful source classification, natural-language entailment or actual decision authority; independent content and whole-package review remain required. See clarification_guard_checks for completed and incomplete forward evaluations.",
+        "10.19.1 guards frozen source identity, quotes and declared decision state, including replay of the earlier bypass. The machine does not establish truthful source classification, natural-language entailment or actual decision authority; independent content and whole-package review remain required. See clarification_guard_checks for completed and incomplete forward evaluations."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "publication_revision": "10.19",
-      "distribution": "Solution-to-technical derivation and one integrated review; deterministic engine and design references retained.",
+      "publication_revision": "10.19.1",
+      "distribution": "Frozen project-decision provenance and state checks before preview/final output; solution-to-technical derivation and one integrated review.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "10.09.1 / frozen-v14 engine + 10.19 solution-to-technical single-review interface"
+      "source_version": "10.09.1 reference baseline + 10.19 single-review interface + 10.19.1 frozen decision source guard"
     }
   ],
   "resources": [
@@ -358,5 +430,5 @@
       "version": "10.03"
     }
   ],
-  "publication_revision": "10.19"
+  "publication_revision": "10.19.1"
 }

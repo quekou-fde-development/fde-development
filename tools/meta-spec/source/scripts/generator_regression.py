@@ -13,7 +13,7 @@ from pathlib import Path
 
 from document_content import compile_documents, template
 from document_structure import parse, validate
-from structure_regression import content_fixture, prepare_review_fixture
+from structure_regression import content_fixture, prepare_review_fixture, prepare_decision_fixture
 
 PACKAGE = Path(__file__).resolve().parent.parent
 
@@ -38,6 +38,7 @@ def prepare(root, request):
         'sources': [{'id': 'brief', 'path': 'sources/brief.md', 'kind': 'markdown'}]})
     (root / 'input/sources').mkdir()
     (root / 'input/sources/brief.md').write_text('固定格式工程夹具，不代表业务正确性。\n')
+    prepare_decision_fixture(root)
 
 
 def resign(root):

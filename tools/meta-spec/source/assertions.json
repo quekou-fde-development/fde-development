@@ -330,6 +330,34 @@
               ]
             },
             {
+              "id": "render.decision_basis",
+              "family": "schema_conformance",
+              "tier": 1,
+              "predicate": {
+                "collection": "documents",
+                "required_fields": [
+                  "id",
+                  "path",
+                  "kind",
+                  "sha256",
+                  "byte_count"
+                ],
+                "field_types": {
+                  "id": "str",
+                  "path": "str",
+                  "kind": "str",
+                  "sha256": "str",
+                  "byte_count": "int"
+                },
+                "decision_basis": true
+              },
+              "derived_fields": [],
+              "source_anchor": "references/mechanical-contract.md §业务决定来源守卫",
+              "mutants": [
+                "M-render-decision-basis"
+              ]
+            },
+            {
               "id": "render.coverage",
               "family": "output_field_coverage",
               "tier": 1,

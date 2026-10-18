@@ -1,0 +1,30 @@
+{
+  "stage": "acquire_sources",
+  "source_id": "sha256:0485eb14d3a720d2475731e65fd36ee5017d277a540a7f82f36dcd432ca91e6a",
+  "fetched_at": "2026-10-18T20:36:21+00:00",
+  "source_count": 3,
+  "output_count": 4,
+  "outputs_sha256": "e2942dcffe2151bf",
+  "outputs": [
+    {
+      "id": "working/source_snapshot.json",
+      "kind": "file",
+      "sha256": "8026d9cf88904e86"
+    },
+    {
+      "id": "working/sources/brief.bin",
+      "kind": "file",
+      "sha256": "d22a1db05371e5d1"
+    },
+    {
+      "id": "working/sources/decision-premises.bin",
+      "kind": "file",
+      "sha256": "5c7080fdbc35b60b"
+    },
+    {
+      "id": "working/sources/decision-register.bin",
+      "kind": "file",
+      "sha256": "24f31902e8543a2d"
+    }
+  ]
+}

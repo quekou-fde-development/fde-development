@@ -14,6 +14,7 @@ import sys
 import uuid
 from document_structure import validate as validate_document_structure
 from document_content import compile_documents
+from decision_guard import check as check_decision_basis, DecisionsOpen, DecisionContractError
 from datetime import datetime, timezone
 
 
@@ -445,11 +446,14 @@ def preview_documents(run_dir):
         if os.path.lexists(_relative_child(run_dir, rel)):
             raise ContractError("最终渲染回执已存在；新的内容修订须使用新的候选运行目录")
     request_path, request_raw, request = _render_request(run_dir)
+    _block_questions(run_dir, request["unresolved_questions"])
     rendered = compile_request(request)
+    decision_inputs = _decision_inputs(run_dir)
     receipt_path, receipt, planned = _preview_material(request_raw, rendered)
     _preflight_writes(run_dir, planned)
-    if _read_bytes(request_path, "working/render_request.json") != request_raw:
-        raise ContractError("编译期间内容请求发生变化；未写预览，请核对请求后重试")
+    for path, raw in [(request_path, request_raw), *decision_inputs]:
+        if _read_bytes(path, "预览前输入复查") != raw:
+            raise ContractError("编译期间内容或决定依据发生变化；未写预览")
     for rel, data in planned:
         _write_new_or_identical(run_dir, rel, data)
     return {"status": "DRAFT_PREVIEW_NOT_REVIEWED", "document_count": receipt["document_count"],
@@ -571,9 +575,20 @@ def _check_content_review(run_dir, request_raw, request, rendered):
     return frozen_inputs
 
 
-def render_documents(run_dir):
-    request_path, request_raw, request = _render_request(run_dir)
-    questions = request["unresolved_questions"]
+def _decision_inputs(run_dir):
+    try:
+        inputs, _decisions = check_decision_basis(run_dir)
+        return inputs
+    except DecisionsOpen as error:
+        blocked = {"status": "WAITING_FOR_CLARIFICATION", "reason": "OPEN_DECISION_BASIS",
+                   "source_id": "input/source_manifest.json", "unresolved_questions": error.questions}
+        _write_new_or_identical(run_dir, "working/render_blocked.json", _json_bytes(blocked))
+        raise RenderBlocked(str(error)) from error
+    except DecisionContractError as error:
+        raise ContractError(str(error)) from error
+
+
+def _block_questions(run_dir, questions):
     if questions:
         blocked = {
             "status": "WAITING_FOR_CLARIFICATION",
@@ -583,7 +598,13 @@ def render_documents(run_dir):
         }
         _write_new_or_identical(run_dir, "working/render_blocked.json", _json_bytes(blocked))
         raise RenderBlocked("存在未决问题；已写 working/render_blocked.json，未写 design/")
+
+
+def render_documents(run_dir):
+    request_path, request_raw, request = _render_request(run_dir)
+    _block_questions(run_dir, request["unresolved_questions"])
     rendered = compile_request(request)
+    decision_inputs = _decision_inputs(run_dir)
     review_inputs = _check_content_review(run_dir, request_raw, request, rendered)
     documents = []
     planned = []
@@ -620,7 +641,7 @@ def render_documents(run_dir):
     for rel in ("render_input_receipt.json", "render_documents_receipt.json"):
         if os.path.lexists(_relative_child(run_dir, rel)):
             raise ContractError(f"{rel} 已存在；请使用新的候选运行目录")
-    for path, raw in [(request_path, request_raw), *review_inputs]:
+    for path, raw in [(request_path, request_raw), *decision_inputs, *review_inputs]:
         if _read_bytes(path, "写入前输入复查") != raw:
             raise ContractError("写入前输入已变化；停止最终渲染")
     for rel, data in planned:

@@ -717,6 +717,81 @@ def _audit_document_content(run_dir):
         return ['内容回读未通过: ' + str(exc)]
 
 
+def _audit_decision_basis(run_dir):
+    """Independently read frozen input decisions; do not import the producer."""
+    try:
+        root = Path(run_dir).resolve()
+        read = lambda rel: Path(contained_file(root, rel)).read_bytes()
+        sha = lambda data: hashlib.sha256(data).hexdigest()
+        manifest_raw = read('input/source_manifest.json')
+        manifest = json.loads(manifest_raw)
+        snapshot_raw = read('working/source_snapshot.json')
+        snapshot = json.loads(snapshot_raw)
+        if snapshot['source_manifest_sha256'] != sha(manifest_raw):
+            raise ValueError('取源清单已改变')
+        rows = manifest['sources']
+        by_id = {r['id']: r for r in rows}
+        if len(by_id) != len(rows):
+            raise ValueError('来源编号重复')
+        register_ids = [r['id'] for r in rows if r['kind'] == 'decision-register']
+        if len(register_ids) != 1:
+            raise ValueError('须有唯一的冻结 decision-register')
+        sources, expected = {}, []
+        roots = [(Path(p) if Path(p).is_absolute() else root / 'input' / p).resolve()
+                 for p in manifest['source_roots']]
+        for row in rows:
+            p = Path(row['path'])
+            p = p if p.is_absolute() else root / 'input' / p
+            if (p.resolve() != p.absolute() or not p.is_file()
+                    or not any(p.is_relative_to(d) for d in roots)
+                    or (p.is_relative_to(root) and not p.is_relative_to(root / 'input'))):
+                raise ValueError('决定来源路径无效')
+            raw = read('working/sources/' + row['id'] + '.bin')
+            if p.read_bytes() != raw:
+                raise ValueError('决定原件与快照不同')
+            sources[row['id']] = raw
+            expected.append({'id': row['id'], 'source_path_sha256': sha(row['path'].encode()),
+                             'content_sha256': sha(raw), 'byte_count': len(raw),
+                             'snapshot_path': 'working/sources/' + row['id'] + '.bin'})
+        if snapshot['sources'] != expected:
+            raise ValueError('决定来源清单与快照不一致')
+        register = json.loads(sources[register_ids[0]])
+        if set(register) != {'schema_version', 'decisions'} or register['schema_version'] != '1.0':
+            raise ValueError('决定记录版本或结构无效')
+        ids, topics = set(), set()
+        for row in register['decisions']:
+            if (set(row) != {'id', 'topic', 'state', 'statement', 'owner', 'evidence'}
+                    or not all(isinstance(row[k], str) and row[k].strip()
+                               for k in ['id', 'topic', 'state', 'statement', 'owner'])
+                    or row['id'] in ids or row['state'] not in ['defined', 'proposed']):
+                raise ValueError('仍有未决或无效业务决定')
+            if row['topic'] in {'app_target', 'role_authorization', 'system_boundary'} and row['topic'] in topics:
+                raise ValueError('必需主题存在多个当前决定')
+            ids.add(row['id']); topics.add(row['topic'])
+            if not isinstance(row['evidence'], list) or not row['evidence']:
+                raise ValueError('决定缺原始依据')
+            for a in row['evidence']:
+                if set(a) != {'source_id', 'line_start', 'line_end', 'quote'}:
+                    raise ValueError('决定锚点结构错误')
+                sid = a['source_id']
+                if by_id[sid]['kind'] not in ['project-evidence', 'project-decision']:
+                    raise ValueError('项目决定引用了模拟、参考或未分类来源')
+                lines = sources[sid].decode('utf-8').splitlines()
+                if (type(a['line_start']) is not int or type(a['line_end']) is not int
+                        or not 1 <= a['line_start'] <= a['line_end'] <= len(lines)
+                        or not isinstance(a['quote'], str) or not a['quote'].strip()
+                        or a['quote'] != '\n'.join(lines[a['line_start']-1:a['line_end']])):
+                    raise ValueError('决定摘录与源文不符')
+        if not {'app_target', 'role_authorization', 'system_boundary'} <= topics:
+            raise ValueError('缺少 App、业务授权或系统边界决定')
+        proof = json.loads(read('working/content_review_proof.json'))
+        if proof['source_snapshot_sha256'] != sha(snapshot_raw):
+            raise ValueError('本版内容复核未绑定该决定快照')
+        return []
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+        return ['业务决定回读未通过: ' + str(exc)]
+
+
 def _audit_native_fields(run_dir):
     """Read actual Markdown cells and check native options independently."""
     import html
@@ -827,6 +902,8 @@ def f_schema_conformance(art, spec, ctx):
         bad.extend(_audit_document_structure(ctx["run_dir"]))
     if p.get("native_field_options"):
         bad.extend(_audit_native_fields(ctx["run_dir"]))
+    if p.get("decision_basis"):
+        bad.extend(_audit_decision_basis(ctx["run_dir"]))
     return not bad, "; ".join(bad[:5])
 
 

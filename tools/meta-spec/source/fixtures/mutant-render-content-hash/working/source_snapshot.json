@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_manifest_sha256": "7c9228fae37dddf759416f9f674915ea8ca29f010231832dcdc0c8ef102fe42f",
+  "source_manifest_sha256": "0485eb14d3a720d2475731e65fd36ee5017d277a540a7f82f36dcd432ca91e6a",
   "sources": [
     {
       "id": "brief",
@@ -8,6 +8,20 @@
       "content_sha256": "d22a1db05371e5d154f3c7f917700d0f7f106ffb8aa67117dcb6f3e22b605b6a",
       "byte_count": 55,
       "snapshot_path": "working/sources/brief.bin"
+    },
+    {
+      "id": "decision-premises",
+      "source_path_sha256": "8e77f27d4b6ecf473c60e8025310d4d45844e61db3bbf1f407a0bf84ffbd82ab",
+      "content_sha256": "5c7080fdbc35b60bcedcbf1080b680aa4bb9bdb8f0d073e23a080ed69bc3c554",
+      "byte_count": 301,
+      "snapshot_path": "working/sources/decision-premises.bin"
+    },
+    {
+      "id": "decision-register",
+      "source_path_sha256": "95d2fc910537b117ac5308805d2d057b7714b712ca53274657cc5618f6305cfe",
+      "content_sha256": "53fc66661da8a0ce853c4e36bbaee80903af56ee8047a9ad7c0a89544229fee0",
+      "byte_count": 1653,
+      "snapshot_path": "working/sources/decision-register.bin"
     }
   ]
 }

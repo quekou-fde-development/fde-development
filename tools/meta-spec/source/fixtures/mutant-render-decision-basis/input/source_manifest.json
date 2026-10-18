@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "source_roots": [
+    "sources"
+  ],
+  "sources": [
+    {
+      "id": "brief",
+      "path": "sources/brief.md",
+      "kind": "markdown"
+    },
+    {
+      "id": "decision-premises",
+      "path": "sources/decision-premises.txt",
+      "kind": "project-evidence"
+    },
+    {
+      "id": "decision-register",
+      "path": "sources/decision-register.json",
+      "kind": "decision-register"
+    }
+  ]
+}

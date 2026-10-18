@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "decisions": [
+    {
+      "id": "D-1",
+      "topic": "app_target",
+      "state": "proposed",
+      "statement": "工程测试假设：方案提出新建独立业务 App，表、字段与 Link 由技术设计推导。",
+      "owner": "hypothetical-fixture-solution-owner",
+      "evidence": [
+        {
+          "source_id": "decision-premises",
+          "line_start": 1,
+          "line_end": 1,
+          "quote": "工程测试假设：方案提出新建独立业务 App，表、字段与 Link 由技术设计推导。"
+        }
+      ]
+    },
+    {
+      "id": "D-2",
+      "topic": "role_authorization",
+      "state": "proposed",
+      "statement": "工程测试假设：执行员录入本人记录，主管审核本组记录，跨组不可写。",
+      "owner": "hypothetical-fixture-solution-owner",
+      "evidence": [
+        {
+          "source_id": "decision-premises",
+          "line_start": 2,
+          "line_end": 2,
+          "quote": "工程测试假设：执行员录入本人记录，主管审核本组记录，跨组不可写。"
+        }
+      ]
+    },
+    {
+      "id": "D-3",
+      "topic": "system_boundary",
+      "state": "proposed",
+      "statement": "工程测试假设：仅通过 Workbench 手工录入与 Arcubase 持久化，不写外部系统。",
+      "owner": "hypothetical-fixture-solution-owner",
+      "evidence": [
+        {
+          "source_id": "decision-premises",
+          "line_start": 3,
+          "line_end": 3,
+          "quote": "工程测试假设：仅通过 Workbench 手工录入与 Arcubase 持久化，不写外部系统。"
+        }
+      ]
+    }
+  ]
+}
