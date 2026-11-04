@@ -1,8 +1,8 @@
 {
   "artifact": "meta-spec",
-  "version": "10.19.1",
+  "version": "11.05",
   "status": "user-approved-release-with-known-limitations",
-  "source_version": "10.09.1 reference baseline + 10.19 single-review interface + 10.19.1 frozen decision source guard",
+  "source_version": "11.05",
   "authorization_date": "2026-10-19",
   "authorization_scope": "User approved repair of the disclosed clarification execution gap with “改吧”; publish source and distribution update within the existing repository.",
   "runtime_functionality_changed_from_frozen_v14": true,
@@ -385,5 +385,9 @@
       "No cross-domain repeatability claim. Historical domain-content and handoff failures remain open.",
       "Technical/platform feasibility and runtime behavior require separate actual verification."
     ]
-  }
+  },
+  "change_notes": [
+    "11.05：输入口径对齐冻结版架构手册与客户分析A（含ER图与原型）；B 在架构审核通过后由 FDE 生成，不送审；assets 中的通用调研输入模板同步为现行版；输出状态字段 `review_status` 与 proposed/approved 批准语义留待后续批次。",
+    "10.26 is a documentation-only change: the review-submission order moved upstream. Architecture (one handbook projecting both the client-facing solution and our technical architecture) plus scope quote and development plan is reviewed first; Meta Spec now runs only after that review passes, on the frozen architecture version. No generation, guard, structure or assertion behavior changed; all script and assertion hashes are unchanged from 10.19.1."
+  ]
 }

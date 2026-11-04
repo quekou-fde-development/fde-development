@@ -1,6 +1,6 @@
 ---
 title: FDE开发手册（FDE）
-version: "10.19"
+version: "11.05"
 status: 发布索引
 ---
 
@@ -10,9 +10,9 @@ status: 发布索引
 
 | 版本 | Markdown | HTML |
 |---|---|---|
-| 10.19 · 发布版 | [阅读手册](development-handbook.md) | [下载阅读版](https://github.com/quekou-fde-development/fde-development/raw/refs/heads/main/handbook/04-development/index.html) |
+| 11.05 · 发布版 | [阅读手册](development-handbook.md) | [下载阅读版](https://github.com/quekou-fde-development/fde-development/raw/refs/heads/main/handbook/04-development/index.html) |
 
-架构设计阶段与开发阶段的试行衔接见[架构设计手册入口](../03-architecture/README.md#阅读与执行)。
+**送审在架构侧，审核通过后才进本手册。** 架构阶段输出的送审件为A（含ER图与原型）＋架构手册＋范围报价（可选）＋开发计划；本手册从「审核通过后由 FDE 自行撰写九份 spec（不送审）」开始承接，spec 写进 `design/`，再按计划开发。架构侧的判据与手册见[架构手册入口](../03-architecture/README.md#阅读与执行)。
 
 ## 模板、参照与资源
 
@@ -21,7 +21,7 @@ status: 发布索引
 | 内容 | 入口 |
 |---|---|
 | 开发计划模板 | [Markdown](../02-project-management/templates/04-development/开发计划模板_10.08.md) |
-| 九份 spec 写作参照 | [参照目录](../02-project-management/templates/04-development/architecture-reference/) |
+| 九份 spec 写作参照（审核通过后用） | [参照目录](spec-reference/) |
 | 开发配套资源总包 | [下载 ZIP](FDE开发配套资源包_10.06.zip) |
 | 通用调研输入空表 | [项目管理手册中的空表](../02-project-management/templates/02-research/通用调研输入文档_10.06.md) |
 

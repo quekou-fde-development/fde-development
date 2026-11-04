@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "10.19.1",
+  "version": "11.05",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -138,9 +138,9 @@
       "slug": "development-design",
       "version": "10.06",
       "status": "nine-writing-references",
-      "archive": "handbook/02-project-management/templates/04-development/architecture-reference/development-design-10.06.zip",
-      "path": "handbook/02-project-management/templates/04-development/architecture-reference/",
-      "entry": "handbook/02-project-management/templates/04-development/architecture-reference/README.md",
+      "archive": "handbook/04-development/spec-reference/development-design-10.06.zip",
+      "path": "handbook/04-development/spec-reference/",
+      "entry": "handbook/04-development/spec-reference/README.md",
       "sha256": "b81eed03d8563b891cb7edbbdc5caa3305104e3f2a5d21a3c4ca6cca120bb6d5",
       "bytes": 24758,
       "source_package_name": "packages/01-development-design_10.06.zip",
@@ -162,14 +162,14 @@
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "10.19.1",
-      "archive_version": "10.19.1",
+      "version": "11.05",
+      "archive_version": "11.05",
       "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-10.19.1.zip",
-      "sha256": "ea10375215785663a1865a05c20c275b2fbfd2cf939da6fe56863843711854a4",
-      "bytes": 610364,
+      "archive": "tools/meta-spec/meta-spec-11.05.zip",
+      "sha256": "3bcd9b86056eb9435ed8a1ec95b8f7c36552234ea09284731177449b67e0a066",
+      "bytes": 609926,
       "member_count": 630,
       "validation": {
         "publication": {
@@ -405,30 +405,30 @@
         "10.19.1 guards frozen source identity, quotes and declared decision state, including replay of the earlier bypass. The machine does not establish truthful source classification, natural-language entailment or actual decision authority; independent content and whole-package review remain required. See clarification_guard_checks for completed and incomplete forward evaluations."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "publication_revision": "10.19.1",
+      "publication_revision": "11.05",
       "distribution": "Frozen project-decision provenance and state checks before preview/final output; solution-to-technical derivation and one integrated review.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "10.09.1 reference baseline + 10.19 single-review interface + 10.19.1 frozen decision source guard"
+      "source_version": "11.05"
     }
   ],
   "resources": [
     {
       "id": "research-input",
       "name": "通用调研输入文档",
-      "version": "10.19",
+      "version": "11.05",
       "path": "handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md",
       "status": "blank-template",
-      "sha256": "cf1ee84eb7c2cc9e7349eeac68a0e79ab06b9743211cf0caa93da42990f0238d"
+      "sha256": "e8976cf914e30f0040ba0444116210be985aac735c5f87521b0adb63cf27a5a9"
     },
     {
       "name": "FDE 上层流程图",
       "path": "handbook/01-workflow/FDE_流程图_内部执行版.html",
       "status": "original-source-preserved",
-      "sha256": "9cc48abe95b584af03f6d874f1ab3d62cf438de079aa883a50d294e8522dfad9",
-      "version": "10.03"
+      "sha256": "e4dedb013eb52771ad009625ff2dcd238c4e1576ca52981138507e2b12b848b6",
+      "version": "11.05"
     }
   ],
-  "publication_revision": "10.19.1"
+  "publication_revision": "11.05"
 }

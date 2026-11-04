@@ -1,6 +1,6 @@
 ---
 title: 项目管理模板与参考目录
-version: "10.19"
+version: "11.05"
 status: 已有材料归集；缺失文件留空
 ---
 
@@ -25,29 +25,30 @@ status: 已有材料归集；缺失文件留空
 
 | 内容 | 文件 | 格式及状态 |
 |---|---|---|
-| 企业、仓库、客服、财务调研 | [现场调研表单](02-research/现场调研_企业仓库客服财务.md) | Markdown；V1.6原有问题与表格脱敏 |
-| 生产报表、仓库收货调研 | [现场调研表单](02-research/现场调研_生产报表仓库收货.md) | Markdown；V1.0原有问题与表格脱敏 |
+| 按客户生成现场调研手册（3次需求） | [通用现场调研手册](02-research/通用现场调研手册.md) | Markdown；骨架固定、参数按客户填；方法依据[调研方法论](../research-methodology.md) |
+| 企业、仓库、客服、财务调研 | [现场调研表单](02-research/现场调研_企业仓库客服财务.md) | Markdown；V1.6原有问题与表格脱敏；按客户生成现场调研手册另见[通用现场调研手册](02-research/通用现场调研手册.md) |
+| 生产报表、仓库收货调研 | [现场调研表单](02-research/现场调研_生产报表仓库收货.md) | Markdown；V1.0原有问题与表格脱敏；按客户生成现场调研手册另见[通用现场调研手册](02-research/通用现场调研手册.md) |
 | 对客调研安排 | [客户版现场调研计划](02-research/客户版现场调研计划.md) | Markdown；原讨论稿五部分栏目 |
 | 基线与试点结果 | [基线与试点对比记录表](02-research/基线与试点对比记录表.md) | Markdown；沿原现场手册附C，补充基线口径与客户确认 |
 | 调研材料归纳 | [通用调研输入空表](02-research/通用调研输入文档_10.06.md) | Markdown；现有输入结构，补充基线与整套送审接口 |
 
-客户分析A在定义问题和产品前形成，沿[开发手册已有workflow写法](../../04-development/development-handbook.md#3-补齐整体架构图和-graph交付完整文件组-a)整理业务流、整体架构图及graph。原文保存在知识库，开发仓库保留同版引用；Meta Workflow独立Skill待补。
+客户分析A在定义问题和产品前形成，沿[开发手册已有workflow写法](../../04-development/development-handbook.md#3-补齐整体架构图和-graph交付完整文件组-a)整理业务流、整体架构图、graph及ER图。原文保存在知识库，开发仓库保留同版引用；Meta Workflow独立Skill待补。
 
 ## 3. 方案与送审
 
 | 内容 | 文件 | 文档Skill |
 |---|---|---|
-| 定义问题、定义产品的项目解决方案 | [解决方案模板](03-solution/解决方案.md) | |
+| 架构手册：四问、三道门、验收项映射（客户向与开发向同体） | [架构手册（可填）](03-solution/架构手册（可填）.md) | |
 | 客户建设范围、分期与报价 | [范围分期与报价](03-solution/范围分期与报价.md) | |
 | 整套方案异步送审 | [送审邮件格式](03-solution/送审邮件.md) | |
 
-方案方法和整体审核清单见[架构设计手册](../../03-architecture/architecture-handbook.md)；A组写法见[FDE开发手册](../../04-development/development-handbook.md)。先由客户分析A形成解决方案，再用Meta Spec生成技术架构B，补齐计划与可行性、核对范围报价，整套一次送审。
+方案方法见[架构方法论](../../03-architecture/architecture-handbook.md)；A组写法见[FDE开发手册](../../04-development/development-handbook.md)。架构由架构师一人产出，客户向为解决方案、开发向为技术架构，两者同源。送审对象是客户分析A、填好的架构手册、范围报价与开发计划；已签单或特殊免报时范围报价只交签单状态；九份spec在审核通过后才写，不随送审。
 
 ## 4. 技术架构与开发计划
 
 | 内容 | 文件 | 使用位置或工具 |
 |---|---|---|
-| B组九份spec写作参照 | [目录](04-development/architecture-reference/README.md) · [下载ZIP](04-development/architecture-reference/development-design-10.06.zip) | [Meta Spec](../../../tools/meta-spec/README.md) |
+| 九份spec写作参照（架构审核通过后用） | [目录](../../04-development/spec-reference/README.md) · [下载ZIP](../../04-development/spec-reference/development-design-10.06.zip) | [Meta Spec](../../../tools/meta-spec/README.md) |
 | 独立开发计划 | [开发计划模板](04-development/开发计划模板_10.08.md) | 项目私有仓库的场景目录下plan/开发计划.md |
 
 ## 5. 分阶段客户群消息
@@ -56,8 +57,8 @@ status: 已有材料归集；缺失文件留空
 |---|---|
 | 背景收集、需求假设 | [C1](05-communication/C1.md) |
 | 建联、问题核实 | [C2](05-communication/C2.md) |
-| 第三次需求、范围确认 | [C3](05-communication/C3.md) |
-| 调研、方案、技术及启动准备 | [C4](05-communication/C4.md) |
+| 第三次需求、现场调研手册与调研安排确认 | [C3](05-communication/C3.md) |
+| 调研、架构及启动准备 | [C4](05-communication/C4.md) |
 | 启动后开发、测试、上线 | [C5](05-communication/C5.md) |
 | 试运行与验收 | [C6](05-communication/C6.md) |
 | 交接与维保 | [C7](05-communication/C7.md) |

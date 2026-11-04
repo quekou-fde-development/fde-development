@@ -1,6 +1,6 @@
 ---
 title: 开发工具
-version: "10.19.1"
+version: "11.05"
 ---
 
 # 开发工具
@@ -9,7 +9,7 @@ version: "10.19.1"
 
 | 工具 | 阅读入口 | ZIP | 用途与状态 |
 |---|---|---|---|
-| Meta Spec | [阅读](meta-spec/) | [下载](meta-spec/meta-spec-10.19.1.zip) | 先形成解决方案，再由Meta Spec生成技术架构，整套一次送审；验证边界见说明 |
+| Meta Spec | [阅读](meta-spec/) | [下载](meta-spec/meta-spec-11.05.zip) | 先形成架构手册（含客户向解决方案与开发向技术架构），一次送审A（含ER图与原型）＋架构手册＋范围报价（可选）＋开发计划；审核通过后由FDE以冻结版架构手册与客户分析A为输入，用Meta Spec自行撰写九份spec，不送审；验证边界见说明 |
 | Meta Skill | [阅读](meta-skill/) | [下载](meta-skill/meta-skill-3.10.1.zip) | 技能蒸馏工作流与完整配套源码，3.10.1 固定快照 |
 | Meta Agent | [阅读](meta-agent/) | [下载](meta-agent/meta-agent-10.06.zip) | 数字员工与市场产品两条制作路线；参数化候选，目标宿主待验收 |
 | Meta Orchestrator | [阅读](meta-orchestrator/) | [下载](meta-orchestrator/meta-orchestrator-10.06.zip) | 业务流、系统分段与协作关系设计参考；完整编译实现未随包提供 |
@@ -24,4 +24,4 @@ version: "10.19.1"
 
 来源包未附许可证的情况在清单中记录；使用范围按原包条款与项目授权执行。实际项目记录采用的工具版本和验证条件。
 
-[FDE开发手册](../handbook/04-development/) · [调研输入空表](../handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md) · [九份架构写作参照](../handbook/02-project-management/templates/04-development/architecture-reference/) · [上层 FDE 流程图](../handbook/01-workflow/FDE_流程图_内部执行版.html) · [提交反馈](../feedback/)
+[FDE开发手册](../handbook/04-development/) · [调研输入空表](../handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md) · [九份架构写作参照](../handbook/04-development/spec-reference/) · [上层 FDE 流程图](../handbook/01-workflow/FDE_流程图_内部执行版.html) · [提交反馈](../feedback/)
