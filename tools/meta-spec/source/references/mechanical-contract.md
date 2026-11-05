@@ -87,7 +87,7 @@
 顶层恰含 `schema_version: "1.0"` 和 `decisions` 数组。每项恰含：
 
 - `id`：唯一非空问题／决定编号；`topic`：非空主题。
-- `state`：`open`、`defined` 或 `proposed`。open 表示当前无足够决定；defined 表示项目来源已明确业务边界；proposed 表示方案作者明确提出的边界。后两者都不表示总架构师批准或平台已实施。
+- `state`：`open`、`defined` 或 `proposed`。open 表示当前无足够决定；defined 表示项目来源已明确业务边界；proposed 表示方案作者明确提出的边界。后两者都不代表架构审核结论，也不表示平台已实施。
 - `statement`：来源所支持的明确决定，或尚需回答的问题；`owner`：来源中的决定者／负责补证者及其决定依据说明。无法识别决定权时保持 open。
 - `evidence`：非空锚点数组。每项恰含 `source_id`、从 1 起的整数 `line_start` / `line_end`、逐行完整 `quote`。quote 使用 UTF-8 原件相应行以换行连接的原文，不裁剪限定语；记录不能引用自身。
 
@@ -105,11 +105,11 @@
 
 成功后只在 `working/previews/<本次 render_request 原始字节的完整 SHA-256>/` 写出 `design/` 九份预览和 `preview_receipt.json`。同版重复调用只接受已存在的相同字节；内容请求改变后使用新哈希目录，保留旧预览。最终渲染回执已存在时拒绝新预览。
 
-预览回执为确定性 JSON，包含 `schema_version: "1.0"`、`kind: "CONTENT_REVIEW_PREVIEW"`、`status: "DRAFT_PREVIEW_NOT_REVIEWED"`、`source_id`、`request_sha256`、`document_count`、`documents`、`documents_sha256` 和能力限制 `limits`。documents 按固定九件顺序列出 `id/path/sha256/byte_count`，使用完整 SHA-256；documents_sha256 为该清单按 UTF-8、ensure_ascii=false、sort_keys=true、分隔符逗号和冒号序列化后的完整 SHA-256。回执没有自动生成的内容审核、业务正确性、总架构师批准或实施结论。
+预览回执为确定性 JSON，包含 `schema_version: "1.0"`、`kind: "CONTENT_REVIEW_PREVIEW"`、`status: "DRAFT_PREVIEW_NOT_REVIEWED"`、`source_id`、`request_sha256`、`document_count`、`documents`、`documents_sha256` 和能力限制 `limits`。documents 按固定九件顺序列出 `id/path/sha256/byte_count`，使用完整 SHA-256；documents_sha256 为该清单按 UTF-8、ensure_ascii=false、sort_keys=true、分隔符逗号和冒号序列化后的完整 SHA-256。回执没有自动生成的内容审核、业务正确性、架构审核结论或实施结论。
 
 ## `working/content_review_proof.json`
 
-完整读取本版九份预览，并逐条回查原始要求、对象/事件/持久事实和跨文件一致性后，由实际复核者填写此 JSON。它是复核声明及其字节绑定，仍需总架构师审核。工程回归脚本中的合成声明仅用于机械夹具，不得用于真实项目。
+完整读取本版九份预览，并逐条回查原始要求、对象/事件/持久事实和跨文件一致性后，由实际复核者填写此 JSON。它是复核声明及其字节绑定，由 FDE 负责，不送审。工程回归脚本中的合成声明仅用于机械夹具，不得用于真实项目。
 
 顶层恰为以下十二键：
 
@@ -151,7 +151,7 @@ design/09-implementation-roadmap.md
 随后脚本写入两个根目录回执：
 
 - `render_input_receipt.json`：冻结 `working/render_request.json` 的路径、哈希和编排后九份正文的哈希清单；
-- `render_documents_receipt.json`：列出九份实际写出的文件、字节数和哈希，并固定记录 `review_status: PENDING_CHIEF_ARCHITECT_REVIEW`。
+- `render_documents_receipt.json`：列出九份实际写出的文件、字节数和哈希，并固定记录 `review_status: FDE_OWNED_NOT_SUBMITTED`（九份 spec 由 FDE 负责，不送审；它不构成人审结论）。
 
 回执只证明输入、文件名、数量和实际落盘字节之间的对应关系。它不充当人工交接或人审通过证据。
 
@@ -179,7 +179,7 @@ python3 scripts/audit.py RUN_DIR --all --contract assertions.json --manifest RUN
 
 `render.content` 以冻结的 `working/render_request.json` 为内容依据，独立读取实际 `design/` 九份文件，逐节核对正文、列表项、树文本、流程步骤、阶段标签和表格数据行。审核器不导入生成器；它用独立实现按本契约的字面编码规则对账。内容被遗漏、错位、修改或新增，即使文件哈希和两份回执被一起重签，也必须返回 FAIL。
 
-结构通过只能证明固定格式符合原参照；内容回读通过只能证明所填内容被保留。业务事实、权限决定、跨文件语义与平台行为继续由分析、澄清、总架构师审核及实施验证负责。
+结构通过只能证明固定格式符合原参照；内容回读通过只能证明所填内容被保留。业务事实、权限决定、跨文件语义与平台行为继续由分析、澄清、FDE 内容复核及实施验证负责。
 
 ## 原生字段检查
 

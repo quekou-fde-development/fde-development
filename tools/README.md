@@ -1,6 +1,6 @@
 ---
 title: 开发工具
-version: "11.05"
+version: "11.05.1"
 ---
 
 # 开发工具
@@ -9,7 +9,7 @@ version: "11.05"
 
 | 工具 | 阅读入口 | ZIP | 用途与状态 |
 |---|---|---|---|
-| Meta Spec | [阅读](meta-spec/) | [下载](meta-spec/meta-spec-11.05.zip) | 先形成架构手册（含客户向解决方案与开发向技术架构），一次送审A（含ER图与原型）＋架构手册＋范围报价（可选）＋开发计划；审核通过后由FDE以冻结版架构手册与客户分析A为输入，用Meta Spec自行撰写九份spec，不送审；验证边界见说明 |
+| Meta Spec | [阅读](meta-spec/) | [下载](meta-spec/meta-spec-11.05.1.zip) | 先形成架构手册（含客户向解决方案与开发向技术架构），一次送审A（含ER图与原型）＋架构手册＋范围报价（可选）＋开发计划；审核通过后由FDE以冻结版架构手册与客户分析A为输入，用Meta Spec自行撰写九份spec，不送审；验证边界见说明 |
 | Meta Skill | [阅读](meta-skill/) | [下载](meta-skill/meta-skill-3.10.1.zip) | 技能蒸馏工作流与完整配套源码，3.10.1 固定快照 |
 | Meta Agent | [阅读](meta-agent/) | [下载](meta-agent/meta-agent-10.06.zip) | 数字员工与市场产品两条制作路线；参数化候选，目标宿主待验收 |
 | Meta Orchestrator | [阅读](meta-orchestrator/) | [下载](meta-orchestrator/meta-orchestrator-10.06.zip) | 业务流、系统分段与协作关系设计参考；完整编译实现未随包提供 |

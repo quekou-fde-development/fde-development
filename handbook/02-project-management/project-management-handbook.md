@@ -1,6 +1,6 @@
 ---
 title: 项目管理手册（项目经理）· 基础版
-version: "11.05"
+version: "11.05.1"
 status: 基础版；已有模板已归集，缺失格式及Skill待补；11.05 起送审交客户分析A（含ER图与原型）、架构手册、范围报价（可选）、开发计划
 ---
 
@@ -97,7 +97,7 @@ status: 基础版；已有模板已归集，缺失格式及Skill待补；11.05 �
 | 客户版现场调研计划 | [调研目的、日程、资料与交付栏目](templates/02-research/客户版现场调研计划.md) | |
 | 基线与试点结果记录 | [基线与试点记录表](templates/02-research/基线与试点对比记录表.md) | |
 | 调研输入整理 | [通用调研输入空表](templates/02-research/通用调研输入文档_10.06.md) | |
-| 客户范围、分期与报价 | [脱敏栏目模板](templates/03-solution/范围分期与报价.md) | |
+| 范围报价：报价、付款与续费（范围、分期、验收见架构手册） | [范围报价模板](templates/03-solution/范围分期与报价.md) | |
 | 架构手册：四问、三道门、验收项映射（客户向与开发向同体） | [架构手册（可填）](templates/03-solution/架构手册（可填）.md) · [架构方法论](../03-architecture/architecture-handbook.md) · [架构理论](../03-architecture/architecture-theory.md) | |
 | 前置客户分析：业务流、整体架构、graph与ER图（A） | [开发手册workflow写法](../04-development/development-handbook.md#3-补齐整体架构图和-graph交付完整文件组-a) | Meta Workflow独立Skill待补 |
 | 九份spec写作参照（审核通过后用） | [九份写作参照](../04-development/spec-reference/README.md) | [Meta Spec](../../tools/meta-spec/README.md) |
@@ -244,7 +244,7 @@ status: 基础版；已有模板已归集，缺失格式及Skill待补；11.05 �
 
 ### 4.5 ④进场调研与架构
 
-**模板与工具**：[架构手册（可填）](templates/03-solution/架构手册（可填）.md) · [现场调研表单目录](templates/02-research/README.md) · [基线记录](templates/02-research/基线与试点对比记录表.md) · [调研输入空表](templates/02-research/通用调研输入文档_10.06.md) · [范围分期与报价](templates/03-solution/范围分期与报价.md) · [九份spec参照](../04-development/spec-reference/README.md) · [C4](templates/05-communication/C4.md)。
+**模板与工具**：[架构手册（可填）](templates/03-solution/架构手册（可填）.md) · [现场调研表单目录](templates/02-research/README.md) · [基线记录](templates/02-research/基线与试点对比记录表.md) · [调研输入空表](templates/02-research/通用调研输入文档_10.06.md) · [范围报价](templates/03-solution/范围分期与报价.md) · [九份spec参照](../04-development/spec-reference/README.md) · [C4](templates/05-communication/C4.md)。
 
 **目标与产出**：取得现场事实与baseline，先形成客户业务流、整体架构图、graph及ER图（A；有工作台需求时加原型）；据此填完架构手册（四问＋三道门＋验收项映射），同时产出范围报价与开发计划，四件同版送审：客户分析A（含ER图；有工作台需求时加原型）、填好的架构手册、范围报价（已签单或特殊免报时只交签单状态）、开发计划。九份spec由 FDE 在审核通过后自行撰写。
 
@@ -262,7 +262,7 @@ PM沿客户的一条实际业务样本核对信息流：最初资料是否有来
 
 PM按调研中的客户任务，沿方案里的体验设计走查：客户何时需要使用、怎样找到并打开产品、首屏得到什么信息、每步能做什么及怎样操作、怎样展开明细、操作后得到什么反馈，最终怎样完成事情。核对首次上手所需的知识与准备，以及实际使用中的查找、填写和切换负担。缺失步骤或不清楚的设计交架构师补齐；客户实际核对和使用验证保留原记录与状态。走查内容随方案正文保存，格式见[架构手册§客户体验流](templates/03-solution/架构手册（可填）.md#customer-experience)。方案材料明确后，将同版客户分析A、方案和技术约束交Meta Spec展开技术架构。
 
-**行动四：定价与排期。** PM据架构手册的边界与不含项核范围分期与报价，范围外的不进报价；已签单或特殊免报时只交签单状态；据验收项映射与端到端流填[开发计划](templates/04-development/开发计划模板_10.08.md)，把每个任务追到架构的具体节，估算人工投入、AI执行时间与token用量。项目架构师提出技术可行性判断，FDE协作验证AI关键能力及预期贡献。PM协调数据、权限、人员和客户时间窗，核对材料入口、版本、验证依据及未验证条件。
+**行动四：定价与排期。** PM据架构手册的边界与不含项填范围报价，只写报价、付款与续费，范围、分期、验收和客户配合引用架构手册版本，不另写；范围外的不进报价；已签单或特殊免报时只交签单状态；据验收项映射与端到端流填[开发计划](templates/04-development/开发计划模板_10.08.md)，把每个任务追到架构的具体节，估算人工投入、AI执行时间与token用量。项目架构师提出技术可行性判断，FDE协作验证AI关键能力及预期贡献。PM协调数据、权限、人员和客户时间窗，核对材料入口、版本、验证依据及未验证条件。
 
 架构手册、范围报价与开发计划引用同一架构版本；二者与架构边界不一致时，以架构为准改报价与计划，不得反向放宽架构。
 

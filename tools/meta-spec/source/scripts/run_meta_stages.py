@@ -471,7 +471,7 @@ def _check_content_review(run_dir, request_raw, request, rendered):
         raise ContractError("content_review_proof.json 键集合不符合机械合同")
     if (proof["schema_version"] != "1.0" or proof["decision"] != "CONTENT_REVIEW_COMPLETED"
             or proof["scope"] != "CONTENT_ONLY"):
-        raise ContractError("需要本版内容复核完成声明；不能用总架构师批准或机械通过代替")
+        raise ContractError("需要本版内容复核完成声明；不能用架构审核结论或机械通过代替")
     if not isinstance(proof["reviewer"], str) or not proof["reviewer"].strip():
         raise ContractError("reviewer 须为非空的复核者声明")
     try:
@@ -632,7 +632,7 @@ def render_documents(run_dir):
         "document_count": len(documents),
         "documents_sha256": _content_hash(documents),
         "unresolved_questions_count": 0,
-        "review_status": "PENDING_CHIEF_ARCHITECT_REVIEW",
+        "review_status": "FDE_OWNED_NOT_SUBMITTED",
         "documents": documents,
     }
     # Check every eventual write first. Existing byte-identical final documents are
@@ -648,7 +648,7 @@ def render_documents(run_dir):
         _write_new_or_identical(run_dir, rel, data)
     _write_new_or_identical(run_dir, "render_input_receipt.json", _json_bytes(input_receipt))
     _write_new_or_identical(run_dir, "render_documents_receipt.json", _json_bytes(output_receipt))
-    return {"stage": "render_documents", "status": "PENDING_CHIEF_ARCHITECT_REVIEW",
+    return {"stage": "render_documents", "status": "FDE_OWNED_NOT_SUBMITTED",
             "document_count": len(documents),
             "request": os.path.relpath(request_path, run_dir)}
 

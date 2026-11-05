@@ -1,6 +1,6 @@
 ---
 title: FDE开发手册（FDE）
-version: "11.05"
+version: "11.05.1"
 status: 发布索引
 ---
 
@@ -10,7 +10,7 @@ status: 发布索引
 
 | 版本 | Markdown | HTML |
 |---|---|---|
-| 11.05 · 发布版 | [阅读手册](development-handbook.md) | [下载阅读版](https://github.com/quekou-fde-development/fde-development/raw/refs/heads/main/handbook/04-development/index.html) |
+| 11.05.1 · 发布版 | [阅读手册](development-handbook.md) | [下载阅读版](https://github.com/quekou-fde-development/fde-development/raw/refs/heads/main/handbook/04-development/index.html) |
 
 **送审在架构侧，审核通过后才进本手册。** 架构阶段输出的送审件为A（含ER图与原型）＋架构手册＋范围报价（可选）＋开发计划；本手册从「审核通过后由 FDE 自行撰写九份 spec（不送审）」开始承接，spec 写进 `design/`，再按计划开发。架构侧的判据与手册见[架构手册入口](../03-architecture/README.md#阅读与执行)。
 

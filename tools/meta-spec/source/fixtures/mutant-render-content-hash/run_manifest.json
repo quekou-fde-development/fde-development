@@ -2,7 +2,7 @@
   "run_id": "golden",
   "package_hash": "41feef30e84385d3",
   "contract_hash": "37432523fe37e969",
-  "run_dir_resolved": "/Users/sherlock/.codex/runs/meta-architecture-development-stability-20261007/preview-gate-generator-01/golden",
+  "run_dir_resolved": "<run-dir>/golden",
   "run_dir_source": "explicit_arg",
   "started_at": "2026-10-08T19:12:40",
   "stages": [

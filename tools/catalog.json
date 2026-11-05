@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "11.05",
+  "version": "11.05.1",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -141,20 +141,20 @@
       "archive": "handbook/04-development/spec-reference/development-design-10.06.zip",
       "path": "handbook/04-development/spec-reference/",
       "entry": "handbook/04-development/spec-reference/README.md",
-      "sha256": "b81eed03d8563b891cb7edbbdc5caa3305104e3f2a5d21a3c4ca6cca120bb6d5",
-      "bytes": 24758,
+      "sha256": "04b3e02f2f84e796e9d0a0564639a55cf071bf51b5066e3c82ab91b6b255691c",
+      "bytes": 24891,
       "source_package_name": "packages/01-development-design_10.06.zip",
       "limitations": [
         "Writing references only; architecture generation package is a separate deliverable."
       ],
       "data_model_sha256": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611",
-      "other_eight_unchanged": true,
+      "other_eight_unchanged": false,
       "source_archive_sha256": "69f63e5f888887822563d70302fecb3e2858f5a0021ff2144c22c12bc55cb8f4",
-      "publication_revision": "10.17",
-      "distribution": "Nine v14 references; eight original documents preserved byte-for-byte.",
+      "publication_revision": "11.05.1",
+      "distribution": "Nine v14 references; eight original documents preserved byte-for-byte except the local path on line 4 of 08-tech-stack-and-directory (sanitized in 11.05.1).",
       "member_count": 10,
       "source_reference_freeze": "frozen-v14",
-      "original_reference_changes": "None; all eight original Wang Lei documents retain their source bytes.",
+      "original_reference_changes": "None; all eight original Wang Lei documents retain their source bytes. 11.05.1 sanitization: the local machine path on line 4 of 08-tech-stack-and-directory.md was replaced with the placeholder `<本地项目根>/README.md`; the other original documents retain their source bytes.",
       "reference_freeze": "frozen-v14",
       "original_archive_sha256": "5c52c29677528ff0a671989fa44c71990bfa746b5f9994f78b2b1ae8d07a8806"
     },
@@ -162,14 +162,14 @@
       "id": "meta-spec",
       "slug": "meta-spec",
       "name": "Meta Spec",
-      "version": "11.05",
-      "archive_version": "11.05",
+      "version": "11.05.1",
+      "archive_version": "11.05.1",
       "status": "user-approved-release-with-known-limitations",
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
-      "archive": "tools/meta-spec/meta-spec-11.05.zip",
-      "sha256": "3bcd9b86056eb9435ed8a1ec95b8f7c36552234ea09284731177449b67e0a066",
-      "bytes": 609926,
+      "archive": "tools/meta-spec/meta-spec-11.05.1.zip",
+      "sha256": "0d482e2c387c47daae9880d943841dd3b2486a720609f51e5645fed54550970d",
+      "bytes": 609319,
       "member_count": 630,
       "validation": {
         "publication": {
@@ -376,7 +376,7 @@
             "platform_execution": "NOT_RUN"
           },
           "review_interface": "Solution then technical design, independent plan and feasibility, then one integrated review. No chief preapproval and no tenth project deliverable.",
-          "reference_documents": "All nine references unchanged; original eight retained byte-for-byte",
+          "reference_documents": "All nine references kept in place; the local path on line 4 of design/08 and original-eight/07 was sanitized in 11.05.1.",
           "description_trigger_eval": "NOT_RERUN: description unchanged",
           "target_host_installation": "NOT_RUN",
           "platform_execution": "NOT_RUN",
@@ -405,12 +405,12 @@
         "10.19.1 guards frozen source identity, quotes and declared decision state, including replay of the earlier bypass. The machine does not establish truthful source classification, natural-language entailment or actual decision authority; independent content and whole-package review remain required. See clarification_guard_checks for completed and incomplete forward evaluations."
       ],
       "license": "No license file supplied in frozen package; no additional license granted by publication.",
-      "publication_revision": "11.05",
+      "publication_revision": "11.05.1",
       "distribution": "Frozen project-decision provenance and state checks before preview/final output; solution-to-technical derivation and one integrated review.",
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "11.05"
+      "source_version": "11.05.1"
     }
   ],
   "resources": [
@@ -430,5 +430,5 @@
       "version": "11.05"
     }
   ],
-  "publication_revision": "11.05"
+  "publication_revision": "11.05.1"
 }

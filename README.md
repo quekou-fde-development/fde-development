@@ -1,6 +1,6 @@
 ---
 title: 缺口 FDE 手册与工具
-version: "11.05"
+version: "11.05.1"
 status: 发布索引
 ---
 

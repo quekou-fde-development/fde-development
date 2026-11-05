@@ -72,7 +72,7 @@ def run(root, failed_run=None):
         change_register(d,lambda x:[v.update(state=state) for v in x['decisions']])
         acquire(d,state+'-acquire');prepare_review_fixture(d)
         out=stage(d,state+'-final');assert out['exit_code']==0,out
-        assert json.loads((d/'render_documents_receipt.json').read_text())['review_status']=='PENDING_CHIEF_ARCHITECT_REVIEW'
+        assert json.loads((d/'render_documents_receipt.json').read_text())['review_status']=='FDE_OWNED_NOT_SUBMITTED'
         assert len(list((d/'design').glob('*.md')))==9
         out=run_command(root,state+'-audit',[PACKAGE/'scripts/audit.py',d,'--all','--json'])
         assert out['exit_code']==0,out

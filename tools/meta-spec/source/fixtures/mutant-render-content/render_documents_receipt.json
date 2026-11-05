@@ -5,7 +5,7 @@
   "document_count": 9,
   "documents_sha256": "464f1e1baa6b5e4c",
   "unresolved_questions_count": 0,
-  "review_status": "PENDING_CHIEF_ARCHITECT_REVIEW",
+  "review_status": "FDE_OWNED_NOT_SUBMITTED",
   "documents": [
     {
       "id": "01-concept.md",

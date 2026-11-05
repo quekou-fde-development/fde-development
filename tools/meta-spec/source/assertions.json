@@ -364,7 +364,7 @@
               "predicate": {
                 "exempt": {
                   "stage": "固定的路由标识，由 runner 的 stage dispatch 决定",
-                  "review_status": "固定为待总架构师审核；它不构成人审结论"
+                  "review_status": "固定为 FDE_OWNED_NOT_SUBMITTED：九份 spec 由 FDE 负责，不送审；它不构成人审结论"
                 }
               },
               "derived_fields": [],

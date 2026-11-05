@@ -1,14 +1,14 @@
 {
   "artifact": "meta-spec",
-  "version": "11.05",
+  "version": "11.05.1",
   "status": "user-approved-release-with-known-limitations",
-  "source_version": "11.05",
+  "source_version": "11.05.1",
   "authorization_date": "2026-10-19",
   "authorization_scope": "User approved repair of the disclosed clarification execution gap with “改吧”; publish source and distribution update within the existing repository.",
   "runtime_functionality_changed_from_frozen_v14": true,
-  "description_changed": false,
+  "description_changed": true,
   "reference_documents": 9,
-  "original_eight_byte_identical": true,
+  "original_eight_byte_identical": false,
   "reference_members_unchanged_from_frozen_v14": 15,
   "design_files": [
     "01-concept.md",
@@ -376,7 +376,7 @@
       "platform_execution": "NOT_RUN"
     },
     "review_interface": "Solution then technical design, independent plan and feasibility, then one integrated review. No chief preapproval and no tenth project deliverable.",
-    "reference_documents": "All nine references unchanged; original eight retained byte-for-byte",
+    "reference_documents": "All nine design references retain their frozen-v14 wording, with the local path on line 4 of 08-tech-stack-and-directory sanitized in 11.05.1; the original eight are retained byte-for-byte except that same line in original 07",
     "description_trigger_eval": "NOT_RERUN: description unchanged",
     "target_host_installation": "NOT_RUN",
     "platform_execution": "NOT_RUN",
@@ -387,6 +387,7 @@
     ]
   },
   "change_notes": [
+    "11.05.1：输出状态改为 FDE_OWNED_NOT_SUBMITTED（九份 spec 由 FDE 负责，不送审），相关说明同步；defined/proposed 不再表述为总架构师批准；原稿 07 第 4 行与样例 run_manifest 的本机路径脱敏，reference_sha256 同步重钉。original_eight_byte_identical 因原稿 07 第 4 行脱敏改为 false；SKILL.md 的 description 本版有改动。candidate_status 历史记录保留当时实跑结果。",
     "11.05：输入口径对齐冻结版架构手册与客户分析A（含ER图与原型）；B 在架构审核通过后由 FDE 生成，不送审；assets 中的通用调研输入模板同步为现行版；输出状态字段 `review_status` 与 proposed/approved 批准语义留待后续批次。",
     "10.26 is a documentation-only change: the review-submission order moved upstream. Architecture (one handbook projecting both the client-facing solution and our technical architecture) plus scope quote and development plan is reviewed first; Meta Spec now runs only after that review passes, on the frozen architecture version. No generation, guard, structure or assertion behavior changed; all script and assertion hashes are unchanged from 10.19.1."
   ]
