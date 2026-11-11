@@ -18,7 +18,7 @@
 | docs/上线验收.md | 每个客户业务上线前需要验收什么 |
 | docs/维护与升级.md | 维护人发布、检查、回退与多人协作 |
 
-本包适合制作界面、业务原型、客户项目的前端基础。登录、服务端权限、数据库保存、真实 AI 和上线环境需按客户项目接入。预览中的所有业务数据均为演示。
+本包适合制作界面、业务页面示意、客户项目的前端基础。登录、服务端权限、数据库保存、真实 AI 和上线环境需按客户项目接入。预览中的所有业务数据均为演示。
 
 维护人命令：npm ci；npm run check；npx playwright install chromium；npm run test:browser。
 日常预览：npm run dev。打开终端实际返回的网址；四页入口为 ?view=recipes&style=6&page=overview。

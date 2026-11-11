@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "11.05.1",
+  "version": "11.11.0",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -138,9 +138,9 @@
       "slug": "development-design",
       "version": "10.06",
       "status": "nine-writing-references",
-      "archive": "handbook/04-development/spec-reference/development-design-10.06.zip",
-      "path": "handbook/04-development/spec-reference/",
-      "entry": "handbook/04-development/spec-reference/README.md",
+      "archive": "4-FDE/spec参照/development-design-10.06.zip",
+      "path": "4-FDE/spec参照/",
+      "entry": "4-FDE/spec参照/README.md",
       "sha256": "04b3e02f2f84e796e9d0a0564639a55cf071bf51b5066e3c82ab91b6b255691c",
       "bytes": 24891,
       "source_package_name": "packages/01-development-design_10.06.zip",
@@ -168,8 +168,8 @@
       "path": "tools/meta-spec/",
       "entry": "tools/meta-spec/README.md",
       "archive": "tools/meta-spec/meta-spec-11.05.1.zip",
-      "sha256": "0d482e2c387c47daae9880d943841dd3b2486a720609f51e5645fed54550970d",
-      "bytes": 609319,
+      "sha256": "51ab2bf49b05bc9acbb52251d67b06e74ed4873cde799b76274d2d837c05a862",
+      "bytes": 613890,
       "member_count": 630,
       "validation": {
         "publication": {
@@ -410,25 +410,26 @@
       "source_root": "tools/meta-spec/source/",
       "install_from": "versioned-archive",
       "archive_install_root": "meta-spec/",
-      "source_version": "11.05.1"
+      "source_version": "11.05.1",
+      "documentation_revision": "11.11.0"
     }
   ],
   "resources": [
     {
       "id": "research-input",
       "name": "通用调研输入文档",
-      "version": "11.05",
-      "path": "handbook/02-project-management/templates/02-research/通用调研输入文档_10.06.md",
-      "status": "blank-template",
-      "sha256": "e8976cf914e30f0040ba0444116210be985aac735c5f87521b0adb63cf27a5a9"
+      "version": "11.11.0",
+      "path": "2-项目经理/④调研/调研报告（对内）.md",
+      "status": "merged-internal-research-report",
+      "sha256": "93fe9b00696db7005b59560fcbd5b5fd002afd28ec9ae0d554cc2665ccd5d781"
     },
     {
       "name": "FDE 上层流程图",
-      "path": "handbook/01-workflow/FDE_流程图_内部执行版.html",
-      "status": "original-source-preserved",
-      "sha256": "e4dedb013eb52771ad009625ff2dcd238c4e1576ca52981138507e2b12b848b6",
-      "version": "11.05"
+      "path": "1-FDE交付流程/FDE_流程图_内部执行版.html",
+      "status": "revised-nine-node-workflow",
+      "sha256": "780956840a61b25f73cb78bfedec771a58680958b30efa2f7d035992c9bec665",
+      "version": "11.11.0"
     }
   ],
-  "publication_revision": "11.05.1"
+  "publication_revision": "11.11.0"
 }

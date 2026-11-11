@@ -1,0 +1,2937 @@
+{
+  "version": "11.11.0",
+  "date": "2026-11-11",
+  "packages": [
+    {
+      "file": "packages/01-development-design_10.06.zip",
+      "bytes": 24891,
+      "sha256": "04b3e02f2f84e796e9d0a0564639a55cf071bf51b5066e3c82ab91b6b255691c",
+      "status": "nine-writing-references",
+      "entry": "README.md",
+      "dependencies": [],
+      "members": [
+        {
+          "path": "01-concept.md",
+          "bytes": 6088,
+          "sha256": "72abad136cbc817dfba56024dcb68508ec81ea31a61c59396c1a140a5154695a"
+        },
+        {
+          "path": "02-use-cases.md",
+          "bytes": 5848,
+          "sha256": "07ce9f6b314229b8b954834c788b736886ba11cda7c21963c1364cddc20e844d"
+        },
+        {
+          "path": "03-data-model.md",
+          "bytes": 10520,
+          "sha256": "929ce50d6677fad106fabf374c3dbf39b21abaf0fd4480e0cd143b80726ad611"
+        },
+        {
+          "path": "04-security-privacy.md",
+          "bytes": 5322,
+          "sha256": "36a526b06a69190dfe4c87c5c8153380f7dfc85caf11dff91dbab81b5902f758"
+        },
+        {
+          "path": "05-site-architecture.md",
+          "bytes": 5126,
+          "sha256": "3c1c17cd8371cf824712f3778f6daa1f37b140e6f30aa1489542506c54fee5dd"
+        },
+        {
+          "path": "06-page-layout.md",
+          "bytes": 4667,
+          "sha256": "499763295280c869cf042059cedee0516a43dbba6c41b7a838542e2d6de4bca0"
+        },
+        {
+          "path": "07-api.md",
+          "bytes": 9480,
+          "sha256": "22e675041e9b5c80ca770ba1bea88fc9d5fbed4fae504d6354fd2dc7e1f63d7e"
+        },
+        {
+          "path": "08-tech-stack-and-directory.md",
+          "bytes": 3735,
+          "sha256": "eb20eddfdc09f1e2eef28b1002f98b8e3f5cc610427f437502d1363fef38b69c"
+        },
+        {
+          "path": "09-implementation-roadmap.md",
+          "bytes": 2379,
+          "sha256": "df14d6577daf479e60f6fd9df68e9b6ece146b805eadaa1cd3cc1777b4b5b8dd"
+        },
+        {
+          "path": "README.md",
+          "bytes": 2472,
+          "sha256": "1948054279c87e8bb5d0f1b7cfbe65b73466e472fc474ec9fd98bd1361e7d0b1"
+        }
+      ]
+    },
+    {
+      "file": "packages/02-meta-skill_3.10.1.zip",
+      "bytes": 396054,
+      "sha256": "0ddf7e5f527ca0c0c9b983fdf61c8cd456aeecf4dd17addb3d54550e0de5140d",
+      "status": "installed-source-snapshot",
+      "entry": "meta-skill/SKILL.md",
+      "dependencies": [
+        "Python 3",
+        "AI host and evaluation tools",
+        "host system skill-creator quick validator"
+      ],
+      "members": [
+        {
+          "path": "README.md",
+          "bytes": 438,
+          "sha256": "1be12f7b496c267cce153294ae30b183f1aee79b6fdc2651563a767c7329635a"
+        },
+        {
+          "path": "meta-skill/SKILL.md",
+          "bytes": 16937,
+          "sha256": "3d0c5bf43c7bd9ac8f223eb546500a9152d8d807184f4cd767211d31cdb0fb07"
+        },
+        {
+          "path": "meta-skill/agents/analyzer.md",
+          "bytes": 2650,
+          "sha256": "b125a18643146f9325de542bc7cf34e4b87684a4870b297037d43d764fc5d0d2"
+        },
+        {
+          "path": "meta-skill/agents/comparator.md",
+          "bytes": 2608,
+          "sha256": "b9d169882a40c46357212055aada02fe07afb18f822a44d211f8644ac8b4973d"
+        },
+        {
+          "path": "meta-skill/agents/grader.md",
+          "bytes": 4218,
+          "sha256": "dca0cd70e48a5ac16fabe239e942cd07e4670a6ea431edd11f05d368e772bb5e"
+        },
+        {
+          "path": "meta-skill/assertions.json",
+          "bytes": 6188,
+          "sha256": "7a6f719a4bd19d19dfc487a46a667ff9e7a0b4121508d5842974acb2cbc54b14"
+        },
+        {
+          "path": "meta-skill/assets/eval_review.html",
+          "bytes": 3207,
+          "sha256": "e2f23584fb190be46ccb07b26874e320fae9d8fed83d7a689fdc78cb34278b16"
+        },
+        {
+          "path": "meta-skill/assets/self_check_inputs.json",
+          "bytes": 852,
+          "sha256": "5f7c16a8370d5d8f411d6e8d787e3b13824d0cbaf03b17b8cdf8e8fd000a25d1"
+        },
+        {
+          "path": "meta-skill/eval-viewer/generate_review.py",
+          "bytes": 11966,
+          "sha256": "8e777d3aae6c566890dd0cea8339fdda66e31c511fdb537bc2f874fc50d5ff5e"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/aggregate_benchmark_receipt.json",
+          "bytes": 648,
+          "sha256": "3e68f9b7a57cb8fc52ab7b5aa89a9dac8d6d0c61d3c46ab4b0bc2ec30e52de32"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/init_eval_workspace_receipt.json",
+          "bytes": 814,
+          "sha256": "42f252e2eee9a533e582549238c7f3629a46b723749d9c0a7890451df8766b70"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/run_manifest.json",
+          "bytes": 1590,
+          "sha256": "956525051c6e6f804ab3c819895bf38854a32b06bedc78113bc5f74cf582f662"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/run_trigger_eval_receipt.json",
+          "bytes": 820,
+          "sha256": "4fa5c754a35b094b089bbdb29181d9168cd0d87389224443b4d9adbcc3a76982"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.json",
+          "bytes": 3243,
+          "sha256": "94aa51f124187d24ae2b5fdf557d3df355aa6a976245a360cc73eb49ce8f2602"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.md",
+          "bytes": 386,
+          "sha256": "8cdf7c2d586c8cf1b14414dc385f19479be0a46f2979571cb8783a33fd570ad2"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/evals/evals.json",
+          "bytes": 618,
+          "sha256": "54dd3c49e57ace14221a28ad99207642db6c3d243cb42ebc25d89c85c85c96a0"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/history.json",
+          "bytes": 101,
+          "sha256": "0015e713c2215c15c42e4e70b6a80c5f4a7441e2f5988092979cf715198770b7"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/trigger_eval/trigger_set.json",
+          "bytes": 181,
+          "sha256": "d303802ab991f7c61f50005b3e6a448a2c8af58de8d0920d9c80058dabdf08bb"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_judge_card.md",
+          "bytes": 1293,
+          "sha256": "0f6b484c2154110dc817ed6ea74bc3ae85922baefe55d0561af9c23b447e5766"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_split.json",
+          "bytes": 872,
+          "sha256": "c6d890ed1e8ddfe38e461e527f4cd6d7fe9387555b6203dd81b2f53563701360"
+        },
+        {
+          "path": "meta-skill/fixtures/golden-self/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/result.json",
+          "bytes": 2416,
+          "sha256": "279514fddd48a88347099848a0f5ceb60b57eec89197b75b44973a932ec31325"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/INJECTION.json",
+          "bytes": 212,
+          "sha256": "3b10a3cd29508d629562d9e6a475dd403a3282f43003e9ecd577f0fdc8da3266"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/aggregate_benchmark_receipt.json",
+          "bytes": 568,
+          "sha256": "4984f1dcd4197cd6733854cea41d5e2096acf7580e104b4b48ad8249f9326fda"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/init_eval_workspace_receipt.json",
+          "bytes": 814,
+          "sha256": "42f252e2eee9a533e582549238c7f3629a46b723749d9c0a7890451df8766b70"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/run_trigger_eval_receipt.json",
+          "bytes": 820,
+          "sha256": "4fa5c754a35b094b089bbdb29181d9168cd0d87389224443b4d9adbcc3a76982"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.json",
+          "bytes": 3243,
+          "sha256": "94aa51f124187d24ae2b5fdf557d3df355aa6a976245a360cc73eb49ce8f2602"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.md",
+          "bytes": 386,
+          "sha256": "8cdf7c2d586c8cf1b14414dc385f19479be0a46f2979571cb8783a33fd570ad2"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/evals/evals.json",
+          "bytes": 618,
+          "sha256": "54dd3c49e57ace14221a28ad99207642db6c3d243cb42ebc25d89c85c85c96a0"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/history.json",
+          "bytes": 101,
+          "sha256": "0015e713c2215c15c42e4e70b6a80c5f4a7441e2f5988092979cf715198770b7"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/trigger_eval/trigger_set.json",
+          "bytes": 181,
+          "sha256": "d303802ab991f7c61f50005b3e6a448a2c8af58de8d0920d9c80058dabdf08bb"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_judge_card.md",
+          "bytes": 1293,
+          "sha256": "0f6b484c2154110dc817ed6ea74bc3ae85922baefe55d0561af9c23b447e5766"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_split.json",
+          "bytes": 872,
+          "sha256": "c6d890ed1e8ddfe38e461e527f4cd6d7fe9387555b6203dd81b2f53563701360"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-aggregate/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/result.json",
+          "bytes": 2416,
+          "sha256": "279514fddd48a88347099848a0f5ceb60b57eec89197b75b44973a932ec31325"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/INJECTION.json",
+          "bytes": 192,
+          "sha256": "e91d314829ed9f8397f460ef6a9efeeebb408247cb32696ef2cec5c11bca7fb6"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/aggregate_benchmark_receipt.json",
+          "bytes": 648,
+          "sha256": "3e68f9b7a57cb8fc52ab7b5aa89a9dac8d6d0c61d3c46ab4b0bc2ec30e52de32"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/init_eval_workspace_receipt.json",
+          "bytes": 734,
+          "sha256": "c24afe10e941acca0823ad3392c7842bf8b9f69282db8b3d3754ad31a223e74c"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/run_trigger_eval_receipt.json",
+          "bytes": 820,
+          "sha256": "4fa5c754a35b094b089bbdb29181d9168cd0d87389224443b4d9adbcc3a76982"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.json",
+          "bytes": 3243,
+          "sha256": "94aa51f124187d24ae2b5fdf557d3df355aa6a976245a360cc73eb49ce8f2602"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.md",
+          "bytes": 386,
+          "sha256": "8cdf7c2d586c8cf1b14414dc385f19479be0a46f2979571cb8783a33fd570ad2"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/evals/evals.json",
+          "bytes": 618,
+          "sha256": "54dd3c49e57ace14221a28ad99207642db6c3d243cb42ebc25d89c85c85c96a0"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/history.json",
+          "bytes": 101,
+          "sha256": "0015e713c2215c15c42e4e70b6a80c5f4a7441e2f5988092979cf715198770b7"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/trigger_eval/trigger_set.json",
+          "bytes": 181,
+          "sha256": "d303802ab991f7c61f50005b3e6a448a2c8af58de8d0920d9c80058dabdf08bb"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_judge_card.md",
+          "bytes": 1293,
+          "sha256": "0f6b484c2154110dc817ed6ea74bc3ae85922baefe55d0561af9c23b447e5766"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_split.json",
+          "bytes": 872,
+          "sha256": "c6d890ed1e8ddfe38e461e527f4cd6d7fe9387555b6203dd81b2f53563701360"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-init/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/result.json",
+          "bytes": 2416,
+          "sha256": "279514fddd48a88347099848a0f5ceb60b57eec89197b75b44973a932ec31325"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/INJECTION.json",
+          "bytes": 204,
+          "sha256": "60a232b8264778c9b47db4435b8affcb572cb991bd6b03265bd5d24e6eb4ceb5"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/aggregate_benchmark_receipt.json",
+          "bytes": 648,
+          "sha256": "3e68f9b7a57cb8fc52ab7b5aa89a9dac8d6d0c61d3c46ab4b0bc2ec30e52de32"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/init_eval_workspace_receipt.json",
+          "bytes": 814,
+          "sha256": "42f252e2eee9a533e582549238c7f3629a46b723749d9c0a7890451df8766b70"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/run_trigger_eval_receipt.json",
+          "bytes": 740,
+          "sha256": "9a035bd785b0dd81cb02c1d884bed7760c8b602e61e9d9957ffd7cc806125243"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.json",
+          "bytes": 3243,
+          "sha256": "94aa51f124187d24ae2b5fdf557d3df355aa6a976245a360cc73eb49ce8f2602"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/aggregate_benchmark/e7f5ece589514eff83fc088ea923b726/workspace/meta-skill-self/iteration-1/benchmark/benchmark.md",
+          "bytes": 386,
+          "sha256": "8cdf7c2d586c8cf1b14414dc385f19479be0a46f2979571cb8783a33fd570ad2"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/evals/evals.json",
+          "bytes": 618,
+          "sha256": "54dd3c49e57ace14221a28ad99207642db6c3d243cb42ebc25d89c85c85c96a0"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/history.json",
+          "bytes": 101,
+          "sha256": "0015e713c2215c15c42e4e70b6a80c5f4a7441e2f5988092979cf715198770b7"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/init_eval_workspace/14e6d35e8cba4116a519a3aafe125ecb/workspace/meta-skill-self/trigger_eval/trigger_set.json",
+          "bytes": 181,
+          "sha256": "d303802ab991f7c61f50005b3e6a448a2c8af58de8d0920d9c80058dabdf08bb"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_judge_card.md",
+          "bytes": 1293,
+          "sha256": "0f6b484c2154110dc817ed6ea74bc3ae85922baefe55d0561af9c23b447e5766"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/_split.json",
+          "bytes": 872,
+          "sha256": "c6d890ed1e8ddfe38e461e527f4cd6d7fe9387555b6203dd81b2f53563701360"
+        },
+        {
+          "path": "meta-skill/fixtures/mutant-self-trigger/stage_outputs/run_trigger_eval/fcf686105f224e569ff36461bc003e0e/workspace/meta-skill-self/trigger_eval/result.json",
+          "bytes": 2416,
+          "sha256": "279514fddd48a88347099848a0f5ceb60b57eec89197b75b44973a932ec31325"
+        },
+        {
+          "path": "meta-skill/references/compilation_rules.md",
+          "bytes": 26496,
+          "sha256": "3f96abd271a1102b94c6e00ee5d2bd8a57657597aa97b9d23637e549b0186231"
+        },
+        {
+          "path": "meta-skill/references/contract_ir.json",
+          "bytes": 6357,
+          "sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf"
+        },
+        {
+          "path": "meta-skill/references/contract_ir.md",
+          "bytes": 36538,
+          "sha256": "e6b950730b8aea73977cb1020e1e2560ca8959be64e9891517d120b110fd0129"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixture_registry.json",
+          "bytes": 6137,
+          "sha256": "3cba1716ee67b49cf802c201f98f5c0f50e098cf8b41669041d25170c8f6113c"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/assertions_jh.json",
+          "bytes": 5551,
+          "sha256": "b90c986454daec7d2572261f17cc732e8e1c165ec73314541fd091a42e0348c6"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/assertions_multiop.json",
+          "bytes": 3670,
+          "sha256": "9b74aa150270e79affea147c8b636910e5661004151099f0d4f1a58ec8798181"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/assertions_multiop_ambiguous.json",
+          "bytes": 3633,
+          "sha256": "4cd24ae17d6c7ce45703f0135f8d39025de7af5d8b8112719136c38241f5456f"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/assertions_oaq.json",
+          "bytes": 27971,
+          "sha256": "d2c2316a5e0f43625d9c25ff81501fda8d94b15b69a12f307d2d26f8a1ec3a25"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/derivation.md",
+          "bytes": 6684,
+          "sha256": "ac211af286fde32663c76fd4afecfb518b9cf6b6c33646544949bf64ac7aed97"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/jh_rules.md",
+          "bytes": 1921,
+          "sha256": "946ed5714389d72a6d109e6d932f7a74f466d0bc16fa09a63480663b8cd15515"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/mock-task1.md",
+          "bytes": 2079,
+          "sha256": "f925e79c155a24fb2039d7d84bd3b2021e8811fab17b0e4c9900814ceb615a62"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/mock-task3.md",
+          "bytes": 1455,
+          "sha256": "fb6655b257feae91094a497e307530969667044d5f3df85d07792814df666aea"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/multiop_rules.md",
+          "bytes": 746,
+          "sha256": "9d4913687b9507bcc58200f0a66681a07de1c6a8e4b1d810c0cc222a17d4f050"
+        },
+        {
+          "path": "meta-skill/references/mechanical/fixtures/task2_golden.json",
+          "bytes": 1164,
+          "sha256": "41c3ace7d11e1c7753b426f44114a33ecb2cd7c5f968126da555c7841e496dbc"
+        },
+        {
+          "path": "meta-skill/references/mechanical/gate_behavior_registry.json",
+          "bytes": 20792,
+          "sha256": "21065b679b7c4a28f89a292423be7898215d1c340dedd9842c4fbaed8d2449c3"
+        },
+        {
+          "path": "meta-skill/references/mechanical/predicate_family_registry.json",
+          "bytes": 7042,
+          "sha256": "b4e7835791d58aae3844abac00b5651e7f3125e17e0eb826f91e874adfdb9d19"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/accept_matrix.py",
+          "bytes": 11299,
+          "sha256": "600705f0e1fd3357d70f3c17fc62fe4e721b7b76d9a140349ad290ccac802275"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/contract_identity_negatives.py",
+          "bytes": 3186,
+          "sha256": "b2e1c50d69a2cd45363c0b071e1ca5fafbe3a9844baa0e9ff54de00f4415b6d5"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/contract_path_behavior.py",
+          "bytes": 5058,
+          "sha256": "33c51c8936c323bd60a1fd33d6b77a29994bebad2e37b804322a6eddba0f8d60"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/e2e_chain.py",
+          "bytes": 10685,
+          "sha256": "2ded3c95e5196a4b308930f7e113ef0b900376374e5422e9c0ba45490e5d4bef"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/fixture_materialization_negatives.py",
+          "bytes": 2215,
+          "sha256": "1cd634e16b3b66b88984e3e7e28ca28fa96a7fc84c3297a1ec9fcdd48074a024"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/full_matrix.sh",
+          "bytes": 4450,
+          "sha256": "b71558ad761a4ae1577282f3967b821154e45d3d33b41048e46e4699544ee9b7"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/gate_behavior.py",
+          "bytes": 29463,
+          "sha256": "16c2aaad5013d5c49c3a808f4be37cbb94cbedc6472a3611fad224515c330944"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/gate_matrix.py",
+          "bytes": 17948,
+          "sha256": "4308309dc4297a9e601d710ae20a6ec0d533dd8e2950945085eb72f1af06fd58"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/gate_reason_binding_negatives.py",
+          "bytes": 2069,
+          "sha256": "06e93b966865c1f9154df8120cd155a78c8cf849861c1cf97842f44882c7df1c"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/gen_mutant_matrix.py",
+          "bytes": 9102,
+          "sha256": "b6bd7d0dd27cbe5071633626a79eea7648297efb2980cad9379796353d7ea81c"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/grade_run.py",
+          "bytes": 1245,
+          "sha256": "b48521537ae41ba8361c8e31bb9d2d877d01424c74e1944b80150dea0446b905"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/ir_drift.py",
+          "bytes": 6837,
+          "sha256": "9022bd83f5091b7b255b61ecafbc21fac6f692a2da9259cffa6188c2736cc662"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_custom_fixtures.py",
+          "bytes": 20068,
+          "sha256": "0652b3e49fba31ddbdac51c81c9e3c41cb8d183834bf4baa8f83ea532937f188"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_e2e_package.py",
+          "bytes": 17761,
+          "sha256": "c554197401b562b0ba6d77316d8c924ecb5cd16e6e6d4c4db2876596d571c6fb"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_gate_fixtures.py",
+          "bytes": 60895,
+          "sha256": "ded98ee3c67b9a3e13b1e02fa24733c765ccd343e9dbf68d4f4ef606282757a4"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_jh_runs.py",
+          "bytes": 14736,
+          "sha256": "09cfe61c5290f547fadd3b7e98878850f5aa945df089dc21572f40f5e48d7878"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_multiop_fixture.py",
+          "bytes": 11549,
+          "sha256": "4248123e9f38e99bce5dbf4ac1236fbade9fd8fbb16cb877a7315a383404952b"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_mutants.py",
+          "bytes": 19343,
+          "sha256": "59e901440d0c4ab470c1a8436508a7847e091faae40c35f2dbd771dd19d35d7c"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_predicate_fixtures.py",
+          "bytes": 4901,
+          "sha256": "44f8032f2addcc4e740985a96fcf1a3a4c2e7085188ba0de31cd9c8fb03b4268"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/make_runs.py",
+          "bytes": 17137,
+          "sha256": "2f49e4dbdf9bfeef45719430a952af475398792d269bd5d9a8026557c6e1dd61"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/manifest_consumer.py",
+          "bytes": 13333,
+          "sha256": "990d0e05aa4c9c7d995afbf8b68f595c5804d7b6dfb13efc2fbc6e8b83f8a4b4"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/predicate_family_behavior.py",
+          "bytes": 9117,
+          "sha256": "79a908fa9dba80ce1efe49bd818e5dc6a40b959c27c41de9e8e812c345d98c90"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/render_contract_negatives.py",
+          "bytes": 6229,
+          "sha256": "bc73022f153faa67917516ceda3ffcbff3230c35aaf8de98c64e2e230877cae1"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/run_matrix.py",
+          "bytes": 2098,
+          "sha256": "fefc48c361f7f97d6f43a6a9cfbde71616a089f441de695370c1a14ca4ae57c0"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/self_check.py",
+          "bytes": 13065,
+          "sha256": "ba019ab9481a26bf2308af312846198008cf3d7ebe82725f35744027525b5156"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/skill_drift.py",
+          "bytes": 20444,
+          "sha256": "28622dcd9259646927d33c1ec9569f64d22a1305c7bf8889aa13d5140392e831"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/skill_drift_negatives.py",
+          "bytes": 25524,
+          "sha256": "4321bf9ba9da505a0af2e2bb05970b46d2cdab3de355c9501ccfb28d8228d263"
+        },
+        {
+          "path": "meta-skill/references/mechanical/tools/skill_drift_tail.sh",
+          "bytes": 288,
+          "sha256": "34568fdde934ac00dc5ceb40852552a304c1664a3995c860ab2679b052867e2e"
+        },
+        {
+          "path": "meta-skill/references/mutant_matrix.md",
+          "bytes": 21481,
+          "sha256": "14e6507097a2635b74965306b59fe12acef5e1c4a4e294b0c9ae3c10671cc14b"
+        },
+        {
+          "path": "meta-skill/references/obligation_registry.json",
+          "bytes": 14138,
+          "sha256": "615a94327c2d0d366449d635005125de7d66ef0b1cdeb527060b45da39213473"
+        },
+        {
+          "path": "meta-skill/references/schemas.md",
+          "bytes": 15253,
+          "sha256": "03382593f6aecf184d5aa998c5643910ed3f0fb7fd4c47e442b9a3deb0743916"
+        },
+        {
+          "path": "meta-skill/references/stateful_workflows.md",
+          "bytes": 8960,
+          "sha256": "6bc8ddd9ee366160e926e6c57f0883683216ff80ae3db509d6f441c218182429"
+        },
+        {
+          "path": "meta-skill/references/verification.md",
+          "bytes": 15114,
+          "sha256": "5ef8bfb9de2033ff3cd8bdd0417270a34a2474f8dd3c722907ce753ccb7b36de"
+        },
+        {
+          "path": "meta-skill/runner_binding.json",
+          "bytes": 987,
+          "sha256": "4f397c5dca26d74447c4bff1d07c1e4f2b786024b4c0505da2cb6eaff2a471b2"
+        },
+        {
+          "path": "meta-skill/scripts/aggregate_benchmark.py",
+          "bytes": 8313,
+          "sha256": "f234922f9a8a979ab533da26b062dca5b70f9753f93d3d0e83b4013dcce3d0eb"
+        },
+        {
+          "path": "meta-skill/scripts/anchor_check.py",
+          "bytes": 9308,
+          "sha256": "ac31e9745b09e0dd31240e73f7253aad046f0ec48d8f582c18c45b4b5382e22a"
+        },
+        {
+          "path": "meta-skill/scripts/audit.py",
+          "bytes": 67836,
+          "sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238"
+        },
+        {
+          "path": "meta-skill/scripts/build_self_fixtures.py",
+          "bytes": 3452,
+          "sha256": "ace50490e8ecf989b0db38a24342d5e3a45030e5172c1bce40c03fd7a6890423"
+        },
+        {
+          "path": "meta-skill/scripts/eval_common.py",
+          "bytes": 6180,
+          "sha256": "f4ac2fdfca5fbd55d03ff82af3d9f7e48de4901c3d084a7c67b862489149c9d5"
+        },
+        {
+          "path": "meta-skill/scripts/full_matrix.py",
+          "bytes": 5132,
+          "sha256": "ba4e208441e8720e150035600923c8c98ddddc7dd3be410fd1531d5bc6f296cc"
+        },
+        {
+          "path": "meta-skill/scripts/init_eval_workspace.py",
+          "bytes": 6509,
+          "sha256": "ac4f9b95e3ad353a3f891eced53333fe5628fd96a1fe820d43fa180ca4398fb9"
+        },
+        {
+          "path": "meta-skill/scripts/regression.py",
+          "bytes": 59695,
+          "sha256": "671e3c32508a8df6acbe36e1e78f808d2d9c918cb158872f670b2e3c0137754d"
+        },
+        {
+          "path": "meta-skill/scripts/run_meta_stages.py",
+          "bytes": 6257,
+          "sha256": "bf283b018017b79f0d608999f9315d40102a16e5cc2cbab44830fb8d08598de2"
+        },
+        {
+          "path": "meta-skill/scripts/run_trigger_eval.py",
+          "bytes": 10918,
+          "sha256": "72b07a9579f6bbda9f036f1fde63e9edb29c9eed2640c30a45d0febdc03a7e86"
+        },
+        {
+          "path": "meta-skill/scripts/validate.py",
+          "bytes": 238658,
+          "sha256": "8ba14c71a81c5668e7f7a53887642d953aba062066af51ff4d84a1f5b19a55af"
+        }
+      ]
+    },
+    {
+      "file": "packages/03-meta-orchestrator_10.06.zip",
+      "bytes": 29769,
+      "sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
+      "status": "design-reference-pre-distillation",
+      "entry": "README.md",
+      "dependencies": [
+        "02-meta-skill_3.10.1.zip for judgment analysis"
+      ],
+      "members": [
+        {
+          "path": "README.md",
+          "bytes": 1014,
+          "sha256": "9d8ebff741c47a4443642feda1434ed1e411cb7b6229a2a629afd9d50f73f5a0"
+        },
+        {
+          "path": "meta-orchestrator-design/spec.md",
+          "bytes": 69533,
+          "sha256": "2dc154c543554d426036cdc2f2b01aaa4c492415de447c2b649bd097d91a42cf"
+        }
+      ]
+    },
+    {
+      "file": "packages/04-meta-agent_10.06.zip",
+      "bytes": 178815,
+      "sha256": "d38ef2f065d300ab5aa105fd3bdcbc1bebaef31ed403612fe2aa816194d789db",
+      "status": "parameterized-candidate-not-deployed",
+      "entry": "meta-agent/README.md",
+      "dependencies": [
+        "Python 3 standard library",
+        "authorized FDE platform API and project resources",
+        "image generation and handoff capability",
+        "octopus-builder-cli and Builder platform access for marketplace route"
+      ],
+      "members": [
+        {
+          "path": "README.md",
+          "bytes": 493,
+          "sha256": "ad89fc91551a439087f5f4de4f82e95265694a7d044b6163cfdd4cc524e8808f"
+        },
+        {
+          "path": "meta-agent/README.md",
+          "bytes": 2405,
+          "sha256": "c647a8a4d1e3adb5a1624f7fd98d676a9ea9fcbc3f440c4b17c14b7af50212c4"
+        },
+        {
+          "path": "meta-agent/design/architecture.md",
+          "bytes": 8073,
+          "sha256": "724cfe3d6c56c0d28c79b8dad9f7e7929fe1408b1c425b1f8deb1e2412c3b3ea"
+        },
+        {
+          "path": "meta-agent/design/contracts/image-handoff.md",
+          "bytes": 6917,
+          "sha256": "52b283b15c1e3161e9fb306671e1f7533307d81803c28d8f4572fbe48a5c1e24"
+        },
+        {
+          "path": "meta-agent/design/contracts/outputs.md",
+          "bytes": 5204,
+          "sha256": "436a30c5c0374e67e149db9f17562e386845cfb859fc253ba839d475f2463e74"
+        },
+        {
+          "path": "meta-agent/design/contracts/prompt-segments.md",
+          "bytes": 7234,
+          "sha256": "e67379f2e70e00a819970e84fdee933f4db0ca22b031d0323b7c534795c07f2f"
+        },
+        {
+          "path": "meta-agent/design/contracts/seat-spec.md",
+          "bytes": 6339,
+          "sha256": "591894980cf47143071bc0a76ebb0c1b4961f19e2fa8642a4a337b76f1880b7e"
+        },
+        {
+          "path": "meta-agent/design/contracts/series-style-09.20.json",
+          "bytes": 1193,
+          "sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f"
+        },
+        {
+          "path": "meta-agent/design/skill-layout.md",
+          "bytes": 6148,
+          "sha256": "e9cfd5b86f14ea4f5caf3b3630da3038e64f17430efcd07a5262370a5b619b99"
+        },
+        {
+          "path": "meta-agent/design/spec-09-meta-agent.md",
+          "bytes": 10827,
+          "sha256": "587c8890b54d08b00c233f7a5dbf9037bdae290decc6da270e0a39c768071376"
+        },
+        {
+          "path": "meta-agent/sanitization-manifest.json",
+          "bytes": 11785,
+          "sha256": "592697ead3073509d8d041c5bcb2404e48959bd7fa6eb4ce56980c3565f1fccb"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/SKILL.md",
+          "bytes": 27537,
+          "sha256": "3c4be89528a1d13a0ae2e2cdb864bed3826a2eb04001acbb35a6cfa8ff91cc6a"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/assertions.json",
+          "bytes": 40900,
+          "sha256": "a4999ea3fa417b093f1fc7a151ab06a7146d17c3648d352c01ee1a6598603a6e"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/references/builder-product.md",
+          "bytes": 6278,
+          "sha256": "c532fece105972718536bafcd97d21983c0ab503fefe58fc0f99318e0516e409"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/references/contract_ir.json",
+          "bytes": 6357,
+          "sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/references/image-handoff.md",
+          "bytes": 6919,
+          "sha256": "124e1236e4c9f565175d1571ed134bcf9dab53f6cd64b372fba1551dfc1ceeca"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/references/outputs.md",
+          "bytes": 5219,
+          "sha256": "3391975e3520f96ec89fa85b19132d3a2f6cd409a003134949ade710d91d4313"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/references/prompt-segments.md",
+          "bytes": 8837,
+          "sha256": "9bd98ca2786d453ddff4e4e144c6dedc19ebb8443ffe323801fdbdcfea6bbafb"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/references/series-style-09.20.json",
+          "bytes": 1193,
+          "sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/scripts/audit.py",
+          "bytes": 67836,
+          "sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/scripts/execute_stage.py",
+          "bytes": 3372,
+          "sha256": "2b3740235f7121c2a755a7e9821036959074c255fcaa2ac1fdec38ecf31f9810"
+        },
+        {
+          "path": "meta-agent/skills/builder-agent/scripts/run_pipeline.py",
+          "bytes": 30149,
+          "sha256": "87c23da9176d13acf1431cb59e486754510f35e6840e9f43874e77b17b468e2f"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/SKILL.md",
+          "bytes": 30336,
+          "sha256": "231c2c00d0e18695de9dc79ab29e93ed02c5e9ee8a9bf1d9eb1ed1e85ca77ff9"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/assertions.json",
+          "bytes": 40811,
+          "sha256": "7da02e3e623c34e84788831e98587fcfe3f8e6a8d1e8274bcae9ddf2ee1a349c"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/contract_ir.json",
+          "bytes": 6357,
+          "sha256": "35a8c53e290a543ca7cdd056bf7eb6f63fa775a5017bfa6173a275fd85b8bcbf"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/image-handoff.md",
+          "bytes": 6919,
+          "sha256": "124e1236e4c9f565175d1571ed134bcf9dab53f6cd64b372fba1551dfc1ceeca"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/outputs.md",
+          "bytes": 5219,
+          "sha256": "3391975e3520f96ec89fa85b19132d3a2f6cd409a003134949ade710d91d4313"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/prompt-segments.md",
+          "bytes": 8837,
+          "sha256": "9bd98ca2786d453ddff4e4e144c6dedc19ebb8443ffe323801fdbdcfea6bbafb"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/seat-spec.md",
+          "bytes": 6540,
+          "sha256": "5e69f8f6acf0abfbb4e5cb56e848ce6813f78b42a8b19fccd79b07b946772e07"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/series-style-09.20.json",
+          "bytes": 1193,
+          "sha256": "0af3bd6eed30ab76a60771a1b24a97b276a7e9f537e824d23878e282a2daac6f"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/references/职能席.md",
+          "bytes": 8317,
+          "sha256": "6d7b7ca7083c2559cbb5964a24268229ad2cf04c1c33f92665e00bd8b0bffe46"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/scripts/audit.py",
+          "bytes": 67836,
+          "sha256": "97698931fbfc47c4c9564e64ec83ca58700e4d7684a4e05d55fcd5b5ac800238"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/scripts/execute_stage.py",
+          "bytes": 3368,
+          "sha256": "7e8312cd1c5d6a225bb58773536f90aedad3b21a721d67b5df00d9ba71cf1773"
+        },
+        {
+          "path": "meta-agent/skills/fde-meta-agent/scripts/run_pipeline.py",
+          "bytes": 39226,
+          "sha256": "e8df663de229ffede6eddbbbc125084b338f56247ecba44e16dcb00945f58e4c"
+        }
+      ]
+    },
+    {
+      "file": "packages/05-workbench-app-development_10.06.zip",
+      "bytes": 16518,
+      "sha256": "0fda98443408293c2a2ebf770f97df14d2b10ea1d3889d58d48fccd331feb016",
+      "status": "installed-source-snapshot",
+      "entry": "workbench-app-development/SKILL.md",
+      "dependencies": [
+        "octopus-cli",
+        "official Workbench scaffold and Node dependencies",
+        "authorized platform account/team/resources"
+      ],
+      "members": [
+        {
+          "path": "README.md",
+          "bytes": 362,
+          "sha256": "d919aba19c4c07b42e09e8c55cac8662c3b76f87da80664a1182aecacd2ec40f"
+        },
+        {
+          "path": "workbench-app-development/SKILL.md",
+          "bytes": 7481,
+          "sha256": "086d555db7495cf14f333e9937a019d1b5a66c32d2631d8ec47d26a9259e05f6"
+        },
+        {
+          "path": "workbench-app-development/agents/openai.yaml",
+          "bytes": 262,
+          "sha256": "87e8aeecb4261ae224391532c397fe12353f47c87deb3f81aa4d3d2893820cb2"
+        },
+        {
+          "path": "workbench-app-development/references/acceptance-scenarios.md",
+          "bytes": 9429,
+          "sha256": "ffc5cf7073a27cab38ca562775e1c4fa367da09486988a6c740d9d9459b4eb9b"
+        },
+        {
+          "path": "workbench-app-development/references/arcubase-runtime-gotchas.md",
+          "bytes": 2461,
+          "sha256": "0979780d37f86a96b8c79b0fcccfc45b93be40fd80a3243a4774f8a610b9860a"
+        },
+        {
+          "path": "workbench-app-development/references/command-contracts.md",
+          "bytes": 5722,
+          "sha256": "4cce18cc9d79a87909a553944b8d27bb9b3306949297cc2a0ae19981595fbfed"
+        },
+        {
+          "path": "workbench-app-development/references/local-validation.md",
+          "bytes": 5424,
+          "sha256": "9005a05c096c0fe9eea5d19b2aa7808c8ce4c0da8db66c867ff9f6f8aafd3871"
+        },
+        {
+          "path": "workbench-app-development/references/octopus-client.md",
+          "bytes": 3092,
+          "sha256": "b494a621fcb9161a145882146a558e94373e61ef4f1d1aaeab51c6f1e41efeb4"
+        }
+      ]
+    },
+    {
+      "file": "packages/06-quekou-frontend_1.0.0.zip",
+      "bytes": 3207208,
+      "sha256": "1805770ad2ad1b1eb564c4f274d1ae49d978e78b8d2c37282b1fac7201eb45f9",
+      "status": "original-unchanged",
+      "entry": "quekou-workbench-1.0.0/START_HERE.md",
+      "dependencies": [
+        "React/ReactDOM ^18.3.1",
+        "target Workbench app compatibility validation"
+      ],
+      "members": [
+        {
+          "path": "quekou-workbench-1.0.0/.agents/skills/quekou-workbench/SKILL.md",
+          "bytes": 3470,
+          "sha256": "3f00cc43276bc06b213b1207bc6e88d0f2cdbae517e43facaf8f7fd9ab90ad44"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/.agents/skills/quekou-workbench/agents/openai.yaml",
+          "bytes": 316,
+          "sha256": "6ba782b85a958c3a90751ab1a01a434fad4dec9d3b7f492726346480ae6f5680"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/.gitignore",
+          "bytes": 75,
+          "sha256": "a2a3926b9bbe9206c3693494a6194d5541363dbf442f96ae511e5cbbbc9ae5aa"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/AGENTS.md",
+          "bytes": 2326,
+          "sha256": "77ebc3324a8e5582790e597f993289244bb211f5e9c6acccf2a6da9cb439ee0d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/LICENSE.txt",
+          "bytes": 526,
+          "sha256": "6e0f01feaf9a16e8f435ba55b91420c396686b01eb60cbbbdf106ee0220048a9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/NEW_CLIENT.md",
+          "bytes": 1400,
+          "sha256": "ea9f5300e424eee0707fe5d613f3c73d7e57146434a111e3df9c7871f6c465a4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/README.md",
+          "bytes": 1715,
+          "sha256": "d9f461c0c6106aae40972b128b5340890b71232fa2831bc73a5876694553b652"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/RELEASE_AUDIT.md",
+          "bytes": 5054,
+          "sha256": "bdc79069e60356348aa432d7d2d433847f50c6dbed683d1c3e16e9734f042b5b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/SHA256SUMS.txt",
+          "bytes": 40775,
+          "sha256": "ee4d39c2daf999ea390f3b6a49e353cc7678f1391408a1ea018654b914f3afeb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/START_HERE.html",
+          "bytes": 94297,
+          "sha256": "fd913f0250050e0abf9c2b3da6e63b2a80942ba2f00f065b5571dd1d0da10b5a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/START_HERE.md",
+          "bytes": 7139,
+          "sha256": "ec577a8c2d5c92de906953370c322a5adfe3aa783003514c0949e6ab14d797f8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/THIRD_PARTY_NOTICES.md",
+          "bytes": 535,
+          "sha256": "ddf67d110734a115473729b4d3fbc8a849a67b19b97e9a774c597633201e57a9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/component-examples.tsx",
+          "bytes": 4594,
+          "sha256": "046ead224a05abf7ecaf3db94969936bdaa5251b90ba05e54d65a089de0775f3"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/component-lab.css",
+          "bytes": 6390,
+          "sha256": "bb9a4514c282ca0cf735bc8fa6d8efd67ca4821eb6b235c9dc93b6b3df2a72d4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/component-lab.tsx",
+          "bytes": 6298,
+          "sha256": "e3952cd5eb5d569eb510dd4f5f3e9172dab8e5f1097c4a0967d251ab1c25b4d7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/data.ts",
+          "bytes": 2873,
+          "sha256": "bfdb584305947dfaecb87cc6d59e050d5ccadc3d701e1f92cc748fe65b2ce7f8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/generated/preview-preset.cjs",
+          "bytes": 3037,
+          "sha256": "c025d9bf982a2aae1b319f065006b5a4cf15d2f606c87cf9d0cc48239731ae9d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/generated/tokens.css",
+          "bytes": 125731,
+          "sha256": "d22b44b2cfd2e425fc1d7901d43955a16ce33b5496ea5629af784bc499f0e9f3"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/main.tsx",
+          "bytes": 610,
+          "sha256": "0d97f5d9cdab14a7dc7f69c8ce53a9970f23acb022a46ca90d424802246238ff"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample01.tsx",
+          "bytes": 192,
+          "sha256": "63a473ce43f7975375fd01c9599b1dd6ffd17d1b43cada3d61c988e65d4dece4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample02.tsx",
+          "bytes": 201,
+          "sha256": "3980ef2416c2fcdcfde57f40d7f306535352e2b4db08b2c7bd4a781a61cb5d18"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample03.tsx",
+          "bytes": 194,
+          "sha256": "54622b2e1669496ee125b22b119fca364167cc2d90a30b180ce5effb7a996acb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample04.tsx",
+          "bytes": 187,
+          "sha256": "f75b07fe36a8d961f2986d2aa9d7ea8ea8be7a7ce192c7206fc3306cc5fa4ea2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample05.tsx",
+          "bytes": 187,
+          "sha256": "d7e925b859d508bacfda7e310d122b03935910a8d79eaa77d064d981ea82a7d6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample06.tsx",
+          "bytes": 186,
+          "sha256": "e7852535b64d27ac6431990b30af40bef1017e11f96c784c79158adb21ea5f1a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample07.tsx",
+          "bytes": 186,
+          "sha256": "f7470f9e2ebf7657a9e4fa670ed548f17ad5b251be1b8f40f598515a932ef13b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample08.tsx",
+          "bytes": 189,
+          "sha256": "e499b55e7502c36ce8e3e8015d260ba5edb17b5ba540d947a69cbfa465781649"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample09.tsx",
+          "bytes": 189,
+          "sha256": "e790fcd17ffe17655de786d46c9ac7a635c7232bef0b9901788eeec4e7ce334d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Sample10.tsx",
+          "bytes": 192,
+          "sha256": "bca2d781e9dc72f65842533b4798d1e60ac97ad9845db02971b3f561782c3ba1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/Workbench.tsx",
+          "bytes": 17501,
+          "sha256": "8dbb2c760cfcdef47e96851cc7544c631426b48de0744f8798de391485533ce2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/specimens/index.ts",
+          "bytes": 500,
+          "sha256": "418e3c75d01dd0f561c225e3c6da3fa03037ded1ecef5b3417d791ae5954e0bc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/styles.css",
+          "bytes": 47950,
+          "sha256": "bd648b0b6265a405ecc96723ccef5a00d116fbfd2e050128de8eda12c4bddc12"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/switcher.tsx",
+          "bytes": 8751,
+          "sha256": "db1ef3029a1bb86deac911f31064184d0f81f7809775e6a9176174652bae03c0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/theme-review.tsx",
+          "bytes": 5230,
+          "sha256": "8682dc2a96bcbcc5d773ed6f4678a2cd207347784eb0e79a536c13ce2e134e6f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/workbench/WorkbenchDemo.tsx",
+          "bytes": 20878,
+          "sha256": "9da5d3184aadca42a93e841fbf5e3038949799d2225cc647c3111d4a9de34884"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/workbench/model.ts",
+          "bytes": 4781,
+          "sha256": "e243e7e65293347ed49ebaff542a7e8884384b9bc6382b79ca639044ff7fd413"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/workbench/route.ts",
+          "bytes": 2791,
+          "sha256": "c54f7ed58b80336c1dd698bd3ec5afc15b591576cd9eff21f65268dab58263c8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/app/workbench/workbench.css",
+          "bytes": 6144,
+          "sha256": "a1517dbc7b205d0d830304f7412c17b56ac5bd451f3ce3ebd009d54f250c8cff"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/artifacts/quekou-theme-1.0.0.tgz",
+          "bytes": 19723,
+          "sha256": "9f58200f965bb22926ae0c571fa972b983fe980f624092c1fbeabf41f771d1d4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/artifacts/quekou-ui-1.0.0.tgz",
+          "bytes": 55678,
+          "sha256": "32f3b9fcafb6b6595079210d1aecf52ecbe3dd54d0007ade38f3235b6295e131"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/build-packages.mjs",
+          "bytes": 1259,
+          "sha256": "75e735fd37d4f0daba41777d84242102944cdfd328cada739c227b654c23b0b8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/build-tokens.mjs",
+          "bytes": 5909,
+          "sha256": "335c356202cc7b4e4b96713735e10f65c887b0c14ebee6be9567dcd7541ff744"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/page-recipes.md",
+          "bytes": 4150,
+          "sha256": "f65a759312957fbb9da711c5f6fc46fc49066a1b0c7524976c2c3dff0e6c9844"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/phase-1-review.md",
+          "bytes": 9291,
+          "sha256": "551f9bfcf7b93bd31749cfd7f3fd26e79965be53ce31db469e4157d64474bc73"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/preferences.json",
+          "bytes": 1884,
+          "sha256": "ec7e87690556aa21661391c3a96d8c329ef6b4e15dccea087ae4cf06459a5301"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/preview-parameters.mjs",
+          "bytes": 2517,
+          "sha256": "5ae692434c6c276a765040068e65ff9ec87f7ca22b517bad79cf97c131bae25f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/references.md",
+          "bytes": 2325,
+          "sha256": "9c4a57c41a42ba17200a89dabda8d77f9882ed8e4f70b0510764e7483a1129c8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/style-spec.md",
+          "bytes": 20596,
+          "sha256": "763bd13959724c047e5c152b9af85da7b352dd0f238f314983b920a65eaa205e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/design/tokens.json",
+          "bytes": 47791,
+          "sha256": "0292cac96e08189b802ebd45cd1a802e920caea174f74027692cec010a0f4506"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/docs/上线验收.md",
+          "bytes": 1887,
+          "sha256": "93f5eaa4a10683f533dc7660f1f8eb83f4c8a564dbbca891ea05fe3a2e3e06c0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/docs/维护与升级.md",
+          "bytes": 2912,
+          "sha256": "2aa4cf2dfcc404065cd6fe44307624a2b286f82ac383229ef7e99f611428661b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/index.html",
+          "bytes": 349,
+          "sha256": "47ec45160dae34708c6f2be522adfc64321584411a9036029327240a77861549"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/README.md",
+          "bytes": 802,
+          "sha256": "53e35222d403600f24c42b28e0c280add067c1ecb154a9cc74ca920c20f1c398"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/brand-palette.svg",
+          "bytes": 2371,
+          "sha256": "9483237188ffbcc28ae03035c15a121d46e1321a8a3570f7d718949e11708750"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/dependencies.json",
+          "bytes": 21613,
+          "sha256": "285123beec01ff5a794fc89360c092f51cfbbeb045b32a3421e9f8227f3dccf9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@alloc__quick-lru-5.3.0-license",
+          "bytes": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__code-frame-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__compat-data-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__core-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__generator-7.29.8-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-compilation-targets-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-globals-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-module-imports-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-module-transforms-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-plugin-utils-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-string-parser-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-validator-identifier-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helper-validator-option-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__helpers-7.29.7-LICENSE",
+          "bytes": 1189,
+          "sha256": "4be9d87b56a306293223b490c0d0b245e9e94f39884147bf051a6c7b825aeb30"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__parser-7.29.9-LICENSE",
+          "bytes": 1086,
+          "sha256": "2e97627cb278aa7556fb9e8817368302301a595b6c7582512b8d74c57b773652"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__plugin-transform-react-jsx-self-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__plugin-transform-react-jsx-source-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__template-7.29.7-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__traverse-7.29.8-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@babel__types-7.29.8-LICENSE",
+          "bytes": 1106,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@jridgewell__gen-mapping-0.3.13-LICENSE",
+          "bytes": 1080,
+          "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@jridgewell__remapping-2.3.5-LICENSE",
+          "bytes": 1080,
+          "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@jridgewell__resolve-uri-3.1.2-LICENSE",
+          "bytes": 1079,
+          "sha256": "b8778b155bfde5a28b023a558753c0fa058a52bb9de35c343c250be1bbcdedab"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@jridgewell__sourcemap-codec-1.6.0-LICENSE",
+          "bytes": 1080,
+          "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@jridgewell__trace-mapping-0.3.31-LICENSE",
+          "bytes": 1080,
+          "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@nodelib__fs.scandir-2.1.5-LICENSE",
+          "bytes": 1079,
+          "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@nodelib__fs.stat-2.0.5-LICENSE",
+          "bytes": 1079,
+          "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@nodelib__fs.walk-1.2.8-LICENSE",
+          "bytes": 1079,
+          "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@rolldown__pluginutils-1.0.0-beta.27-LICENSE",
+          "bytes": 1302,
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__babel__core-7.20.5-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__babel__generator-7.27.0-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__babel__template-7.4.4-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__babel__traverse-7.28.0-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__estree-1.0.9-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__prop-types-15.7.15-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__react-18.3.18-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@types__react-dom-18.3.5-LICENSE",
+          "bytes": 1141,
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/@vitejs__plugin-react-4.7.0-LICENSE",
+          "bytes": 1103,
+          "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/any-promise-1.3.0-LICENSE",
+          "bytes": 1060,
+          "sha256": "bd54a6ab4e3ad0f73420d8e4d2a990179e6367e5752a6abac5f61ad4f4130a43"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/anymatch-3.1.3-LICENSE",
+          "bytes": 784,
+          "sha256": "5a3b0007c4203f10fe11b3fe8747253eb994f135e10b73e1f88ada941af09c6e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/arg-5.0.2-LICENSE.md",
+          "bytes": 1079,
+          "sha256": "91887c62d26f64b8d6e98b1dca57e75aca62e6f9af79fb0783f8f1904abaeea6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/autoprefixer-10.4.21-LICENSE",
+          "bytes": 1095,
+          "sha256": "c4630ac8b89cb317ac5bdd60ac5e4e185eab9bd5151a0c7b3afa41aa83d7ec9b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/baseline-browser-mapping-2.11.26-LICENSE.txt",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/binary-extensions-2.3.0-license",
+          "bytes": 1167,
+          "sha256": "96f0820026bd6dadc4af99c6dba7111d2e0190c092c376a746c13863e151d072"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/braces-3.0.3-LICENSE",
+          "bytes": 1091,
+          "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/browserslist-4.29.1-LICENSE",
+          "bytes": 1118,
+          "sha256": "21c2679a63d7699c0e644409e2f17d0adbc7a965003feb06b3ff4b833d21f722"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/camelcase-css-2.0.1-license",
+          "bytes": 1111,
+          "sha256": "4c97d11c3d10ddede28b756f4d834e660bc49d67d9a8aae16bda5e59efcd479f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/caniuse-lite-1.0.30001812-LICENSE",
+          "bytes": 18651,
+          "sha256": "fd3a263fe19ed8faa9068b43abaebafc02c77897b0c6fc09abc04bb592e5f16e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/chokidar-3.6.0-LICENSE",
+          "bytes": 1129,
+          "sha256": "db9ba183d4cbfbaf6c27db2effddbb84b46340c33ed32a066bc0b144a3ea1298"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/commander-4.1.1-LICENSE",
+          "bytes": 1098,
+          "sha256": "04512a63dce4d2d506ad612dc0bd7681ccf6e3655f7b6eaef7dfac8323d1ec0b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/convert-source-map-2.0.0-LICENSE",
+          "bytes": 1078,
+          "sha256": "1fa6ee8bb95a81ae3d73a5bd074a3ac380ffec13697051063ca1a601921b91db"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/csstype-3.2.3-LICENSE",
+          "bytes": 1062,
+          "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/debug-4.4.3-LICENSE",
+          "bytes": 1139,
+          "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/didyoumean-1.2.2-LICENSE",
+          "bytes": 584,
+          "sha256": "614a7a948ca1b4fa7088c021f3ac15a997cdc87a75e4e78f031c346d1ed30150"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/electron-to-chromium-1.5.439-LICENSE",
+          "bytes": 728,
+          "sha256": "25ba5c59dad3e0dd8f9540beaa0f0a86a10e3aec35af5fdc8e88c5f6a5c0d8c6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/es-errors-1.3.0-LICENSE",
+          "bytes": 1071,
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/esbuild-0.25.12-LICENSE.md",
+          "bytes": 1069,
+          "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/esbuild-0.28.2-LICENSE.md",
+          "bytes": 1069,
+          "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/escalade-3.2.0-license",
+          "bytes": 1104,
+          "sha256": "9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/fast-glob-3.3.3-LICENSE",
+          "bytes": 1079,
+          "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/fastq-1.20.3-LICENSE",
+          "bytes": 765,
+          "sha256": "c3367f6d01a79d368fc4fbb41b3615fcd92f243d6597ab96742f6f976f9325af"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/fdir-6.5.0-LICENSE",
+          "bytes": 1053,
+          "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/fill-range-7.1.1-LICENSE",
+          "bytes": 1091,
+          "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/fraction.js-4.3.7-LICENSE",
+          "bytes": 1070,
+          "sha256": "ff20ef9f4a15b351e2708410108383a84e9c0ac715da852961b6f7a6299651fb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/fsevents-2.3.3-LICENSE",
+          "bytes": 1133,
+          "sha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/function-bind-1.1.2-LICENSE",
+          "bytes": 1052,
+          "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/gensync-1.0.0-beta.2-LICENSE",
+          "bytes": 1075,
+          "sha256": "e3a956681ee067f971ac413994171b3d90ca801ec6324e76c9c55366cfe31cb0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/glob-parent-5.1.2-LICENSE",
+          "bytes": 753,
+          "sha256": "2c46f1325bd3822a33c1e2c1e49c18d13127ac00f9c8b3b79196c7a126f73cd9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/glob-parent-6.0.2-LICENSE",
+          "bytes": 857,
+          "sha256": "fc68eb8f1c8e1d6b8be50f3c177927e24791cae7dc251e6253a012f37926a30c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/hasown-2.0.4-LICENSE",
+          "bytes": 1083,
+          "sha256": "bf9b0d665be2a689851eea667ca9f42066ea1d903b38349c51e6a44b2577680a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/is-binary-path-2.1.0-license",
+          "bytes": 1159,
+          "sha256": "85fe65eefab89e2a683232b96e6f689279821a0bd3b351e9ab6a6ebd19dea567"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/is-core-module-2.17.0-LICENSE",
+          "bytes": 1078,
+          "sha256": "5c496ce5ae47eb8e5ddcaa5e29c27c446a3855b19e3a66991b52f361bed22b28"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/is-extglob-2.1.1-LICENSE",
+          "bytes": 1087,
+          "sha256": "73b5283588baa142c5baaef5f56d3e8fdea7a30b214e8c5737e87640f882453a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/is-glob-4.0.3-LICENSE",
+          "bytes": 1088,
+          "sha256": "4cd903859549d4b20b571041f96dfae1136ed079c476126268f9d7cc1b611150"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/is-number-7.0.0-LICENSE",
+          "bytes": 1091,
+          "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/jiti-1.21.7-LICENSE",
+          "bytes": 1078,
+          "sha256": "46231df5a7733c3f52f11b71f3df61813007745b62b09031acfb45fb42d75082"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/js-tokens-4.0.0-LICENSE",
+          "bytes": 1103,
+          "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/json5-2.2.3-LICENSE.md",
+          "bytes": 1145,
+          "sha256": "53e59feb13058722d977c699eb0407c7bce2f93c949b681bbd2ff31698535927"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/lilconfig-3.1.3-LICENSE",
+          "bytes": 1074,
+          "sha256": "d70f9e316930b4333b6f51af5f0d0cb7ded6a4a2641549aa088027aaff91e950"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/lines-and-columns-1.2.4-LICENSE",
+          "bytes": 1080,
+          "sha256": "456fe85ad3e71db9523313cf7437b0f90c392d8a48c869908e46716b26d2cf53"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/loose-envify-1.4.0-LICENSE",
+          "bytes": 1100,
+          "sha256": "4eb7543b08d955a6d23fcc224601d43ff566e775be918805e26210d7f6eb4893"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/lru-cache-5.1.1-LICENSE",
+          "bytes": 765,
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/lucide-react-0.468.0-LICENSE",
+          "bytes": 880,
+          "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/merge2-1.4.1-LICENSE",
+          "bytes": 1082,
+          "sha256": "b2590e53ea6e050512c3993bfc746c394bbba9242fd6909245201bdc1dc6862a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/micromatch-4.0.8-LICENSE",
+          "bytes": 1091,
+          "sha256": "35bdd8a44339719441900fb50fbefc5e2dca1ca662cbaed7a687de842c8b70f2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/ms-2.1.3-license.md",
+          "bytes": 1079,
+          "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/mz-2.7.0-LICENSE",
+          "bytes": 1121,
+          "sha256": "b54cad06af80663a692483d407ea7d3fbec77fc12f4d7eed3f9f511ad87fca6a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/nanoid-3.3.19-LICENSE",
+          "bytes": 1095,
+          "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/node-releases-2.0.57-LICENSE",
+          "bytes": 1107,
+          "sha256": "3706296ed611888111ceccc1dff4712844dea4bde0b185c82d718c3b69895abe"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/normalize-path-3.0.0-LICENSE",
+          "bytes": 1088,
+          "sha256": "e70ff771504ba41f2be55de812a017ff46433d7a250c862e38fc419159e44500"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/normalize-range-0.1.2-license",
+          "bytes": 1120,
+          "sha256": "0b61ac8491c66669491fdb328200203822b91d2a0461f5cd898fe0944ea97e41"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/object-assign-4.1.1-license",
+          "bytes": 1119,
+          "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/object-hash-3.0.0-LICENSE",
+          "bytes": 1092,
+          "sha256": "ea9e6806c48a8a043ad8f2446527dc860617068265cffbef3efa4aaba39f18d8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/path-parse-1.0.7-LICENSE",
+          "bytes": 1080,
+          "sha256": "3f4609137f65070541b9214300ea0d640af8192857de0eeb2b03403003d9228a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/picocolors-1.1.1-LICENSE",
+          "bytes": 787,
+          "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/picomatch-2.3.2-LICENSE",
+          "bytes": 1091,
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/picomatch-4.0.7-LICENSE",
+          "bytes": 1091,
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/pirates-4.0.7-LICENSE",
+          "bytes": 1071,
+          "sha256": "b3e8623bbd73e4f964f9b5091c7b4c7e078fd760113890b8c1af951ab7921877"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/playwright-1.63.0-LICENSE",
+          "bytes": 11601,
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/playwright-1.63.0-NOTICE",
+          "bytes": 254,
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/playwright-core-1.63.0-LICENSE",
+          "bytes": 11601,
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/playwright-core-1.63.0-NOTICE",
+          "bytes": 254,
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/postcss-8.5.28-LICENSE",
+          "bytes": 1095,
+          "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/postcss-import-15.1.0-LICENSE",
+          "bytes": 1118,
+          "sha256": "e775239f3f181bf677ddac2cce14db8d078fb6c1aad347b685a5cbc3c60865db"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/postcss-js-4.1.0-LICENSE",
+          "bytes": 1095,
+          "sha256": "d6998a4ba4e15bba3dece87a0075ecdde8f0c017ab03635911ffb71dbac250b9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/postcss-load-config-4.0.2-LICENSE",
+          "bytes": 1105,
+          "sha256": "21ffeb3616fb8bbcd873831077579bfaa9ff1ee4d4823e0cec6aec3f255a856f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/postcss-nested-6.2.0-LICENSE",
+          "bytes": 1095,
+          "sha256": "02a0c8b164b043f19148b472dbe53a337d53149acaba6f3f911ed42bc66f9619"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/postcss-value-parser-4.2.0-LICENSE",
+          "bytes": 1074,
+          "sha256": "3687447039151857a6ba378db062172c7f33d4aa70a615c87a43a9c50e990485"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/queue-microtask-1.2.3-LICENSE",
+          "bytes": 1081,
+          "sha256": "d4c2065e2b936e62a4eb400efb4576edec9ca1388a9f78aa288e147275e7bc8b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/react-18.3.1-LICENSE",
+          "bytes": 1086,
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/react-dom-18.3.1-LICENSE",
+          "bytes": 1086,
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/react-refresh-0.17.0-LICENSE",
+          "bytes": 1088,
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/read-cache-1.0.2-LICENSE",
+          "bytes": 1102,
+          "sha256": "8d9b8158455aa7ab4d28d3196ec414812b231f554416f8dd51d45b5024dfde62"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/readdirp-3.6.0-LICENSE",
+          "bytes": 1114,
+          "sha256": "dffec71d93f273d2af7b54c6c7e7e70b3289c632ec0d7253210ec21ac336d5ac"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/resolve-1.22.12-LICENSE",
+          "bytes": 1071,
+          "sha256": "60acd7711e6c138e6041836e32d922705254cc1568a30fdf16aa8f59bb87aeaa"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/reusify-1.1.0-LICENSE",
+          "bytes": 1087,
+          "sha256": "93a1506953b08ad4874e1cc0971a1d2ac387ca510da91e4d05e460a6c4966fa3"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/rollup-4.63.5-LICENSE.md",
+          "bytes": 35231,
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/run-parallel-1.2.0-LICENSE",
+          "bytes": 1081,
+          "sha256": "d4c2065e2b936e62a4eb400efb4576edec9ca1388a9f78aa288e147275e7bc8b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/scheduler-0.23.2-LICENSE",
+          "bytes": 1086,
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/semver-6.3.1-LICENSE",
+          "bytes": 765,
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/source-map-js-1.2.1-LICENSE",
+          "bytes": 1526,
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/sucrase-3.35.1-LICENSE",
+          "bytes": 1106,
+          "sha256": "c43b99fc682391ced47fee2bf964bc387ab5e65ba7b626b39cd6d1facd24e6a5"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/supports-preserve-symlinks-flag-1.0.0-LICENSE",
+          "bytes": 1067,
+          "sha256": "0f0ca96f50793990031ebc488a38f7292ff70bce8ab6a8e5eeda674abc32ccdf"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/tailwindcss-3.4.17-LICENSE",
+          "bytes": 1071,
+          "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/thenify-3.3.1-LICENSE",
+          "bytes": 1121,
+          "sha256": "ae538dfbba770702cec046d5c63b8aa29c2faaff7ad9513693f1f9ee4e6f22b5"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/thenify-all-1.6.0-LICENSE",
+          "bytes": 1099,
+          "sha256": "965ef284f7f4c176842ec2e87fa13e79feed777d56d7a21a5a3b38f1bb6dc288"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/tinyglobby-0.2.17-LICENSE",
+          "bytes": 1076,
+          "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/to-regex-range-5.0.1-LICENSE",
+          "bytes": 1091,
+          "sha256": "e7d1fee7347ffddccc5fd03327ffdb50f8c112be0d5016d62388a92c4ae6e7a9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/ts-interface-checker-0.1.13-LICENSE",
+          "bytes": 11357,
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/typescript-5.7.3-LICENSE.txt",
+          "bytes": 9197,
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/update-browserslist-db-1.3.3-LICENSE",
+          "bytes": 1118,
+          "sha256": "9877e90da14aa8c931a1f9d07cc2a20ce119106e5dab1ebb41af865266d0cd2a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/util-deprecate-1.0.2-LICENSE",
+          "bytes": 1102,
+          "sha256": "0154425673db15cdfa80ecba2c9b1f1a867f7197a006764712849bfc3a93cbb7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/vite-6.4.3-LICENSE.md",
+          "bytes": 115624,
+          "sha256": "008938a3441801ca3960f8e3ccb4c0738e7996442a53063141d57d3769a7344d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/yallist-3.1.1-LICENSE",
+          "bytes": 765,
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/licenses/yaml-2.9.1-LICENSE",
+          "bytes": 738,
+          "sha256": "5bba27375d93e9119f76c1015f7672cf9ad5f70952296e0842fb2243d6376869"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/10-detail.png",
+          "bytes": 151081,
+          "sha256": "b069622daa3b9abff9cb21d631134e6428aa8f816bd814edef5bd10adef0a7c0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/10-list.png",
+          "bytes": 137036,
+          "sha256": "eb8498fbebbda01c830934158131963824a3680c066891960d6714407f0bdbb0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/10-overview.png",
+          "bytes": 202794,
+          "sha256": "31ce7b8f08e05a902f37a7a218e21d167d7ddb550d07a18f8fb243037f83bf99"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/10-settings.png",
+          "bytes": 131313,
+          "sha256": "3f715f705ecccd72ba4455839253835f2ceca3d603d3658909b897055380373c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/6-detail.png",
+          "bytes": 155249,
+          "sha256": "a316b4001ecb5a2e448289ea2ef66580517d3365d683546d36f8762cf28ddfae"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/6-list.png",
+          "bytes": 140451,
+          "sha256": "0f4f850775059d2db2585f2050089af8e17a2616cd8368a09c67c1b6c5e92305"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/6-overview.png",
+          "bytes": 216625,
+          "sha256": "feee04d4eba6297e8e5a3ef43e47c4932effc836ebf9ab65ed95ddd4700b940f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/6-settings.png",
+          "bytes": 137598,
+          "sha256": "6fb08b27cbc3f05ef06f53143ec62242395fabe0a8558daca43742a755a1e490"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/7-detail.png",
+          "bytes": 348619,
+          "sha256": "98fbd287c8df8f4374c2fd81d1fd2494797d65388e1d0a19292dcab73594504f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/7-list.png",
+          "bytes": 310924,
+          "sha256": "c5502dfca5b84a0389d8f955d9e9fe2ad62d4381ce7ee45bf2a20256292828e2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/7-overview.png",
+          "bytes": 433135,
+          "sha256": "5b8fe9e48ac4cb9a88d2fc0e7a6913406e55a702f293ed3d32a534e93f14fc4f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/materials/previews/7-settings.png",
+          "bytes": 334118,
+          "sha256": "04dd38032b3c392b75d09cfc98fa6d43b29440b49d698524cba2704c45849dbd"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/package-lock.json",
+          "bytes": 112046,
+          "sha256": "a0a6d96d776a35e1ef8cc7311e16f3442d1bcb1abe397f57d4d768fb6b3181bb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/package.json",
+          "bytes": 1252,
+          "sha256": "5eb8c903600b2577299c97dfff5cfa6ec0fb69bcbaa5678f68fc1598734a5f13"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/LICENSE.txt",
+          "bytes": 526,
+          "sha256": "6e0f01feaf9a16e8f435ba55b91420c396686b01eb60cbbbdf106ee0220048a9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/README.md",
+          "bytes": 2302,
+          "sha256": "e8767a368d4b5e340a760018bbfca55a58a7cb3a6fc16fa4b2339ff7daf0b14f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/index.cjs",
+          "bytes": 28117,
+          "sha256": "4a7796289261883b9d04cff7d333963fdc577524c2d066a646320072011a7b56"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/index.d.ts",
+          "bytes": 29,
+          "sha256": "d5372d042d9f41b1606b145d309ff1d18ae3546ee61e34be18824e4b3839a992"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/index.js",
+          "bytes": 27167,
+          "sha256": "edad31a8866e15099d7db1acd22109f9b4c50910259893eb1c0c84e578b1270b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/tailwind.preset.cjs",
+          "bytes": 4095,
+          "sha256": "ab4aecb7ae39b6926c373d5390e9241872118a1c15b6e7e4dc65bd8920c15a37"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/tailwind.preset.d.ts",
+          "bytes": 2494,
+          "sha256": "5fdddb0506d4ecaac024ae6d75f7129c9ccedebbf7dc51e152bb6bfd07fc85ab"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/tailwind.preset.js",
+          "bytes": 3173,
+          "sha256": "39f3ec2e535765a7b0ffd2831d3afe51962355cb80fe83a9deeb6b3a92139a38"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/tokens.css",
+          "bytes": 79996,
+          "sha256": "e5d338722cdc84f9371cc26a0324d33e904a544760d38ed59a2332df888eba4e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/dist/tokens.d.ts",
+          "bytes": 40997,
+          "sha256": "3c6cd859062c85581a1849dd4dd8a1f44f762745e44c6b485705cb7c283bbb5c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/package.json",
+          "bytes": 793,
+          "sha256": "5f0abb5763eb8f4d1e9ed7ccdf68d87c9a0b4cc1b49183c9b69cb67e0eb525e2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/src/index.ts",
+          "bytes": 29,
+          "sha256": "d5372d042d9f41b1606b145d309ff1d18ae3546ee61e34be18824e4b3839a992"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/src/tailwind.preset.ts",
+          "bytes": 3190,
+          "sha256": "2c9ee8f8e23b33f8a53b47f5be503a6bcea496afc83e09aeb761fba50605fbda"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/src/tokens.css",
+          "bytes": 79996,
+          "sha256": "e5d338722cdc84f9371cc26a0324d33e904a544760d38ed59a2332df888eba4e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/src/tokens.ts",
+          "bytes": 30125,
+          "sha256": "f941b8fc059d682b92be7b4bb13c13351d400439a41f03ada5ebe55d6d51f2b4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/theme/tsconfig.json",
+          "bytes": 461,
+          "sha256": "9715ea0bfee3e1c7641e0735ae97cadb22678f1df2c09716b610a4e01347f07e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/LICENSE.txt",
+          "bytes": 526,
+          "sha256": "6e0f01feaf9a16e8f435ba55b91420c396686b01eb60cbbbdf106ee0220048a9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/README.md",
+          "bytes": 8451,
+          "sha256": "66eb9614f881688fa05cfc08dbe4912d8d3d8dca93ba8ee744ebd552b9b4c389"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/ActivityFeed.d.ts",
+          "bytes": 660,
+          "sha256": "66bd5942aff32eb05694ba7bd2d0e16cfbcd0ca0bcc6d0caa27e846e7b266c22"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/BreakdownPanel.d.ts",
+          "bytes": 520,
+          "sha256": "22444f2cf8d0e24700aaa6831bfdb94bd1a321ad9f46e8925cd95c8c738e0b76"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/DangerZone.d.ts",
+          "bytes": 453,
+          "sha256": "1867d7a31ad523a109b95bce19b0062e7f4a56741dfc4447df7e6b33ac52e5cb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/EntitySummary.d.ts",
+          "bytes": 679,
+          "sha256": "483d7053f38fe353188c6d20daf668aa136ae854f710b0fcfc604d613b04b5c7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/KpiRow.d.ts",
+          "bytes": 707,
+          "sha256": "b09d151ff6d5cdbfc64df8e3c8a4670e589fae8e2c68a65787cd78eb5ee25a63"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/PaginationBar.d.ts",
+          "bytes": 447,
+          "sha256": "d40367408cb6cacabeef60b3a71059ea2b88931e6004a828e57d512dbe2d9caa"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/QueryBar.d.ts",
+          "bytes": 276,
+          "sha256": "50026db6b89d82fc4bed76ae2e3317ce62d7bfe76df6672fdf68e8710ea82beb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/RecordTable.d.ts",
+          "bytes": 515,
+          "sha256": "2e0aa8cef9b5daeba41fad2e4589559389ba6e4198a6d548c6d8a82ea70f2c9a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/RelatedRecords.d.ts",
+          "bytes": 440,
+          "sha256": "6181296cd7c1db10cf27d680d778dc87971c04128364566bff80b956aa3a5d4a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/SettingsNav.d.ts",
+          "bytes": 457,
+          "sha256": "bc6164df97a895614cd1dab105e91022d341eec0d03cab44dffe182e415719e4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/SettingsSection.d.ts",
+          "bytes": 1010,
+          "sha256": "ec86365b90adf8371dc9ad5b2a16fe00ff56f80d3b21e19fcc95b2abfe756630"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/blocks/TrendPanel.d.ts",
+          "bytes": 471,
+          "sha256": "b9d79d53a4667582bf5b1d308c7faf83c7fbf4537792747813ed5b9f9099ee00"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/AppShell.d.ts",
+          "bytes": 531,
+          "sha256": "de592e04909553df29b2f26b550a05819841fdfd10e0479f9cd70e559a8a310a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Avatar.d.ts",
+          "bytes": 390,
+          "sha256": "8c87a80b8171894d1aa545f0f8c2458581cda93d03f4c3d8c3d2b74d311fbdc5"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Badge.d.ts",
+          "bytes": 1063,
+          "sha256": "64a0cdb1c26516d41c340a8ce9d9216a08c34e22efeb20f1b099958e1845f8dd"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Button.d.ts",
+          "bytes": 449,
+          "sha256": "aeaad2716cd508a9f629c4f74376b06118c696223b68863be5550d3fbd6ce8fe"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/ChartCard.d.ts",
+          "bytes": 441,
+          "sha256": "8932c170785b3c2cbf0a6497b2ea1812adf5c44f33eb501a83117e7772309836"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Checkbox.d.ts",
+          "bytes": 410,
+          "sha256": "e51b135413b5c678767a6c12d83783373e3f8672951802ca43b553d3fb732b70"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/CommandPalette.d.ts",
+          "bytes": 589,
+          "sha256": "70a82e1b8284ddb246c25875cc13b6d4020994606790336e0423a5cc8d9be5b1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/DataTable.d.ts",
+          "bytes": 1208,
+          "sha256": "8f76276e6afb1e90c73cc7cd93181f5460ef03619cb40e97aa956862450414e0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/DetailPanel.d.ts",
+          "bytes": 449,
+          "sha256": "1fd9cfea3d5edce721d0af11b228ac5da58b80ea64920ff478b710590c621cb1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Dialog.d.ts",
+          "bytes": 572,
+          "sha256": "f59847cfd89e994eac0c76f0e5b25aca2f0009db2fee7f4aa011f133778408fb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Drawer.d.ts",
+          "bytes": 234,
+          "sha256": "00df570b4e4a1ae15949176f4c836c3a5777d356bc10e1823b163b85380e3472"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/EmptyState.d.ts",
+          "bytes": 425,
+          "sha256": "2634261f16a0d2ca72e125bfcb77ae623562609c0add58cb12881cd08c1c7bc7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/FilterBar.d.ts",
+          "bytes": 804,
+          "sha256": "6f1eb681fe8195594484773a595510438ec253f27179f7113cc83f2a5fe12940"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Input.d.ts",
+          "bytes": 397,
+          "sha256": "9f4bfb184ffbde6e98d9cdf078506bd654eb3b27ae533563d7eae78156704791"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/KpiCard.d.ts",
+          "bytes": 506,
+          "sha256": "ddfa1d7dce2867190da7e5b0951a6ab831d463cc8ffc518bf13e67070e087af7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/NavGroup.d.ts",
+          "bytes": 580,
+          "sha256": "7834cb0d8e3a8965a48572598c2c73c7da9a2ac94f35b09f43877c4764c9254d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/PageHeader.d.ts",
+          "bytes": 442,
+          "sha256": "a7df31173b1cabad0bd9dff7b7feefac068f72545f7f5a910eaea78055a5f985"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Pagination.d.ts",
+          "bytes": 417,
+          "sha256": "82f3048df14f234491841e8f4c203af83158c62b4972c316213af298d286818e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Popover.d.ts",
+          "bytes": 481,
+          "sha256": "5b621fc2ce2cf1ff1bf6eaedae9f25f64853a4155fa28a810d558cbcd94a83ad"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/ProgressBar.d.ts",
+          "bytes": 455,
+          "sha256": "da2fe90b2592d7d19529e19b03e336d093425f045f13ebf097aaa39b851f83b6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Select.d.ts",
+          "bytes": 538,
+          "sha256": "79c02164abcad759b622ecc9de449017ce48bd53ff1c61d9f93c513b07b89037"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Skeleton.d.ts",
+          "bytes": 377,
+          "sha256": "5e05c24100d78babeee9ac1896582826f49f5373e4fed2d6e83ff2d301185405"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Sparkline.d.ts",
+          "bytes": 420,
+          "sha256": "843877bcbeff45c7ef7757ead5e044a8337e88d6b23694300d8693e31d0c5b82"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/StatTile.d.ts",
+          "bytes": 400,
+          "sha256": "88a4ea7bd4c95422cf38319f9ee532fad57841fe3d89d9db5c7bdd218d8d8bd0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/StatusDot.d.ts",
+          "bytes": 425,
+          "sha256": "8e997ae185773962e456b20f53226b2567992c5e73a4fce1a52382207a1c940f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Tag.d.ts",
+          "bytes": 367,
+          "sha256": "e1dcd016101426e6d92104f7988be97f7344c2f2b289b8da98f01fe6e3724426"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/ThemeProvider.d.ts",
+          "bytes": 345,
+          "sha256": "fc1e173f6813f11c4769dba652320cc78105e1e558e32ef3d404de0f109e21e8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Toast.d.ts",
+          "bytes": 481,
+          "sha256": "a4034975be85485c7c5d152e41ec14581990783256d8de011cf23d1e4cc1d626"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/components/Tooltip.d.ts",
+          "bytes": 468,
+          "sha256": "421dfbed46796fed3747c115712cf60ceb443bd881d5175ae66ecdc16d9723cb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/index.cjs",
+          "bytes": 85240,
+          "sha256": "528e6f7a9f6d7dc0203bdb370869b46a14888e80f96bc856252551572427a477"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/index.d.ts",
+          "bytes": 2028,
+          "sha256": "01d65f81020c05a1b61cc14e4d6a437327ba1bf3752a39ae86392a281e64303f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/index.js",
+          "bytes": 74709,
+          "sha256": "08dce07e32156ad566daae6dd9bc701c1bec0e4fcd0807f9dd5bd70da21777ab"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/internal/foundation.d.ts",
+          "bytes": 8297,
+          "sha256": "edb9a8205a2fd102936f8ba47b60e1d5354774558f4c5dab9c20adb06d051aef"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/recipes/Detail.d.ts",
+          "bytes": 804,
+          "sha256": "f8c0128c2d6acb3c2822a91d288896d1d2d6e25d3e6344eda2449c5307dbb787"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/recipes/List.d.ts",
+          "bytes": 660,
+          "sha256": "c550a151ca9268ecfa6f8899dd7b2f6c0e884893d65785ea4ef44d430d666153"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/recipes/Overview.d.ts",
+          "bytes": 719,
+          "sha256": "56eb3539900be42a9b9a93e4b85b90bd89d1adaa27b21cae3b1d73a7acbb8384"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/recipes/Settings.d.ts",
+          "bytes": 753,
+          "sha256": "021a3f126f394c8680e7273bcd1ba37a28285b9cb0cf9aaf471e91970d93ef9c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/recipes/catalog.d.ts",
+          "bytes": 1130,
+          "sha256": "09ed697ee55124fd2edfdfa0bcf35fc3d49e9c13b6b8c480f80c9be59fc2d626"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/dist/styles.css",
+          "bytes": 32003,
+          "sha256": "847a09fd7f960eb59ca867471f1c300fc18ad1b91102d1898c90559a9ab254c6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/package.json",
+          "bytes": 679,
+          "sha256": "619ff899d90d987137b277f5e503927d5177705671a7c9c1a7f071d94ff8ea0e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/ActivityFeed.tsx",
+          "bytes": 1833,
+          "sha256": "fe33d1499c90c2716ea0870936dddf557ca77b50f37f06f4bf095fe85bdc6de9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/BreakdownPanel.tsx",
+          "bytes": 1551,
+          "sha256": "e70891dc16abfdf8581796f6006ac7f5f6d5aea3971c7ab772df1ea316edbbfe"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/DangerZone.tsx",
+          "bytes": 2218,
+          "sha256": "8bd02c902347bbf2c582d53015faea2a5002cf27e15ddcf6a82230a825d69a39"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/EntitySummary.tsx",
+          "bytes": 1544,
+          "sha256": "9bfded31aea7deabf7fd0dd40cd68216982c3db369e4ae5d828734a218a8abca"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/KpiRow.tsx",
+          "bytes": 1683,
+          "sha256": "7cd2ea5e7413dec303d11e2a361594f043fa353a6add701d9eef16f5d4994735"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/PaginationBar.tsx",
+          "bytes": 1157,
+          "sha256": "eb57c856cd6227471d5cee8b7b11f9b8d45ba8df73f926c516b7aedc525785a5"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/QueryBar.tsx",
+          "bytes": 369,
+          "sha256": "2df79d62187a9f534cfe6c3955b53d3c7ebd3ca4c0d62181f0104013462123fd"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/RecordTable.tsx",
+          "bytes": 1414,
+          "sha256": "a1304ef7ff658f2e5c28012c9a8524d441ea335c07aa237ccfaa5bd126cd49de"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/RelatedRecords.tsx",
+          "bytes": 995,
+          "sha256": "a2ac815eac24d02434894be825b34370e3ba90748e22fe0f2f4a92321fc16606"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/SettingsNav.tsx",
+          "bytes": 1058,
+          "sha256": "a954a8dc0395a351d394685363fc0e381b07b8595c68e1d523c3793f29a50f32"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/SettingsSection.tsx",
+          "bytes": 2068,
+          "sha256": "c3a21a8363ab52cf76c7d6510ce50b5864d9d5fe6dfd370dac3adb116b98257d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks/TrendPanel.tsx",
+          "bytes": 3133,
+          "sha256": "6375931c6ca9256d1baaab63f4f671b71bdc14ea3f7a78abc552bcee21b1fdea"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/blocks.css",
+          "bytes": 12857,
+          "sha256": "cf4787d24a156ce031752f730fb8ea81c41b8fd07175757392da152347940370"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/AppShell.example.tsx",
+          "bytes": 721,
+          "sha256": "edb7aeb2f1b0bf11da5d6ecf0e6b09210dc9734bd288fb863a9216823efc36a8"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/AppShell.tsx",
+          "bytes": 1476,
+          "sha256": "cd436d6c78f0f091bfea0c3949e33060dc82ace99a56c0a907aa626670bd194b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Avatar.example.tsx",
+          "bytes": 231,
+          "sha256": "642f4d877b51ea792bb0bbb9da132acb2b44bef41aae3ccd568492dcae2fb788"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Avatar.tsx",
+          "bytes": 823,
+          "sha256": "934c694b1cd1f9b1364e196a35f1e843cbf60f7682de65d4f1e1618fa2403cfa"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Badge.example.tsx",
+          "bytes": 275,
+          "sha256": "cc3a96275a44b786f308b0166c9a3d63b9ab803350dd85b5dae3b2e1f330208d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Badge.tsx",
+          "bytes": 947,
+          "sha256": "2356f358d20ca8d17037d1c3b1a015d9c6b3f16c017ac57c113b3611f19cb431"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Button.example.tsx",
+          "bytes": 588,
+          "sha256": "b4790a1695509304169d5cbb0f1e86a84191a60076edd84032486be50b103f77"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Button.tsx",
+          "bytes": 894,
+          "sha256": "aae07b76b899d10b74410a114cb8b1621229628cf4031bec95cda959c79a7bc3"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/ChartCard.example.tsx",
+          "bytes": 384,
+          "sha256": "4eb03f887b412bd0b578676d4e2977d08a49a8d6245b72ac0502e52aef4a9e7a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/ChartCard.tsx",
+          "bytes": 938,
+          "sha256": "f8e1c5fe3839283c2c498c219108c7bcf95aeb70c96f8f91e4d0ebbce295290b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Checkbox.example.tsx",
+          "bytes": 410,
+          "sha256": "cf7cc5c05a9022834f8b52fea11aa41ed0b4b4647f8b9931c5f43cf2f1e295e4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Checkbox.tsx",
+          "bytes": 889,
+          "sha256": "9d2e5afb8feaba598fb54bb7d1f75d5d15dfd897ba0692ebbd665d7215f1d918"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/CommandPalette.example.tsx",
+          "bytes": 604,
+          "sha256": "a46d8dec22177810087bb383f48a026ac9aef1899f7d735055a31383a57d10b7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/CommandPalette.tsx",
+          "bytes": 2761,
+          "sha256": "2867ffbdde6b52d45849b42b719942b1b48eaabc53fbee5c1f0b0c1aeb2e74d9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/DataTable.example.tsx",
+          "bytes": 970,
+          "sha256": "ab526b73feaf4169632e9977145d0287c8024810273b57ee68a7ce5fc516d27e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/DataTable.tsx",
+          "bytes": 7809,
+          "sha256": "eebad344af2da3cad97c7eb3b11d3f7f75e07a70bdfa27c3bb62244af33ba81d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/DetailPanel.example.tsx",
+          "bytes": 582,
+          "sha256": "f8af00ee9e77ed1888a356d15689d89e6a23ca7fab2a27342fa8631228a443f2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/DetailPanel.tsx",
+          "bytes": 1112,
+          "sha256": "a0a8084b53b49dd9e3a0ab097d414be92ee08aa1f00279e073307d61022eea5c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Dialog.example.tsx",
+          "bytes": 810,
+          "sha256": "ac1f7ea35b72ba8ba7f989dc4b02fda623b85380ff837f775d3d37fdf2734278"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Dialog.tsx",
+          "bytes": 2729,
+          "sha256": "d5e58e0ba40f45f4395256703e1b9dd268c3bd8b0bca66ea16530fcd937a4e00"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Drawer.example.tsx",
+          "bytes": 749,
+          "sha256": "c33dd06ea054808acd2187c1c628676add5c1bd60d90e4eda305232a809f8235"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Drawer.tsx",
+          "bytes": 363,
+          "sha256": "6fb26ebfd64fb881b1caefd5fec882a4143d7bce91bfdf580535b7418f532763"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/EmptyState.example.tsx",
+          "bytes": 172,
+          "sha256": "0b152eb7065dc08c7b08298711d5a0ad467f47960d7c40aa9f2edca41389b18b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/EmptyState.tsx",
+          "bytes": 770,
+          "sha256": "642db3fda8191a04f9a35134df50000fbecc2e710447adcb46b8db601b955ad6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/FilterBar.example.tsx",
+          "bytes": 863,
+          "sha256": "435187238373ead44f07ab196de7268cc51f8da2e7c671e823b3ae09cbe71594"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/FilterBar.tsx",
+          "bytes": 1634,
+          "sha256": "1a8041915b50dd3eaa8d52f1c2541f58c5dcf876a4b8955730f554370547da64"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Input.example.tsx",
+          "bytes": 386,
+          "sha256": "7c806e4b3270cf51052cba496f494d908b2c804d435abaa7e68e0b593dade471"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Input.tsx",
+          "bytes": 1038,
+          "sha256": "ed0af8b8da59429fe4de8ada17091c4b84e6fd60a0f486f7a533ced7d45193c7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/KpiCard.example.tsx",
+          "bytes": 384,
+          "sha256": "604344e10d29ac1d2ce1de63dab9099f90646bb0e3559c7e4df5558c808d5183"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/KpiCard.tsx",
+          "bytes": 1174,
+          "sha256": "399803d1dfbd70a6210ad9b19ab07515933e365afbd6fc44fc69294aa075175f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/NavGroup.example.tsx",
+          "bytes": 566,
+          "sha256": "751227371437b3b366eb43d5c09b80bdc97acecff217b6ff9238f1bebebb91a1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/NavGroup.tsx",
+          "bytes": 1157,
+          "sha256": "e71be9c18d3e3224d7aa4bb2d7975203010184e7823afe1784f04cf7359a39fc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/PageHeader.example.tsx",
+          "bytes": 310,
+          "sha256": "20c7f8868f157900ae0989e9a2ff4066ca09fc6ea899e765703cc40eb80ac678"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/PageHeader.tsx",
+          "bytes": 812,
+          "sha256": "ef0139118ef675ece6f7c0358fc6b340c4b49b6a5c8d22a7c29e4ebd5cb5ebf0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Pagination.example.tsx",
+          "bytes": 212,
+          "sha256": "99cc6409b26661469c530aeb4c5a022367f0ea629d391629265b661daa0e43ff"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Pagination.tsx",
+          "bytes": 1211,
+          "sha256": "6e5d2488e5ad82750bf34fefa1c75a9d9e695ae995b2f08e89019e68684a5fa9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Popover.example.tsx",
+          "bytes": 427,
+          "sha256": "e7ec90872d5883618f5ca5f4ae99060390c402d49b06a0782baa30d3afee44ba"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Popover.tsx",
+          "bytes": 1835,
+          "sha256": "f0d574c44d3729642a27bd2e6552b34e4e02000b6870e45b14d558f7b3a3880c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/ProgressBar.example.tsx",
+          "bytes": 382,
+          "sha256": "67b035e36d0f0c88d284a2a05028dce706a27f1f61aff011f3d5398e2277a381"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/ProgressBar.tsx",
+          "bytes": 787,
+          "sha256": "1a6ee71ceb52059a28cf6e2b1803c3be5ed140a75ad2eaeaf1df450b9b7ba9eb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Select.example.tsx",
+          "bytes": 396,
+          "sha256": "b4bfa3c54ac92a8bc57b21c938c25499a9939502725be58ea3989fd6fbab3bcc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Select.tsx",
+          "bytes": 1259,
+          "sha256": "05d4913f76de87397a41857ac2e3c70c85d734c8fbed6e519f09b34789d7aa09"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Skeleton.example.tsx",
+          "bytes": 135,
+          "sha256": "d7085f6c2267f2f5d94ca436dd516e19923fb1a2852d3788ae9ae9f5dc74afbc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Skeleton.tsx",
+          "bytes": 699,
+          "sha256": "a018612a5e98845acda42c6fc42bc0df1f461c468f56dfdb3a794aedfda1a224"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Sparkline.example.tsx",
+          "bytes": 366,
+          "sha256": "d61e2de13d11710cbe9dca04ea97e9f966c150fd7dd009c0708bdc37a0d57d6b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Sparkline.tsx",
+          "bytes": 1185,
+          "sha256": "7ff4fdaac6a40b8364c7d70e4964bd7d45ced36f3b0b006b76e6d43257813086"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/StatTile.example.tsx",
+          "bytes": 265,
+          "sha256": "210622a3347e47a7765c682b8dc8baab7700f9f98bd20eeaa5b747ead1219b7f"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/StatTile.tsx",
+          "bytes": 671,
+          "sha256": "9296d3b521f5ac98ca3f0ef1573898ec32f44a9e12d89b56f06106bfa54b6f94"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/StatusDot.example.tsx",
+          "bytes": 269,
+          "sha256": "51941d8eb0ac2acac48f5674e769ee9d0f131375a08ce7c7fe1f92fb3bbd1e23"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/StatusDot.tsx",
+          "bytes": 682,
+          "sha256": "b7f6c8b3a5b8767a7c505295c775960caad80e38331e5028184c43f156cbdfb9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Tag.example.tsx",
+          "bytes": 373,
+          "sha256": "c3ef5c1191d0dbd6908443ea9050e29d915b5cb418b39e0c6b21cbe8ba809286"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Tag.tsx",
+          "bytes": 724,
+          "sha256": "06c0ff993c64b8c64ebbcf7cd136803449f25f87f0bd59eff3b265b0421500c7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/ThemeProvider.tsx",
+          "bytes": 694,
+          "sha256": "7fa473858ab7160f3e715a0b223faeb0c74c47becc6509f9cc14291f4a116508"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Toast.example.tsx",
+          "bytes": 394,
+          "sha256": "3189f706944a2c7ed21245b5d7cc36b4a6633f697350e250c452fa2d77e567dc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Toast.tsx",
+          "bytes": 1705,
+          "sha256": "a6a779808fdd9dc4cdee75a3f75e9682e101456f7af99c8103aa62b87feea507"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Tooltip.example.tsx",
+          "bytes": 225,
+          "sha256": "26c2ac0082d42f7645fd892091af51f784bd49949cfcfbaee8a18d796f055df6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/components/Tooltip.tsx",
+          "bytes": 1522,
+          "sha256": "2b998e64311d86cd2b74db1b4afd0a5d72ac51223ebea1f5d807ab8d46056be0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/index.ts",
+          "bytes": 2059,
+          "sha256": "a17effa9e22e0a028b3acf93b3b4f08fc382b767132c2f4907a97849ea672e63"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/internal/foundation.tsx",
+          "bytes": 2742,
+          "sha256": "4b976650648ac277afcd071ba6906c08402f99c3311ee79bc4b6e085ad23c9f4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/recipes/Detail.tsx",
+          "bytes": 2306,
+          "sha256": "dc3ff5d419ac42d7642e2069414de3671d1ecdbc5395d55f0b816f9efb26f03c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/recipes/List.tsx",
+          "bytes": 1086,
+          "sha256": "16dca41ae9b340f5a955da4edf6317fa5881bf25a9b6c618ab8840711b3b9df2"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/recipes/Overview.tsx",
+          "bytes": 1100,
+          "sha256": "bd25d3ce92aaa28fc20766b740e6cca0cba5386ed6c8e6dc4cb9ddd1645ec821"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/recipes/Settings.tsx",
+          "bytes": 1641,
+          "sha256": "c534d7cd16533a9bf7b7328ce10c12d5a604f702dd8e9bc9069b3f2d47b6f815"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/recipes/catalog.ts",
+          "bytes": 811,
+          "sha256": "30d1f86e06badbb4993ece6eec4256e391aef106f8d704bbae432570e48aedc7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/src/styles.css",
+          "bytes": 19145,
+          "sha256": "876336bd3adb1feb957b5ccdcf6c4ae7c53b6c7cfbfc95dae18d0439c2e4b40d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/packages/ui/tsconfig.json",
+          "bytes": 461,
+          "sha256": "9715ea0bfee3e1c7641e0735ae97cadb22678f1df2c09716b610a4e01347f07e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/postcss.config.cjs",
+          "bytes": 69,
+          "sha256": "fe0d5cf3cb8c1922f71cca2da3796f3e63366623ad6164336655766efe330e6a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/browser-contrast.cjs",
+          "bytes": 3739,
+          "sha256": "3783f74362855344c9ae44efe2d4382c4524cca8fe0fd2ce817ccbf0e8fec769"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/browser-runtime.cjs",
+          "bytes": 469,
+          "sha256": "c2333e2b1965a6419f1b0afc0fc3a02772706b6b4c050c9a8acdc9ddbbb2e096"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-client-browser.cjs",
+          "bytes": 3565,
+          "sha256": "d6058b8a9adf90b1494cf02933982a5c26a86577809f11baf2f5af8c89581fad"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-guide.cjs",
+          "bytes": 1567,
+          "sha256": "fa8d62d352772d4b9b7451945029c0087daa6d627acf6c14622090c063739b12"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-phase3.cjs",
+          "bytes": 11650,
+          "sha256": "565bb45f517c2921f78fb430f294a9d508d07d820058bada3239155f99479316"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-phase4-model.mjs",
+          "bytes": 2110,
+          "sha256": "5208224514ecbfc363974b2cca481060c33e88e6f33e982cd919e7479386cf32"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-phase4.cjs",
+          "bytes": 12536,
+          "sha256": "85e51021fc51bf33497a8701cf78ee90a728626b1df4d2280334b31546ca5a71"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-release-browser.cjs",
+          "bytes": 4745,
+          "sha256": "6c158d5fc4321ecbfc15070e3c7ac5b7fff229b8276ce9a96dbfeb7e8bba5c1a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/check-token-contract.mjs",
+          "bytes": 2791,
+          "sha256": "06d83ff16ba33ce78c85126425176b3cdeee570fdeda753feae6c25be72f287c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/phase3/browser-report.json",
+          "bytes": 71648,
+          "sha256": "ca3dd214c421e0a93f9714bbedfd1459f7d74b2620bf32b84e75f38357d2cb63"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/phase4/browser-report.json",
+          "bytes": 23508,
+          "sha256": "591a313b2e7790816546e86a6ed4e5d1d66b3909d6aacc850fae1287761d0bfc"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/phase4/model-report.json",
+          "bytes": 367,
+          "sha256": "276f3517837631bb43045dd902408d1be908a5c6b4d52f2b37ad13c7370f577d"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/phase5-token-contract-report.json",
+          "bytes": 473,
+          "sha256": "2b2939659d8e663e3e381ffe74d9d2180c32ddd4fd9a588260258a3df6d4320c"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/release/client-browser-report.json",
+          "bytes": 6689,
+          "sha256": "8ea64d2023f0f879200e05ae5b040d1bad302e6d55ec232aa9aa129249ed9994"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/release/guide-report.json",
+          "bytes": 102,
+          "sha256": "8ff099185b2612938e38fa580df71b168eee849b9e8590dca36f8186b0e11f44"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/release/hardening-report.json",
+          "bytes": 583,
+          "sha256": "5d935bd2ef556cfd9efbe440946e4766e29c22362cf080ed28e6ac18b5eaefb7"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/release/npm-audit.json",
+          "bytes": 364,
+          "sha256": "b371a504a40ed5a766dc75efe3602dad5c4a1fbe04d8be543eff36dab4469ce9"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/release/portability-report.json",
+          "bytes": 929,
+          "sha256": "107848f0b19ce92d6f92934fafff11cddccea7b83fe240143e66c02ab2a1ee81"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/token-audit.mjs",
+          "bytes": 3026,
+          "sha256": "8640a589fd7a75ec5bff373783c28494cbd627559b44a6055defb1d8044f6be6"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/qa/token-report.json",
+          "bytes": 4379,
+          "sha256": "860d809acae1ac8b5757d586d52c35e93b23ae02d90737043fa6e59e4591d266"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/scripts/build-guide.mjs",
+          "bytes": 8361,
+          "sha256": "a08d2751b785e1e51d69175a9240edaddc980d3b73f1c7dc8e728168c4bf785e"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/scripts/create-client.mjs",
+          "bytes": 5459,
+          "sha256": "361df97aa8e8c093e669e3d40bf74a6ff6201385acfaf2dc6f665fadec1a2a07"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/scripts/package-release.mjs",
+          "bytes": 5967,
+          "sha256": "5c2c8fe4f3086066a36afa256fe3a9ad4c99d3de583ebace7f819063637ef175"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/scripts/test-browser.mjs",
+          "bytes": 1414,
+          "sha256": "8ee1aff36e3d74595c018300e78494ccea59351a328877ba91a028259bf6a0ee"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/scripts/verify-release.mjs",
+          "bytes": 1179,
+          "sha256": "6354afbfc5b3a66679c26847fe523f2e121dee0e01df92058781c1f3214161b3"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/AGENTS.md",
+          "bytes": 1609,
+          "sha256": "f9bb31b6a588ecbb97c71be79b8de258bdd71396be805f41503b50a7b6cbc16a"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/index.html",
+          "bytes": 297,
+          "sha256": "1aec7fc67fc4292ceaa0bf71eba7ee923c17193e714fc75cc392c007e51b959b"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/postcss.config.cjs",
+          "bytes": 58,
+          "sha256": "1101ca039933c92ba71d75728d98800c0ab3fa600f8bb82070dd2973c8bad9c3"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/src/main.tsx",
+          "bytes": 6021,
+          "sha256": "60d5527fc099028517b2f301c773ab019f9dc8a8c29b01b7ec0c484b60fbecff"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/src/styles.css",
+          "bytes": 801,
+          "sha256": "ac0bd76ae3cad144324a796f7ccdce7357ee063528677fba92bfbb6ad65be7a1"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/tailwind.config.cjs",
+          "bytes": 123,
+          "sha256": "7af5a5fa9d3db68feceea356c86a0e4202ebca92397a51a842d1822052d43a53"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/tsconfig.json",
+          "bytes": 384,
+          "sha256": "367e68f0bba26f54fee27281790c3a28ddb45d96fffe508a3a68b60f05d16ceb"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/starter/vite.config.ts",
+          "bytes": 215,
+          "sha256": "2a1391a97b8d5b7f8cc1f239e12015801596242122dd79e79a1251fae511c8e0"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/tailwind.config.cjs",
+          "bytes": 134,
+          "sha256": "807dda159ba9923cd698e8d7199845d1e9f38d6f841ad6d7e35b9a514b285aaf"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/tsconfig.json",
+          "bytes": 392,
+          "sha256": "ea6fd4740476f35ca3fc6ca53f4afc2ca323277f79fd54fa175ce882446696d4"
+        },
+        {
+          "path": "quekou-workbench-1.0.0/vite.config.ts",
+          "bytes": 174,
+          "sha256": "87e384be8278118d27a6cf87697dfde9ce684bb6c094dc91604eda6d301c0cb9"
+        }
+      ]
+    }
+  ],
+  "deferred": [],
+  "publication_revision": "11.11.0",
+  "distribution": "Public documentation edition; executable code and licenses preserved.",
+  "separate_downloads": [
+    {
+      "tool": "meta-spec",
+      "state": "user-approved-release-with-known-limitations",
+      "repository_path": "tools/meta-spec/",
+      "archive": "tools/meta-spec/meta-spec-11.05.1.zip",
+      "sha256": "51ab2bf49b05bc9acbb52251d67b06e74ed4873cde799b76274d2d837c05a862",
+      "bytes": 613890,
+      "members": 630,
+      "version": "11.05.1"
+    }
+  ],
+  "development_plan_template": {
+    "version": "11.11.0",
+    "status": "available",
+    "repository_path": "4-FDE/开发计划.md",
+    "archive_path": "inputs/开发计划.md",
+    "sha256": "09092d7209dd2207fa4107aca88f3e91ca206ed5a1695ff0c4c913eb5d1a0948",
+    "bytes": 17114,
+    "included_in_this_companion_archive": true
+  },
+  "workflow": {
+    "version": "11.11.0",
+    "status": "revised-nine-node-workflow",
+    "repository_path": "1-FDE交付流程/FDE_流程图_内部执行版.html",
+    "archive_path": "00-fde-flow/FDE_流程图_内部执行版.html",
+    "sha256": "780956840a61b25f73cb78bfedec771a58680958b30efa2f7d035992c9bec665",
+    "bytes": 11930,
+    "source_sha256": "780956840a61b25f73cb78bfedec771a58680958b30efa2f7d035992c9bec665",
+    "archive_sha256": "780956840a61b25f73cb78bfedec771a58680958b30efa2f7d035992c9bec665",
+    "link_adaptation": "Nine-node internal execution edition; canonical HTML copied byte-for-byte."
+  },
+  "research_input": {
+    "version": "11.11.0",
+    "status": "available",
+    "repository_path": "2-项目经理/④调研/调研报告（对内）.md",
+    "archive_path": "inputs/调研报告（对内）.md",
+    "sha256": "93fe9b00696db7005b59560fcbd5b5fd002afd28ec9ae0d554cc2665ccd5d781",
+    "bytes": 25879
+  }
+}

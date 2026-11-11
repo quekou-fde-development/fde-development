@@ -1,0 +1,10 @@
+{
+  "version": "11.07.1",
+  "source": "开发技术手册.md",
+  "output": "index.html",
+  "source_sha256": "b6644161611b550a8c13d9dc941be148c57b1ea832ffc73c1aa57c493bcaac5c",
+  "canonical_html_sha256": "ac2f2e6cb2aa27bce7081a9888b7bad9f9c8039efcea5f4f432ebad1e6ee1d82",
+  "html_sha256": "87d9b78cf5a1f5cbb7cf30dbbff59efb59ee11d65cf849b5a270ca2d418a9acb",
+  "headings": 45,
+  "bytes": 104288
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>缺口 FDE 全流程图 · 内部执行版</title>
+<style>
+:root{--ink:#07172b;--blue:#246bfd;--orange:#ff6b35;--line:#d7e0ea;--paper:#f4f7fa;--muted:#45617f;--green:#16856b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 "PingFang SC","Microsoft YaHei",sans-serif}
+.toolbar{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line)}
+.toolbar strong{font-size:17px}.toolbar p{margin:2px 0 0;color:var(--muted);font-size:12px}.controls{display:flex;gap:8px}button{font:inherit;cursor:pointer}
+.controls button,.close{border:1px solid var(--line);border-radius:6px;background:#fff;padding:5px 12px}.controls button:hover,.controls button:focus-visible{border-color:var(--blue);color:var(--blue)}
+.workspace{max-width:1500px;margin:24px auto;padding:0 20px}.canvas-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:34px 28px}
+.flow{display:flex;align-items:stretch;gap:10px;min-width:1260px}.node{flex:1;min-height:148px;border:2px solid var(--blue);border-radius:12px;background:#fff;padding:16px 12px;color:var(--ink);text-align:left;transition:.15s}
+.node:hover,.node:focus-visible,.node.active{border-color:var(--orange);box-shadow:0 5px 20px #07172b14;transform:translateY(-2px);outline:none}.node .num{display:block;color:var(--blue);font-size:24px;font-weight:700}.node .name{display:block;font-size:17px;font-weight:650;margin:5px 0}.node small{display:block;color:var(--muted);font-size:12px}.arrow{align-self:center;color:var(--blue);font-size:24px;font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0 0;color:var(--muted);font-size:13px}.key{display:inline-flex;align-items:center;gap:6px}.dot{width:12px;height:12px;border-radius:3px;background:var(--blue)}.dot.pm{background:var(--green)}.dot.arch{background:var(--orange)}.dot.fde{background:#7b61c9}
+.detail{margin-top:18px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:10px;padding:22px 26px}.detail-head{display:flex;justify-content:space-between;gap:20px}.detail h2{margin:0;font-size:23px}.detail h3{margin:18px 0 8px;font-size:15px}.detail p{color:var(--muted)}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 30px}.action{padding:12px 0;border-top:1px solid var(--line)}.action strong{display:block}.action span{color:var(--muted);font-size:13px}.output{padding:12px 14px;background:var(--paper);border-radius:7px;color:var(--ink)!important}
+.note{margin-top:16px;color:var(--muted);font-size:13px}.note a{color:var(--blue)}
+@media(max-width:760px){.toolbar{padding:10px 14px;align-items:flex-start}.toolbar p{display:none}.workspace{padding:0 10px;margin:12px auto}.canvas-wrap{padding:20px 16px}.detail{padding:18px}.detail-grid{grid-template-columns:1fr}.controls button{padding:4px 8px}}
+@media print{@page{size:A3 landscape;margin:10mm}body{background:#fff}.toolbar,.detail,.note{display:none!important}.workspace{margin:0;padding:0;max-width:none}.canvas-wrap{overflow:visible;border:0;padding:0}.flow{min-width:0;gap:4px}.node{min-height:120px;padding:10px 7px;break-inside:avoid}.node .name{font-size:13px}.node small{font-size:9px}.arrow{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="toolbar"><div><strong>缺口 FDE 全流程图 · 内部执行版</strong><p>九节点主流程 · 点击节点查看动作、责任与产出</p></div><div class="controls"><button type="button" id="expand">展开①</button><button type="button" id="print">打印</button></div></header>
+<main class="workspace">
+<section class="canvas-wrap" aria-label="FDE 九节点流程图">
+<div class="flow" id="flow">
+<button class="node" data-node="s1"><span class="num">①</span><span class="name">背景与商机</span><small>资料交接 · 行业调研<br>判断是否投入</small></button><span class="arrow">→</span>
+<button class="node" data-node="s2"><span class="num">②</span><span class="name">建联</span><small>2 次需求<br>陪填清单 · 约进场</small></button><span class="arrow">→</span>
+<button class="node" data-node="s3"><span class="num">③</span><span class="name">三次需求</span><small>生成客户调研手册<br>确认调研安排</small></button><span class="arrow">→</span>
+<button class="node" data-node="s4"><span class="num">④</span><span class="name">调研</span><small>现场事实与证据<br>对内、对外报告</small></button><span class="arrow">→</span>
+<button class="node" data-node="s5"><span class="num">⑤</span><span class="name">方案</span><small>架构设计 · 解决方案<br>开发计划 · 报价附件</small></button><span class="arrow">→</span>
+<button class="node" data-node="s6"><span class="num">⑥</span><span class="name">送审</span><small>三件同版一次送审<br>记录结论与条件</small></button><span class="arrow">→</span>
+<button class="node" data-node="s7"><span class="num">⑦</span><span class="name">启动会</span><small>demo 演示<br>签验收标准及清单</small></button><span class="arrow">→</span>
+<button class="node" data-node="s8"><span class="num">⑧</span><span class="name">开发</span><small>按需 spec<br>开发 · 测试 · 发布</small></button><span class="arrow">→</span>
+<button class="node" data-node="s9"><span class="num">⑨</span><span class="name">维护</span><small>运行交接<br>维保与续费</small></button>
+</div>
+<div class="legend" aria-label="角色图例"><span class="key"><i class="dot"></i>主流程与商务决定</span><span class="key"><i class="dot pm"></i>PM：组织、核对、计划与报价</span><span class="key"><i class="dot arch"></i>架构师：架构设计与对外两件</span><span class="key"><i class="dot fde"></i>FDE：demo、按需 spec 与实施</span></div>
+</section>
+<section class="detail" id="detail" aria-live="polite"><div class="detail-head"><div><h2 id="detail-title">① 背景与商机</h2><p id="detail-owner"></p></div><button class="close" id="close" aria-label="收起详情">×</button></div><p class="output" id="detail-output"></p><div class="detail-grid" id="detail-actions"></div></section>
+<p class="note">送审三件：开发计划、架构设计（含架构图）、解决方案；范围与报价作附件。详细执行口径见 <a href="流程说明.md">流程说明</a>。审核未通过时回到⑤同步修订；开发发现事实或设计缺口时回到④或⑤，已签验收版本不直接改写。</p>
+</main>
+<script>
+const stages={
+s1:{title:"① 背景与商机",owner:"商务负责人移交并决定投入；PM 接收资料、做行业调研",output:"产出：项目交接资料包、行业调研记录，以及继续／暂缓／终止决定。",actions:[["①-1 接资料交接包、做行业调研","核对来源，了解行业与客户基本业务，未知项标为待核实。"],["①-2 判断做不做","核对问题、客户配合、必要条件与投入，记录决定人、结论和理由。"]]},
+s2:{title:"② 建联（2 次需求）",owner:"PM 与客户对接人",output:"产出：客户资料清单、2 次需求记录、进场时间与配合安排。",actions:[["②-1 陪客户填客户资料清单","电话或线上会由我方提问、我方填写，不直接发表格给客户。"],["②-2 对 2 次需求、约进场时间","核对组织结构、数据环境、初步业务流和初步生产线。"]]},
+s3:{title:"③ 三次需求",owner:"PM；客户对接人确认",output:"产出：客户调研手册、部门题库、场景卡与双方确认的调研计划。",actions:[["③-1 生成这个客户的调研手册","按行业、组织、业务与场景选择题库和场景卡。"],["③-2 客户确认调研安排","确认日程、人员、资料、观察范围与许可事项。"]]},
+s4:{title:"④ 调研",owner:"PM 组织并出具两份报告；调研参与人记录",output:"产出：调研手册、证据样本、对内与对外调研报告、脱敏转写稿。",actions:[["④-1 进场调研","记录业务流、资金流、信息流、数据流、生产线与数据环境。"],["④-2 出调研报告","对内版支撑架构设计，对外版供客户核对事实和范围。"],["④-3 转写录音、改实名","按许可转写与脱敏，保留时间位置和原件索引。"]]},
+s5:{title:"⑤ 方案",owner:"架构师主做架构设计与对外两件；PM 主做计划与报价",output:"产出：架构设计（含架构图）、对外架构图、解决方案、开发计划、范围与报价。",actions:[["⑤-1 填架构手册（架构设计）","按六段形成架构设计与架构图，保留依据和未验证条件。"],["⑤-2 画对外架构图","从架构手册取材，控制在 1–2 页。"],["⑤-3 写解决方案","从架构手册摘出，PM 核对范围与验收口径。"],["⑤-4 定报价","PM 编制，架构师提供成本依据，作为送审附件。"],["⑤-5 编开发计划","PM 主做、架构师辅助，按范围和验收项排任务与验证。"]]},
+s6:{title:"⑥ 送审",owner:"PM 组织；总架构师审核；架构师答疑",output:"产出：三件送审邮件，以及通过／退回／暂缓结论、范围和条件。",actions:[["⑥-1 组织送审、收审核结论","开发计划、架构设计（含架构图）、解决方案同版提交；报价作附件。退回时同步修订受影响材料。"]]},
+s7:{title:"⑦ 启动会",owner:"PM 组织；FDE 演示；客户授权验收人确认",output:"产出：demo 说明与签署的验收标准及验收清单。",actions:[["⑦-1 出 demo","方案确定后由 FDE 制作；当前暂不做，保留待补。"],["⑦-2 启动会、签验收标准及清单","核对范围、计划、配合和验收样本，签署并固定版本。"]]},
+s8:{title:"⑧ 开发",owner:"FDE 实施；PM 统筹；架构师处理设计问题",output:"产出：按需 spec、开发实现、测试与发布记录、验收及运行交接材料。",actions:[["⑧-1 写 spec（按需）","审核通过后按项目需要选用规格参照，不强制一次写齐九份。"],["⑧-2 开发、测试、发布","按计划实施，按验收项测试与复测，取得批准后发布并记录限制。"]]},
+s9:{title:"⑨ 维护",owner:"PM 与后续维护责任人",output:"产出：维保与续费记录；当前为空壳，只记录实际交接事实。",actions:[["⑨-1 维护","登记维护范围、服务窗口、响应约定、续费与未决事项；未定内容不补写承诺。"]]}
+};
+const detail=document.getElementById("detail"),title=document.getElementById("detail-title"),owner=document.getElementById("detail-owner"),output=document.getElementById("detail-output"),actions=document.getElementById("detail-actions");
+function show(id){const s=stages[id];title.textContent=s.title;owner.textContent=s.owner;output.textContent=s.output;actions.replaceChildren();for(const [name,desc] of s.actions){const div=document.createElement("div");div.className="action";const strong=document.createElement("strong");strong.textContent=name;const span=document.createElement("span");span.textContent=desc;div.append(strong,span);actions.append(div)}document.querySelectorAll(".node").forEach(n=>n.classList.toggle("active",n.dataset.node===id));detail.hidden=false}
+document.querySelectorAll(".node").forEach(n=>n.addEventListener("click",()=>show(n.dataset.node)));
+document.getElementById("expand").addEventListener("click",()=>show("s1"));document.getElementById("close").addEventListener("click",()=>{detail.hidden=true;document.querySelectorAll(".node").forEach(n=>n.classList.remove("active"))});document.getElementById("print").addEventListener("click",()=>window.print());show("s1");
+</script>
+</body>
+</html>
