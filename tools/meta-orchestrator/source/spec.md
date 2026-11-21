@@ -7,7 +7,7 @@ structure_version: 结构重写 2026-07-08（依赖顺序重排 + 就地定义 +
 created: 2026-06-29
 restructured: 2026-07-08
 status: 设计已收敛。本文 = 用 meta-skill 蒸 meta-orchestrator SKILL.md 的输入语料（描述性规格，非命令式 SKILL.md 本体；SKILL.md 由 meta-skill 蒸、不手搓）。
-archive: 重写前原文（版本疤痕原貌）见 `_archive/spec_v1.1_pre-rewrite_20260708.md`；逐版变更史见 `_revisions.md`；下一步重蒸批见文末 §附。
+archive: 重写前原文（版本疤痕原貌）见 `99_归档/spec_v1.1_pre-rewrite_20260708.md`；逐版变更史见 `_revisions.md`；下一步重蒸批见文末 §附。
 reading: 全文按依赖顺序排列——每个概念在第一次被用到之前已就地定义，线性读下来无需前向脑补。粗体术语 = 该处首次定义点，后文只引用不重述。
 ---
 

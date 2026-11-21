@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "11.11.0",
+  "version": "11.22",
   "status": "published-with-validated-candidates",
   "packages": [
     {
@@ -40,15 +40,15 @@
         "No license file is present in the supplied source archive; confirm release terms before reuse outside the authorized organization."
       ],
       "license": "No license file supplied in source archive.",
-      "sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
-      "bytes": 29769,
+      "sha256": "77333e10e699466b7e8feb5cf65ba2e03be41e6119a0338b9ac910ae89383c0c",
+      "bytes": 29773,
       "archive": "tools/meta-orchestrator/meta-orchestrator-10.06.zip",
       "path": "tools/meta-orchestrator/",
       "entry": "tools/meta-orchestrator/README.md",
       "source_package_name": "packages/03-meta-orchestrator_10.06.zip",
       "member_count": 2,
-      "source_archive_sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
-      "publication_revision": "10.07.4",
+      "source_archive_sha256": "77333e10e699466b7e8feb5cf65ba2e03be41e6119a0338b9ac910ae89383c0c",
+      "publication_revision": "11.22",
       "distribution": "Public documentation edition; internal navigation and author-machine metadata removed; executable code unchanged.",
       "original_archive_sha256": "ad6988e309257b632dae6949d0b96b1e042db0452805beeb5ce151b0934210de",
       "source_root": "tools/meta-orchestrator/source/"

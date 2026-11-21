@@ -33,7 +33,7 @@ def sync(resources):
 
 def update_manifest(files):
     manifest = json.loads(files["manifest.json"])
-    manifest.update(version="11.11.0", date="2026-11-11", publication_revision="11.11.0")
+    manifest.update(version="11.22", date="2026-11-22", publication_revision="11.22")
     for key, target, source in (
         ("development_plan_template", "inputs/开发计划.md", "4-FDE/开发计划.md"),
         ("research_input", "inputs/调研报告（对内）.md", "2-项目经理/④调研/调研报告（对内）.md"),
@@ -68,6 +68,23 @@ def update_manifest(files):
     files["manifest.json"] = (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode()
 
 
+def workflow_navigation():
+    return '''---
+title: 流程图阅读入口
+type: companion-navigation
+version: "11.22"
+---
+
+# 流程图阅读入口
+
+本资源包的图保留 11.11 九节点历史版本。其正文说明见[11.11 历史流程说明](https://github.com/quekou-fde-development/fde-development/blob/main/1-FDE交付流程/_archive/流程说明_11.11.0.md)。
+
+当前交付按八阶段执行：商机背景 → 商务建联 → 现场调研 → 架构方案 → 项目启动会 → 开发测试 → 项目验收 → 售后维护。
+
+联网阅读[当前流程说明](https://github.com/quekou-fde-development/fde-development/blob/main/1-FDE交付流程/流程说明.md)与[项目经理手册](https://github.com/quekou-fde-development/fde-development/blob/main/2-项目经理/项目管理工作手册.md)。
+'''.encode()
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--resources", type=Path, default=DEFAULT_RESOURCES)
@@ -76,6 +93,7 @@ def main():
     resources = args.resources.resolve()
     if resources == DEFAULT_RESOURCES:
         sync(resources)
+        (resources / "00-fde-flow/流程说明.md").write_bytes(workflow_navigation())
     files = {}
     for file in sorted(resources.rglob("*")):
         if file.is_symlink():

@@ -2,9 +2,9 @@
   "version": "11.07.1",
   "source": "开发技术手册.md",
   "output": "index.html",
-  "source_sha256": "b6644161611b550a8c13d9dc941be148c57b1ea832ffc73c1aa57c493bcaac5c",
-  "canonical_html_sha256": "ac2f2e6cb2aa27bce7081a9888b7bad9f9c8039efcea5f4f432ebad1e6ee1d82",
-  "html_sha256": "87d9b78cf5a1f5cbb7cf30dbbff59efb59ee11d65cf849b5a270ca2d418a9acb",
+  "source_sha256": "a0bc76381e57f1af14861270a4660c859995a4842b484488d6098a3108057e6a",
+  "canonical_html_sha256": "86b8b0bf9c4956936e0204aab0f780d19922dff76cc665a4904368b080a4d8b4",
+  "html_sha256": "fd505c54e9404f8004e95090d16aae1b0bfd35fe09572dcb9c88779b2eeaee08",
   "headings": 45,
-  "bytes": 104288
+  "bytes": 104270
 }

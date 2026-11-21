@@ -1,6 +1,6 @@
 {
-  "version": "11.11.0",
-  "date": "2026-11-11",
+  "version": "11.22",
+  "date": "2026-11-22",
   "packages": [
     {
       "file": "packages/01-development-design_10.06.zip",
@@ -668,8 +668,8 @@
     },
     {
       "file": "packages/03-meta-orchestrator_10.06.zip",
-      "bytes": 29769,
-      "sha256": "56b598a0eaf1fff3b77241d7b634f0328310886a7eaba3dcccf8e541751bb739",
+      "bytes": 29773,
+      "sha256": "77333e10e699466b7e8feb5cf65ba2e03be41e6119a0338b9ac910ae89383c0c",
       "status": "design-reference-pre-distillation",
       "entry": "README.md",
       "dependencies": [
@@ -683,8 +683,8 @@
         },
         {
           "path": "meta-orchestrator-design/spec.md",
-          "bytes": 69533,
-          "sha256": "2dc154c543554d426036cdc2f2b01aaa4c492415de447c2b649bd097d91a42cf"
+          "bytes": 69534,
+          "sha256": "1c8a12341da9ae2b88542bad9ba68081c95a2a485bf6a16e9a32920252006164"
         }
       ]
     },
@@ -2892,7 +2892,7 @@
     }
   ],
   "deferred": [],
-  "publication_revision": "11.11.0",
+  "publication_revision": "11.22",
   "distribution": "Public documentation edition; executable code and licenses preserved.",
   "separate_downloads": [
     {
